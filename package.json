@@ -1,6 +1,6 @@
 {
   "name": "fave-ui",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "React UI KiT by Fave",
   "author": "Fave",
   "license": "MIT",
@@ -27,11 +27,11 @@
     "lint": "eslint \"src/**/*.{js,ts,tsx}\" --cache",
     "prepublishOnly": "rm -rf dist && yarn build",
     "dev": "start-storybook -p 6006",
-    "create-component": "./tools/create-component.js",
     "build-storybook": "build-storybook",
     "build": "rollup -c",
     "clean": "git clean -Xdf",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006",
+    "create-component": "./tools/create-component.js"
   },
   "dependencies": {
     "@babel/runtime": "^7.1.2",
