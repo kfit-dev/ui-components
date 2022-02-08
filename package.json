@@ -1,6 +1,6 @@
 {
   "name": "fave-ui",
-  "version": "0.1.24",
+  "version": "0.1.0",
   "description": "React UI KiT by Fave",
   "author": "Fave",
   "license": "MIT",
@@ -22,17 +22,16 @@
     "npm": ">=5"
   },
   "scripts": {
-    "test": "yarn lint && ./node_modules/.bin/jest --passWithNoTests",
+    "test": "yarn lint && ./node_modules/.bin/jest",
     "test:watch": "yarn run test -- --watch",
     "lint": "eslint \"src/**/*.{js,ts,tsx}\" --cache",
     "prepublishOnly": "rm -rf dist && yarn build",
     "dev": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs-build",
+    "build-storybook": "build-storybook",
     "build": "rollup -c",
     "clean": "git clean -Xdf",
     "storybook": "start-storybook -p 6006",
-    "create-component": "node ./tools/create-component.js",
-    "prepare": "husky install"
+    "create-component": "./tools/create-component.js"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
@@ -91,7 +90,7 @@
     "fave-tailwindcss-presets": "^0.1.1",
     "file-loader": "^6.0.0",
     "fs-extra": "^7.0.0",
-    "husky": "^7.0.0",
+    "husky": "^4.0.10",
     "jest": "^27.5.0",
     "lint-staged": "^10.0.1",
     "phosphor-react": "^1.4.0",

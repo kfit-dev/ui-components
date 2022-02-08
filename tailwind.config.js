@@ -1,4 +1,6 @@
 module.exports = {
-  content: ['./src/**/*.tsx', './src/**/*.ts'],
-  presets: [require('fave-tailwindcss-presets')]
+  content: [
+		"./src/**/*.tsx", 
+		"./src/**/*.ts"
+	],
 }
