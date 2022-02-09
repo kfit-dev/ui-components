@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { MagnifyingGlass, CaretRight, CaretLeft, Plus } from 'phosphor-react'
+import { MagnifyingGlass, CaretRight, CaretLeft ,Plus } from 'phosphor-react'
 import Button, { ButtonProps } from '../index'
 
 export default {
@@ -25,13 +25,10 @@ export const PrimaryIconLeft = Template.bind({})
 PrimaryIconLeft.args = {
   label: 'Button',
   iconPlacement: 'start',
-  children: (
-    <>
-      <CaretRight size={24} className="iconLeft" /> BUTTON
-    </>
-  ),
+  children:"BUTTON",
   type: 'primary',
   size: 'large',
+  icon: <CaretRight size={24} className="icon-start" />,
 }
 
 export const PrimaryIconRight = Template.bind({})
@@ -39,13 +36,10 @@ export const PrimaryIconRight = Template.bind({})
 PrimaryIconRight.args = {
   label: 'Button',
   iconPlacement: 'end',
-  children: (
-    <>
-      BUTTON <MagnifyingGlass size={24} className="iconRight" />
-    </>
-  ),
+  children:"BUTTON",
   type: 'primary',
   size: 'large',
+  icon: <MagnifyingGlass size={24} className="icon-end" />
 }
 
 export const Text = Template.bind({})
@@ -63,12 +57,9 @@ TextIconLeft.args = {
   label: 'Button',
   type: 'text',
   iconPlacement: 'start',
-  children: (
-    <>
-      <CaretRight size={24} className="iconLeft" /> BUTTON
-    </>
-  ),
+  children:"BUTTON",
   size: 'large',
+  icon: <CaretRight size={24} className="icon-start" />,
 }
 
 export const TextIconRight = Template.bind({})
@@ -77,50 +68,35 @@ TextIconRight.args = {
   label: 'Button',
   type: 'text',
   iconPlacement: 'end',
-  children: (
-    <>
-      BUTTON <MagnifyingGlass size={24} className="iconRight" />
-    </>
-  ),
+  children:"BUTTON",
   size: 'large',
+  icon:<MagnifyingGlass size={24} className="icon-end" />
 }
 
 export const IconSearch = Template.bind({})
 
 IconSearch.args = {
   label: 'Button',
-  children: (
-    <>
-      <MagnifyingGlass size={16} className="circle" />
-    </>
-  ),
   shape: 'circle',
   size: 'large',
+  icon: <MagnifyingGlass size={16} className="circle" />
 }
 
 export const IconCaretLeft = Template.bind({})
 
 IconCaretLeft.args = {
   label: 'Button',
-  children: (
-    <>
-      <CaretLeft size={16} className="circle" />
-    </>
-  ),
   shape: 'circle',
   size: 'large',
+  icon:  <CaretLeft size={16} className="circle" />
 }
 
 export const IconPlus = Template.bind({})
 
 IconPlus.args = {
   label: 'Button',
-  children: (
-    <>
-      <Plus size={16} className="circle" />
-    </>
-  ),
   type: 'primary',
   shape: 'circle',
   size: 'large',
+  icon: <Plus size={16} className="circle" />,
 }
