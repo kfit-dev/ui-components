@@ -47,11 +47,13 @@
           "caseInsensitive": true
         }
       }
-    ]
+    ],
+    "eol-last": ["error", "always"],
+    "object-curly-spacing": ["error", "always"]
   },
   "overrides": [
     {
-      "files": ["*.test.js"],
+      "files": ["*.test.js", "*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
       "env": {
         "jest": true
       }

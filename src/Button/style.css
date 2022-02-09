@@ -1,56 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+.ant-btn {
+  @apply rounded-lg bg-white text-primary text-base font-bold font-inter h-auto;
+  @apply inline-flex items-center justify-center border-none border-transparent;
 
-.ant-btn{
-    @apply rounded-lg bg-white text-primary text-base font-bold font-inter h-auto;
-    @apply inline-flex items-center justify-center border-none border-transparent;
-    
-    @apply hover:text-primary;
-    @apply focus:text-primary focus:border-transparent focus:outline-none;
+  @apply hover:text-primary;
+  @apply focus:text-primary focus:border-transparent focus:outline-none;
 
-    &-lg{
-        @apply px-4 py-4 h-auto;
-    }
+  &-lg {
+    @apply px-4 py-4 h-auto;
+  }
 
-    &-circle{
-        @apply h-auto px-1.5 py-2;
-        @apply hover:outline-primary hover:outline-1;
-    }
+  &-circle {
+    @apply h-auto px-1.5 py-2;
+    @apply hover:outline-primary hover:outline-1;
+  }
 
-    &-primary{
-        @apply bg-primary text-white;
-        @apply hover:bg-primary hover:bg-opacity-70 hover:text-white focus:bg-primary focus:text-white focus:outline-none;
-    }
+  &-primary {
+    @apply bg-primary text-white;
+    @apply hover:bg-primary hover:bg-opacity-70 hover:text-white focus:bg-primary focus:text-white focus:outline-none;
+  }
 }
 
 .ant-btn-primary:hover {
-    background-color: rgba(222, 32, 106, 0.7);
+  background-color: rgba(222, 32, 106, 0.7);
 }
 
-.iconRight{
-    @apply align-bottom pl-1;
- }
-
- .iconLeft{
-    @apply align-bottom pr-1;
- }
-
-.start{
-    @apply pr-2;
+.iconRight {
+  @apply align-bottom pl-1;
 }
 
-.end{
-    @apply pl-2;
+.iconLeft {
+  @apply align-bottom pr-1;
 }
 
-.circle{
-    @apply align-middle mb-1;
+.start {
+  @apply pr-2;
 }
 
-.default{
-    @apply px-2;
+.end {
+  @apply pl-2;
 }
 
+.circle {
+  @apply align-middle mb-1;
+}
 
-
-
-
+.default {
+  @apply px-2;
+}
