@@ -18,13 +18,13 @@ const Button: React.FC<ButtonProps> = (props) => {
 
   return (
     <AntButton 
-			className={classNames(classNames, iconPlacement && `icon-${iconPlacement}` )}
-			 icon={iconPlacement ? null : icon}
-			 { ...restProps }
-			>
-			{ hasIconPlacement() && iconPlacement === "start" && icon}
-			{children}
-			{ hasIconPlacement() && iconPlacement === "end" && icon}
+		className={classNames(classNames, iconPlacement && `icon-${iconPlacement}` )}
+			icon={iconPlacement ? null : icon}
+			{ ...restProps }
+		>
+		{ hasIconPlacement() && iconPlacement === "start" && icon}
+		{children}
+		{ hasIconPlacement() && iconPlacement === "end" && icon}
     </AntButton>
   )
 }
