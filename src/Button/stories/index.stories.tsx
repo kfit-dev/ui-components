@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { MagnifyingGlass, CaretRight, CaretLeft ,Plus } from 'phosphor-react'
+import { MagnifyingGlass, CaretRight,ArrowLeft,Plus } from 'phosphor-react'
 import Button, { ButtonProps } from '../index'
 
 export default {
@@ -70,7 +70,7 @@ TextIconRight.args = {
   iconPlacement: 'end',
   children:"BUTTON",
   size: 'large',
-  icon:<MagnifyingGlass size={24} className="icon-end" />
+  icon:<CaretRight size={24} className="icon-end" />
 }
 
 export const IconSearch = Template.bind({})
@@ -82,13 +82,13 @@ IconSearch.args = {
   icon: <MagnifyingGlass size={16} className="circle" />
 }
 
-export const IconCaretLeft = Template.bind({})
+export const IconArrowLeft = Template.bind({})
 
-IconCaretLeft.args = {
+IconArrowLeft.args = {
   label: 'Button',
   shape: 'circle',
   size: 'large',
-  icon:  <CaretLeft size={16} className="circle" />
+  icon:  <ArrowLeft size={16} className="circle" />
 }
 
 export const IconPlus = Template.bind({})
