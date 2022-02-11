@@ -54,6 +54,7 @@
   "overrides": [
     {
       "files": ["*.test.js", "*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
+
       "env": {
         "jest": true
       }
