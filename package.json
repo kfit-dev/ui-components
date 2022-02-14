@@ -113,7 +113,7 @@
     "bracketSpacing": true
   },
   "lint-staged": {
-    "./**/*.js": [
+    "./**/*.{js,jsx,ts,tsx}": [
       "yarn lint --fix",
       "prettier --write"
     ],
