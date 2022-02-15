@@ -10,16 +10,16 @@ export default {
 
 const Template: ComponentStory<typeof Radio> = (args: RadioProps) => <Radio {...args} />
 
-export const Primary = Template.bind({})
+export const Basic = Template.bind({})
 
-Primary.args = {
+Basic.args = {
   label: 'Radio',
   children: 'Radio'
 }
 
-export const PrimaryChecked = Template.bind({})
+export const BasicChecked = Template.bind({})
 
-PrimaryChecked.args = {
+BasicChecked.args = {
   label: 'Radio',
   children: 'Radio',
   defaultChecked: 'true'
