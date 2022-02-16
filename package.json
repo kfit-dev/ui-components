@@ -22,7 +22,7 @@
     "npm": ">=5"
   },
   "scripts": {
-    "test": "yarn lint && ./node_modules/.bin/jest",
+    "test": "yarn lint && ./node_modules/.bin/jest --passWithNoTests",
     "test:watch": "yarn run test -- --watch",
     "lint": "eslint \"src/**/*.{js,ts,tsx}\" --cache",
     "prepublishOnly": "rm -rf dist && yarn build",
