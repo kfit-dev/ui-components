@@ -20,7 +20,7 @@ export const PrimaryChecked = Template.bind({})
 PrimaryChecked.args = {
   label: 'Checkbox',
   children: 'Checkbox',
-  defaultChecked: true
+  checked: true
 }
 
 export const Disabled = Template.bind({})
@@ -36,7 +36,7 @@ export const DisabledChecked = Template.bind({})
 DisabledChecked.args = {
   label: 'Checkbox',
   children: 'Checkbox',
-  defaultChecked: true,
+  checked: true,
   disabled: true
 }
 
@@ -45,5 +45,6 @@ export const CheckAll = Template.bind({})
 CheckAll.args = {
   label: 'Checkbox',
   children: 'Check All',
-  indeterminate: 'indeterminate'
+  indeterminate: true,
+  checked: false
 }
