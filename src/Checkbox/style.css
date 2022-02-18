@@ -38,7 +38,7 @@
     @apply border-slate-700;
   }
   &-input + &-inner {
-    @apply border-slate-700 rounded h-3.5 w-3.5;
+    @apply border-slate-700 rounded;
   }
   &-indeterminate {
     .ant-checkbox-inner::after {
