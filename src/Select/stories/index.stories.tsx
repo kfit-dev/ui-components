@@ -1,43 +1,190 @@
-/* eslint-disable no-console */
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-// import { AntSelect as Select } from "antd";
-import { Select as AntSelect, SelectProps } from 'antd'
-// import { default as Select, SelectProps } from '../index'
-import 'antd/lib/button/style/index.css'
+import { Form, FormItemProps } from 'antd'
+import { MagnifyingGlass, CaretDown } from 'phosphor-react'
+import { default as Select, SelectProps } from '../index'
 
 export default {
   title: 'Select',
-  component: AntSelect
-} as ComponentMeta<typeof AntSelect>
+  component: Select
+} as ComponentMeta<typeof Select>
 
-const Template: ComponentStory<typeof AntSelect> = (args: SelectProps) => (
-  <AntSelect style={{ width: 120 }} {...args}>
-    <AntSelect.Option value="jack">Jack</AntSelect.Option>
-    <AntSelect.Option value="lucy">Lucy</AntSelect.Option>
-    <AntSelect.Option value="disabled" disabled>
-      Disabled
-    </AntSelect.Option>
-    <AntSelect.Option value="Yiminghe">yiminghe</AntSelect.Option>
-  </AntSelect>
+type Args = {
+  formItem: FormItemProps
+  select: SelectProps
+}
+
+const Template: ComponentStory<typeof Select> = (args: Args) => (
+  <Form.Item style={{ width: '320px' }} {...args.formItem}>
+    <Select {...args.select} />
+  </Form.Item>
 )
-
-// const { Option } = Select;
-
-// const children = [];
-// for (let i = 10; i < 36; i++) {
-//   children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
-// }
-
-// const options = [{ value: 'gold' }, { value: 'lime' }, { value: 'green' }, { value: 'cyan' }];
 
 export const Primary = Template.bind({})
 
 Primary.args = {
-  // children:
-  // <>
-  //   <AntSelect.Option value="MY">Malaysia</AntSelectOption>
-  //   <AntSelect.Option value="SG">Singapore</AntSelect.Option>
-  //   <AntSelect.Option value="ID">Indonesia</AntSelect.Option>
-  // </>
+  select: {
+    label: 'Select',
+    mode: 'multiple',
+    defaultValue: 'SG',
+    placeholder: 'Search',
+    bordered: false,
+    showArrow: true,
+    suffixIcon: <CaretDown size={16} />,
+    options: [
+      { label: 'Poland', value: 'PL' },
+      { label: 'Malaysia', value: 'MY' },
+      { label: 'Singapore', value: 'SG' },
+      { label: 'Indonesia', value: 'In' },
+      { label: 'India', value: 'ID' },
+      { label: 'Vietname', value: 'VT' }
+    ]
+  },
+  formItem: {
+    label: 'Text field title'
+  }
+}
+
+export const PrimaryBordered = Template.bind({})
+
+PrimaryBordered.args = {
+  select: {
+    label: 'Select',
+    mode: 'multiple',
+    defaultValue: 'SG',
+    placeholder: 'Search',
+    showArrow: true,
+    suffixIcon: <CaretDown size={16} />,
+    options: [
+      { label: 'Poland', value: 'PL' },
+      { label: 'Malaysia', value: 'MY' },
+      { label: 'Singapore', value: 'SG' },
+      { label: 'Indonesia', value: 'In' },
+      { label: 'India', value: 'ID' },
+      { label: 'Vietname', value: 'VT' }
+    ]
+  },
+  formItem: {
+    label: 'Text field title'
+  }
+}
+
+export const Basic = Template.bind({})
+
+Basic.args = {
+  select: {
+    label: 'Select',
+    mode: 'multiple',
+    placeholder: 'Search',
+    showArrow: true,
+    suffixIcon: <CaretDown size={16} />,
+    options: [
+      { label: 'Poland', value: 'PL' },
+      { label: 'Malaysia', value: 'MY' },
+      { label: 'Singapore', value: 'SG' },
+      { label: 'Indonesia', value: 'In' },
+      { label: 'India', value: 'ID' },
+      { label: 'Vietname', value: 'VT' }
+    ]
+  },
+  formItem: {
+    label: 'Text field title'
+  }
+}
+
+export const BasicSearch = Template.bind({})
+
+BasicSearch.args = {
+  select: {
+    label: 'Select',
+    mode: 'multiple',
+    placeholder: 'Search',
+    showArrow: true,
+    suffixIcon: <MagnifyingGlass size={16} />,
+    options: [
+      { label: 'Poland', value: 'PL' },
+      { label: 'Malaysia', value: 'MY' },
+      { label: 'Singapore', value: 'SG' },
+      { label: 'Indonesia', value: 'In' },
+      { label: 'India', value: 'ID' },
+      { label: 'Vietname', value: 'VT' }
+    ]
+  },
+  formItem: {
+    label: 'Text field title'
+  }
+}
+
+export const BasicDisabled = Template.bind({})
+
+BasicDisabled.args = {
+  select: {
+    label: 'Select',
+    mode: 'multiple',
+    defaultValue: 'MY',
+    placeholder: 'Search',
+    showArrow: true,
+    disabled: true,
+    suffixIcon: <CaretDown size={16} />,
+    options: [
+      { label: 'Poland', value: 'PL' },
+      { label: 'Malaysia', value: 'MY' },
+      { label: 'Singapore', value: 'SG' },
+      { label: 'Indonesia', value: 'In' },
+      { label: 'India', value: 'ID' },
+      { label: 'Vietname', value: 'VT' }
+    ]
+  },
+  formItem: {
+    label: 'Text field title'
+  }
+}
+
+export const BasicHelper = Template.bind({})
+
+BasicHelper.args = {
+  select: {
+    label: 'Select',
+    mode: 'multiple',
+    placeholder: 'Select',
+    showArrow: true,
+    suffixIcon: <CaretDown size={16} />,
+    options: [
+      { label: 'Poland', value: 'PL' },
+      { label: 'Malaysia', value: 'MY' },
+      { label: 'Singapore', value: 'SG' },
+      { label: 'Indonesia', value: 'In' },
+      { label: 'India', value: 'ID' },
+      { label: 'Vietname', value: 'VT' }
+    ]
+  },
+  formItem: {
+    label: 'Text field title',
+    extra: 'Optional helper text here. Wrap text if more tha one line text.'
+  }
+}
+
+export const BasicError = Template.bind({})
+
+BasicError.args = {
+  select: {
+    label: 'Select',
+    mode: 'multiple',
+    placeholder: 'Error',
+    showArrow: true,
+    suffixIcon: <CaretDown size={16} />,
+    options: [
+      { label: 'Poland', value: 'PL' },
+      { label: 'Malaysia', value: 'MY' },
+      { label: 'Singapore', value: 'SG' },
+      { label: 'Indonesia', value: 'In' },
+      { label: 'India', value: 'ID' },
+      { label: 'Vietname', value: 'VT' }
+    ]
+  },
+  formItem: {
+    label: 'Text field title',
+    validateStatus: 'error',
+    help: 'Error text here. No more than one line'
+  }
 }
