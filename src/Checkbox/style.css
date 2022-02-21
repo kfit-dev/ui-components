@@ -5,7 +5,7 @@
     }
   }
   &-wrapper {
-    @apply font-inter font-normal flex;
+    @apply text-slate-700 font-inter font-normal flex;
   }
   &-wrapper:hover {
     .ant-checkbox-inner {
