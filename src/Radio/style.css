@@ -6,7 +6,7 @@
   }
 
   &-wrapper {
-    @apply font-inter font-normal leading-6 flex;
+    @apply text-slate-700 font-inter font-normal leading-6 flex;
   }
 
   &-wrapper-disabled {
