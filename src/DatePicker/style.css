@@ -1,0 +1,198 @@
+.ant-picker {
+  @apply h-10 px-4 border-transparent shadow-none rounded-lg;
+  @apply hover:border-slate-700 focus:border-slate-700;
+
+  &-input > input {
+    @apply text-neutral-700;
+  }
+
+  &-range {
+    .ant-picker-active-bar {
+      @apply bg-slate-700;
+    }
+  }
+
+  &-range-separator {
+    @apply px-4 text-slate-700;
+  }
+
+  &-suffix {
+    @apply text-slate-700;
+  }
+
+  &-cell-in-view.ant-picker-cell-today {
+    .ant-picker-cell-inner::before {
+      @apply rounded-full border-neutral-300;
+    }
+  }
+
+  &-cell .ant-picker-cell-inner {
+    @apply rounded-full inline-block w-auto;
+  }
+
+  &-cell-in-view.ant-picker-cell-selected {
+    .ant-picker-cell-inner {
+      @apply bg-slate-700;
+    }
+  }
+
+  &-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single)::before,
+  &-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single)::before {
+    @apply bg-slate-700;
+  }
+
+  &-cell-in-view.ant-picker-cell-in-range::before {
+    @apply bg-slate-700;
+  }
+
+  &-cell-in-view.ant-picker-cell-in-range {
+    @apply text-white;
+  }
+
+  &-header-view button {
+    @apply text-[#1D3557] text-base font-inter font-bold leading-6;
+    @apply hover:opacity-80 hover:text-[#1D3557];
+  }
+
+  &-header-view button:not(:first-child) {
+    margin-left: 4px;
+  }
+
+  &-cell-in-view.ant-picker-cell-range-start {
+    .ant-picker-cell-inner {
+      @apply bg-slate-700;
+    }
+  }
+
+  &-cell-in-view.ant-picker-cell-range-end {
+    .ant-picker-cell-inner {
+      @apply bg-slate-700;
+    }
+  }
+
+  &-cell-in-view.ant-picker-cell-range {
+    @apply hover:bg-slate-100;
+
+    .ant-picker-cell-range-hover {
+      @apply hover:bg-red-300;
+      @apply bg-pink-600;
+    }
+  }
+
+  &-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover::before {
+    @apply bg-slate-400;
+    @apply hover:bg-pink-200;
+  }
+
+  &-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single).ant-picker-cell-range-hover-start::before {
+    @apply bg-slate-700;
+  }
+
+  &-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single):not(.ant-picker-cell-range-end)
+    .ant-picker-cell-inner {
+    @apply rounded-tl-2xl rounded-bl-2xl;
+  }
+
+  &-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single):not(.ant-picker-cell-range-start)
+    .ant-picker-cell-inner {
+    @apply rounded-tr-2xl rounded-br-2xl;
+  }
+}
+
+.ant-form-item-label {
+  @apply pb-2 mb-0;
+}
+
+.ant-form-item .ant-form-item-label {
+  @apply leading-none;
+}
+
+.ant-form-item-has-error {
+  .ant-picker {
+    &-input > input {
+      @apply text-red-600;
+    }
+
+    &-separator {
+      @apply text-red-600;
+    }
+
+    &-range-separator {
+      @apply text-red-600;
+    }
+
+    &-suffix {
+      @apply text-red-600;
+    }
+  }
+}
+
+/* sunday */
+.ant-picker-body > table > thead > tr th:nth-child(1) {
+  text-indent: -9999px;
+  line-height: 0; /* Collapse the original line */
+}
+.ant-picker-body > table > thead > tr th:nth-child(1):after {
+  content: 'S';
+  @apply text-primary block font-normal indent-0 leading-normal;
+}
+
+/* monday */
+.ant-picker-body > table > thead > tr th:nth-child(2) {
+  text-indent: -9999px;
+  line-height: 0; /* Collapse the original line */
+}
+.ant-picker-body > table > thead > tr th:nth-child(2):after {
+  content: 'M';
+  @apply block font-normal indent-0 leading-normal;
+}
+
+/* tuesday */
+.ant-picker-body > table > thead > tr th:nth-child(3) {
+  text-indent: -9999px;
+  line-height: 0; /* Collapse the original line */
+}
+.ant-picker-body > table > thead > tr th:nth-child(3):after {
+  content: 'T';
+  @apply block font-normal indent-0 leading-normal;
+}
+
+/* wednesday */
+.ant-picker-body > table > thead > tr th:nth-child(4) {
+  text-indent: -9999px;
+  line-height: 0; /* Collapse the original line */
+}
+.ant-picker-body > table > thead > tr th:nth-child(4):after {
+  content: 'W';
+  @apply block font-normal indent-0 leading-normal;
+}
+
+/* thursday */
+.ant-picker-body > table > thead > tr th:nth-child(5) {
+  text-indent: -9999px;
+  line-height: 0; /* Collapse the original line */
+}
+.ant-picker-body > table > thead > tr th:nth-child(5):after {
+  content: 'T';
+  @apply block font-normal indent-0 leading-normal;
+}
+
+/* friday */
+.ant-picker-body > table > thead > tr th:nth-child(6) {
+  text-indent: -9999px;
+  line-height: 0; /* Collapse the original line */
+}
+.ant-picker-body > table > thead > tr th:nth-child(6):after {
+  content: 'F';
+  @apply block font-normal indent-0 leading-normal;
+}
+
+/* saturday */
+.ant-picker-body > table > thead > tr th:nth-child(7) {
+  text-indent: -9999px;
+  line-height: 0; /* Collapse the original line */
+}
+.ant-picker-body > table > thead > tr th:nth-child(7):after {
+  content: 'S';
+  @apply block font-normal indent-0 leading-normal;
+}
