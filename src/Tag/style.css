@@ -1,0 +1,24 @@
+.ant-tag {
+  @apply px-4 py-1 border-0 text-white rounded-md font-inter;
+  @apply inline-flex items-center;
+
+  &.none {
+    @apply bg-neutral-100 text-neutral-900;
+  }
+
+  &-success {
+    @apply bg-green-500;
+  }
+
+  &-error {
+    @apply bg-red-600;
+  }
+
+  &-warning {
+    @apply bg-yellow-400;
+  }
+
+  &-default {
+    @apply bg-neutral-300;
+  }
+}
