@@ -1,0 +1,47 @@
+.ant-form {
+  &-item-label {
+    @apply mb-0 leading-none !important;
+  }
+
+  &-item-control-input-content {
+    .ant-input-affix-wrapper {
+      @apply font-inter h-10 px-4 rounded-lg;
+      @apply hover:border-primary;
+      @apply focus:border-primary focus:shadow-none;
+
+      input {
+        /* @apply font-inter h-10 px-4 rounded-lg; */
+        @apply hover:border-primary;
+        @apply focus:border-primary focus:shadow-none;
+      }
+
+      input::placeholder {
+        @apply text-neutral-300;
+      }
+
+      .ant-input-prefix {
+        @apply mr-1.5;
+        @apply text-neutral-300;
+      }
+
+      .ant-input-clear-icon > svg {
+        display: none;
+      }
+
+      .ant-input-clear-icon {
+        @apply h-4 w-4;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='dimgray' viewBox='0 0 256 256'><rect width='256' height='256' fill='none'></rect><line x1='200' y1='56' x2='56' y2='200' stroke='dimgray' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></line><line x1='200' y1='200' x2='56' y2='56' stroke='dimgray' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></line></svg>");
+        /* background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#737373' viewBox='0 0 256 256'><rect width='256' height='256' fill='none'></rect><line x1='200' y1='56' x2='56' y2='200' stroke='#737373' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></line><line x1='200' y1='200' x2='56' y2='56' stroke='#737373' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></line></svg>"); */
+        /* background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#737373' viewBox='0 0 256 256'><rect width='256' height='256' fill='none'></rect><line x1='200' y1='56' x2='56' y2='200' stroke='#737373' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></line><line x1='200' y1='200' x2='56' y2='56' stroke='#737373' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></line></svg>"); */
+      }
+    }
+
+    .ant-input-affix-wrapper-focused {
+      @apply shadow-none border-primary;
+    }
+
+    .roundedSearch {
+      @apply rounded-full;
+    }
+  }
+}
