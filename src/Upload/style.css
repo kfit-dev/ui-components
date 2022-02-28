@@ -1,0 +1,34 @@
+.ant-upload-list-picture-card {
+  &.ant-upload-list {
+    @apply flex flex-wrap;
+  }
+
+  & .ant-upload-list-item {
+    @apply rounded-lg p-1;
+
+    & .ant-upload-list-item-info {
+      @apply rounded;
+    }
+
+    & .ant-upload-list-item-thumbnail {
+      @apply object-cover;
+    }
+  }
+}
+
+.ant-upload {
+  &.ant-upload-select-picture-card {
+    @apply border-none rounded-lg bg-white;
+
+    order: -1;
+
+    & .ant-upload {
+      @apply flex items-center;
+      @apply font-inter;
+
+      & > svg {
+        @apply text-primary mr-1;
+      }
+    }
+  }
+}
