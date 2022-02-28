@@ -2,8 +2,12 @@
   @apply h-10 px-4 border-transparent shadow-none rounded-lg;
   @apply hover:border-slate-700 focus:border-slate-700;
 
+  &-panel-container {
+    @apply rounded-lg;
+  }
+
   &-input > input {
-    @apply text-neutral-700;
+    @apply text-neutral-700 font-inter;
   }
 
   &-range {
@@ -28,6 +32,11 @@
 
   &-cell .ant-picker-cell-inner {
     @apply rounded-full inline-block w-auto;
+    @apply px-0;
+  }
+
+  &-year-panel .ant-picker-cell-inner {
+    @apply px-2.5 rounded-lg;
   }
 
   &-cell-in-view.ant-picker-cell-selected {
@@ -50,7 +59,7 @@
   }
 
   &-header-view button {
-    @apply text-[#1D3557] text-base font-inter font-bold leading-6;
+    @apply text-[#1D3557] text-base font-inter font-bold uppercase leading-6;
     @apply hover:opacity-80 hover:text-[#1D3557];
   }
 
