@@ -25,12 +25,20 @@
   }
   &-disabled {
     .ant-checkbox-inner {
-      @apply bg-neutral-300 border-neutral-200;
+      @apply bg-white border-neutral-200;
     }
     .ant-checkbox-inner::after {
       @apply border-white;
     }
   }
+  &-disabled.ant-checkbox-checked .ant-checkbox-inner {
+    @apply bg-neutral-300;
+  }
+
+  &-disabled.ant-checkbox-checked .ant-checkbox-inner::after {
+    @apply border-white;
+  }
+
   &-input {
     @apply m-0;
   }
