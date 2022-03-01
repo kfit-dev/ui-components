@@ -29,13 +29,13 @@
 
   &:not(.ant-select-customize-input):hover {
     .ant-select-selector {
-      @apply border-primary;
+      @apply border-neutral-300;
     }
   }
 
   &-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) {
     .ant-select-selector {
-      @apply border-primary shadow-none;
+      @apply border-neutral-300 shadow-none;
     }
   }
 
@@ -78,11 +78,19 @@
 
   &-item-option-selected:not(.ant-select-item-option-disabled) {
     @apply font-inter font-semibold;
-    @apply bg-primary bg-opacity-10;
+    @apply mx-2 bg-transparent;
 
     .ant-select-item-option-state {
-      @apply text-primary;
+      @apply text-neutral-700;
     }
+  }
+
+  &-item-option-active:not(.ant-select-item-option-disabled) {
+    @apply mx-2 bg-neutral-100 rounded;
+  }
+
+  &-item {
+    @apply mx-2 h-9;
   }
 
   &-arrow {
