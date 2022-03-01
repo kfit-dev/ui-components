@@ -9,13 +9,7 @@ import './style.css'
 export type SelectProps = AntSelectProps
 
 const Select: React.FC<SelectProps> = props => {
-  const { children, options, suffixIcon, ...restProps } = props
-
-  return (
-    <AntSelect options={options} suffixIcon={suffixIcon == null ? null : suffixIcon} {...restProps}>
-      {children}
-    </AntSelect>
-  )
+  return <AntSelect {...props} />
 }
 
 export default Select
