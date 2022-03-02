@@ -1,21 +1,22 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
-import { default as Input, InputProps } from '../index'
+import { MagnifyingGlass } from 'phosphor-react'
+import { Search, SearchProps } from '../index'
 
 export default {
-  title: 'Input',
-  component: Input
-} as ComponentMeta<typeof Input>
+  title: 'Search',
+  component: Search
+} as ComponentMeta<typeof Search>
 
 type Args = {
   formItem: FormItemProps
-  input: InputProps
+  input: SearchProps
 }
 
-const Template: ComponentStory<typeof Input> = (args: Args) => (
+const Template: ComponentStory<typeof Search> = (args: Args) => (
   <Form.Item style={{ width: '320px' }} {...args.formItem}>
-    <Input {...args.input} />
+    <Search {...args.input} />
   </Form.Item>
 )
 
@@ -26,33 +27,21 @@ Basic.args = {
     label: 'Input',
     placeholder: 'Placeholder',
     allowClear: true,
-    bordered: false
+    prefix: <MagnifyingGlass size={16} />
   },
   formItem: {
     label: 'Text field title'
   }
 }
 
-export const BasicBordered = Template.bind({})
+export const SearchError = Template.bind({})
 
-BasicBordered.args = {
+SearchError.args = {
   input: {
     label: 'Input',
     placeholder: 'Placeholder',
-    allowClear: true
-  },
-  formItem: {
-    label: 'Text field title'
-  }
-}
-
-export const BasicError = Template.bind({})
-
-BasicError.args = {
-  input: {
-    label: 'Input',
-    placeholder: 'Placeholder',
-    allowClear: true
+    allowClear: true,
+    prefix: <MagnifyingGlass size={16} />
   },
   formItem: {
     label: 'Text field title',
@@ -61,14 +50,15 @@ BasicError.args = {
   }
 }
 
-export const BasicDisabled = Template.bind({})
+export const SearchLoading = Template.bind({})
 
-BasicDisabled.args = {
+SearchLoading.args = {
   input: {
     label: 'Input',
-    placeholder: 'Disabled',
+    placeholder: 'Placeholder',
     allowClear: true,
-    disabled: true
+    loading: true,
+    prefix: <MagnifyingGlass size={16} />
   },
   formItem: {
     label: 'Text field title'

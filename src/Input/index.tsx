@@ -1,17 +1,17 @@
 import * as React from 'react'
-import { Input as AntInput, InputProps as AntInputProps } from 'antd'
+import { default as AntInput, InputProps as AntInputProps, SearchProps as AntSearchProps } from 'antd/lib/input'
 
 import '../assets/style/form-item.css'
 import 'antd/lib/input/style/index.css'
 import './style.css'
 
-export type InputProps = AntInputProps & {
-  rounded?: true | false
-}
+export type InputProps = AntInputProps
+
+export type SearchProps = AntSearchProps
+export const { Search } = AntInput
 
 const Input: React.FC<InputProps> = props => {
-  const { rounded, ...restProps } = props
-  return <AntInput className={!rounded ? undefined : 'roundedSearch'} {...restProps} />
+  return <AntInput {...props} />
 }
 
 export default Input
