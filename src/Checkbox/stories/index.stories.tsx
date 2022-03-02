@@ -6,7 +6,26 @@ export default {
   component: Checkbox
 } as ComponentMeta<typeof Checkbox>
 
-const Template: ComponentStory<typeof Checkbox> = (args: CheckboxProps) => <Checkbox {...args} />
+const Template: ComponentStory<typeof Checkbox> = (args: CheckboxProps) => {
+  const { indeterminate, checked, ...restArgs } = args
+  const [checkIndeterminate, setIndeterminate] = React.useState(indeterminate)
+  const [checkAll, setCheckAll] = React.useState(checked)
+
+  const onCheckAllChange = (e: any) => {
+    const option = !checkIndeterminate
+    setIndeterminate(option)
+    setCheckAll(e.target.checked)
+  }
+
+  return (
+    <Checkbox
+      onChange={onCheckAllChange}
+      indeterminate={indeterminate !== undefined ? checkIndeterminate : undefined}
+      checked={checkAll}
+      {...restArgs}
+    />
+  )
+}
 
 export const Primary = Template.bind({})
 
