@@ -1,6 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
+import moment from 'moment'
 import { CaretDown, ArrowRight } from 'phosphor-react'
 import { RangePickerProps, RangePicker } from '../index'
 
@@ -14,11 +15,20 @@ type Args = {
   datePicker: RangePickerProps
 }
 
-const Template: ComponentStory<typeof RangePicker> = (args: Args) => (
-  <Form.Item style={{ width: '320px' }} {...args.formItem}>
-    <RangePicker style={{ width: '320px' }} {...args.datePicker} />
-  </Form.Item>
-)
+const Template: ComponentStory<typeof RangePicker> = (args: Args) => {
+  return(
+    <Form.Item style={{ width: '320px' }} {...args.formItem}>
+      <RangePicker 
+        style={{ width: '320px' }} 
+        disabledDate={(current) => {
+          const customDate = moment().format("YYYY-MM-DD");
+          return current && current < moment(customDate, "YYYY-MM-DD");
+        }} 
+        {...args.datePicker} 
+      />
+    </Form.Item>
+  )
+}
 
 export const Basic = Template.bind({})
 

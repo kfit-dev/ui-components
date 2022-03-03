@@ -1,6 +1,6 @@
 .ant-picker {
   @apply h-10 px-4 border-transparent shadow-none rounded-lg;
-  @apply hover:border-slate-700 focus:border-slate-700;
+  @apply hover:border-neutral-300 focus:border-neutral-300;
 
   &-panel-container {
     @apply rounded-lg;
@@ -10,18 +10,27 @@
     @apply text-neutral-700 font-inter;
   }
 
+  &-header{
+    @apply border-none;
+  }
+
   &-range {
     .ant-picker-active-bar {
-      @apply bg-slate-700;
+      @apply bg-slate-300;
     }
   }
 
   &-range-separator {
-    @apply px-4 text-slate-700;
+    @apply px-4 text-slate-300;
   }
 
   &-suffix {
     @apply text-slate-700;
+  }
+
+  &-clear > span > svg{
+    @apply h-4 w-4 text-transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='dimgray' viewBox='0 0 256 256'><rect width='256' height='256' fill='none'></rect><line x1='200' y1='56' x2='56' y2='200' stroke='dimgray' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></line><line x1='200' y1='200' x2='56' y2='56' stroke='dimgray' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></line></svg>");
   }
 
   &-cell-in-view.ant-picker-cell-today {
