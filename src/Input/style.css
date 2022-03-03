@@ -28,6 +28,7 @@
         @apply h-4 w-4;
         background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='dimgray' viewBox='0 0 256 256'><rect width='256' height='256' fill='none'></rect><line x1='200' y1='56' x2='56' y2='200' stroke='dimgray' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></line><line x1='200' y1='200' x2='56' y2='56' stroke='dimgray' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></line></svg>");
       }
+
     }
 
     .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
@@ -69,7 +70,12 @@
     }
 
     .ant-btn > .anticon-search {
-      /* @apply hidden; */
+      @apply h-4 w-4;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='dimgray' viewBox='0 0 256 256'><rect width='256' height='256' fill='none'></rect><circle cx='116' cy='116' r='84' fill='none' stroke='dimgray' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></circle><line x1='175.4' y1='175.4' x2='224' y2='224' fill='none' stroke='dimgray' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></line></svg>");
+    }
+
+    .ant-btn > .anticon-search > svg {
+      @apply hidden;
     }
 
     .ant-input-search > .ant-input-group > .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {

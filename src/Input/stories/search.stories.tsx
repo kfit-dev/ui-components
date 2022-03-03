@@ -1,7 +1,6 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
-import { MagnifyingGlass } from 'phosphor-react'
 import { Search, SearchProps } from '../index'
 
 export default {
@@ -27,7 +26,6 @@ Basic.args = {
     label: 'Input',
     placeholder: 'Placeholder',
     allowClear: true,
-    prefix: <MagnifyingGlass size={16} />
   },
   formItem: {
     label: 'Text field title'
@@ -41,7 +39,6 @@ SearchError.args = {
     label: 'Input',
     placeholder: 'Placeholder',
     allowClear: true,
-    prefix: <MagnifyingGlass size={16} />
   },
   formItem: {
     label: 'Text field title',
@@ -58,7 +55,6 @@ SearchLoading.args = {
     placeholder: 'Placeholder',
     allowClear: true,
     loading: true,
-    prefix: <MagnifyingGlass size={16} />
   },
   formItem: {
     label: 'Text field title'
