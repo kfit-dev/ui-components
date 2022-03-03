@@ -28,10 +28,6 @@
         @apply h-4 w-4;
         background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='dimgray' viewBox='0 0 256 256'><rect width='256' height='256' fill='none'></rect><line x1='200' y1='56' x2='56' y2='200' stroke='dimgray' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></line><line x1='200' y1='200' x2='56' y2='56' stroke='dimgray' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></line></svg>");
       }
-<<<<<<< HEAD
-
-=======
->>>>>>> d7d45c23ccca66b70cc176aad93081cbe6a3ccde
     }
 
     .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
