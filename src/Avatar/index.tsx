@@ -5,7 +5,10 @@ import 'antd/lib/avatar/style/index.css';
 import './style.css';
 
 const Avatar: React.FC<AntAvatarProps> = props => {
-  return <AntAvatar {...props} />;
+  const { src } = props;
+  return (
+    <AntAvatar className={src ? 'image-avatar' : 'text-avatar'} {...props} />
+  );
 };
 
 Avatar.defaultProps = {

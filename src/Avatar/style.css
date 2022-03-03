@@ -1,4 +1,13 @@
 .ant-avatar {
-  @apply bg-neutral-300 text-sm border border-white;
   @apply flex justify-center items-center;
+
+  &.text-avatar {
+    @apply text-sm;
+    @apply border border-white;
+    @apply bg-neutral-300;
+  }
+
+  &.image-avatar {
+    @apply bg-slate-100;
+  }
 }

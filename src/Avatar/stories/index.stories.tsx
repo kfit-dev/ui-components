@@ -32,6 +32,5 @@ export const WithProfilePicture = Template.bind({});
 
 WithProfilePicture.args = {
   label: 'Avatar',
-  src: 'https://joeschmoe.io/api/v1/random',
-  style: { backgroundColor: 'white' }
+  src: 'https://joeschmoe.io/api/v1/random'
 };
