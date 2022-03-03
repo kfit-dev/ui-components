@@ -1,6 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
+import moment from 'moment'
 import { CaretDown } from 'phosphor-react'
 import { default as DatePicker, DatePickerProps } from '../index'
 
@@ -14,11 +15,19 @@ type Args = {
   datePicker: DatePickerProps
 }
 
-const Template: ComponentStory<typeof DatePicker> = (args: Args) => (
-  <Form.Item style={{ width: '320px' }} {...args.formItem}>
-    <DatePicker style={{ width: '320px' }} {...args.datePicker} />
-  </Form.Item>
-)
+const Template: ComponentStory<typeof DatePicker> = (args: Args) => {
+  return (
+    <Form.Item style={{ width: '320px' }} {...args.formItem}>
+      <DatePicker 
+        style={{ width: '320px' }} {...args.datePicker} 
+        disabledDate={(current) => {
+          const customDate = moment().format("YYYY-MM-DD");
+          return current && current < moment(customDate, "YYYY-MM-DD");
+        }} 
+      />
+    </Form.Item>
+  )
+}
 
 export const Basic = Template.bind({})
 
@@ -35,9 +44,9 @@ Basic.args = {
   }
 }
 
-export const BasicQuater = Template.bind({})
+export const BasicQuarter = Template.bind({})
 
-BasicQuater.args = {
+BasicQuarter.args = {
   datePicker: {
     label: 'DatePicker',
     showToday: false,
