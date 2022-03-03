@@ -12,7 +12,7 @@ export default {
 const Template: ComponentStory<typeof Popover> = (args: PopoverProps) => (
 
   <Popover {...args} >
-    <Button style={{ backgroundColor: 'grey' }}>Hover</Button>
+    <Button style={{ backgroundColor: 'grey',  margin: '140px' }}>Hover</Button>
   </Popover>
 );
 
@@ -21,7 +21,7 @@ const buttonStyle={
   fontWeight:"600",
   marginTop:'6px',
   boxShadow:'none',
-  fontSize:"12px" 
+  fontSize:"12px",
 }
 
 const contentButton = (
