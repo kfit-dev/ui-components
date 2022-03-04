@@ -1,8 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { default as AvatarGroup, AvatarGroupProps } from '../index';
 import Avatar from '../../Avatar';
+import { default as AvatarGroup, AvatarGroupProps } from '../index';
 
 export default {
   title: 'AvatarGroup',
