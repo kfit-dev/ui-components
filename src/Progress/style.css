@@ -1,0 +1,192 @@
+@import '../variables.css';
+
+.ant-progress {
+  @apply font-inter;
+}
+
+/* center line success/exception icons */
+.ant-progress {
+  &.ant-progress-line {
+    & .ant-progress-text {
+      @apply relative;
+    }
+
+    &.ant-progress-default {
+      & .ant-progress-text {
+        &::before {
+          position: absolute;
+          transform: translateY(-40%);
+        }
+      }
+    }
+    &.ant-progress-small {
+      & .ant-progress-text {
+        &::before {
+          position: absolute;
+          transform: translateY(-46%);
+        }
+      }
+    }
+  }
+}
+
+.ant-progress {
+  &.ant-progress-status-success.ant-progress-default {
+    &.ant-progress-circle {
+      & .ant-progress-text {
+        &::before {
+          /* content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgb(16 185 129)" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="216 72 104 184 48 128" fill="none" stroke="rgb(16 185 129)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline></svg>'); */
+          content: var(--ic-check-24);
+        }
+      }
+    }
+  }
+
+  &.ant-progress-status-exception.ant-progress-default {
+    &.ant-progress-circle {
+      & .ant-progress-text {
+        &::before {
+          /* content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgb(220 38 38)" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" stroke="rgb(220 38 38)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="200" y1="200" x2="56" y2="56" stroke="rgb(220 38 38)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg>'); */
+          content: var(--ic-x-24);
+        }
+      }
+    }
+  }
+
+  &.ant-progress-status-success {
+    &.ant-progress-small.ant-progress-circle {
+      & .ant-progress-text {
+        &::before {
+          /* content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(16 185 129)" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="216 72 104 184 48 128" fill="none" stroke="rgb(16 185 129)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline></svg>'); */
+          content: var(--ic-check-16);
+        }
+      }
+    }
+
+    &.ant-progress-line {
+      & .ant-progress-text {
+        &::before {
+          /* content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(16 185 129)" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="172 104 113.3 160 84 132" fill="none" stroke="rgb(16 185 129)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline><circle cx="128" cy="128" r="96" fill="none" stroke="rgb(16 185 129)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle></svg>'); */
+          content: var(--ic-check-outline-16);
+        }
+      }
+    }
+  }
+
+  &.ant-progress-status-exception {
+    &.ant-progress-small.ant-progress-circle {
+      & .ant-progress-text {
+        &::before {
+          /* content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(220 38 38)" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" stroke="rgb(220 38 38)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="200" y1="200" x2="56" y2="56" stroke="rgb(220 38 38)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg>'); */
+          content: var(--ic-x-16);
+        }
+      }
+    }
+
+    &.ant-progress-line {
+      & .ant-progress-text {
+        &::before {
+          /* content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(220 38 38)" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" fill="none" stroke="rgb(220 38 38)" stroke-miterlimit="10" stroke-width="16"></circle><line x1="160" y1="96" x2="96" y2="160" fill="none" stroke="rgb(220 38 38)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="160" y1="160" x2="96" y2="96" fill="none" stroke="rgb(220 38 38)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg>'); */
+          content: var(--ic-x-outline-16);
+        }
+      }
+    }
+  }
+
+  /*&.ant-progress-status-success.ant-progress-small {
+    &.ant-progress-circle {
+      & .ant-progress-text {
+        &::before {
+          content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(16 185 129)" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="216 72 104 184 48 128" fill="none" stroke="rgb(16 185 129)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline></svg>');
+        }
+      }
+    }
+
+     &.ant-progress-line {
+      & .ant-progress-text {
+        &::before {
+          content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#10B981" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="172 104 113.3 160 84 132" fill="none" stroke="rgb(16 185 129)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline><circle cx="128" cy="128" r="96" fill="none" stroke="rgb(16 185 129)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle></svg>');
+        }
+      }
+    } 
+  }*/
+
+  /* &.ant-progress-status-exception.ant-progress-small {
+    &.ant-progress-circle {
+      & .ant-progress-text {
+        &::before {
+          content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(220 38 38)" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="200" y1="56" x2="56" y2="200" stroke="rgb(220 38 38)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="200" y1="200" x2="56" y2="56" stroke="rgb(220 38 38)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg>');
+        }
+      }
+    }
+  } */
+
+  /* Hide default circle icon */
+  & .ant-progress-text {
+    & > .anticon {
+      @apply hidden;
+    }
+  }
+}
+
+/* .ant-progress-status-success {
+  &.ant-progress-circle {
+    & .ant-progress-text {
+      &::before {
+        content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgb(16,185,129)" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><polyline points="216 72 104 184 48 128" fill="none" stroke="rgb(16,185,129)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline></svg>');
+      }
+
+      & > .anticon {
+        @apply hidden;
+      }
+    }
+  }
+} */
+
+.ant-progress-success-bg,
+.ant-progress-bg {
+  @apply bg-slate-700;
+  /* &::after {
+    content: url();
+  } */
+}
+
+.ant-progress-line {
+  @apply flex items-center;
+
+  &.ant-progress-status-normal {
+    & .ant-progress-text {
+      @apply text-neutral-500;
+    }
+  }
+
+  & .ant-progress-inner {
+    @apply bg-white;
+  }
+}
+
+.ant-progress-circle {
+  &.ant-progress-status-normal {
+    & .ant-progress-text {
+      @apply text-slate-700;
+    }
+  }
+
+  & .ant-progress-circle-trail {
+    @apply stroke-white;
+  }
+}
+
+.ant-progress-inner:not(.ant-progress-circle-gradient) {
+  & .ant-progress-circle-path {
+    @apply stroke-slate-700;
+  }
+}
+
+/* .ant-progress {
+  @apply h-1.5;
+
+  &.mini {
+    @apply h-1;
+  }
+} */
