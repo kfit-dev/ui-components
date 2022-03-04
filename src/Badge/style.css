@@ -1,0 +1,38 @@
+.ant-badge {
+  sup {
+    @apply top-[15%] right-[15%];
+
+    &.ant-badge-status-success {
+      @apply bg-green-500;
+    }
+
+    &.ant-badge-status-error {
+      @apply bg-red-600;
+    }
+
+    &.ant-badge-status-default {
+      @apply bg-neutral-400;
+    }
+
+    &.ant-badge-status-processing {
+      @apply absolute;
+      @apply bg-slate-700;
+      @apply shadow-[0px_0px_0px_1px_#CBD5E1];
+
+      &::after {
+        @apply animate-none;
+        @apply border-none;
+      }
+    }
+
+    &.ant-badge-status-warning {
+      @apply bg-yellow-400;
+    }
+  }
+
+  &.status-badge {
+    sup {
+      @apply h-2.5 w-2.5;
+    }
+  }
+}
