@@ -29,7 +29,7 @@ Notification.args = {
   overflowCount: 99,
   children: (
     <>
-      <Avatar size={64}></Avatar>
+      <Avatar size={40}></Avatar>
     </>
   )
 };
@@ -41,7 +41,7 @@ Status.args = {
   dot: true,
   children: (
     <>
-      <Avatar size={64}></Avatar>
+      <Avatar size={40}></Avatar>
     </>
   )
 };

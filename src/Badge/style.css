@@ -2,6 +2,10 @@
   sup {
     @apply top-[15%] right-[15%];
 
+    &.ant-badge-count {
+      @apply font-inter;
+    }
+
     &.ant-badge-status-success {
       @apply bg-green-500;
     }
