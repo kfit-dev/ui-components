@@ -32,10 +32,6 @@ const circleArgs = {
   type: 'circle',
   percent: 65,
   width: 80
-  // format: (percent, successPercent) => {
-  //   console.log(successPercent)
-  //   return percent === successPercent ? <Check size={24} /> : `${percent}%`
-  // }
 }
 
 const circleSmallArgs = {
@@ -50,7 +46,6 @@ export const Normal = Template.bind({})
 
 Normal.args = {
   ...args
-  // size: 'small'
 }
 
 export const Finished = Template.bind({})
@@ -96,7 +91,6 @@ export const NormalCircle = Template.bind({})
 
 NormalCircle.args = {
   ...circleArgs
-  // strokeWidth: 30
 }
 
 export const FinishedCircle = Template.bind({})
