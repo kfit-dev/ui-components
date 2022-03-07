@@ -8,16 +8,16 @@ export default {
   component: Progress,
   argTypes: {
     type: {
-      control: { type: 'radio', options: ['line', 'circle'] },
-      defaultValue: 'line'
+      options: ['line', 'circle'],
+      control: { type: 'radio' }
     },
     size: {
-      control: { type: 'radio', disable: true, options: ['default', 'small'] },
-      defaultValue: 'default'
+      options: ['default', 'small'],
+      control: { type: 'radio', disable: true }
     },
     status: {
-      control: { type: 'radio', options: ['default', 'success', 'exception'] },
-      defaultValue: 'default'
+      options: ['default', 'success', 'exception'],
+      control: { type: 'radio' }
     }
   }
 } as ComponentMeta<typeof Progress>
