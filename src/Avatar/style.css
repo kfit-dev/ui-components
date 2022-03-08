@@ -1,13 +1,14 @@
 .ant-avatar {
   @apply flex justify-center items-center;
 
-  &.text-avatar {
-    @apply text-sm;
+  &.ant-avatar-circle {
+    /* hardcoded to 18px inside ant design's source code as an inline style */
+    @apply text-sm !important;
     @apply border border-white;
     @apply bg-neutral-300;
   }
 
-  &.image-avatar {
+  &.ant-avatar-image {
     @apply bg-slate-100;
   }
 }

@@ -7,10 +7,7 @@ import './style.css';
 export type AvatarProps = AntAvatarProps;
 
 const Avatar: React.FC<AvatarProps> = props => {
-  const { src } = props;
-  return (
-    <AntAvatar className={src ? 'image-avatar' : 'text-avatar'} {...props} />
-  );
+  return <AntAvatar {...props} />;
 };
 
 Avatar.defaultProps = {
