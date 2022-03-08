@@ -1,0 +1,109 @@
+.ant-card {
+  @apply rounded-lg;
+  @apply w-72;
+
+  .ant-card-head {
+    @apply px-4;
+    .ant-card-head-wrapper > {
+      .ant-card-head-title {
+        @apply font-inter font-semibold text-sm;
+        padding-bottom: 14px;
+        padding-top: 22px;
+      }
+
+      .ant-card-extra {
+        @apply py-0 mt-1;
+      }
+    }
+  }
+  .ant-card-body {
+    @apply font-inter text-sm;
+    @apply py-0 px-4;
+  }
+
+  .ant-card-body > div > p:first-child {
+    @apply pt-2;
+  }
+
+  .ant-card-body > div > p {
+    @apply pt-1;
+  }
+
+  .ant-card-body > div > p:last-child {
+    @apply pb-4;
+  }
+
+  &-body:only-child {
+    @apply p-4;
+
+    div > p:first-child {
+      @apply pt-0;
+    }
+
+    div > p {
+      @apply pt-1;
+    }
+
+    div > p:last-child {
+      @apply pb-0;
+    }
+  }
+
+  &-cover {
+    @apply rounded-t-lg;
+
+    img {
+      @apply rounded-t-lg;
+    }
+  }
+  &-cover ~ &-body {
+    @apply p-4;
+  }
+
+  &-meta {
+    @apply my-0;
+
+    &-avatar {
+      @apply pr-2;
+    }
+
+    &-detail {
+      .ant-card-meta-title {
+        @apply font-inter text-neutral-700 font-semibold text-sm;
+      }
+      .ant-card-meta-description {
+        @apply font-inter text-neutral-700 text-sm;
+      }
+    }
+  }
+
+  &-small {
+    @apply w-64;
+    .ant-card-head {
+      @apply px-2;
+      .ant-card-head-wrapper > {
+        .ant-card-head-title {
+          @apply font-inter font-semibold text-xs;
+          @apply pt-3;
+          padding-bottom: 8px;
+        }
+
+        .ant-card-extra {
+          @apply py-0;
+        }
+      }
+    }
+    .ant-card-body {
+      @apply font-inter text-xs;
+      @apply py-0 px-2;
+    }
+
+    .ant-card-body > div > p {
+      @apply pt-1;
+    }
+
+    .ant-card-body > div > p:last-child {
+      @apply pb-2;
+    }
+  }
+}
