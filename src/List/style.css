@@ -1,0 +1,12 @@
+.ant-list-bordered {
+  @apply rounded-lg border-slate-100;
+
+  .ant-list-header,
+  .ant-list-footer {
+    @apply font-bold text-neutral-700;
+  }
+
+  .ant-list-item {
+    @apply text-neutral-700;
+  }
+}
