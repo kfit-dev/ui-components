@@ -83,6 +83,9 @@
     }
 
     &.ant-progress-line {
+      & .ant-progress-bg {
+        @apply bg-red-600;
+      }
       & .ant-progress-text {
         &::before {
           content: var(--ic-x-outline-16);
