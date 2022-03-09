@@ -1,3 +1,9 @@
+@import '../assets/style/form-item.css';
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/date-picker/style/index.css';
+@import 'antd/lib/empty/style/index.css';
+@import '../variable.css';
+
 .ant-picker {
   @apply h-10 px-4 border-transparent shadow-none rounded-lg;
   @apply hover:border-neutral-300 focus:border-neutral-300;
@@ -10,7 +16,7 @@
     @apply text-neutral-700 font-inter;
   }
 
-  &-header{
+  &-header {
     @apply border-none;
   }
 
@@ -28,9 +34,9 @@
     @apply text-slate-700;
   }
 
-  &-clear > span > svg{
+  &-clear > span > svg {
     @apply h-4 w-4 text-transparent;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='dimgray' viewBox='0 0 256 256'><rect width='256' height='256' fill='none'></rect><line x1='200' y1='56' x2='56' y2='200' stroke='dimgray' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></line><line x1='200' y1='200' x2='56' y2='56' stroke='dimgray' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></line></svg>");
+    background-image: var(--ic-x-16-neutral);
   }
 
   &-cell-in-view.ant-picker-cell-today {
@@ -68,8 +74,8 @@
   }
 
   &-header-view button {
-    @apply text-[#1D3557] text-base font-inter font-bold uppercase leading-6;
-    @apply hover:opacity-80 hover:text-[#1D3557];
+    @apply text-slate-700 text-base font-inter font-bold uppercase leading-6;
+    @apply hover:opacity-80 hover:text-slate-700;
   }
 
   &-header-view button:not(:first-child) {
@@ -142,75 +148,53 @@
     &-suffix {
       @apply text-red-600;
     }
+
+    &-clear > span > svg {
+      background-image: var(--ic-x-16);
+    }
   }
 }
 
-/* sunday */
-.ant-picker-body > table > thead > tr th:nth-child(1) {
-  text-indent: -9999px;
-  line-height: 0; /* Collapse the original line */
+.ant-picker-body > table > thead > tr th:nth-child(n + 1):nth-child(-n + 8) {
+  @apply indent-[9999px] leading-[0];
 }
+
+.ant-picker-body > table > thead > tr th:nth-child(n + 1):nth-child(-n + 8):after {
+  @apply block font-normal indent-0 leading-normal;
+}
+
+/* sunday */
 .ant-picker-body > table > thead > tr th:nth-child(1):after {
   content: 'S';
-  @apply text-primary block font-normal indent-0 leading-normal;
+  @apply text-primary;
 }
 
 /* monday */
-.ant-picker-body > table > thead > tr th:nth-child(2) {
-  text-indent: -9999px;
-  line-height: 0; /* Collapse the original line */
-}
 .ant-picker-body > table > thead > tr th:nth-child(2):after {
   content: 'M';
-  @apply block font-normal indent-0 leading-normal;
 }
 
 /* tuesday */
-.ant-picker-body > table > thead > tr th:nth-child(3) {
-  text-indent: -9999px;
-  line-height: 0; /* Collapse the original line */
-}
 .ant-picker-body > table > thead > tr th:nth-child(3):after {
   content: 'T';
-  @apply block font-normal indent-0 leading-normal;
 }
 
 /* wednesday */
-.ant-picker-body > table > thead > tr th:nth-child(4) {
-  text-indent: -9999px;
-  line-height: 0; /* Collapse the original line */
-}
 .ant-picker-body > table > thead > tr th:nth-child(4):after {
   content: 'W';
-  @apply block font-normal indent-0 leading-normal;
 }
 
 /* thursday */
-.ant-picker-body > table > thead > tr th:nth-child(5) {
-  text-indent: -9999px;
-  line-height: 0; /* Collapse the original line */
-}
 .ant-picker-body > table > thead > tr th:nth-child(5):after {
   content: 'T';
-  @apply block font-normal indent-0 leading-normal;
 }
 
 /* friday */
-.ant-picker-body > table > thead > tr th:nth-child(6) {
-  text-indent: -9999px;
-  line-height: 0; /* Collapse the original line */
-}
 .ant-picker-body > table > thead > tr th:nth-child(6):after {
   content: 'F';
-  @apply block font-normal indent-0 leading-normal;
 }
 
 /* saturday */
-.ant-picker-body > table > thead > tr th:nth-child(7) {
-  text-indent: -9999px;
-  line-height: 0; /* Collapse the original line */
-}
 .ant-picker-body > table > thead > tr th:nth-child(7):after {
   content: 'S';
-  @apply block font-normal indent-0 leading-normal;
 }

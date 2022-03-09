@@ -18,12 +18,13 @@ type Args = {
 const Template: ComponentStory<typeof DatePicker> = (args: Args) => {
   return (
     <Form.Item style={{ width: '320px' }} {...args.formItem}>
-      <DatePicker 
-        style={{ width: '320px' }} {...args.datePicker} 
-        disabledDate={(current) => {
-          const customDate = moment().format("YYYY-MM-DD");
-          return current && current < moment(customDate, "YYYY-MM-DD");
-        }} 
+      <DatePicker
+        style={{ width: '320px' }}
+        {...args.datePicker}
+        disabledDate={current => {
+          const customDate = moment().format('YYYY-MM-DD')
+          return current && current < moment(customDate, 'YYYY-MM-DD')
+        }}
       />
     </Form.Item>
   )
@@ -35,7 +36,6 @@ Basic.args = {
   datePicker: {
     label: 'DatePicker',
     showToday: false,
-    // bordered:false,
     format: 'DD/MM/YYYY',
     suffixIcon: <CaretDown color="#737373" />
   },
