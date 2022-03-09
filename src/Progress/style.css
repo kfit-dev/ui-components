@@ -62,6 +62,9 @@
     }
 
     &.ant-progress-line {
+      & .ant-progress-bg {
+        @apply bg-green-500;
+      }
       & .ant-progress-text {
         &::before {
           content: var(--ic-check-outline-16);
@@ -127,8 +130,26 @@
   }
 }
 
-.ant-progress-inner:not(.ant-progress-circle-gradient) {
-  & .ant-progress-circle-path {
-    @apply stroke-slate-700;
+.ant-progress-status-normal {
+  & .ant-progress-inner:not(.ant-progress-circle-gradient) {
+    & .ant-progress-circle-path {
+      @apply stroke-slate-700;
+    }
+  }
+}
+
+.ant-progress-status-success {
+  & .ant-progress-inner:not(.ant-progress-circle-gradient) {
+    & .ant-progress-circle-path {
+      @apply stroke-green-500;
+    }
+  }
+}
+
+.ant-progress-status-exception {
+  & .ant-progress-inner:not(.ant-progress-circle-gradient) {
+    & .ant-progress-circle-path {
+      @apply stroke-red-600;
+    }
   }
 }
