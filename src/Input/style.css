@@ -3,6 +3,10 @@
     @apply mb-0 leading-none !important;
   }
 
+  &-item-label {
+    @apply pb-2;
+  }
+
   &-item-control-input-content {
     .ant-input-affix-wrapper {
       @apply font-inter h-10 px-4 rounded-lg;
