@@ -1,3 +1,6 @@
+@import '../assets/style/form-item.css';
+@import 'antd/lib/input/style/index.css';
+
 .ant-form {
   &-item-label {
     @apply mb-0 leading-none !important;
