@@ -42,7 +42,7 @@
     }
 
     .ant-input-affix-wrapper-focused {
-      @apply border-neutral-300 shadow-none;
+      @apply border-neutral-300 shadow-none border border-solid;
     }
 
     .roundedSearch {
