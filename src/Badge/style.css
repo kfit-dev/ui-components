@@ -34,11 +34,8 @@
     &.ant-badge-status-warning {
       @apply bg-yellow-400;
     }
-  }
 
-  /* only affects status circle, not notification circle */
-  &.status-badge {
-    sup {
+    &.ant-badge-dot {
       @apply h-2.5 w-2.5;
     }
   }
