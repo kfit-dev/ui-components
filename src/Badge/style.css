@@ -36,6 +36,7 @@
     }
   }
 
+  /* only affects status circle, not notification circle */
   &.status-badge {
     sup {
       @apply h-2.5 w-2.5;
