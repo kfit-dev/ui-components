@@ -8,11 +8,8 @@ export default {
   component: Badge,
   argTypes: {
     status: {
-      control: {
-        type: 'radio',
-        options: ['success', 'error', 'default', 'processing', 'warning']
-      },
-      defaultValue: ['error']
+      options: ['success', 'error', 'default', 'processing', 'warning'],
+      control: { type: 'radio' }
     }
   }
 } as ComponentMeta<typeof Badge>;
@@ -27,6 +24,7 @@ Notification.args = {
   label: 'Badge',
   count: 5,
   overflowCount: 99,
+  status: 'error',
   children: (
     <>
       <Avatar size={40}></Avatar>
@@ -39,6 +37,7 @@ export const Status = Template.bind({});
 Status.args = {
   label: 'Badge',
   dot: true,
+  status: 'error',
   children: (
     <>
       <Avatar size={40}></Avatar>
