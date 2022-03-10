@@ -8,8 +8,6 @@ const Avatar: React.FC<AvatarProps> = props => {
   return <AntAvatar {...props} />;
 };
 
-Avatar.defaultProps = {
-  size: 'default'
-};
+Avatar.defaultProps = {};
 
 export default Avatar;
