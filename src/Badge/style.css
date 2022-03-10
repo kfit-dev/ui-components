@@ -23,7 +23,8 @@
     &.ant-badge-status-processing {
       @apply absolute;
       @apply bg-slate-700;
-      @apply shadow-[0px_0px_0px_1px_#CBD5E1];
+      @apply shadow-[0px_0px_0px_1px];
+      @apply shadow-slate-300;
 
       &::after {
         @apply animate-none;
