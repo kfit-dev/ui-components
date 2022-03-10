@@ -1,5 +1,9 @@
+@import 'antd/lib/avatar/style/index.css';
+
 .ant-avatar {
-  @apply flex justify-center items-center;
+  /* hardcoded to inline-block inside ant design's source code */
+  @apply flex !important;
+  @apply justify-center items-center;
 
   &.ant-avatar-circle {
     /* hardcoded to 18px inside ant design's source code as an inline style */

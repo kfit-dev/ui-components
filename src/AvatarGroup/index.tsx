@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { Avatar as AntAvatar } from 'antd';
-
-import 'antd/lib/avatar/style/index.css';
-import './style.css';
 import { GroupProps as AntAvatarGroupProps } from 'antd/lib/avatar';
+import './style.css';
 
 export type AvatarGroupProps = AntAvatarGroupProps;
 
