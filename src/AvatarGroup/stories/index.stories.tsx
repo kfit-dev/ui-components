@@ -8,11 +8,8 @@ export default {
   component: AvatarGroup,
   argTypes: {
     size: {
-      control: {
-        type: 'radio',
-        options: [64, 'large', 'default', 'small']
-      },
-      defaultValue: 64
+      options: [64, 'large', 'default', 'small'],
+      control: { type: 'radio' }
     }
   }
 } as ComponentMeta<typeof AvatarGroup>;
@@ -25,11 +22,12 @@ export const Text = Template.bind({});
 
 Text.args = {
   label: 'AvatarGroup',
+  size: 64,
   children: (
     <>
-      <Avatar>lala</Avatar>
-      <Avatar>lala</Avatar>
-      <Avatar>lala</Avatar>
+      <Avatar>KS</Avatar>
+      <Avatar>KS</Avatar>
+      <Avatar>KS</Avatar>
     </>
   )
 };
@@ -38,6 +36,7 @@ export const Images = Template.bind({});
 
 Images.args = {
   label: 'AvatarGroup',
+  size: 64,
   children: (
     <>
       <Avatar src={'https://joeschmoe.io/api/v1/random'} />
@@ -51,10 +50,11 @@ export const Mixed = Template.bind({});
 
 Mixed.args = {
   label: 'AvatarGroup',
+  size: 64,
   children: (
     <>
       <Avatar src={'https://joeschmoe.io/api/v1/random'} />
-      <Avatar>lala</Avatar>
+      <Avatar>KS</Avatar>
       <Avatar src={'https://joeschmoe.io/api/v1/random'} />
     </>
   )

@@ -8,11 +8,8 @@ export default {
   component: Avatar,
   argTypes: {
     size: {
-      control: {
-        type: 'radio',
-        options: [64, 'large', 'default', 'small']
-      },
-      defaultValue: 64
+      options: [64, 'large', 'default', 'small'],
+      control: { type: 'radio' }
     }
   }
 } as ComponentMeta<typeof Avatar>;
@@ -25,12 +22,14 @@ export const Default = Template.bind({});
 
 Default.args = {
   label: 'Avatar',
-  children: 'KS'
+  children: 'KS',
+  size: 64
 };
 
 export const WithProfilePicture = Template.bind({});
 
 WithProfilePicture.args = {
   label: 'Avatar',
-  src: 'https://joeschmoe.io/api/v1/random'
+  src: 'https://joeschmoe.io/api/v1/random',
+  size: 64
 };
