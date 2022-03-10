@@ -1,8 +1,6 @@
 @import 'antd/lib/style/default.css';
 @import 'antd/lib/popover/style/index.css';
 
-.ant-popover{
-
 .ant-popover {
   &-content {
     @apply w-40;
