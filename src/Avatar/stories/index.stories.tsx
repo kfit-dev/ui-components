@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { AvatarProps } from 'antd';
-import { default as Badge } from '../../Badge';
 import { default as Avatar } from '../index';
 
 export default {
@@ -34,35 +33,3 @@ WithProfilePicture.args = {
   src: 'https://joeschmoe.io/api/v1/random',
   size: 64
 };
-
-export const DefaultWithBadge = Template.bind({});
-
-DefaultWithBadge.args = {
-  label: 'Avatar',
-  size: 64,
-  children: 'KS'
-};
-
-DefaultWithBadge.decorators = [
-  Story => (
-    <Badge dot={true}>
-      <Story />
-    </Badge>
-  )
-];
-
-export const DefaultWithProfilePicture = Template.bind({});
-
-DefaultWithProfilePicture.args = {
-  label: 'Avatar',
-  src: 'https://joeschmoe.io/api/v1/random',
-  size: 64
-};
-
-DefaultWithProfilePicture.decorators = [
-  Story => (
-    <Badge dot={true}>
-      <Story />
-    </Badge>
-  )
-];
