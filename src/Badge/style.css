@@ -37,7 +37,7 @@
     }
 
     &.ant-badge-dot {
-      @apply h-1/4 w-1/4;
+      @apply h-2.5 w-2.5;
     }
   }
 }
