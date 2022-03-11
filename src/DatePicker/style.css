@@ -79,7 +79,7 @@
   }
 
   &-header-view button:not(:first-child) {
-    margin-left: 4px;
+    @apply ml-1;
   }
 
   &-cell-in-view.ant-picker-cell-range-start {
@@ -119,16 +119,8 @@
 
   &-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single):not(.ant-picker-cell-range-start)
     .ant-picker-cell-inner {
-    @apply rounded-tr-2xl rounded-br-2xl;
+    @apply rounded-r-2xl;
   }
-}
-
-.ant-form-item-label {
-  @apply pb-2 mb-0;
-}
-
-.ant-form-item .ant-form-item-label {
-  @apply leading-none;
 }
 
 .ant-form-item-has-error {
@@ -155,46 +147,48 @@
   }
 }
 
-.ant-picker-body > table > thead > tr th:nth-child(n + 1):nth-child(-n + 8) {
-  @apply indent-96 leading-[0] overflow-hidden;
-}
+.ant-picker-body > table > thead > tr {
+  th:nth-child(n + 1):nth-child(-n + 8) {
+    @apply indent-96 leading-[0] overflow-hidden;
+  }
 
-.ant-picker-body > table > thead > tr th:nth-child(n + 1):nth-child(-n + 8):after {
-  @apply block font-normal indent-0 leading-normal;
-}
+  th:nth-child(n + 1):nth-child(-n + 8):after {
+    @apply block font-normal indent-0 leading-normal;
+  }
 
-/* sunday */
-.ant-picker-body > table > thead > tr th:nth-child(1):after {
-  content: 'S';
-  @apply text-primary;
-}
+  /* sunday */
+  th:nth-child(1):after {
+    content: 'S';
+    @apply text-primary;
+  }
 
-/* monday */
-.ant-picker-body > table > thead > tr th:nth-child(2):after {
-  content: 'M';
-}
+  /* monday */
+  th:nth-child(2):after {
+    content: 'M';
+  }
 
-/* tuesday */
-.ant-picker-body > table > thead > tr th:nth-child(3):after {
-  content: 'T';
-}
+  /* tuesday */
+  th:nth-child(3):after {
+    content: 'T';
+  }
 
-/* wednesday */
-.ant-picker-body > table > thead > tr th:nth-child(4):after {
-  content: 'W';
-}
+  /* wednesday */
+  th:nth-child(4):after {
+    content: 'W';
+  }
 
-/* thursday */
-.ant-picker-body > table > thead > tr th:nth-child(5):after {
-  content: 'T';
-}
+  /* thursday */
+  th:nth-child(5):after {
+    content: 'T';
+  }
 
-/* friday */
-.ant-picker-body > table > thead > tr th:nth-child(6):after {
-  content: 'F';
-}
+  /* friday */
+  th:nth-child(6):after {
+    content: 'F';
+  }
 
-/* saturday */
-.ant-picker-body > table > thead > tr th:nth-child(7):after {
-  content: 'S';
+  /* saturday */
+  th:nth-child(7):after {
+    content: 'S';
+  }
 }
