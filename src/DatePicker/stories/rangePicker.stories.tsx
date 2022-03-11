@@ -2,7 +2,7 @@ import React from 'react'
 import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
 import { differenceInDays } from 'date-fns'
-import { CaretDown, ArrowRight } from 'phosphor-react'
+import { ArrowRight } from 'phosphor-react'
 import { default as DatePicker } from '../index'
 
 export default {
@@ -38,7 +38,6 @@ Basic.args = {
     showToday: false,
     format: 'DD/MM/YYYY',
     dateRange: true,
-    suffixIcon: <CaretDown />,
     separator: <ArrowRight />
   },
   formItem: {
@@ -54,7 +53,6 @@ Error.args = {
     showToday: false,
     format: 'DD/MM/YYYY',
     dateRange: true,
-    suffixIcon: <CaretDown />,
     separator: <ArrowRight />
   },
   formItem: {
