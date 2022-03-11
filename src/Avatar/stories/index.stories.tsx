@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { AvatarProps } from 'antd';
-import { default as Avatar } from '../index';
 import { default as Badge } from '../../Badge';
+import { default as Avatar } from '../index';
 
 export default {
   title: 'Avatar',
