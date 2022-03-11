@@ -156,7 +156,7 @@
 }
 
 .ant-picker-body > table > thead > tr th:nth-child(n + 1):nth-child(-n + 8) {
-  @apply indent-[9999px] leading-[0];
+  @apply indent-96 leading-[0] overflow-hidden;
 }
 
 .ant-picker-body > table > thead > tr th:nth-child(n + 1):nth-child(-n + 8):after {

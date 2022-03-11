@@ -1,19 +1,18 @@
 import * as React from 'react'
-import {
-  default as AntDatePicker,
-  DatePickerProps as AntDatePickerProps,
-  RangePickerProps as AntRangePickerProps
-} from 'antd/lib/date-picker'
+import generatePicker from 'antd/es/date-picker/generatePicker'
+import en from 'antd/es/date-picker/locale/en_US'
+import { CaretDown } from 'phosphor-react'
+import dateFnsGenerateConfig from 'rc-picker/lib/generate/dateFns'
 
 import './style.css'
+en.lang.quarterFormat = "'Q'Q"
 
-export type DatePickerProps = AntDatePickerProps
-export type RangePickerProps = AntRangePickerProps
+const DatePicker = generatePicker<Date>(dateFnsGenerateConfig)
 
-export const { RangePicker } = AntDatePicker
+export const QuarterPicker = DatePicker.QuarterPicker
 
-const DatePicker: React.FC<AntDatePickerProps> = props => {
-  return <AntDatePicker {...props} />
+DatePicker.defaultProps = {
+  suffixIcon: <CaretDown color="#737373" />
 }
 
 export default DatePicker

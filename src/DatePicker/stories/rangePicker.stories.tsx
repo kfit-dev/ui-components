@@ -1,30 +1,30 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
-import moment from 'moment'
+import { differenceInDays } from 'date-fns'
 import { CaretDown, ArrowRight } from 'phosphor-react'
-import { RangePickerProps, RangePicker } from '../index'
+import { default as DatePicker } from '../index'
 
 export default {
   title: 'RangePicker',
-  component: RangePicker
-} as ComponentMeta<typeof RangePicker>
+  component: DatePicker.RangePicker
+} as ComponentMeta<typeof DatePicker.RangePicker>
 
 type Args = {
   formItem: FormItemProps
-  datePicker: RangePickerProps
+  datePicker: typeof DatePicker.RangePicker
 }
 
-const Template: ComponentStory<typeof RangePicker> = (args: Args) => {
-  return(
+const Template: Story<Args> = (args: Args) => {
+  return (
     <Form.Item style={{ width: '320px' }} {...args.formItem}>
-      <RangePicker 
-        style={{ width: '320px' }} 
-        disabledDate={(current) => {
-          const customDate = moment().format("YYYY-MM-DD");
-          return current && current < moment(customDate, "YYYY-MM-DD");
-        }} 
-        {...args.datePicker} 
+      <DatePicker.RangePicker
+        style={{ width: '320px' }}
+        {...args.datePicker}
+        disabledDate={current => {
+          return current && differenceInDays(current, new Date()) < 0
+        }}
+        {...args.datePicker}
       />
     </Form.Item>
   )

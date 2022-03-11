@@ -1,9 +1,9 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
-import moment from 'moment'
+import { differenceInDays } from 'date-fns'
 import { CaretDown } from 'phosphor-react'
-import { default as DatePicker, DatePickerProps } from '../index'
+import { default as DatePicker } from '../index'
 
 export default {
   title: 'DatePicker',
@@ -12,18 +12,17 @@ export default {
 
 type Args = {
   formItem: FormItemProps
-  datePicker: DatePickerProps
+  datePicker: typeof DatePicker
 }
 
-const Template: ComponentStory<typeof DatePicker> = (args: Args) => {
+const Template: Story<Args> = (args: Args) => {
   return (
     <Form.Item style={{ width: '320px' }} {...args.formItem}>
       <DatePicker
         style={{ width: '320px' }}
         {...args.datePicker}
         disabledDate={current => {
-          const customDate = moment().format('YYYY-MM-DD')
-          return current && current < moment(customDate, 'YYYY-MM-DD')
+          return current && differenceInDays(current, new Date()) < 0
         }}
       />
     </Form.Item>
@@ -36,8 +35,7 @@ Basic.args = {
   datePicker: {
     label: 'DatePicker',
     showToday: false,
-    format: 'DD/MM/YYYY',
-    suffixIcon: <CaretDown color="#737373" />
+    format: 'DD/MM/YYYY'
   },
   formItem: {
     label: 'Date'
@@ -49,10 +47,8 @@ export const BasicQuarter = Template.bind({})
 BasicQuarter.args = {
   datePicker: {
     label: 'DatePicker',
-    showToday: false,
-    format: 'DD/MM/YYYY',
-    picker: 'quarter',
-    suffixIcon: <CaretDown color="#737373" />
+    format: "YYYY-'Q'Q",
+    picker: 'quarter'
   },
   formItem: {
     label: 'Date'
