@@ -15,4 +15,8 @@ DatePicker.defaultProps = {
   suffixIcon: <CaretDown color="#737373" />
 }
 
+DatePicker.RangePicker.defaultProps = {
+  suffixIcon: <CaretDown color="#737373" />
+}
+
 export default DatePicker
