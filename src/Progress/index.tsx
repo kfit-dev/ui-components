@@ -12,6 +12,4 @@ const Progress: React.FC<ProgressProps> = ({ size, strokeWidth, ...restProps }) 
   return <AntProgress strokeWidth={defaultStrokeWidth} size={size} {...restProps} />
 }
 
-Progress.defaultProps = {}
-
 export default Progress
