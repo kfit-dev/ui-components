@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Empty as AntEmpty, EmptyProps as AntEmptyProps } from 'antd';
 
-import 'antd/lib/empty/style/index.css';
 import './style.css';
 import {
   AddMoreSVG,
