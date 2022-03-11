@@ -1,6 +1,5 @@
 @import 'antd/lib/style/default.css';
 @import 'antd/lib/tooltip/style/index.css';
-@import 'antd/lib/empty/style/index.css';
 
 .ant-tooltip-inner {
   @apply bg-white font-inter text-xs text-neutral-700 font-normal;
