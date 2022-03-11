@@ -17,26 +17,26 @@ const SeemsEmptySVG = (props: React.SVGProps<SVGSVGElement>) => {
       <path
         d="M49.9868 27.0095L47.9868 29.0095"
         stroke="#737373"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M49.9868 29.0095L47.9868 27.0095"
         stroke="#737373"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M13.9868 28.0095L11.9868 30.0095"
         stroke="#737373"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M13.9868 30.0095L11.9868 28.0095"
         stroke="#737373"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <circle
         cx="33.0001"
@@ -44,7 +44,7 @@ const SeemsEmptySVG = (props: React.SVGProps<SVGSVGElement>) => {
         r="8.44298"
         fill="#F5F5F5"
         stroke="#737373"
-        stroke-width="1.53509"
+        strokeWidth="1.53509"
       />
       <circle cx="29.1626" cy="28.4429" r="0.767544" fill="#404040" />
       <circle cx="36.8379" cy="28.4429" r="0.767544" fill="#404040" />

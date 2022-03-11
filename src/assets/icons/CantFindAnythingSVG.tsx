@@ -12,34 +12,34 @@ const CantFindAnythingSVG = (props: React.SVGProps<SVGSVGElement>) => {
     >
       <rect x="5" y="28" width="55" height="16" rx="4" fill="#D4D4D4" />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M44 44H56C58.2091 44 60 42.2091 60 40V32C60 29.7909 58.2091 28 56 28H44V44Z"
         fill="#F5F5F5"
       />
       <path
         d="M41.9868 18.0095L39.9868 20.0095"
         stroke="#737373"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M41.9868 20.0095L39.9868 18.0095"
         stroke="#737373"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M15.9868 38.0095L13.9868 40.0095"
         stroke="#737373"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M15.9868 40.0095L13.9868 38.0095"
         stroke="#737373"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <circle
         cx="27"
@@ -47,7 +47,7 @@ const CantFindAnythingSVG = (props: React.SVGProps<SVGSVGElement>) => {
         r="11"
         fill="#F5F5F5"
         stroke="#737373"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <line
         x1="34.4056"
@@ -55,8 +55,8 @@ const CantFindAnythingSVG = (props: React.SVGProps<SVGSVGElement>) => {
         x2="41.1562"
         y2="45.5944"
         stroke="#737373"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <circle cx="22" cy="27" r="1" fill="#404040" />
       <circle cx="32" cy="27" r="1" fill="#404040" />
@@ -67,16 +67,16 @@ const CantFindAnythingSVG = (props: React.SVGProps<SVGSVGElement>) => {
       <path
         d="M51.625 38.25C53.0747 38.25 54.25 37.0747 54.25 35.625C54.25 34.1753 53.0747 33 51.625 33C50.1753 33 49 34.1753 49 35.625C49 37.0747 50.1753 38.25 51.625 38.25Z"
         stroke="#737373"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M53.4814 37.4812L55.0002 39"
         stroke="#737373"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <circle cx="46.5" cy="22.5" r="1.5" fill="#D4D4D4" />
       <circle cx="10.5" cy="27.5" r="1.5" fill="#A3A3A3" />

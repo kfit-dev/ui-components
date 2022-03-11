@@ -34,26 +34,26 @@ const NoBankAccountSVG = (props: React.SVGProps<SVGSVGElement>) => {
       <path
         d="M11.9868 34.0095L9.98682 36.0095"
         stroke="#737373"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M11.9868 36.0095L9.98682 34.0095"
         stroke="#737373"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M51.9868 39.0095L49.9868 41.0095"
         stroke="#737373"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M51.9868 41.0095L49.9868 39.0095"
         stroke="#737373"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <circle
         cx="19"
@@ -61,7 +61,7 @@ const NoBankAccountSVG = (props: React.SVGProps<SVGSVGElement>) => {
         r="6.41667"
         fill="#F5F5F5"
         stroke="#737373"
-        stroke-width="1.16667"
+        strokeWidth="1.16667"
       />
       <circle cx="16.0833" cy="26.4166" r="0.583333" fill="#404040" />
       <circle cx="21.9168" cy="26.4166" r="0.583333" fill="#404040" />

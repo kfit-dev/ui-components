@@ -17,26 +17,26 @@ const NothingHereSVG = (props: React.SVGProps<SVGSVGElement>) => {
       <path
         d="M47.9868 17.0095L45.9868 19.0095"
         stroke="#737373"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M47.9868 19.0095L45.9868 17.0095"
         stroke="#737373"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M22.9868 32.0095L20.9868 34.0095"
         stroke="#737373"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M22.9868 34.0095L20.9868 32.0095"
         stroke="#737373"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <circle
         cx="35"
@@ -44,7 +44,7 @@ const NothingHereSVG = (props: React.SVGProps<SVGSVGElement>) => {
         r="6.41667"
         fill="#F5F5F5"
         stroke="#737373"
-        stroke-width="1.16667"
+        strokeWidth="1.16667"
       />
       <circle cx="32.0833" cy="21.4166" r="0.583333" fill="#404040" />
       <circle cx="37.9168" cy="21.4166" r="0.583333" fill="#404040" />
