@@ -1,0 +1,24 @@
+.ant-popconfirm {
+  .ant-popover-inner {
+    @apply rounded-lg;
+  }
+  .ant-popover-message {
+    @apply flex font-inter text-xs pb-4;
+
+    svg {
+      @apply self-center;
+    }
+
+    .ant-popover-message-title {
+      @apply pl-1.5;
+    }
+  }
+
+  .ant-popover-buttons button {
+    @apply ml-4;
+  }
+
+  .ant-btn-sm {
+    @apply text-xs px-3 py-1;
+  }
+}
