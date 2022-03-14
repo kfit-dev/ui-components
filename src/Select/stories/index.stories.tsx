@@ -1,5 +1,5 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
 import { MagnifyingGlass, CaretDown } from 'phosphor-react'
 import { default as Select, SelectProps } from '../index'
@@ -14,7 +14,7 @@ type Args = {
   select: SelectProps
 }
 
-const Template: ComponentStory<typeof Select> = (args: Args) => (
+const Template: Story<Args> = (args: Args) => (
   <Form.Item style={{ width: '320px' }} {...args.formItem}>
     <Select {...args.select} />
   </Form.Item>
