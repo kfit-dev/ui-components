@@ -104,6 +104,4 @@ const Empty: React.FC<EmptyProps> = ({
   );
 };
 
-Empty.defaultProps = {};
-
 export default Empty;
