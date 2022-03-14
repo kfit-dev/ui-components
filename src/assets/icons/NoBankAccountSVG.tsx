@@ -1,8 +1,15 @@
-import * as React from 'react'
+import * as React from 'react';
 
 const NoBankAccountSVG = (props: React.SVGProps<SVGSVGElement>) => {
   return (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      width="64"
+      height="64"
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <rect x="17.6504" y="26" width="4.4" height="19.8" fill="#D4D4D4" />
       <rect x="33.0503" y="26" width="4.4" height="19.8" fill="#D4D4D4" />
       <rect x="25.3506" y="26" width="4.4" height="19.8" fill="#D4D4D4" />
@@ -24,11 +31,38 @@ const NoBankAccountSVG = (props: React.SVGProps<SVGSVGElement>) => {
         fill="#D4D4D4"
       />
       <circle cx="31.4002" cy="21.6" r="2.2" fill="#F5F5F5" />
-      <path d="M11.9868 34.0095L9.98682 36.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M11.9868 36.0095L9.98682 34.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M51.9868 39.0095L49.9868 41.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M51.9868 41.0095L49.9868 39.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="19" cy="27" r="6.41667" fill="#F5F5F5" stroke="#737373" strokeWidth="1.16667" />
+      <path
+        d="M11.9868 34.0095L9.98682 36.0095"
+        stroke="#737373"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M11.9868 36.0095L9.98682 34.0095"
+        stroke="#737373"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M51.9868 39.0095L49.9868 41.0095"
+        stroke="#737373"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M51.9868 41.0095L49.9868 39.0095"
+        stroke="#737373"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle
+        cx="19"
+        cy="27"
+        r="6.41667"
+        fill="#F5F5F5"
+        stroke="#737373"
+        strokeWidth="1.16667"
+      />
       <circle cx="16.0833" cy="26.4166" r="0.583333" fill="#404040" />
       <circle cx="21.9168" cy="26.4166" r="0.583333" fill="#404040" />
       <path
@@ -40,7 +74,7 @@ const NoBankAccountSVG = (props: React.SVGProps<SVGSVGElement>) => {
       <circle cx="13.5" cy="41.5" r="1.5" fill="#A3A3A3" />
       <circle cx="24.5" cy="18.5" r="1.5" fill="#A3A3A3" />
     </svg>
-  )
-}
+  );
+};
 
-export default NoBankAccountSVG
+export default NoBankAccountSVG;

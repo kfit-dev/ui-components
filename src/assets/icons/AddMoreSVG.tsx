@@ -1,17 +1,51 @@
-import * as React from 'react'
+import * as React from 'react';
 
 const AddMoreSVG = (props: React.SVGProps<SVGSVGElement>) => {
   return (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      width="64"
+      height="64"
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M16 48V22L24 14H42C43.1046 14 44 14.8954 44 16V48C44 49.1046 43.1046 50 42 50H18C16.8954 50 16 49.1046 16 48Z"
         fill="#D4D4D4"
       />
-      <path d="M44.9868 17.0095L42.9868 19.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M44.9868 19.0095L42.9868 17.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M13.9868 31.0095L11.9868 33.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M13.9868 33.0095L11.9868 31.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="42" cy="29" r="6.41667" fill="#F5F5F5" stroke="#737373" strokeWidth="1.16667" />
+      <path
+        d="M44.9868 17.0095L42.9868 19.0095"
+        stroke="#737373"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M44.9868 19.0095L42.9868 17.0095"
+        stroke="#737373"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.9868 31.0095L11.9868 33.0095"
+        stroke="#737373"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.9868 33.0095L11.9868 31.0095"
+        stroke="#737373"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle
+        cx="42"
+        cy="29"
+        r="6.41667"
+        fill="#F5F5F5"
+        stroke="#737373"
+        strokeWidth="1.16667"
+      />
       <circle cx="39.0833" cy="28.4166" r="0.583333" fill="#404040" />
       <circle cx="44.9168" cy="28.4166" r="0.583333" fill="#404040" />
       <path
@@ -22,7 +56,10 @@ const AddMoreSVG = (props: React.SVGProps<SVGSVGElement>) => {
       <circle cx="47.5" cy="39.5" r="1.5" fill="#737373" />
       <circle cx="18.5" cy="45.5" r="1.5" fill="#A3A3A3" />
       <circle cx="10.5" cy="36.5" r="1.5" fill="#A3A3A3" />
-      <path d="M24 14L16 22H22C23.1046 22 24 21.1046 24 20V14Z" fill="#A3A3A3" />
+      <path
+        d="M24 14L16 22H22C23.1046 22 24 21.1046 24 20V14Z"
+        fill="#A3A3A3"
+      />
       <rect x="20" y="39" width="16" height="1" rx="0.5" fill="#F5F5F5" />
       <rect x="20" y="41" width="11" height="1" rx="0.5" fill="#F5F5F5" />
       <g clipPath="url(#clip0_1385_2108)">
@@ -39,11 +76,16 @@ const AddMoreSVG = (props: React.SVGProps<SVGSVGElement>) => {
       </g>
       <defs>
         <clipPath id="clip0_1385_2108">
-          <rect width="11.6104" height="6" fill="white" transform="translate(20 27)" />
+          <rect
+            width="11.6104"
+            height="6"
+            fill="white"
+            transform="translate(20 27)"
+          />
         </clipPath>
       </defs>
     </svg>
-  )
-}
+  );
+};
 
-export default AddMoreSVG
+export default AddMoreSVG;

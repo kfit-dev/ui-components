@@ -1,17 +1,51 @@
-import * as React from 'react'
+import * as React from 'react';
 
 const NothingHereSVG = (props: React.SVGProps<SVGSVGElement>) => {
   return (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      width="64"
+      height="64"
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M13 22.125V45.875C13 47.1867 14.0633 48.25 15.375 48.25H48.625C49.9367 48.25 51 47.1867 51 45.875V24.8537C51 23.542 49.9367 22.4787 48.625 22.4787H24.5552C23.9364 22.4787 23.342 22.2372 22.8986 21.8056L21.4784 20.4231C21.035 19.9915 20.4406 19.75 19.8218 19.75H15.375C14.0633 19.75 13 20.8133 13 22.125Z"
         fill="#D4D4D4"
       />
-      <path d="M47.9868 17.0095L45.9868 19.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M47.9868 19.0095L45.9868 17.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M22.9868 32.0095L20.9868 34.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M22.9868 34.0095L20.9868 32.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="35" cy="22" r="6.41667" fill="#F5F5F5" stroke="#737373" strokeWidth="1.16667" />
+      <path
+        d="M47.9868 17.0095L45.9868 19.0095"
+        stroke="#737373"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M47.9868 19.0095L45.9868 17.0095"
+        stroke="#737373"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M22.9868 32.0095L20.9868 34.0095"
+        stroke="#737373"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M22.9868 34.0095L20.9868 32.0095"
+        stroke="#737373"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle
+        cx="35"
+        cy="22"
+        r="6.41667"
+        fill="#F5F5F5"
+        stroke="#737373"
+        strokeWidth="1.16667"
+      />
       <circle cx="32.0833" cy="21.4166" r="0.583333" fill="#404040" />
       <circle cx="37.9168" cy="21.4166" r="0.583333" fill="#404040" />
       <path
@@ -22,7 +56,7 @@ const NothingHereSVG = (props: React.SVGProps<SVGSVGElement>) => {
       <circle cx="25.5" cy="47.5" r="1.5" fill="#A3A3A3" />
       <circle cx="8.5" cy="33.5" r="1.5" fill="#A3A3A3" />
     </svg>
-  )
-}
+  );
+};
 
-export default NothingHereSVG
+export default NothingHereSVG;

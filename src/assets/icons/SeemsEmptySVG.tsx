@@ -1,17 +1,51 @@
-import * as React from 'react'
+import * as React from 'react';
 
 const SeemsEmptySVG = (props: React.SVGProps<SVGSVGElement>) => {
   return (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      width="64"
+      height="64"
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M19.0846 26.5891L14.5791 34.4737V39.079H51.4212V34.4737L46.9157 26.5891C46.4472 25.7692 45.5752 25.2632 44.6309 25.2632H21.3694C20.4251 25.2632 19.5531 25.7692 19.0846 26.5891Z"
         fill="#F5F5F5"
       />
-      <path d="M49.9868 27.0095L47.9868 29.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M49.9868 29.0095L47.9868 27.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M13.9868 28.0095L11.9868 30.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M13.9868 30.0095L11.9868 28.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="33.0001" cy="29.2105" r="8.44298" fill="#F5F5F5" stroke="#737373" strokeWidth="1.53509" />
+      <path
+        d="M49.9868 27.0095L47.9868 29.0095"
+        stroke="#737373"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M49.9868 29.0095L47.9868 27.0095"
+        stroke="#737373"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.9868 28.0095L11.9868 30.0095"
+        stroke="#737373"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.9868 30.0095L11.9868 28.0095"
+        stroke="#737373"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle
+        cx="33.0001"
+        cy="29.2105"
+        r="8.44298"
+        fill="#F5F5F5"
+        stroke="#737373"
+        strokeWidth="1.53509"
+      />
       <circle cx="29.1626" cy="28.4429" r="0.767544" fill="#404040" />
       <circle cx="36.8379" cy="28.4429" r="0.767544" fill="#404040" />
       <path
@@ -27,7 +61,7 @@ const SeemsEmptySVG = (props: React.SVGProps<SVGSVGElement>) => {
       />
       <circle cx="22.5" cy="45.5" r="1.5" fill="#A3A3A3" />
     </svg>
-  )
-}
+  );
+};
 
-export default SeemsEmptySVG
+export default SeemsEmptySVG;
