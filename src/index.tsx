@@ -1,3 +1,4 @@
+export { default as Tooltip, TooltipProps } from './Tooltip'
 export { default as Empty, EmptyProps } from './Empty';
 export { default as Button, ButtonProps } from './Button';
 export { default as Radio, RadioProps } from './Radio';
