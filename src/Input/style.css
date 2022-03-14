@@ -1,13 +1,10 @@
 @import '../assets/style/form-item.css';
 @import 'antd/lib/input/style/index.css';
+@import '../variables.css';
 
 .ant-form {
   &-item-label {
     @apply mb-0 leading-none !important;
-  }
-
-  &-item-label {
-    @apply pb-2;
   }
 
   &-item-control-input-content {
@@ -28,12 +25,12 @@
       }
 
       .ant-input-clear-icon > svg {
-        display: none;
+        @apply hidden;
       }
 
       .ant-input-clear-icon {
         @apply h-4 w-4;
-        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='dimgray' viewBox='0 0 256 256'><rect width='256' height='256' fill='none'></rect><line x1='200' y1='56' x2='56' y2='200' stroke='dimgray' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></line><line x1='200' y1='200' x2='56' y2='56' stroke='dimgray' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></line></svg>");
+        background-image: var(--ic-x-16-neutral);
       }
     }
 
@@ -42,7 +39,7 @@
     }
 
     .ant-input-affix-wrapper-focused {
-      @apply border-neutral-300 shadow-none border border-solid;
+      @apply border-neutral-300 shadow-none;
     }
 
     .roundedSearch {
@@ -67,8 +64,7 @@
     }
 
     .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-btn:focus {
-      @apply outline-offset-0;
-      outline: 0px solid transparent;
+      @apply outline-offset-0 outline-0 outline-hidden;
     }
 
     .ant-btn > .ant-btn-loading-icon:only-child .anticon {
@@ -77,7 +73,7 @@
 
     .ant-btn > .anticon-search {
       @apply h-4 w-4;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='dimgray' viewBox='0 0 256 256'><rect width='256' height='256' fill='none'></rect><circle cx='116' cy='116' r='84' fill='none' stroke='dimgray' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></circle><line x1='175.4' y1='175.4' x2='224' y2='224' fill='none' stroke='dimgray' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'></line></svg>");
+      background-image: var(--ic-magnifying-glass-16);
     }
 
     .ant-btn > .anticon-search > svg {
@@ -106,5 +102,9 @@
 
   .ant-form-item-control-input-content .ant-input-search .ant-input-group .ant-input-affix-wrapper-focused {
     @apply border-red-600 shadow-none;
+  }
+
+  .ant-input-affix-wrapper .ant-input-clear-icon {
+    background-image: var(--ic-x-16);
   }
 }

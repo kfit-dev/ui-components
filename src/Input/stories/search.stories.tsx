@@ -1,5 +1,5 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
 import { Search, SearchProps } from '../index'
 
@@ -13,7 +13,7 @@ type Args = {
   input: SearchProps
 }
 
-const Template: ComponentStory<typeof Search> = (args: Args) => (
+const Template: Story<Args> = (args: Args) => (
   <Form.Item style={{ width: '320px' }} {...args.formItem}>
     <Search {...args.input} />
   </Form.Item>
@@ -25,7 +25,7 @@ Basic.args = {
   input: {
     label: 'Input',
     placeholder: 'Placeholder',
-    allowClear: true,
+    allowClear: true
   },
   formItem: {
     label: 'Text field title'
@@ -38,7 +38,7 @@ SearchError.args = {
   input: {
     label: 'Input',
     placeholder: 'Placeholder',
-    allowClear: true,
+    allowClear: true
   },
   formItem: {
     label: 'Text field title',
@@ -54,7 +54,7 @@ SearchLoading.args = {
     label: 'Input',
     placeholder: 'Placeholder',
     allowClear: true,
-    loading: true,
+    loading: true
   },
   formItem: {
     label: 'Text field title'

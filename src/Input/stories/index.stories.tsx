@@ -1,5 +1,5 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
 import { default as Input, InputProps } from '../index'
 
@@ -13,7 +13,7 @@ type Args = {
   input: InputProps
 }
 
-const Template: ComponentStory<typeof Input> = (args: Args) => (
+const Template: Story<Args> = (args: Args) => (
   <Form.Item style={{ width: '320px' }} {...args.formItem}>
     <Input {...args.input} />
   </Form.Item>
