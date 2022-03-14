@@ -1,3 +1,5 @@
+@import 'antd/lib/tabs/style/index.css';
+
 .ant-tabs {
   &-nav {
     @apply font-inter text-sm;
@@ -26,6 +28,14 @@
   .ant-tabs-tab-btn {
     @apply focus:text-primary;
     @apply hover:text-primary;
+
+    span > .ant-badge {
+      @apply inline-grid pl-1.5;
+
+      .ant-badge-status-default {
+        @apply bg-primary;
+      }
+    }
   }
 
   .ant-tabs-ink-bar {
@@ -40,12 +50,5 @@
       @apply hover:text-neutral-300;
       @apply hover:text-neutral-300;
     }
-  }
-}
-
-.tab-badge {
-  @apply flex;
-  .tab-badge-dot {
-    @apply self-center ml-2;
   }
 }
