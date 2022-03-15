@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
-import { MagnifyingGlass, CaretDown } from 'phosphor-react'
+import { MagnifyingGlass } from 'phosphor-react'
 import { default as Select, SelectProps } from '../index'
 
 export default {
@@ -30,7 +30,6 @@ Primary.args = {
     placeholder: 'Search',
     bordered: false,
     showArrow: true,
-    suffixIcon: <CaretDown size={16} />,
     options: [
       { label: 'Poland', value: 'PL' },
       { label: 'Malaysia', value: 'MY' },
@@ -54,7 +53,6 @@ PrimaryBordered.args = {
     defaultValue: 'SG',
     placeholder: 'Search',
     showArrow: true,
-    suffixIcon: <CaretDown size={16} />,
     options: [
       { label: 'Poland', value: 'PL' },
       { label: 'Malaysia', value: 'MY' },
@@ -77,7 +75,6 @@ Basic.args = {
     mode: 'multiple',
     placeholder: 'Search',
     showArrow: true,
-    suffixIcon: <CaretDown size={16} />,
     options: [
       { label: 'Poland', value: 'PL' },
       { label: 'Malaysia', value: 'MY' },
@@ -125,7 +122,6 @@ BasicDisabled.args = {
     placeholder: 'Search',
     showArrow: true,
     disabled: true,
-    suffixIcon: <CaretDown size={16} />,
     options: [
       { label: 'Poland', value: 'PL' },
       { label: 'Malaysia', value: 'MY' },
@@ -148,7 +144,6 @@ BasicHelper.args = {
     mode: 'multiple',
     placeholder: 'Select',
     showArrow: true,
-    suffixIcon: <CaretDown size={16} />,
     options: [
       { label: 'Poland', value: 'PL' },
       { label: 'Malaysia', value: 'MY' },
@@ -172,7 +167,6 @@ BasicError.args = {
     mode: 'multiple',
     placeholder: 'Error',
     showArrow: true,
-    suffixIcon: <CaretDown size={16} />,
     options: [
       { label: 'Poland', value: 'PL' },
       { label: 'Malaysia', value: 'MY' },
