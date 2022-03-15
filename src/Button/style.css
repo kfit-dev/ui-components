@@ -52,7 +52,7 @@
     }
 
     &.icon-end {
-      @apply pr-3;
+      @apply pr-2;
 
       svg:last-child {
         @apply ml-1;
