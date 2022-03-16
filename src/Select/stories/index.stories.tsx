@@ -2,6 +2,7 @@ import React from 'react'
 import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
 import { MagnifyingGlass } from 'phosphor-react'
+import '../../assets/style/form-item.css'
 import { default as Select, SelectProps } from '../index'
 
 export default {
@@ -83,6 +84,20 @@ Basic.args = {
       { label: 'India', value: 'ID' },
       { label: 'Vietname', value: 'VT' }
     ]
+  },
+  formItem: {
+    label: 'Text field title'
+  }
+}
+
+export const BasicEmpty = Template.bind({})
+
+BasicEmpty.args = {
+  select: {
+    label: 'Select',
+    mode: 'multiple',
+    placeholder: 'Search',
+    showArrow: true
   },
   formItem: {
     label: 'Text field title'
