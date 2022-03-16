@@ -3,22 +3,22 @@ import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
 import { differenceInDays } from 'date-fns'
 import { ArrowRight } from 'phosphor-react'
-import { default as DatePicker } from '../index'
+import { RangePicker } from '../index'
 
 export default {
   title: 'RangePicker',
-  component: DatePicker.RangePicker
-} as ComponentMeta<typeof DatePicker.RangePicker>
+  component: RangePicker
+} as ComponentMeta<typeof RangePicker>
 
 type Args = {
   formItem: FormItemProps
-  datePicker: typeof DatePicker.RangePicker
+  datePicker: typeof RangePicker
 }
 
 const Template: Story<Args> = (args: Args) => {
   return (
     <Form.Item style={{ width: '320px' }} {...args.formItem}>
-      <DatePicker.RangePicker
+      <RangePicker
         style={{ width: '320px' }}
         {...args.datePicker}
         disabledDate={current => {

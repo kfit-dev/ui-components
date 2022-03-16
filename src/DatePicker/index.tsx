@@ -7,16 +7,26 @@ import dateFnsGenerateConfig from 'rc-picker/lib/generate/dateFns'
 import './style.css'
 en.lang.quarterFormat = "'Q'Q"
 
+const CaretDownIcon = <CaretDown />
 const DatePicker = generatePicker<Date>(dateFnsGenerateConfig)
 
 export const QuarterPicker = DatePicker.QuarterPicker
+export const WeekPicker = DatePicker.WeekPicker
+export const MonthPicker = DatePicker.MonthPicker
+export const YearPicker = DatePicker.YearPicker
+export const RangePicker = DatePicker.RangePicker
+export const TimePicker = DatePicker.TimePicker
+
+DatePicker.QuarterPicker.defaultProps = {
+  format: "YYYY-'Q'Q"
+}
 
 DatePicker.defaultProps = {
-  suffixIcon: <CaretDown color="#737373" />
+  suffixIcon: CaretDownIcon
 }
 
 DatePicker.RangePicker.defaultProps = {
-  suffixIcon: <CaretDown color="#737373" />
+  suffixIcon: CaretDownIcon
 }
 
 export default DatePicker

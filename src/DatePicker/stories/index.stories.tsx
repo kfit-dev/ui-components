@@ -2,7 +2,6 @@ import React from 'react'
 import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
 import { differenceInDays } from 'date-fns'
-import { CaretDown } from 'phosphor-react'
 import { default as DatePicker } from '../index'
 
 export default {
@@ -47,7 +46,6 @@ export const BasicQuarter = Template.bind({})
 BasicQuarter.args = {
   datePicker: {
     label: 'DatePicker',
-    format: "YYYY-'Q'Q",
     picker: 'quarter'
   },
   formItem: {
@@ -61,8 +59,7 @@ ErrorBasic.args = {
   datePicker: {
     label: 'RangePicker',
     showToday: false,
-    format: 'DD/MM/YYYY',
-    suffixIcon: <CaretDown />
+    format: 'DD/MM/YYYY'
   },
   formItem: {
     label: 'Date',
