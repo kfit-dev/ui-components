@@ -1,4 +1,16 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/popconfirm/style/index.css';
+@import 'antd/lib/popover/style/index.css';
+@import '../Button/style.css';
+
 .ant-popconfirm {
+  .ant-popover-content {
+    @apply w-72;
+  }
+
+  .ant-popover-inner-content {
+    @apply p-3;
+  }
   .ant-popover-inner {
     @apply rounded-lg;
   }
@@ -12,13 +24,5 @@
     .ant-popover-message-title {
       @apply pl-1.5;
     }
-  }
-
-  .ant-popover-buttons button {
-    @apply ml-4;
-  }
-
-  .ant-btn-sm {
-    @apply text-xs px-3 py-1;
   }
 }

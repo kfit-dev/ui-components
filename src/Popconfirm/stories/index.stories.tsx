@@ -11,8 +11,8 @@ export default {
 
 const Template: ComponentStory<typeof Popconfirm> = (args: PopconfirmProps) => {
   return (
-    <Popconfirm style={{ margin: '120px' }} {...args}>
-      <Button type="primary" style={{ margin: '200px' }}>
+    <Popconfirm {...args}>
+      <Button type="primary" style={{ margin: '150px' }}>
         Click Me
       </Button>
     </Popconfirm>
