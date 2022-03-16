@@ -17,11 +17,9 @@ type Args = {
 }
 
 const Template: Story<Args> = (args: Args) => (
-  <Form layout='vertical'>
-    <Form.Item style={{ width: '320px' }} {...args.formItem}>
-      <Select {...args.select} />
-    </Form.Item>
-  </Form>
+  <Form.Item style={{ width: '320px' }} {...args.formItem}>
+    <Select {...args.select} />
+  </Form.Item>
 )
 
 export const Primary = Template.bind({})
