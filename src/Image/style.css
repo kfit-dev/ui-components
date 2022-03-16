@@ -16,6 +16,13 @@
   .ant-image-img {
     @apply rounded;
   }
+
+  .ant-image-mask {
+    .ant-image-mask-info {
+      @apply flex;
+      @apply items-center;
+    }
+  }
 }
 
 .ant-image-preview-root {
