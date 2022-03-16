@@ -3,10 +3,8 @@ import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
 import { default as Input, InputProps } from '../index'
 
-import '../../assets/style/form-item.css';
-
 export default {
-  title: 'Input/Basic',
+  title: 'Input',
   component: Input
 } as ComponentMeta<typeof Input>
 
@@ -16,11 +14,9 @@ type Args = {
 }
 
 const Template: Story<Args> = (args: Args) => (
-  <Form layout='vertical'>
-    <Form.Item style={{ width: '320px' }} {...args.formItem}>
-      <Input {...args.input} />
-    </Form.Item>
-  </Form>
+  <Form.Item style={{ width: '320px' }} {...args.formItem}>
+    <Input {...args.input} />
+  </Form.Item>
 )
 
 export const Basic = Template.bind({})
