@@ -14,3 +14,4 @@ export {
   TimelineProps,
   TimelineItemProps
 } from './Timeline';
+export { default as Input, Search, InputProps, SearchProps } from './Input';
