@@ -2,8 +2,9 @@ import React from 'react'
 import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
 import { MagnifyingGlass } from 'phosphor-react'
-import '../../assets/style/form-item.css'
 import { default as Select, SelectProps } from '../index'
+
+import '../../assets/style/form-item.css'
 
 export default {
   title: 'Select',
