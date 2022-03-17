@@ -25,6 +25,18 @@ Top.args = {
   label: 'Popconfirm',
   title: 'Are you sure you wish to delete this task',
   placement: 'top',
+  icon: <WarningCircle size={16} className={'icon-none'} />,
+  onConfirm: { confirm },
+  okText: 'Button',
+  cancelText: 'Button'
+}
+
+export const TopIcon = Template.bind({})
+
+TopIcon.args = {
+  label: 'Popconfirm',
+  title: 'Are you sure you wish to delete this task',
+  placement: 'top',
   icon: <WarningCircle size={16} />,
   onConfirm: { confirm },
   okText: 'Button',
@@ -34,6 +46,18 @@ Top.args = {
 export const Bottom = Template.bind({})
 
 Bottom.args = {
+  label: 'Popconfirm',
+  title: 'Are you sure you wish to delete this task',
+  placement: 'bottom',
+  icon: <WarningCircle size={16} className={'icon-none'} />,
+  onConfirm: { confirm },
+  okText: 'Button',
+  cancelText: 'Button'
+}
+
+export const BottomIcon = Template.bind({})
+
+BottomIcon.args = {
   label: 'Popconfirm',
   title: 'Are you sure you wish to delete this task',
   placement: 'bottom',

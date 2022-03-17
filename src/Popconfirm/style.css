@@ -18,11 +18,15 @@
     @apply flex font-inter text-xs pb-4;
 
     svg {
-      @apply self-center;
+      @apply self-center text-slate-700;
     }
 
     .ant-popover-message-title {
-      @apply pl-1.5;
+      @apply pl-1.5 text-slate-700;
     }
+  }
+
+  .icon-none {
+    @apply hidden;
   }
 }
