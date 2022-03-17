@@ -42,6 +42,7 @@
     .ant-timeline-item-content {
       @apply text-xs;
       @apply text-neutral-700;
+      @apply font-inter;
       /* hardcoded as -7.001px in ant design source code */
       @apply -top-[3px];
     }
