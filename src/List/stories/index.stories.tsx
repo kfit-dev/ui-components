@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { default as List, ListProps } from '../index';
-import { default as ListItem } from '../../ListItem';
-import ListItemMeta from '../../ListItemMeta';
+import {
+  default as List,
+  ListItem,
+  ListItemMetaSkeleton,
+  ListProps
+} from '../index';
 import { default as Button } from '../../Button';
-// import { default as Avatar} from '../../A'
+import { default as Avatar } from '../../Avatar';
+import { useEffect } from '@storybook/addons';
 
 export default {
   title: 'List',
@@ -16,35 +19,88 @@ const Template: ComponentStory<typeof List> = (args: ListProps<any>) => (
   <List {...args} />
 );
 
+const description =
+  'Ant Design, a design language for background applications, is refined by Ant UED Team';
 const dataSource = [
-  'Racing car sprays burning fuel into crowd.',
-  'Japanese princess to wed commoner.',
-  'Australian walks 100km after outback crash.',
-  'Man charged over missing wedding girl.',
-  'Los Angeles battles huge wildfires.'
+  {
+    avatar: 'KS',
+    title: 'Racing car sprays burning fuel into crowd.',
+    description
+  },
+  { avatar: 'KS', title: 'Japanese princess to wed commoner.', description },
+  {
+    avatar: 'KS',
+    title: 'Australian walks 100km after outback crash.',
+    description
+  },
+  {
+    avatar: 'KS',
+    title: 'Man charged over missing wedding girl.',
+    description
+  },
+  { avatar: 'KS', title: 'Los Angeles battles huge wildfires.', description }
 ];
 
 export const Default = Template.bind({});
 
 Default.args = {
-  header: <div>Header</div>,
-  footer: <div>Footer</div>,
+  size: 'small',
+  header: 'List Header',
+  footer: 'List Footer',
   label: 'List',
   dataSource: dataSource,
-  renderItem: item => <ListItem>{item}</ListItem>
+  renderItem: item => <ListItem>{item.title}</ListItem>
 };
 
 Default.argTypes = {
   size: {
+    options: ['small', 'default', 'large'],
     control: {
-      type: 'radio',
-      options: ['small', 'default', 'large']
-    },
-    defaultValue: 'default'
+      type: 'radio'
+    }
   }
 };
 
+const count = 3;
+const fakeDataUrl = `https://randomuser.me/api/?results=${count}&inc=name,gender,email,nat,picture&noinfo`;
+
 export const LoadMoreList: React.FC = props => {
+  const [initLoading, setInitLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState([]);
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    fetch(fakeDataUrl)
+      .then(res => res.json())
+      .then(res => {
+        setInitLoading(false);
+        setData(res.results);
+        setList(res.results);
+      });
+  }, []);
+
+  const onLoadMore = () => {
+    setLoading(true);
+    setList(
+      data.concat(
+        [...new Array(count)].map(() => ({
+          loading: true,
+          name: {},
+          picture: {}
+        }))
+      )
+    );
+    fetch(fakeDataUrl)
+      .then(res => res.json())
+      .then(res => {
+        const localData = data.concat(res.results);
+        setData(localData);
+        setList(localData);
+        setLoading(false);
+      });
+  };
+
   const LoadMoreButton = () => (
     <div
       style={{
@@ -54,22 +110,25 @@ export const LoadMoreList: React.FC = props => {
         lineHeight: '32px'
       }}
     >
-      <Button type={'primary'} onClick={() => {}}>
+      <Button type={'primary'} onClick={onLoadMore}>
         Load more
       </Button>
     </div>
   );
+
+  const loadMore = !initLoading && !loading ? <LoadMoreButton /> : null;
   return (
     <List
-      loadMore={<LoadMoreButton />}
+      loadMore={loadMore}
       bordered={false}
-      dataSource={dataSource}
+      dataSource={list}
       renderItem={item => (
         <ListItem actions={[<Button type={'text'}>Button</Button>]}>
-          <ListItemMeta
-            // avatar={<Avatar src={item.picture.large} />}
-            title={<a href="https://ant.design">{item}</a>}
-            description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+          <ListItemMetaSkeleton
+            avatar={<Avatar size={32}>KS</Avatar>}
+            title={item.name.last}
+            description={description}
+            loading={item.loading}
           />
         </ListItem>
       )}
