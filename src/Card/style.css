@@ -2,7 +2,6 @@
 @import 'antd/lib/tabs/style/index.css';
 @import '../Avatar/style.css';
 @import 'antd/lib/tabs/style/index.css';
-
 .ant-tabs {
   &-nav {
     @apply font-inter text-sm;
@@ -45,7 +44,6 @@
     }
   }
 }
-
 .ant-card {
   @apply rounded-lg;
   @apply w-72;
