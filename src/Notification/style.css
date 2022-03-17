@@ -1,0 +1,63 @@
+@import 'antd/lib/notification/style/index.css';
+
+.ant-notification {
+  .ant-notification-notice {
+    @apply rounded-lg;
+    @apply shadow-lg;
+
+    .ant-notification-notice-message {
+      @apply font-bold;
+    }
+
+    .ant-notification-notice-message,
+    .ant-notification-notice-description {
+      @apply text-neutral-700;
+    }
+
+    .ant-notification-notice-close {
+      /* to align vertically with notification title and icon */
+      /* harcoded to 16px in ant design source code */
+      @apply top-[0.8rem];
+    }
+  }
+
+  .ant-notification-notice-with-icon {
+    .ant-notification-notice-icon {
+      /* to match the distance as shown on figma */
+      /* hardcoded to margin left 4px in ant design source code */
+      @apply ml-0;
+      @apply mt-0.5;
+    }
+
+    .ant-notification-notice-message,
+    .ant-notification-notice-description {
+      /* to match the distance as shown on figma */
+      /* harcoded to 48px in ant design source code */
+      @apply ml-10;
+    }
+  }
+
+  .ant-notification-notice-info {
+    .ant-notification-notice-icon {
+      @apply text-neutral-700;
+    }
+  }
+
+  .ant-notification-notice-success {
+    .ant-notification-notice-icon {
+      @apply text-green-500;
+    }
+  }
+
+  .ant-notification-notice-error {
+    .ant-notification-notice-icon {
+      @apply text-red-600;
+    }
+  }
+
+  .ant-notification-notice-warning {
+    .ant-notification-notice-icon {
+      @apply text-yellow-400;
+    }
+  }
+}
