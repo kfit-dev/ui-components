@@ -1,0 +1,150 @@
+@import 'antd/lib/card/style/index.css';
+@import 'antd/lib/tabs/style/index.css';
+@import '../Avatar/style.css';
+@import 'antd/lib/tabs/style/index.css';
+
+.ant-tabs {
+  &-nav {
+    @apply font-inter text-sm;
+  }
+  &-tab {
+    @apply text-neutral-400;
+    @apply hover:text-primary;
+    @apply pb-2;
+  }
+  &-top > .ant-tabs-nav::before {
+    @apply border-b-2 border-b-white;
+  }
+  .ant-tabs-tab-active {
+    @apply text-primary;
+    @apply hover:text-primary;
+    .ant-tabs-tab-btn {
+      @apply text-primary;
+      @apply focus:text-primary;
+    }
+  }
+  .ant-tabs-tab-btn {
+    @apply focus:text-primary;
+    @apply hover:text-primary;
+    span > .ant-badge {
+      @apply inline-grid pl-1.5;
+      .ant-badge-status-default {
+        @apply bg-primary;
+      }
+    }
+  }
+  .ant-tabs-ink-bar {
+    @apply bg-primary;
+  }
+  .ant-tabs-tab-disabled {
+    @apply text-neutral-300;
+    @apply hover:text-neutral-300 !important;
+    .ant-tabs-tab-btn {
+      @apply hover:text-neutral-300;
+      @apply hover:text-neutral-300;
+    }
+  }
+}
+
+.ant-card {
+  @apply rounded-lg;
+  @apply w-72;
+  &-head {
+    @apply px-4;
+    &-wrapper > {
+      .ant-card-head-title {
+        @apply font-inter font-semibold text-sm;
+        padding-bottom: 14px;
+        padding-top: 22px;
+      }
+      .ant-card-extra {
+        @apply py-0 mt-1;
+      }
+    }
+  }
+  &-body {
+    @apply font-inter text-sm;
+    @apply py-0 px-4;
+  }
+  &-body > div > p:first-child {
+    @apply pt-2;
+  }
+  &-body > div > p {
+    @apply pt-1 mb-0;
+  }
+  &-body > div > p:last-child {
+    @apply pb-4;
+  }
+  &-body:only-child {
+    @apply p-4;
+    div > p:first-child {
+      @apply pt-0;
+    }
+    div > p {
+      @apply pt-1;
+    }
+    div > p:last-child {
+      @apply pb-0;
+    }
+  }
+  &-cover {
+    @apply rounded-t-lg;
+    img {
+      @apply rounded-t-lg;
+    }
+  }
+  &-cover ~ &-body {
+    @apply p-4;
+  }
+  &-meta {
+    @apply my-0;
+    &-avatar {
+      @apply pr-2;
+    }
+    &-detail {
+      .ant-card-meta-title {
+        @apply font-inter text-neutral-700 font-semibold text-sm;
+      }
+      .ant-card-meta-description {
+        @apply font-inter text-neutral-700 text-sm;
+      }
+    }
+  }
+  &-small {
+    @apply w-64;
+    .ant-card-head {
+      @apply px-2;
+      .ant-card-head-wrapper > {
+        .ant-card-head-title {
+          @apply font-inter font-semibold text-xs;
+          @apply pt-3;
+          padding-bottom: 8px;
+        }
+        .ant-card-extra {
+          @apply py-0;
+        }
+      }
+    }
+    .ant-card-body {
+      @apply font-inter text-xs;
+      @apply py-0 px-2;
+    }
+    .ant-card-body > div > p {
+      @apply pt-1;
+    }
+    .ant-card-body > div > p:last-child {
+      @apply pb-2;
+    }
+  }
+  &-contain-tabs {
+    .ant-card-head {
+      @apply border-b-transparent pb-4;
+      &-title {
+        @apply pt-4 pb-2 !important;
+      }
+    }
+    .ant-tabs-tab {
+      @apply pb-2  pt-2 text-sm !important;
+    }
+  }
+}
