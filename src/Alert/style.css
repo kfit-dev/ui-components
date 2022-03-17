@@ -13,6 +13,11 @@
     @apply text-sm;
   }
 
+  .ant-alert-message,
+  .ant-alert-description {
+    @apply font-inter;
+  }
+
   &.ant-alert-with-description {
     .ant-alert-message {
       @apply mb-0;
