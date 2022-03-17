@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ButtonProps } from '../../Button';
-import Button from '../../Button';
+import Button, { ButtonProps } from '../../Button';
 import Notification from '../index';
 
 export default {
