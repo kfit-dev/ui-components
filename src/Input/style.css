@@ -48,12 +48,22 @@
 
     .ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
       @apply rounded-l-full;
-      @apply border-r-transparent z-0;
+      @apply border-transparent z-0;
     }
 
     .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child {
       border: 1px solid;
-      @apply rounded-r-full bg-white border-l-0 border-neutral-300;
+      @apply rounded-r-full bg-white border-l-0 border-transparent;
+    }
+
+    .ant-input-search {
+      .ant-input-affix-wrapper-focused {
+        @apply border-neutral-300 shadow-none !important;
+      }
+
+      .ant-input-affix-wrapper-focused + .ant-input-group-addon:last-child {
+        @apply border-neutral-300 shadow-none !important;
+      }
     }
 
     .ant-input-search
@@ -100,12 +110,16 @@
 }
 
 .ant-form-item-has-error {
-  .ant-form-item-control-input-content .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child {
+  .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child {
     @apply border-red-600 !important;
   }
 
-  .ant-form-item-control-input-content .ant-input-search .ant-input-group .ant-input-affix-wrapper-focused {
+  .ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
     @apply border-red-600 shadow-none;
+  }
+
+  .ant-input-search .ant-input-group .ant-input-affix-wrapper-focused {
+    @apply border-red-600 shadow-none !important;
   }
 
   .ant-input-affix-wrapper .ant-input-clear-icon {

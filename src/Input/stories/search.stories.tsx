@@ -54,7 +54,8 @@ SearchLoading.args = {
     label: 'Input',
     placeholder: 'Placeholder',
     allowClear: true,
-    loading: true
+    loading: true,
+    disabled: true
   },
   formItem: {
     label: 'Text field title'
