@@ -5,7 +5,7 @@ import { CaretRight } from 'phosphor-react'
 import Button, { ButtonProps } from '../index'
 
 export default {
-  title: 'Button/Large',
+  title: 'Button/Small',
   component: Button
 } as ComponentMeta<typeof Button>
 
@@ -17,7 +17,7 @@ Primary.args = {
   label: 'Button',
   children: 'Button',
   type: 'primary',
-  size: 'large'
+  size: 'small'
 }
 
 export const PrimaryIconLeft = Template.bind({})
@@ -27,7 +27,7 @@ PrimaryIconLeft.args = {
   iconPlacement: 'start',
   children: 'Button',
   type: 'primary',
-  size: 'large',
+  size: 'small',
   icon: <CaretRight size={16} className="icon-start" />
 }
 
@@ -38,7 +38,7 @@ PrimaryIconRight.args = {
   iconPlacement: 'end',
   children: 'Button',
   type: 'primary',
-  size: 'large',
+  size: 'small',
   icon: <CaretRight size={16} className="icon-end" />
 }
 
@@ -48,7 +48,7 @@ Text.args = {
   label: 'Button',
   children: 'Button',
   type: 'text',
-  size: 'large'
+  size: 'small'
 }
 
 export const TextIconLeft = Template.bind({})
@@ -58,7 +58,7 @@ TextIconLeft.args = {
   type: 'text',
   iconPlacement: 'start',
   children: 'Button',
-  size: 'large',
+  size: 'small',
   icon: <CaretRight size={16} className="icon-start" />
 }
 
@@ -69,6 +69,6 @@ TextIconRight.args = {
   type: 'text',
   iconPlacement: 'end',
   children: 'Button',
-  size: 'large',
+  size: 'small',
   icon: <CaretRight size={16} className="icon-end" />
 }
