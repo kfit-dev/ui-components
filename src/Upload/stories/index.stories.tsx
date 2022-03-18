@@ -75,46 +75,7 @@ const Template: Story<Args> = ({ text, ...restArgs }: Args) => {
   )
 }
 
-// export const DraggerTemplate = () => {
-//   const props = {
-//     label: 'Upload',
-//     name: 'file',
-//     multiple: true,
-//     action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-//     onChange(info) {
-//       const { status } = info.file
-//       if (status !== 'uploading') {
-//         console.log(info.file, info.fileList)
-//       }
-//       if (status === 'done') {
-//         alert(`${info.file.name} file uploaded successfully.`)
-//       } else if (status === 'error') {
-//         alert(`${info.file.name} file upload failed.`)
-//       }
-//     },
-//     onDrop(e) {
-//       console.log('Dropped files', e.dataTransfer.files)
-//     }
-//   }
-
-//   return (
-//     <Dragger {...props}>
-//       <p className="ant-upload-drag-icon">{/* <InboxOutlined /> */}</p>
-//       <p className="ant-upload-text">Click or drag file to this area to upload</p>
-//       <p className="ant-upload-hint">
-//         Support for a single or bulk upload. Strictly prohibit from uploading company data or other band files
-//       </p>
-//     </Dragger>
-//   )
-// }
-
-const DraggerTemplate: Story<Args> = (args: Args) => {
-  // const [fileList, setFileList] = useState<UploadFile<PictureItem>[]>(initialList)
-
-  // const handleChange = ({ fileList }: UploadChangeParam<PictureItem>) => setFileList(fileList)
-
-  return <Dragger {...args} />
-}
+const DraggerTemplate: Story<Args> = (args: Args) => <Dragger {...args} />
 
 export const Normal = Template.bind({})
 
@@ -142,31 +103,11 @@ DragnDrop.args = {
     const { status } = info.file
 
     if (status !== 'uploading') {
-      // console.log(info.file, info.fileList)
     }
     if (status === 'done') {
       alert(`${info.file.name} file uploaded successfully.`)
     } else if (status === 'error') {
       alert(`${info.file.name} file upload failed.`)
     }
-  },
-  onDrop(e) {
-    // console.log('Dropped files', e.dataTransfer.files)
   }
 }
-
-// export const PicturesWall = () => {
-//   const [fileList, setFileList] = useState<UploadFile<PictureItem>[]>(initialList)
-
-//   const handleChange = ({ fileList }: UploadChangeParam<PictureItem>) => setFileList(fileList)
-
-//   return (
-//     <Upload listType="picture-card" fileList={fileList} onChange={handleChange}>
-//       {fileList.length >= 8 ? null : <UploadButton />}
-//     </Upload>
-//   )
-// }
-
-// const args = {
-//   label: 'Upload'
-// }
