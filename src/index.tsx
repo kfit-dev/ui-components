@@ -11,7 +11,9 @@ export { default as Popover } from './Popover'
 export {
   default as Upload,
   UploadProps,
-  UploadButtonContent as UploadButton,
-  UploadButtonContentProps as UploadButtonProps
+  Dragger,
+  DraggerProps,
+  UploadButtonContent,
+  UploadButtonContentProps
 } from './Upload'
-// export * as Interface from 'antd/lib/upload/interface'
+export * from 'antd/lib/upload/interface'

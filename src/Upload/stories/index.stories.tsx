@@ -18,7 +18,8 @@ type Args = UploadProps<PictureItem> & {
 }
 
 const args: Args = {
-  label: 'Upload'
+  label: 'Upload',
+  action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76'
 }
 
 const initialList: UploadFile<PictureItem>[] = [
