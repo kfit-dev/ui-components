@@ -1,5 +1,5 @@
-@import 'antd/lib/image/style/index.css';
 @import 'antd/lib/style/default.css';
+@import 'antd/lib/image/style/index.css';
 
 .ant-image {
   &.ant-image-error {
