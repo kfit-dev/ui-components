@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { default as Button } from '../../Button';
 import { default as Avatar } from '../../Avatar';
+import { default as Button } from '../../Button';
 import {
   default as List,
   ListItem,
@@ -121,8 +121,15 @@ export const LoadMoreList: React.FC = props => {
       loadMore={loadMore}
       bordered={false}
       dataSource={list}
-      renderItem={(item, index) => (
-        <ListItem actions={[<Button type={'text'}>Button</Button>]} key={index}>
+      renderItem={(item, _) => (
+        <ListItem
+          actions={[
+            <Button key={_} type={'text'}>
+              Button
+            </Button>
+          ]}
+          key={_}
+        >
           <ListItemMetaSkeleton
             avatar={<Avatar size={32}>KS</Avatar>}
             title={item.name.last}
