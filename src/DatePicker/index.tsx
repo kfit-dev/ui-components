@@ -17,8 +17,9 @@ export const YearPicker = DatePicker.YearPicker
 export const RangePicker = DatePicker.RangePicker
 export const TimePicker = DatePicker.TimePicker
 
-DatePicker.QuarterPicker.defaultProps = {
-  format: "YYYY-'Q'Q"
+QuarterPicker.defaultProps = {
+  format: "YYYY-'Q'Q",
+  suffixIcon: CaretDownIcon
 }
 
 DatePicker.defaultProps = {

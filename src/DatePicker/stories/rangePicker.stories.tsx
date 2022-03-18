@@ -5,8 +5,10 @@ import { differenceInDays } from 'date-fns'
 import { ArrowRight } from 'phosphor-react'
 import { RangePicker } from '../index'
 
+import '../../assets/style/form-item.css'
+
 export default {
-  title: 'RangePicker',
+  title: 'DatePicker/RangePicker',
   component: RangePicker
 } as ComponentMeta<typeof RangePicker>
 

@@ -2,29 +2,30 @@ import React from 'react'
 import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
 import { differenceInDays } from 'date-fns'
-import { default as DatePicker } from '../index'
+import { QuarterPicker } from '../index'
 
 import '../../assets/style/form-item.css'
 
 export default {
-  title: 'DatePicker/Basic',
-  component: DatePicker
-} as ComponentMeta<typeof DatePicker>
+  title: 'DatePicker/QuarterPicker',
+  component: QuarterPicker
+} as ComponentMeta<typeof QuarterPicker>
 
 type Args = {
   formItem: FormItemProps
-  datePicker: typeof DatePicker
+  datePicker: typeof QuarterPicker
 }
 
 const Template: Story<Args> = (args: Args) => {
   return (
     <Form.Item style={{ width: '320px' }} {...args.formItem}>
-      <DatePicker
+      <QuarterPicker
         style={{ width: '320px' }}
         {...args.datePicker}
         disabledDate={current => {
           return current && differenceInDays(current, new Date()) < 0
         }}
+        {...args.datePicker}
       />
     </Form.Item>
   )
@@ -35,25 +36,9 @@ export const Basic = Template.bind({})
 Basic.args = {
   datePicker: {
     label: 'DatePicker',
-    showToday: false,
-    format: 'DD/MM/YYYY'
+    picker: 'quarter'
   },
   formItem: {
     label: 'Date'
-  }
-}
-
-export const Error = Template.bind({})
-
-Error.args = {
-  datePicker: {
-    label: 'RangePicker',
-    showToday: false,
-    format: 'DD/MM/YYYY'
-  },
-  formItem: {
-    label: 'Date',
-    validateStatus: 'error',
-    help: 'Error text here. No more than one line'
   }
 }
