@@ -33,7 +33,6 @@
   .ant-notification-notice-with-icon {
     .ant-notification-notice-icon {
       @apply ml-0;
-      @apply mt-0.5;
     }
 
     .ant-notification-notice-message,
