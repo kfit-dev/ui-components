@@ -24,11 +24,11 @@ const description =
   'Success Text Success Text Success Text Success Text Success Text';
 const type = 'success';
 const OneActionButton: BaseButtonProps[] = [
-  { type: 'text', children: 'Button' }
+  { type: 'text', children: 'Button', size: 'small' }
 ];
 const TwoActionButtons: BaseButtonProps[] = [
-  { type: 'primary', children: 'Button' },
-  { type: 'text', children: 'Button' }
+  { type: 'primary', children: 'Button', size: 'small', className: 'mb-2.5' },
+  { type: 'text', children: 'Button', size: 'small' }
 ];
 
 export const Basic = Template.bind({});
