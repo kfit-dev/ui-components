@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { default as Button } from '../../Button';
+import { default as Avatar } from '../../Avatar';
 import {
   default as List,
   ListItem,
   ListItemMetaSkeleton,
   ListProps
 } from '../index';
-import { default as Button } from '../../Button';
-import { default as Avatar } from '../../Avatar';
-import { useEffect } from '@storybook/addons';
 
 export default {
   title: 'List',
@@ -122,8 +121,8 @@ export const LoadMoreList: React.FC = props => {
       loadMore={loadMore}
       bordered={false}
       dataSource={list}
-      renderItem={item => (
-        <ListItem actions={[<Button type={'text'}>Button</Button>]}>
+      renderItem={(item, index) => (
+        <ListItem actions={[<Button type={'text'}>Button</Button>]} key={index}>
           <ListItemMetaSkeleton
             avatar={<Avatar size={32}>KS</Avatar>}
             title={item.name.last}
