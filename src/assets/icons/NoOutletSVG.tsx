@@ -1,53 +1,19 @@
-import * as React from 'react';
+import * as React from 'react'
 
 const NoOutletSVG = (props: React.SVGProps<SVGSVGElement>) => {
   return (
-    <svg
-      width="64"
-      height="64"
-      viewBox="0 0 64 64"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M19.5847 21.6498C19.5847 21.0975 20.0324 20.6498 20.5847 20.6498H41.2648C41.8171 20.6498 42.2648 21.0975 42.2648 21.6498V22.9178H43.2331C44.0235 22.9178 44.7397 23.3833 45.0607 24.1055L47.819 30.3116C48.4068 31.6341 47.4387 33.1238 45.9913 33.1238H44.5328V46.9999C44.5328 48.1045 43.6374 48.9999 42.5328 48.9999H30.9248V39.6599C30.9248 38.5553 30.0293 37.6599 28.9248 37.6599H26.1207C25.0162 37.6599 24.1207 38.5553 24.1207 39.6599V48.9999H19.3167C18.2121 48.9999 17.3167 48.1045 17.3167 46.9999V33.1238H15.8582C14.4109 33.1238 13.4428 31.6341 14.0306 30.3116L16.7888 24.1055C17.1098 23.3833 17.8261 22.9178 18.6165 22.9178H19.5847V21.6498ZM34.3268 37.5259C34.3268 36.9736 34.7745 36.5259 35.3268 36.5259H38.9968C39.5491 36.5259 39.9968 36.9736 39.9968 37.5259V41.1959C39.9968 41.7482 39.5491 42.1959 38.9968 42.1959H35.3268C34.7745 42.1959 34.3268 41.7482 34.3268 41.1959V37.5259Z"
         fill="#D4D4D4"
       />
-      <path
-        d="M29.9868 19.0095L27.9868 21.0095"
-        stroke="#737373"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M29.9868 21.0095L27.9868 19.0095"
-        stroke="#737373"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M17.9868 39.0095L15.9868 41.0095"
-        stroke="#737373"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M17.9868 41.0095L15.9868 39.0095"
-        stroke="#737373"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle
-        cx="40"
-        cy="22"
-        r="6.41667"
-        fill="#F5F5F5"
-        stroke="#737373"
-        strokeWidth="1.16667"
-      />
+      <path d="M29.9868 19.0095L27.9868 21.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M29.9868 21.0095L27.9868 19.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M17.9868 39.0095L15.9868 41.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M17.9868 41.0095L15.9868 39.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="40" cy="22" r="6.41667" fill="#F5F5F5" stroke="#737373" strokeWidth="1.16667" />
       <circle cx="37.0833" cy="21.4166" r="0.583333" fill="#404040" />
       <circle cx="42.9168" cy="21.4166" r="0.583333" fill="#404040" />
       <path
@@ -59,7 +25,7 @@ const NoOutletSVG = (props: React.SVGProps<SVGSVGElement>) => {
       <circle cx="20.5" cy="45.5" r="1.5" fill="#A3A3A3" />
       <circle cx="7.5" cy="35.5" r="1.5" fill="#A3A3A3" />
     </svg>
-  );
-};
+  )
+}
 
-export default NoOutletSVG;
+export default NoOutletSVG

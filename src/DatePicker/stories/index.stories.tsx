@@ -2,7 +2,7 @@ import React from 'react'
 import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
 import { differenceInDays } from 'date-fns'
-import { DatePicker } from '../index'
+import { default as DatePicker } from '../index'
 
 import '../../assets/style/form-item.css'
 
@@ -18,17 +18,15 @@ type Args = {
 
 const Template: Story<Args> = (args: Args) => {
   return (
-    <Form layout='vertical'>
-      <Form.Item style={{ width: '320px' }} {...args.formItem}>
-        <DatePicker
-          style={{ width: '320px' }}
-          {...args.datePicker}
-          disabledDate={current => {
-            return current && differenceInDays(current, new Date()) < 0
-          }}
-        />
-      </Form.Item>
-    </Form>
+    <Form.Item style={{ width: '320px' }} {...args.formItem}>
+      <DatePicker
+        style={{ width: '320px' }}
+        {...args.datePicker}
+        disabledDate={current => {
+          return current && differenceInDays(current, new Date()) < 0
+        }}
+      />
+    </Form.Item>
   )
 }
 
@@ -38,6 +36,7 @@ Basic.args = {
   datePicker: {
     label: 'DatePicker',
     showToday: false,
+    format: 'DD/MM/YYYY'
   },
   formItem: {
     label: 'Date'
@@ -48,8 +47,9 @@ export const Error = Template.bind({})
 
 Error.args = {
   datePicker: {
-    label: 'DatePicker',
+    label: 'RangePicker',
     showToday: false,
+    format: 'DD/MM/YYYY'
   },
   formItem: {
     label: 'Date',
