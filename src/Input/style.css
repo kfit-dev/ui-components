@@ -105,6 +105,17 @@
   @apply bg-neutral-100 !important;
 }
 
+.ant-input-affix-wrapper-disabled + .ant-input-group-addon:last-child button {
+  @apply bg-neutral-100 !important;
+}
+
+.ant-input-search
+  > .ant-input-group
+  > .ant-input-group-addon:last-child
+  .ant-input-search-button:not(.ant-btn-primary).ant-btn-loading::before {
+  @apply bg-neutral-100 !important;
+}
+
 .ant-input-affix-wrapper-borderless ~ .ant-input-group-addon:last-child {
   @apply border-0 !important;
 }
