@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Button } from 'antd'
-import { WarningCircle, XCircle, CheckCircle } from 'phosphor-react'
+import { WarningCircle, XCircle, CheckCircle, Info } from 'phosphor-react'
 import { default as Popconfirm, PopconfirmProps } from '../index'
 
 export default {
@@ -49,7 +49,7 @@ TopInfoIcon.args = {
   label: 'Popconfirm',
   title: 'Are you sure you wish to delete this task',
   placement: 'top',
-  icon: <WarningCircle size={16} />,
+  icon: <Info size={16} />,
   onConfirm: { confirm },
   okText: 'Button',
   cancelText: 'Button'
@@ -97,7 +97,7 @@ BottomIcon.args = {
   label: 'Popconfirm',
   title: 'Are you sure you wish to delete this task',
   placement: 'bottom',
-  icon: <WarningCircle size={16} />,
+  icon: <WarningCircle size={16} color={'#FBBF24'} />,
   onConfirm: { confirm },
   okText: 'Button',
   cancelText: 'Button'
