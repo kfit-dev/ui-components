@@ -1,15 +1,8 @@
-import * as React from 'react';
+import * as React from 'react'
 
 const CantFindAnythingSVG = (props: React.SVGProps<SVGSVGElement>) => {
   return (
-    <svg
-      width="64"
-      height="64"
-      viewBox="0 0 64 64"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <rect x="5" y="28" width="55" height="16" rx="4" fill="#D4D4D4" />
       <path
         fillRule="evenodd"
@@ -17,38 +10,11 @@ const CantFindAnythingSVG = (props: React.SVGProps<SVGSVGElement>) => {
         d="M44 44H56C58.2091 44 60 42.2091 60 40V32C60 29.7909 58.2091 28 56 28H44V44Z"
         fill="#F5F5F5"
       />
-      <path
-        d="M41.9868 18.0095L39.9868 20.0095"
-        stroke="#737373"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M41.9868 20.0095L39.9868 18.0095"
-        stroke="#737373"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M15.9868 38.0095L13.9868 40.0095"
-        stroke="#737373"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M15.9868 40.0095L13.9868 38.0095"
-        stroke="#737373"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle
-        cx="27"
-        cy="28"
-        r="11"
-        fill="#F5F5F5"
-        stroke="#737373"
-        strokeWidth="2"
-      />
+      <path d="M41.9868 18.0095L39.9868 20.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M41.9868 20.0095L39.9868 18.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M15.9868 38.0095L13.9868 40.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M15.9868 40.0095L13.9868 38.0095" stroke="#737373" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="27" cy="28" r="11" fill="#F5F5F5" stroke="#737373" strokeWidth="2" />
       <line
         x1="34.4056"
         y1="37.1562"
@@ -82,7 +48,7 @@ const CantFindAnythingSVG = (props: React.SVGProps<SVGSVGElement>) => {
       <circle cx="10.5" cy="27.5" r="1.5" fill="#A3A3A3" />
       <circle cx="5.5" cy="35.5" r="1.5" fill="#A3A3A3" />
     </svg>
-  );
-};
+  )
+}
 
-export default CantFindAnythingSVG;
+export default CantFindAnythingSVG
