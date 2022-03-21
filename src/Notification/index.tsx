@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { notification as AntNotification } from 'antd';
 import { ArgsProps, NotificationApi } from 'antd/lib/notification';
-import { CheckCircle, Info, WarningCircle, XCircle } from 'phosphor-react';
+import { CheckCircle, Info, WarningCircle, X, XCircle } from 'phosphor-react';
 
 import './style.css';
 
@@ -10,27 +10,40 @@ const Notification = AntNotification;
 const originalCalls = { ...Notification };
 
 const iconSize = 24;
+const customCloseIconSize = 16;
+const CustomCloseIcon: React.FC = () => <X size={customCloseIconSize} />;
 
-Notification.info = ({ icon, ...restArgs }: ArgsProps) =>
-  originalCalls.info({ icon: icon || <Info size={iconSize} />, ...restArgs });
+Notification.open = ({ closeIcon, ...restArgs }: ArgsProps) =>
+  originalCalls.open({
+    closeIcon: closeIcon || <CustomCloseIcon />,
+    ...restArgs
+  });
 
-Notification.success = ({ icon, ...restArgs }: ArgsProps) =>
+Notification.info = ({ icon, closeIcon, ...restArgs }: ArgsProps) =>
+  originalCalls.info({
+    icon: icon || <Info size={iconSize} />,
+    closeIcon: closeIcon || <CustomCloseIcon />,
+    ...restArgs
+  });
+
+Notification.success = ({ icon, closeIcon, ...restArgs }: ArgsProps) =>
   originalCalls.success({
     icon: icon || <CheckCircle size={iconSize} />,
+    closeIcon: closeIcon || <CustomCloseIcon />,
     ...restArgs
   });
 
-Notification.error = ({ icon, ...restArgs }: ArgsProps) =>
+Notification.error = ({ icon, closeIcon, ...restArgs }: ArgsProps) =>
   originalCalls.error({
     icon: icon || <XCircle size={iconSize} />,
-    duration: 0,
+    closeIcon: closeIcon || <CustomCloseIcon />,
     ...restArgs
   });
 
-Notification.warning = ({ icon, ...restArgs }: ArgsProps) =>
+Notification.warning = ({ icon, closeIcon, ...restArgs }: ArgsProps) =>
   originalCalls.warning({
     icon: icon || <WarningCircle size={iconSize} />,
-    duration: 0,
+    closeIcon: closeIcon || <CustomCloseIcon />,
     ...restArgs
   });
 
