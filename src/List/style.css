@@ -2,17 +2,15 @@
 @import 'antd/lib/skeleton/style/index.css';
 
 .ant-list {
-  /* @apply bg-white; */
+  .ant-list-header,
+  .ant-list-footer,
+  .ant-list-item {
+    @apply font-inter;
+  }
 
   &.ant-list-bordered {
     @apply rounded-lg;
     @apply border-slate-100;
-
-    .ant-list-header,
-    .ant-list-footer,
-    .ant-list-item {
-      @apply font-inter;
-    }
 
     .ant-list-header,
     .ant-list-footer {
@@ -24,15 +22,11 @@
     }
   }
 
-  .ant-list-item {
-    /* @apply border-b-red-800; */
-  }
-
-  &.ant-list-split {
+  .ant-spin-nested-loading {
     .ant-list-header,
     .ant-list-footer,
     .ant-list-item {
-      @apply border-b-slate-100 !important;
+      @apply border-b-slate-100;
     }
   }
 }
