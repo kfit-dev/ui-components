@@ -8,6 +8,7 @@
     @apply hover:bg-neutral-300;
 
     a {
+      @apply text-neutral-500;
       @apply hover:text-neutral-700;
     }
 
