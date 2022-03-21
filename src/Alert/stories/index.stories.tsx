@@ -1,8 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { BaseButtonProps } from 'antd/lib/button/button';
-import { default as Alert, AlertProps, alertWithButtons } from '../index';
+import { default as Alert, AlertProps, AlertWithButtons } from '../index';
+import Button from '../../Button';
 
 export default {
   title: 'Alert',
@@ -23,13 +22,6 @@ const message = 'Success Text';
 const description =
   'Success Text Success Text Success Text Success Text Success Text';
 const type = 'success';
-const OneActionButton: BaseButtonProps[] = [
-  { type: 'text', children: 'Button', size: 'small' }
-];
-const TwoActionButtons: BaseButtonProps[] = [
-  { type: 'primary', children: 'Button', size: 'small', className: 'mb-2.5' },
-  { type: 'text', children: 'Button', size: 'small' }
-];
 
 export const Basic = Template.bind({});
 
@@ -51,7 +43,13 @@ BasicWithCustomButton.args = {
   showIcon: false,
   closable: false,
   banner: false,
-  action: alertWithButtons(OneActionButton)
+  action: (
+    <AlertWithButtons>
+      <Button type={'text'} size={'small'}>
+        Button
+      </Button>
+    </AlertWithButtons>
+  )
 };
 
 export const TitleWithDescription = Template.bind({});
@@ -74,5 +72,14 @@ TitleWithDescriptionWithCustomButton.args = {
   type: type,
   showIcon: false,
   closable: false,
-  action: alertWithButtons(TwoActionButtons)
+  action: (
+    <AlertWithButtons>
+      <Button type={'primary'} size="small" className="mb-2.5">
+        Button
+      </Button>
+      <Button type={'text'} size={'small'}>
+        Button
+      </Button>
+    </AlertWithButtons>
+  )
 };

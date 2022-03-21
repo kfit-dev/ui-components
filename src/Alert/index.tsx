@@ -8,34 +8,28 @@ import {
 } from '../assets/icons';
 
 import './style.css';
-import Button, { ButtonProps } from '../Button';
 
 export type AlertProps = AntAlertProps;
+type IconTypes = 'success' | 'info' | 'warning' | 'error' | undefined;
 
-export const alertWithButtons = (buttonList: ButtonProps[]) => {
-  return (
-    <div className={'flex flex-col'}>
-      {buttonList.map((button: ButtonProps, _) => (
-        <Button {...button} key={_} />
-      ))}
-    </div>
-  );
+export const AlertWithButtons: React.FC = ({ children }) => {
+  return <div className={'flex flex-col'}>{children}</div>;
+};
+
+// icons are different based on whether they
+// have description prop or not, this function
+// standardises them
+const iconType = (icon: React.ReactNode, type: IconTypes) => {
+  if (type === 'success') return <SuccessIconSVG />;
+  else if (type === 'info') return <InfoIconSVG />;
+  else if (type === 'warning') return <WarningIconSVG />;
+  else if (type === 'error') return <ErrorIconSVG />;
+  else return icon;
 };
 
 const Alert: React.FC<AlertProps> = props => {
   const { icon, type } = props;
-
-  // icons are different based on whether they
-  // have description prop or not, this function
-  // standardises them
-  const iconType = () => {
-    if (type === 'success') return <SuccessIconSVG />;
-    else if (type === 'info') return <InfoIconSVG />;
-    else if (type === 'warning') return <WarningIconSVG />;
-    else if (type === 'error') return <ErrorIconSVG />;
-    else return icon;
-  };
-  return <AntAlert icon={iconType()} {...props} />;
+  return <AntAlert icon={iconType(icon, type)} {...props} />;
 };
 
 export default Alert;
