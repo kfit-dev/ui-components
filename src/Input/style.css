@@ -9,7 +9,7 @@
 
   &-item-control-input-content {
     .ant-input-affix-wrapper {
-      @apply font-inter h-10 px-4 pr-1 rounded-lg;
+      @apply font-inter h-10 px-4 rounded-lg;
 
       input {
         @apply focus:border-neutral-300 z-0 focus:shadow-none;
@@ -47,7 +47,7 @@
     }
 
     .ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
-      @apply rounded-l-full;
+      @apply rounded-l-full pr-1;
       @apply border-transparent z-0;
     }
 
@@ -114,6 +114,11 @@
   > .ant-input-group-addon:last-child
   .ant-input-search-button:not(.ant-btn-primary).ant-btn-loading::before {
   @apply bg-neutral-100 !important;
+}
+
+.ant-input-affix-wrapper-borderless {
+  @apply bg-white;
+  @apply hover:bg-white;
 }
 
 .ant-input-affix-wrapper-borderless ~ .ant-input-group-addon:last-child {
