@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Alert as AntAlert, AlertProps as AntAlertProps } from 'antd';
-import { BaseButtonProps } from 'antd/lib/button/button';
 import {
   ErrorIconSVG,
   InfoIconSVG,
@@ -13,7 +12,7 @@ import Button, { ButtonProps } from '../Button';
 
 export type AlertProps = AntAlertProps;
 
-export const alertWithButtons = (buttonList: BaseButtonProps[]) => {
+export const alertWithButtons = (buttonList: ButtonProps[]) => {
   return (
     <div className={'flex flex-col'}>
       {buttonList.map((button: ButtonProps, _) => (
