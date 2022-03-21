@@ -4,7 +4,7 @@ import { Form, FormItemProps } from 'antd'
 import { Search, SearchProps } from '../index'
 
 export default {
-  title: 'Search',
+  title: 'Input/Search',
   component: Search
 } as ComponentMeta<typeof Search>
 

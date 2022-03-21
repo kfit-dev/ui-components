@@ -62,7 +62,7 @@
       }
 
       .ant-input-affix-wrapper-focused + .ant-input-group-addon:last-child {
-        @apply border-neutral-300 shadow-none !important;
+        @apply border-neutral-300 shadow-none;
       }
     }
 
@@ -95,7 +95,7 @@
     }
 
     .ant-input-search > .ant-input-group > .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
-      @apply border-r-0 !important;
+      @apply border-r-0;
       @apply border-r-transparent z-0;
     }
   }
@@ -105,15 +105,11 @@
   @apply bg-neutral-100 !important;
 }
 
-.ant-input-affix-wrapper-disabled + .ant-input-group-addon:last-child button {
-  @apply bg-neutral-100 !important;
-}
-
 .ant-input-search
   > .ant-input-group
   > .ant-input-group-addon:last-child
   .ant-input-search-button:not(.ant-btn-primary).ant-btn-loading::before {
-  @apply bg-neutral-100 !important;
+  @apply bg-neutral-100;
 }
 
 .ant-input-affix-wrapper-borderless {
@@ -122,12 +118,12 @@
 }
 
 .ant-input-affix-wrapper-borderless ~ .ant-input-group-addon:last-child {
-  @apply border-0 !important;
+  @apply border-0;
 }
 
 .ant-form-item-has-error {
   .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child {
-    @apply border-red-600 !important;
+    @apply border-red-600;
   }
 
   .ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
