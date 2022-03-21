@@ -75,7 +75,13 @@ const Template: Story<Args> = ({ text, ...restArgs }: Args) => {
   )
 }
 
-const DraggerTemplate: Story<Args> = (args: Args) => <Dragger {...args} />
+const DraggerTemplate: Story<Args> = (args: Args) => {
+  const [fileList, setFileList] = useState<UploadFile<PictureItem>[]>(initialList)
+
+  const handleChange = ({ fileList }: UploadChangeParam<PictureItem>) => setFileList(fileList)
+
+  return <Dragger fileList={fileList} onChange={handleChange} {...args} />
+}
 
 export const Normal = Template.bind({})
 
@@ -91,23 +97,10 @@ PicturesWall.args = {
   listType: 'picture-card'
 }
 
-export const DragnDrop = DraggerTemplate.bind({})
+export const DragAndDrop = DraggerTemplate.bind({})
 
-DragnDrop.args = {
+DragAndDrop.args = {
   ...args,
   name: 'file',
-  multiple: true,
-  fileList: initialList,
-  action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
-  onChange(info) {
-    const { status } = info.file
-
-    if (status !== 'uploading') {
-    }
-    if (status === 'done') {
-      alert(`${info.file.name} file uploaded successfully.`)
-    } else if (status === 'error') {
-      alert(`${info.file.name} file upload failed.`)
-    }
-  }
+  multiple: true
 }
