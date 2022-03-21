@@ -49,9 +49,22 @@
     @apply text-neutral-700 !important;
   }
 
+  &-jump-next,
+  &-jump-prev {
+    @apply min-w-0 w-6 h-6;
+
+    .ant-pagination-item-link {
+      @apply h-full;
+    }
+
+    .ant-pagination-item-ellipsis {
+      @apply h-6;
+    }
+  }
+
   .anticon-double-left,
   .anticon-double-right {
-    @apply text-neutral-700 flex justify-center pt-2.5;
+    @apply text-neutral-700 flex justify-center pt-1.5;
   }
 
   &-next,
