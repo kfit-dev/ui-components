@@ -4,7 +4,7 @@ import { Form, FormItemProps } from 'antd'
 import { default as Input, InputProps } from '../index'
 
 export default {
-  title: 'Input',
+  title: 'Input/Basic',
   component: Input
 } as ComponentMeta<typeof Input>
 
