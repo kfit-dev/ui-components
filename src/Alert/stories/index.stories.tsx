@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { default as Alert, AlertProps, AlertWithButtons } from '../index';
 import Button from '../../Button';
+import { default as Alert, AlertProps, AlertWithButtons } from '../index';
 
 export default {
   title: 'Alert',
