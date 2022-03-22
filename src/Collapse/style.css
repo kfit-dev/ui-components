@@ -2,7 +2,6 @@
 
 .ant-collapse {
   @apply font-inter;
-  @apply border-none;
 
   .ant-collapse-item {
     @apply border-slate-100;
