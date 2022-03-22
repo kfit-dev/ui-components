@@ -61,8 +61,13 @@ const initialList: UploadFile<PictureItem>[] = [
   }
 ]
 
+const getList = () =>
+  initialList.map(item => {
+    return { ...item }
+  })
+
 const Template: Story<Args> = ({ text, ...restArgs }: Args) => {
-  const [fileList, setFileList] = useState<UploadFile<PictureItem>[]>(initialList)
+  const [fileList, setFileList] = useState<UploadFile<PictureItem>[]>(getList())
 
   const handleChange = ({ fileList }: UploadChangeParam<PictureItem>) => setFileList(fileList)
 
@@ -76,7 +81,7 @@ const Template: Story<Args> = ({ text, ...restArgs }: Args) => {
 }
 
 const DraggerTemplate: Story<Args> = (args: Args) => {
-  const [fileList, setFileList] = useState<UploadFile<PictureItem>[]>(initialList)
+  const [fileList, setFileList] = useState<UploadFile<PictureItem>[]>(getList())
 
   const handleChange = ({ fileList }: UploadChangeParam<PictureItem>) => setFileList(fileList)
 

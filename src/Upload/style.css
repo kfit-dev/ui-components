@@ -147,6 +147,10 @@
 .ant-upload-list.ant-upload-list-text {
   @apply font-inter;
 
+  & a {
+    color: unset;
+  }
+
   & .ant-upload-list-item {
     height: unset;
 
