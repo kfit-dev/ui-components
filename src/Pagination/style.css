@@ -1,5 +1,5 @@
-@import 'antd/lib/pagination/style/index.css';
 @import 'antd/lib/style/default.css';
+@import 'antd/lib/pagination/style/index.css';
 @import '../Select/style.css';
 
 .ant-pagination {
