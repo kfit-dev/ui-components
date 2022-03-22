@@ -8,7 +8,7 @@ export type PaginationProps = AntPaginationProps & {
   RightIcon: React.ReactNode
 }
 
-const createItemRender = (LeftIcon: React.ReactNode, RightIcon: React.ReactNode) => (
+const itemRender = (LeftIcon: React.ReactNode, RightIcon: React.ReactNode) => (
   page: React.ReactNode,
   type: string,
   originalElement: React.ReactNode
@@ -23,7 +23,7 @@ const createItemRender = (LeftIcon: React.ReactNode, RightIcon: React.ReactNode)
 }
 
 const Pagination: React.FC<PaginationProps> = ({ LeftIcon, RightIcon, ...restProps }) => {
-  return <AntPagination {...restProps} itemRender={createItemRender(LeftIcon, RightIcon)} />
+  return <AntPagination {...restProps} itemRender={itemRender(LeftIcon, RightIcon)} />
 }
 
 Pagination.defaultProps = {
