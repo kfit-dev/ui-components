@@ -1,45 +1,22 @@
-.ant-select {
-  &:not(.ant-select-customize-input) {
-    .ant-select-selector {
-      @apply rounded-lg h-10 py-1 px-4;
-      @apply border-neutral-300;
+@import '../assets/style/form-item.css';
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/select/style/index.css';
+@import 'antd/lib/empty/style/index.css';
+@import '../Input/style.css';
+@import '../Select/style.css';
 
-      .ant-select-selection-search-input {
-        @apply font-inter text-neutral-700 text-sm;
-        @apply h-10 px-1.5;
-      }
-    }
-  }
-
-  &:not(.any-select-disabled):hover {
-    .ant-select-selector {
-      @apply border-primary;
-    }
-  }
-
-  &-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) {
-    .ant-select-selector {
-      @apply border-primary shadow-none;
-    }
-  }
-
-  &-clear {
-    @apply flex h-4 w-4 right-4 opacity-100;
-
-    span.anticon.anticon-close-circle {
-      svg {
-        @apply h-4 w-4;
-      }
-    }
-  }
-}
-
-.roundedSearch.ant-select:not(.ant-select-customize-input) {
+.ant-select-auto-complete {
+  @apply bg-transparent !important;
   .ant-select-selector {
-    @apply rounded-full;
+    @apply w-full;
+    @apply bg-transparent;
   }
 }
 
-.ant-form-item .ant-form-item-label {
-  @apply mb-0;
+.ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+  @apply border-none border-transparent;
+}
+
+.ant-select-dropdown {
+  @apply rounded-lg !important;
 }
