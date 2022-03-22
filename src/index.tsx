@@ -25,3 +25,9 @@ export {
   RangePicker,
   QuarterPicker
 } from './DatePicker';
+export {
+  default as Collapse,
+  CollapsePanel,
+  CollapseProps,
+  CollapsePanelProps
+} from './Collapse';
