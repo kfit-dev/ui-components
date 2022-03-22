@@ -73,18 +73,17 @@ const inputArgs = {
 
 export const BasicSearch = () => {
   return (
-    <Form.Item style={{ width: '320px' }} {...inputArgs.formItem}>
-      <AutoComplete
-        {...inputArgs.autoComplete}
-        filterOption={(inputValue, option) =>
-          option!.value
-            .toString()
-            .toUpperCase()
-            .indexOf(inputValue.toUpperCase()) !== -1
-        }
-      >
-        <Search {...inputArgs.input} />
-      </AutoComplete>
-    </Form.Item>
+    <AutoComplete
+      style={{ width: '320px' }}
+      {...inputArgs.autoComplete}
+      filterOption={(inputValue, option) =>
+        option!.value
+          .toString()
+          .toUpperCase()
+          .indexOf(inputValue.toUpperCase()) !== -1
+      }
+    >
+      <Search {...inputArgs.input} />
+    </AutoComplete>
   )
 }
