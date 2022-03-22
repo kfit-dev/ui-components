@@ -26,3 +26,4 @@ export {
   RangePicker,
   QuarterPicker
 } from './DatePicker';
+export { default as Pagination, PaginationProps } from './Pagination'
