@@ -1,7 +1,7 @@
 @import 'antd/lib/style/default.css';
-@import 'antd/lib/popconfirm/style/index.css';
 @import '../Popover/style.css';
 @import '../Button/style.css';
+@import 'antd/lib/popconfirm/style/index.css';
 
 .ant-popconfirm {
   .ant-popover-content {
