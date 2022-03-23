@@ -32,5 +32,6 @@ export {
   RangePicker,
   QuarterPicker
 } from './DatePicker'
+export { default as Pagination, PaginationProps } from './Pagination';
 export { default as PopConfirm, PopconfirmProps, NoIcon, WarningIcon } from './Popconfirm'
-export { default as Pagination, PaginationProps } from './Pagination'
+export { default as AutoComplete, AutoCompleteProps } from './AutoComplete'
