@@ -26,4 +26,5 @@ export {
   RangePicker,
   QuarterPicker
 } from './DatePicker';
-export { default as Pagination, PaginationProps } from './Pagination'
+export { default as Pagination, PaginationProps } from './Pagination';
+export { default as Message, MessageProps } from './Message';
