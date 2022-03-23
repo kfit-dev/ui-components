@@ -28,8 +28,7 @@ Collapse.defaultProps = {
         size={16}
       />
     </span>
-  ),
-  bordered: false
+  )
 };
 
 export default Collapse;
