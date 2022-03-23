@@ -1,8 +1,6 @@
-@import '../assets/style/form-item.css';
 @import 'antd/lib/style/default.css';
-@import 'antd/lib/select/style/index.css';
-@import 'antd/lib/empty/style/index.css';
-@import '../Input/style.css';
+@import 'antd/lib/auto-complete/style/index.css';
+
 @import '../Select/style.css';
 
 .ant-select-auto-complete {

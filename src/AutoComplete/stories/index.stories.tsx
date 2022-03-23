@@ -3,6 +3,9 @@ import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps, Input, InputProps } from 'antd'
 import Search from 'antd/lib/input/Search'
 import { default as AutoComplete, AutoCompleteProps } from '../index'
+
+import '../../assets/style/form-item.css'
+
 export default {
   title: 'AutoComplete',
   component: AutoComplete
