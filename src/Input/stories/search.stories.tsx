@@ -4,7 +4,7 @@ import { Form, FormItemProps } from 'antd'
 import { Search, SearchProps } from '../index'
 
 export default {
-  title: 'Search',
+  title: 'Input/Search',
   component: Search
 } as ComponentMeta<typeof Search>
 
@@ -54,7 +54,8 @@ SearchLoading.args = {
     label: 'Input',
     placeholder: 'Placeholder',
     allowClear: true,
-    loading: true
+    loading: true,
+    disabled: true
   },
   formItem: {
     label: 'Text field title'
