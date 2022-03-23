@@ -24,12 +24,9 @@ const Template: ComponentStory<typeof Drawer> = (
 ) => {
   const { visible, onClose, children } = context;
   return (
-    <Drawer
-      {...args}
-      visible={visible}
-      onClose={onClose}
-      children={args.children || children}
-    />
+    <Drawer {...args} visible={visible} onClose={onClose}>
+      {args.children || children}
+    </Drawer>
   );
 };
 
