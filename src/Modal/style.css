@@ -1,0 +1,25 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/modal/style/index.css';
+@import '../Button/style.css';
+
+.ant-modal {
+  &-content {
+    @apply font-inter rounded-lg;
+  }
+
+  &-header {
+    @apply rounded-t-lg;
+  }
+
+  &-footer {
+    @apply rounded-b-lg;
+  }
+
+  &-title {
+    @apply text-neutral-700 font-bold;
+  }
+
+  &-body {
+    @apply text-neutral-700 font-normal;
+  }
+}
