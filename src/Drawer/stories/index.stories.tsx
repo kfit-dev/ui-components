@@ -38,14 +38,7 @@ export const BasicDrawer = Template.bind({});
 BasicDrawer.args = {
   label: 'Drawer Title',
   title: 'Drawer Title',
-  placement: 'right',
-  children: (
-    <>
-      <p>Some contents</p>
-      <p>Some contents</p>
-      <p>Some contents</p>
-    </>
-  )
+  placement: 'right'
 };
 
 BasicDrawer.decorators = [
@@ -63,7 +56,11 @@ BasicDrawer.decorators = [
         <Story
           visible={mainDrawerVisible}
           onClose={() => setMainDrawerVisible(false)}
-        />
+        >
+          <p>Some contents</p>
+          <p>Some contents</p>
+          <p>Some contents</p>
+        </Story>
       </div>
     );
   }
@@ -95,32 +92,26 @@ ExtraDrawer.decorators = [
         <Story
           visible={mainDrawerVisible}
           onClose={() => setMainDrawerVisible(false)}
-          children={
-            <>
-              <p>Some contents</p>
-              <p>Some contents</p>
-              <p>Some contents</p>
-              <Button
-                className={'mr-1'}
-                type={'primary'}
-                onClick={() => setChildrenDrawerVisible(true)}
-              >
-                Open Children Drawer
-              </Button>
-              <Story
-                visible={childrenDrawerVisible}
-                onClose={() => setChildrenDrawerVisible(false)}
-                children={
-                  <>
-                    <p>Some contents</p>
-                    <p>Some contents</p>
-                    <p>Some contents</p>
-                  </>
-                }
-              />
-            </>
-          }
-        />
+        >
+          <p>Some contents</p>
+          <p>Some contents</p>
+          <p>Some contents</p>
+          <Button
+            className={'mr-1'}
+            type={'primary'}
+            onClick={() => setChildrenDrawerVisible(true)}
+          >
+            Open Children Drawer
+          </Button>
+          <Story
+            visible={childrenDrawerVisible}
+            onClose={() => setChildrenDrawerVisible(false)}
+          >
+            <p>Some contents</p>
+            <p>Some contents</p>
+            <p>Some contents</p>
+          </Story>
+        </Story>
       </div>
     );
   }
