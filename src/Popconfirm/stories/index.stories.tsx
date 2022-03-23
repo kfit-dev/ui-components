@@ -1,8 +1,8 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Button } from 'antd'
-import { WarningCircle, XCircle, CheckCircle, Info } from 'phosphor-react'
-import { default as Popconfirm, PopconfirmProps } from '../index'
+import { XCircle, CheckCircle, Info } from 'phosphor-react'
+import { default as Popconfirm, NoIcon, PopconfirmProps, WarningIcon } from '../index'
 
 export default {
   title: 'Popconfirm',
@@ -25,7 +25,7 @@ Top.args = {
   label: 'Popconfirm',
   title: 'Are you sure you wish to delete this task',
   placement: 'top',
-  icon: <WarningCircle size={16} className={'icon-none'} />,
+  icon: NoIcon,
   onConfirm: { confirm },
   okText: 'Button',
   cancelText: 'Button'
@@ -37,7 +37,7 @@ TopWarningIcon.args = {
   label: 'Popconfirm',
   title: 'Are you sure you wish to delete this task',
   placement: 'top',
-  icon: <WarningCircle size={16} color={'#FBBF24'} />,
+  icon: WarningIcon,
   onConfirm: { confirm },
   okText: 'Button',
   cancelText: 'Button'
@@ -85,7 +85,7 @@ Bottom.args = {
   label: 'Popconfirm',
   title: 'Are you sure you wish to delete this task',
   placement: 'bottom',
-  icon: <WarningCircle size={16} className={'icon-none'} />,
+  icon: NoIcon,
   onConfirm: { confirm },
   okText: 'Button',
   cancelText: 'Button'
@@ -97,7 +97,7 @@ BottomIcon.args = {
   label: 'Popconfirm',
   title: 'Are you sure you wish to delete this task',
   placement: 'bottom',
-  icon: <WarningCircle size={16} color={'#FBBF24'} />,
+  icon: WarningIcon,
   onConfirm: { confirm },
   okText: 'Button',
   cancelText: 'Button'
