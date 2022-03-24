@@ -16,9 +16,8 @@ const iconSize = 16;
 const Message = AntMessage;
 const originalCalls = { ...Message };
 
-Message.info = ({ icon, content, ...restArgs }: MessageProps) =>
+Message.info = ({ icon, ...restArgs }: MessageProps) =>
   originalCalls.info({
-    content: content,
     icon: icon || <Info size={iconSize} />,
     ...restArgs
   });
