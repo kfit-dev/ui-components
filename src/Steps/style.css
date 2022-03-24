@@ -31,7 +31,7 @@
   @apply font-inter;
 
   & .ant-steps-item-icon {
-    @apply border-2;
+    @apply font-inter border-2;
 
     & .ant-steps-icon {
       @apply text-sm;
@@ -100,15 +100,22 @@
 /* description color and line color */
 .ant-steps-item {
   &-wait {
-    & .ant-steps-icon {
-      @apply font-semibold text-neutral-400;
+    & .ant-steps-item-icon {
+      & .ant-steps-icon {
+        @apply font-semibold text-neutral-400;
+      }
+    }
+
+    & > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item {
+      &-title {
+        @apply text-neutral-400;
+      }
     }
   }
 
   &-finish,
   &-wait {
     & > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item {
-      &-title,
       &-description {
         @apply text-neutral-400;
       }
@@ -156,6 +163,12 @@
   /* dot icon color */
   &-finish,
   &-process {
+    & > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item {
+      &-title {
+        @apply text-slate-700;
+      }
+    }
+
     & .ant-steps-item-icon {
       @apply border-slate-700 bg-transparent;
     }
