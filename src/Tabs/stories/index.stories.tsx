@@ -57,7 +57,7 @@ initialTabs.forEach(tab => (tab.badge = <Badge status="default"></Badge>))
 export const BasicTabBadge = () => {
   const [tabs, setTabs] = useState(initialTabs)
 
-  const handlTabClick = (key: string) => {
+  const handleTabClick = (key: string) => {
     const newTabs = tabs.map(tab => (tab.key === key ? { ...tab, showBadge: false } : tab))
 
     setTabs(newTabs)
@@ -67,7 +67,7 @@ export const BasicTabBadge = () => {
 
   return (
     <>
-      <Tabs defaultActiveKey={defaultActiveTabKey} onChange={handlTabClick}>
+      <Tabs defaultActiveKey={defaultActiveTabKey} onChange={handleTabClick}>
         {tabs.map(tab => (
           <TabPane key={tab.key} {...tab} tab={renderTabHeader({ defaultActiveKey: defaultActiveTabKey, ...tab })} />
         ))}
