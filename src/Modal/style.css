@@ -22,4 +22,55 @@
   &-body {
     @apply text-neutral-700 font-normal;
   }
+
+  &-confirm{
+    @apply w-[352px] !important;
+    .ant-modal-body{
+      @apply p-4;
+    }
+  }
+
+  &-confirm-body{
+
+    .ant-modal-confirm-title{
+      @apply ml-2;
+    }
+
+    .ant-modal-confirm-content{
+      @apply ml-2 mr-6;
+    }
+
+  }
+
+  .ant-modal-confirm-btns{
+    @apply mt-4 mr-4;
+  }
+
+  &-close-x{
+    @apply w-4 h-4 mt-4 mr-4;
+
+    svg{
+      @apply text-neutral-400;
+    }
+  }
+}
+
+.ant-modal.with-icon{
+
+  @apply w-[376px] !important;
+
+  .ant-modal-confirm-body{
+    
+    svg{
+      @apply float-left mr-2;
+    }
+
+    .ant-modal-confirm-content{
+      @apply ml-8 mt-1 mr-6;
+    }
+
+    .ant-modal-confirm-title{
+      @apply leading-6;
+    }
+  }
 }

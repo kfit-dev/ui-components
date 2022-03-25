@@ -1,9 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-
-import Button from 'antd/lib/button'
-import Space from 'antd/lib/space'
-import { default as Modal, ModalProps } from '../index'
+import { X, CheckCircle } from 'phosphor-react'
+import { default as Modal, ModalProps, ModalFunctions } from '../index'
 
 export default {
   title: 'Modal',
@@ -12,37 +10,81 @@ export default {
 
 const Template: ComponentStory<typeof Modal> = (args: ModalProps) => <Modal {...args} />
 
-export const Primary = Template.bind({})
 
-Primary.args = {
-  title: 'Modal'
+const content = "This is the content of the modal. Depends on what you want to convey, it’s best to keep it short. Else it’ll be too long.";
+
+export const Basic = Template.bind({})
+
+Basic.args = {
+  modalFunc: ()=>ModalFunctions.confirm({
+    title: 'Modal Title',
+    content: content,
+    closable:true,
+    closeIcon:<X size={16}/>,
+    okText:"Confirm",
+    cancelText:"Button",
+    confirmMode: false,
+    hasIcon:false,
+  })
 }
 
-export const test = () => {
-  return (
-    <>
-      <Button type="primary">Modal</Button>
-      <Modal title="Modal" visible={true} okText="Confirm" cancelText="Button">
-        <p>Bla bla ...</p>
-        <p>Bla bla ...</p>
-        <p>Bla bla ...</p>
-      </Modal>
-    </>
-  )
+export const BasicInfo = Template.bind({})
+
+BasicInfo.args = {
+  modalFunc: ()=>ModalFunctions.info({
+    title: 'Modal Title',
+    content: content,
+    closable:true,
+    closeIcon:<X size={16}/>,
+    okText:"Confirm",
+    cancelText:"Button",
+    confirmMode: false,
+    hasIcon:true,
+  })
 }
 
-export const Basic = () => {
-  // Modal.confirm({
-  //   title: 'Confirm',
-  //   content: 'Bla bla ...',
-  //   okText: '确认',
-  //   cancelText: '取消',
-  // });
+export const Success = Template.bind({})
 
-  // eslint-disable-next-line no-unused-expressions
-  return (
-    <Space>
-      <Button onClick={Basic}>Confirm</Button>
-    </Space>
-  )
+Success.args = {
+  modalFunc: ()=>ModalFunctions.info({
+    title: 'Modal Title',
+    content: content,
+    closable:true,
+    closeIcon:<X size={16}/>,
+    okText:"Confirm",
+    cancelText:"Button",
+    icon: <CheckCircle size={24} color={'#10B981'} />,
+    confirmMode: false,
+    hasIcon:true,
+  })
+}
+
+export const Error = Template.bind({})
+
+Error.args = {
+  modalFunc: ()=>ModalFunctions.error({
+    title: 'Modal Title',
+    content: content,
+    closable:true,
+    closeIcon:<X size={16}/>,
+    okText:"Confirm",
+    cancelText:"Button",
+    confirmMode: false,
+    hasIcon:true,
+  })
+}
+
+export const Warning = Template.bind({})
+
+Warning.args = {
+  modalFunc: ()=>ModalFunctions.warning({
+    title: 'Modal Title',
+    content: content,
+    closable:true,
+    closeIcon:<X size={16}/>,
+    okText:"Confirm",
+    cancelText:"Button",
+    confirmMode: false,
+    hasIcon:true,
+  })
 }

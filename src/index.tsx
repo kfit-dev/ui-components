@@ -37,3 +37,4 @@ export {
   QuarterPicker
 } from './DatePicker';
 export { default as Pagination, PaginationProps } from './Pagination';
+export { default as Modal,ModalFunctions, ModalProps,ModalFuncProps } from './Modal';
