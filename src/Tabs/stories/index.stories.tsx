@@ -63,7 +63,7 @@ export const BasicTabBadge = () => {
     setTabs(newTabs)
   }
 
-  const defaultActiveTabKey = '1'
+  const defaultActiveTabKey = '1' // change test
 
   return (
     <>
