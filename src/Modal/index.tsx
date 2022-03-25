@@ -41,7 +41,7 @@ export const ModalFunctions = {
 }
 
 const Modal: React.FC<ModalProps> = props => {
-  return <Button onClick={()=>props.modalFunc({ ...props })}>Click</Button>
+  return <Button onClick={()=>props.modalFunc({ ...props })}>Press Me</Button>
 }
 
 export default Modal
