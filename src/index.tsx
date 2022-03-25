@@ -37,6 +37,7 @@ export {
   QuarterPicker
 } from './DatePicker';
 export { default as Pagination, PaginationProps } from './Pagination';
+export { default as Message, MessageProps } from './Message';
 export { default as Drawer, DrawerProps } from './Drawer';
 export {
   default as PopConfirm,
