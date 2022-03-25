@@ -4,6 +4,32 @@
 
 @import '../variables.css';
 
+/* custom line indicator for navigation */
+.ant-steps-navigation {
+  & .ant-steps-item:before {
+    @apply hidden;
+  }
+
+  & .ant-steps-item-container {
+    @apply relative;
+
+    &:before {
+      @apply absolute bottom-0 left-1/2 block w-0 h-0.5 bg-slate-700;
+      content: '';
+      transition: width 0.3s, left 0.3s;
+      transition-timing-function: ease-out;
+    }
+  }
+
+  & .ant-steps-item-active {
+    & .ant-steps-item-container {
+      &:before {
+        @apply left-0 w-full;
+      }
+    }
+  }
+}
+
 .ant-steps-with-progress {
   &.ant-steps-small.ant-steps-horizontal:not(.ant-steps-label-vertical) .ant-steps-item:first-child {
     @apply pl-1;
@@ -13,8 +39,8 @@
     & .ant-progress {
       top: unset;
       right: 'unset';
-      bottom: -6px;
-      left: -6px;
+      bottom: -5px;
+      left: -5px;
 
       & .ant-progress-text {
         @apply hidden;
@@ -31,11 +57,13 @@
   @apply font-inter;
 
   & .ant-steps-item-icon {
-    @apply font-inter border-2;
+    @apply font-inter;
+    border-width: 1px;
 
     & .ant-steps-icon {
       @apply text-sm;
-      top: -1px;
+      line-height: 1.52rem;
+      top: 0;
     }
 
     & .anticon {
@@ -83,7 +111,7 @@
 .ant-steps-item-finish {
   & .anticon-check:before {
     @apply block;
-    transform: translateY(-24%);
+    transform: translateY(-26%);
     content: var(--ic-check-12-s700);
   }
 }
