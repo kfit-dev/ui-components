@@ -38,7 +38,7 @@ BasicInfo.args = {
     closeIcon:<X size={16}/>,
     okText:"Confirm",
     cancelText:"Button",
-    confirmMode: false,
+    confirmMode: true,
     hasIcon:true,
   })
 }
@@ -54,7 +54,7 @@ Success.args = {
     okText:"Confirm",
     cancelText:"Button",
     icon: <CheckCircle size={24} color={'#10B981'} />,
-    confirmMode: false,
+    confirmMode: true,
     hasIcon:true,
   })
 }
@@ -69,7 +69,7 @@ Error.args = {
     closeIcon:<X size={16}/>,
     okText:"Confirm",
     cancelText:"Button",
-    confirmMode: false,
+    confirmMode: true,
     hasIcon:true,
   })
 }
