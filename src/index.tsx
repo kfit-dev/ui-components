@@ -45,4 +45,4 @@ export {
   WarningIcon
 } from './Popconfirm';
 export { default as AutoComplete, AutoCompleteProps } from './AutoComplete';
-export { default as Tabs, TabsProps, TabPeneProps } from './Tabs'
+export { default as Tabs, TabsProps, TabPaneProps, renderTabHeader } from './Tabs'
