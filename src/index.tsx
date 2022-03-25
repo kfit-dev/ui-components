@@ -37,4 +37,14 @@ export {
   QuarterPicker
 } from './DatePicker';
 export { default as Pagination, PaginationProps } from './Pagination';
+export { default as Message, MessageProps } from './Message';
+export { default as Drawer, DrawerProps } from './Drawer';
+export {
+  default as PopConfirm,
+  PopconfirmProps,
+  NoIcon,
+  WarningIcon
+} from './Popconfirm';
+export { default as AutoComplete, AutoCompleteProps } from './AutoComplete';
+export { default as Tabs, TabsProps, TabPaneProps, renderTabHeader } from './Tabs'
 export { default as Modal,ModalFunctions, ModalProps,ModalFuncProps } from './Modal';
