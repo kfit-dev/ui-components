@@ -1,7 +1,7 @@
 @import 'antd/lib/style/default.css';
 @import 'antd/lib/date-picker/style/index.css';
 @import 'antd/lib/empty/style/index.css';
-@import '../variable.css';
+@import '../variables.css';
 
 .ant-picker {
   @apply h-10 px-4 border-transparent shadow-none rounded-lg;
