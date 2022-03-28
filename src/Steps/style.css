@@ -62,9 +62,10 @@
 
     & .ant-steps-icon {
       @apply text-sm;
-      /* line-height: 1.44rem; */
+      <<<<<<<head/* line-height: 1.44rem; */
       line-height: 0;
-      top: 0;
+      =======line-height: 1.52rem;
+      >>>>>>>a9ae7ba00128e4c1e0125c9c17f7abc412803208top: 0;
     }
 
     & .anticon {
@@ -112,8 +113,9 @@
 .ant-steps-item-finish {
   & .anticon-check:before {
     @apply block;
-    transform: translateY(-18%);
-    content: var(--ic-check-12-s700);
+    <<<<<<<headtransform: translateY(-18%);
+    =======transform: translateY(-26%);
+    >>>>>>>a9ae7ba00128e4c1e0125c9c17f7abc412803208content: var(--ic-check-12-s700);
   }
 }
 
