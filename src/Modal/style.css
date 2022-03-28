@@ -3,24 +3,9 @@
 @import '../Button/style.css';
 
 .ant-modal {
-  &-content {
-    @apply font-inter rounded-lg;
-  }
 
-  &-header {
-    @apply rounded-t-lg;
-  }
-
-  &-footer {
-    @apply rounded-b-lg;
-  }
-
-  &-title {
-    @apply text-neutral-700 font-bold;
-  }
-
-  &-body {
-    @apply text-neutral-700 font-normal;
+  &-content{
+    @apply rounded-lg;
   }
 
   &-confirm{
@@ -28,22 +13,28 @@
     .ant-modal-body{
       @apply p-4;
     }
-  }
 
-  &-confirm-body{
-
-    .ant-modal-confirm-title{
-      @apply ml-2;
+    &-content {
+      @apply font-inter leading-5 ml-2 mr-6;
+      @apply text-neutral-700 !important;
     }
-
-    .ant-modal-confirm-content{
-      @apply ml-2 mr-6;
+  
+    &-title {
+      @apply ml-2 w-72;
+      @apply text-neutral-700 font-bold !important;
     }
-
+  
+    &-body {
+      @apply text-neutral-700 font-normal !important;
+    }
   }
 
   .ant-modal-confirm-btns{
     @apply mt-4 mr-4;
+
+    .ant-btn > span{
+      @apply leading-5;
+    }
   }
 
   &-close-x{
