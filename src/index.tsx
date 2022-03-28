@@ -58,3 +58,5 @@ export {
   TabPaneProps,
   renderTabHeader
 } from './Tabs';
+
+export { default as Steps, Step, StepsProps, StepProps } from './Steps';
