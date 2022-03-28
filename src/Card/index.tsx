@@ -3,16 +3,19 @@ import { default as AntCard, CardProps as AntCardProps, CardMetaProps as AntCard
 
 import './style.css'
 
-export type CardProps = AntCardProps
+export type CardProps = AntCardProps & {
+  hasButton?:boolean,
+}
 
 export type MetaProps = AntCardMetaProps & {
-  hasmeta: true | false
+  hasmeta: boolean,
 }
 
 export const { Meta } = AntCard
 
 const Card: React.FC<CardProps> = props => {
-  return <AntCard {...props} />
+  const { hasButton, ...restProps } = props
+  return <AntCard {...restProps} className={ hasButton ? "with-button" : ""}/>
 }
 
 export default Card

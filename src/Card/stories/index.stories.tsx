@@ -45,6 +45,7 @@ DefaultCardButton.args = {
     label: 'Card',
     title: 'Default Card Title',
     children: content,
+    hasButton:true,
     extra: <Button type="text">Button</Button>
   },
   meta: {
@@ -74,6 +75,7 @@ SmallCardButton.args = {
     size: 'small',
     title: 'Small Card Title',
     children: content,
+    hasButton:true,
     extra: (
       <Button size="small" type="text">
         Button
@@ -150,7 +152,6 @@ CoverCard.args = {
   meta: {
     label: 'Card',
     hasmeta: true,
-    avatar: <Avatar src="https://joeschmoe.io/api/v1/random" />,
     title: 'Default Card Title',
     description: 'Card description',
     extra: <DotsThree size={16} />
@@ -166,6 +167,7 @@ CoverCardAvatar.args = {
   meta: {
     label: 'Card',
     hasmeta: true,
+    avatar: <Avatar src="https://joeschmoe.io/api/v1/random" />,
     title: 'Default Card Title',
     description: 'Card description',
     extra: <DotsThree size={16} />

@@ -1,59 +1,17 @@
+@import 'antd/lib/style/default.css';
 @import 'antd/lib/card/style/index.css';
-@import 'antd/lib/tabs/style/index.css';
-@import '../Avatar/style.css';
-@import 'antd/lib/tabs/style/index.css';
-.ant-tabs {
-  &-nav {
-    @apply font-inter text-sm;
-  }
-  &-tab {
-    @apply text-neutral-400;
-    @apply hover:text-primary;
-    @apply pb-2;
-  }
-  &-top > .ant-tabs-nav::before {
-    @apply border-b-2 border-b-white;
-  }
-  .ant-tabs-tab-active {
-    @apply text-primary;
-    @apply hover:text-primary;
-    .ant-tabs-tab-btn {
-      @apply text-primary;
-      @apply focus:text-primary;
-    }
-  }
-  .ant-tabs-tab-btn {
-    @apply focus:text-primary;
-    @apply hover:text-primary;
-    span > .ant-badge {
-      @apply inline-grid pl-1.5;
-      .ant-badge-status-default {
-        @apply bg-primary;
-      }
-    }
-  }
-  .ant-tabs-ink-bar {
-    @apply bg-primary;
-  }
-  .ant-tabs-tab-disabled {
-    @apply text-neutral-300;
-    @apply hover:text-neutral-300 !important;
-    .ant-tabs-tab-btn {
-      @apply hover:text-neutral-300;
-      @apply hover:text-neutral-300;
-    }
-  }
-}
+@import '../Tabs/style.css';
+@import 'antd/lib/grid/style/index.css';
+
 .ant-card {
   @apply rounded-lg;
   @apply w-72;
   &-head {
-    @apply px-4;
+    @apply px-4 min-h-0;
     &-wrapper > {
       .ant-card-head-title {
         @apply font-inter font-semibold text-sm;
-        padding-bottom: 14px;
-        padding-top: 22px;
+        @apply pt-4 pb-2;
       }
       .ant-card-extra {
         @apply py-0 mt-1;
@@ -102,6 +60,7 @@
     &-detail {
       .ant-card-meta-title {
         @apply font-inter text-neutral-700 font-semibold text-sm;
+        @apply mb-1 !important;
       }
       .ant-card-meta-description {
         @apply font-inter text-neutral-700 text-sm;
@@ -111,12 +70,11 @@
   &-small {
     @apply w-64;
     .ant-card-head {
-      @apply px-2;
+      @apply px-2 min-h-0;
       .ant-card-head-wrapper > {
         .ant-card-head-title {
           @apply font-inter font-semibold text-xs;
-          @apply pt-3;
-          padding-bottom: 8px;
+          @apply pt-2 pb-1;
         }
         .ant-card-extra {
           @apply py-0;
@@ -143,6 +101,31 @@
     }
     .ant-tabs-tab {
       @apply pb-2  pt-2 text-sm !important;
+    }
+
+    .ant-tabs-tab + .ant-tabs-tab{
+      @apply ml-6;
+    }
+  }
+}
+
+
+.with-button {
+  .ant-card-head {
+    &-wrapper > {
+      .ant-card-head-title {
+        @apply pt-[18px] pb-3.5;
+      }
+    }
+  }
+}
+
+.ant-card-small.with-button {
+  .ant-card-head {
+    .ant-card-head-wrapper > {
+      .ant-card-head-title {
+        @apply pt-3 pb-[9px];
+      }
     }
   }
 }
