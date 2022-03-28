@@ -62,7 +62,8 @@
 
     & .ant-steps-icon {
       @apply text-sm;
-      line-height: 1.52rem;
+      /* line-height: 1.44rem; */
+      line-height: 0;
       top: 0;
     }
 
@@ -89,7 +90,7 @@
 
     & .anticon-close:before {
       @apply block;
-      transform: translateY(-32%);
+      transform: translateY(-28%);
       content: var(--ic-x-12-r600);
     }
 
@@ -111,7 +112,7 @@
 .ant-steps-item-finish {
   & .anticon-check:before {
     @apply block;
-    transform: translateY(-26%);
+    transform: translateY(-18%);
     content: var(--ic-check-12-s700);
   }
 }
