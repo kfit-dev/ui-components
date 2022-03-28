@@ -91,7 +91,7 @@ InlineMenu.decorators = [
           title="Navigation One"
           // disabled={true}
         >
-          <MenuItemGroup title="Item 1">
+          <MenuItemGroup title="Sub-menu 1">
             <MenuItem key="setting:1">Option 1</MenuItem>
             <MenuItem key="setting:2">Option 2</MenuItem>
           </MenuItemGroup>

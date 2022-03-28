@@ -97,13 +97,20 @@
   &.ant-menu-inline-collapsed {
     .ant-menu-submenu-selected {
       .ant-menu-submenu-title {
-        @apply bg-slate-100 !important;
-      }
+        @apply bg-slate-100;
+        @apply relative;
 
-      @apply border-l-2;
-      @apply border-slate-700;
-      @apply left-0;
-      @apply bg-slate-100;
+        &::after {
+          @apply content-[''];
+          @apply border-l-2;
+          @apply border-slate-700;
+          @apply top-0;
+          @apply left-0;
+          @apply h-full;
+          @apply bg-slate-100;
+          @apply absolute;
+        }
+      }
     }
   }
 
