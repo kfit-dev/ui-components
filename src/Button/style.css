@@ -2,7 +2,7 @@
   @apply rounded-lg font-inter h-auto;
   @apply inline-flex items-center justify-center border-none;
   @apply focus:border-transparent focus:outline-none;
-  @apply px-4 py-1.5 font-semibold;
+  @apply px-4 py-1.5 font-semibold leading-5;
 
   &.icon-start {
     @apply pl-2;
