@@ -1,5 +1,9 @@
+@import 'antd/lib/style/default.css';
 @import 'antd/lib/list/style/index.css';
-@import 'antd/lib/skeleton/style/index.css';
+@import '../Empty/style.css';
+@import 'antd/lib/spin/style/index.css';
+@import 'antd/lib/pagination/style/index.css';
+@import 'antd/lib/grid/style/index.css';
 
 .ant-list {
   /* for both lists */

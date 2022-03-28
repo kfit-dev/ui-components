@@ -8,6 +8,7 @@ import {
   ListItemMetaSkeleton,
   ListProps
 } from '../index';
+import 'antd/lib/skeleton/style/index.css';
 
 export default {
   title: 'List',
