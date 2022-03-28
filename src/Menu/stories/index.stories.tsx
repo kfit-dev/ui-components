@@ -89,7 +89,7 @@ InlineMenu.decorators = [
           key={'one'}
           icon={<HouseLine weight={isIconFill(selectedKey, 'one')} size={16} />}
           title="Navigation One"
-          disabled={true}
+          // disabled={true}
         >
           <MenuItemGroup title="Item 1">
             <MenuItem key="setting:1">Option 1</MenuItem>

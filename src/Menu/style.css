@@ -58,7 +58,10 @@
     .ant-menu-sub {
       .ant-menu-item-group {
         .ant-menu-item {
+          /* when hover, background color overflows */
+          @apply w-auto;
           @apply text-slate-700;
+
           /* hardcoded to margin-top: 4px, margin-bottom: 8px */
           @apply my-0;
 
@@ -70,7 +73,7 @@
           }
 
           &::after {
-            /* hardcoded to border-right: 1px solid #1890ff in antd codebase */
+            /* hardcoded to border-right: 2px solid #1890ff in antd codebase */
             border-right: unset;
           }
 
@@ -79,11 +82,10 @@
             @apply font-semibold;
 
             &::after {
-              /* hardcoded to border-right: 1px solid #1890ff in antd codebase */
+              /* hardcoded to border-right: 2px solid #1890ff in antd codebase */
               border-right: unset;
               @apply border-l-2;
               @apply border-slate-700;
-              @apply absolute;
               @apply left-0;
             }
           }
@@ -95,19 +97,34 @@
   &.ant-menu-inline-collapsed {
     .ant-menu-submenu-selected {
       .ant-menu-submenu-title {
-        @apply bg-slate-100;
-        @apply border-l-2;
-        @apply border-slate-700;
-        @apply left-0;
+        @apply bg-slate-100 !important;
       }
+
+      @apply border-l-2;
+      @apply border-slate-700;
+      @apply left-0;
+      @apply bg-slate-100;
     }
   }
 
   &.ant-menu-inline,
   &.ant-menu-inline-collapsed {
+    @apply bg-transparent;
     @apply rounded;
-    /* hardcoded to border-right: 1px solid #1890ff in antd codebase */
+    /* hardcoded to border-right: 2px solid #1890ff in antd codebase */
     border-right: unset;
+
+    .ant-menu-submenu {
+      @apply bg-white;
+
+      &:first-child {
+        @apply rounded-t-[inherit];
+      }
+
+      &:last-child {
+        @apply rounded-b-[inherit];
+      }
+    }
 
     :not(.ant-menu-submenu-disabled) {
       .ant-menu-submenu-title {
@@ -115,14 +132,41 @@
         /* horizontal menu requires hover for text color to be slate-700 */
         @apply text-slate-700;
         @apply my-0;
+        @apply rounded-[inherit];
+
+        /* when hover, background color overflows */
+        @apply w-auto;
 
         &:active {
-          /* hardcoded to border-right: 1px solid #1890ff in antd codebase */
+          /* hardcoded to border-right: 2px solid #1890ff in antd codebase */
           border-right: unset;
+          @apply rounded;
         }
 
         &:hover {
           @apply bg-neutral-100;
+        }
+      }
+    }
+
+    .ant-menu-submenu-selected {
+      &:first-child {
+        @apply rounded-tr-[inherit];
+        @apply rounded-tl-[inherit];
+
+        .ant-menu-submenu-title {
+          @apply rounded-tr-[inherit];
+          @apply rounded-tl-[inherit];
+        }
+      }
+
+      &:last-child {
+        @apply rounded-br-[inherit];
+        @apply rounded-bl-[inherit];
+
+        .ant-menu-submenu-title {
+          @apply rounded-br-[inherit];
+          @apply rounded-bl-[inherit];
         }
       }
     }
@@ -133,6 +177,8 @@
 .ant-menu-submenu {
   /* hardcoded to color #1890ff in antd codebase */
   @apply text-neutral-400 !important;
+
+  /* hardcoded to border-bottom: 2px solid #1890ff in antd codebase */
   border-bottom: unset;
 
   .ant-menu-sub {
