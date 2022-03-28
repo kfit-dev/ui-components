@@ -47,3 +47,4 @@ export {
 } from './Popconfirm';
 export { default as AutoComplete, AutoCompleteProps } from './AutoComplete';
 export { default as Tabs, TabsProps, TabPaneProps, renderTabHeader } from './Tabs'
+export { default as Card, CardProps, MetaProps } from './Card'
