@@ -37,3 +37,11 @@ export {
   QuarterPicker
 } from './DatePicker';
 export { default as Pagination, PaginationProps } from './Pagination';
+export {
+  default as Menu,
+  MenuItem,
+  MenuItemGroup,
+  MenuProps,
+  MenuItemProps,
+  MenuItemGroupProps
+} from './Menu';
