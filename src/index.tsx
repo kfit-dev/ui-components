@@ -45,3 +45,18 @@ export {
   MenuItemProps,
   MenuItemGroupProps
 } from './Menu';
+export { default as Message, MessageProps } from './Message';
+export { default as Drawer, DrawerProps } from './Drawer';
+export {
+  default as PopConfirm,
+  PopconfirmProps,
+  NoIcon,
+  WarningIcon
+} from './Popconfirm';
+export { default as AutoComplete, AutoCompleteProps } from './AutoComplete';
+export {
+  default as Tabs,
+  TabsProps,
+  TabPaneProps,
+  renderTabHeader
+} from './Tabs';
