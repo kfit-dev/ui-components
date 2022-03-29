@@ -5,28 +5,32 @@
 
 .ant-card {
   @apply rounded-lg;
-  @apply w-72;
+  @apply w-[279px];
   &-head {
     @apply px-4 min-h-0;
     &-wrapper > {
       .ant-card-head-title {
-        @apply font-inter font-semibold text-sm;
-        @apply pt-4 pb-2;
+        @apply font-inter font-semibold text-neutral-700 text-sm;
+        @apply pt-4 pb-2 pr-1.5;
       }
       .ant-card-extra {
         @apply py-0 mt-1;
+
+        button {
+          @apply mr-0;
+        }
       }
     }
   }
   &-body {
-    @apply font-inter text-sm;
+    @apply font-inter text-sm text-neutral-700 ;
     @apply py-0 px-4;
   }
   &-body > div > p:first-child {
     @apply pt-2;
   }
   &-body > div > p {
-    @apply pt-1 mb-0;
+    @apply pt-1 mb-0 w-[247px];
   }
   &-body > div > p:last-child {
     @apply pb-4;
@@ -59,11 +63,11 @@
     }
     &-detail {
       .ant-card-meta-title {
-        @apply font-inter text-neutral-700 font-semibold text-sm;
+        @apply font-inter text-neutral-700 font-semibold text-sm w-48;
         @apply mb-1 !important;
       }
       .ant-card-meta-description {
-        @apply font-inter text-neutral-700 text-sm;
+        @apply font-inter text-neutral-700 text-sm w-48;
       }
     }
   }
@@ -73,8 +77,8 @@
       @apply px-2 min-h-0;
       .ant-card-head-wrapper > {
         .ant-card-head-title {
-          @apply font-inter font-semibold text-xs;
-          @apply pt-2 pb-1;
+          @apply font-inter font-semibold text-xs text-neutral-700 ;
+          @apply pt-2 pb-1 pr-1.5;
         }
         .ant-card-extra {
           @apply py-0;
@@ -82,11 +86,11 @@
       }
     }
     .ant-card-body {
-      @apply font-inter text-xs;
+      @apply font-inter text-xs text-neutral-700 ;
       @apply py-0 px-2;
     }
     .ant-card-body > div > p {
-      @apply pt-1;
+      @apply pt-1 w-60;
     }
     .ant-card-body > div > p:last-child {
       @apply pb-2;
