@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Bell, HouseLine, MagnifyingGlass } from 'phosphor-react';
+import { Bell, CaretDown, HouseLine, MagnifyingGlass } from 'phosphor-react';
 import {
   default as Menu,
   MenuItemGroup,
@@ -40,7 +40,11 @@ TopNavigation.args = {
       <MenuItem key={'three'} disabled={true}>
         Navigation Three
       </MenuItem>
-      <MenuSubMenu key={'four'} title="Navigation One">
+      <MenuSubMenu
+        icon={<CaretDown size={16} weight={'light'} />}
+        key={'four'}
+        title="Navigation One"
+      >
         <MenuItemGroup title="Item 1">
           <MenuItem key="setting:1">Option 1</MenuItem>
           <MenuItem key="setting:2">Option 2</MenuItem>

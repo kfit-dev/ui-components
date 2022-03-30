@@ -47,6 +47,24 @@
         @apply text-neutral-300 !important;
       }
     }
+
+    .ant-menu-submenu {
+      &.ant-menu-submenu-open {
+        svg {
+          @apply -rotate-180;
+        }
+      }
+      .ant-menu-submenu-title {
+        /* background-color: red; */
+        @apply flex;
+        @apply items-center;
+        @apply flex-row-reverse;
+
+        svg {
+          @apply ml-2;
+        }
+      }
+    }
   }
 
   /* left side navigation */
