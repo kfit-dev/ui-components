@@ -17,7 +17,7 @@ export { default as Progress, ProgressProps } from './Progress';
 export { default as Avatar, AvatarProps } from './Avatar';
 export { default as AvatarGroup, AvatarGroupProps } from './AvatarGroup';
 export { default as Badge, BadgeProps } from './Badge';
-export { default as Popover } from './Popover';
+export { default as Popover, PopoverProps } from './Popover';
 export { default as Notification, NotificationProps } from './Notification';
 export { default as Input, Search, InputProps, SearchProps } from './Input';
 export {
@@ -32,6 +32,7 @@ export * from 'antd/lib/upload/interface';
 export { default as Alert, AlertProps, AlertWithButtons } from './Alert';
 export {
   default as Timeline,
+  TimelineItem,
   TimelineProps,
   TimelineItemProps
 } from './Timeline';
@@ -67,3 +68,4 @@ export {
   renderTabHeader
 } from './Tabs';
 export { default as Steps, Step, StepsProps, StepProps } from './Steps';
+export { default as Image, ImageProps } from './Image';
