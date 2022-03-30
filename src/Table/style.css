@@ -1,0 +1,16 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/table/style/index.css';
+
+@import '../Button/style.css';
+@import '../Empty/style.css';
+@import '../Radio/style.css';
+@import '../checkbox/style.css';
+/* @import 'antd/lib/checkbox/style/index.css'; */
+
+@import 'antd/lib/dropdown/style/index.css';
+
+@import 'antd/lib/spin/style/index.css';
+@import '../Pagination/style.css';
+@import '../Tooltip/style.css';
+@import '../Input/style.css';
+@import 'antd/lib/tree/style/index.css';
