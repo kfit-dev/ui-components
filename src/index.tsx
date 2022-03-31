@@ -51,10 +51,12 @@ export {
   MenuItem,
   MenuItemGroup,
   MenuSubMenu,
+  MenuDivider,
   MenuProps,
   MenuItemProps,
   MenuItemGroupProps,
-  MenuSubMenuProps
+  MenuSubMenuProps,
+  MenuDividerProps
 } from './Menu';
 export {
   default as Collapse,
@@ -79,3 +81,4 @@ export {
 } from './Tabs';
 export { default as Steps, Step, StepsProps, StepProps } from './Steps';
 export { default as Image, ImageProps } from './Image';
+export { default as Dropdown, DropdownProps } from './Dropdown';
