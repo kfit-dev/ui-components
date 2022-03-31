@@ -45,13 +45,23 @@ export {
   RangePicker,
   QuarterPicker
 } from './DatePicker';
+export { default as Pagination, PaginationProps } from './Pagination';
+export {
+  default as Menu,
+  MenuItem,
+  MenuItemGroup,
+  MenuSubMenu,
+  MenuProps,
+  MenuItemProps,
+  MenuItemGroupProps,
+  MenuSubMenuProps
+} from './Menu';
 export {
   default as Collapse,
   CollapsePanel,
   CollapseProps,
   CollapsePanelProps
 } from './Collapse';
-export { default as Pagination, PaginationProps } from './Pagination';
 export { default as Message, MessageProps } from './Message';
 export { default as Drawer, DrawerProps } from './Drawer';
 export {

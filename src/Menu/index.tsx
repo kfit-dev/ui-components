@@ -1,28 +1,40 @@
-import * as React from 'react'
-import { Menu as AntMenu, MenuProps as AntMenuProps } from 'antd'
-import { MenuDividerProps as AntMenuDividerProps } from 'antd/lib/menu'
-import { MenuTheme } from 'antd/lib/menu/MenuContext'
+import * as React from 'react';
+import {
+  Menu as AntMenu,
+  MenuProps as AntMenuProps,
+  MenuItemProps as AntMenuItemProps,
+  SubMenuProps as AntSubMenuProps
+} from 'antd';
+import { MenuItemGroupProps as AntMenuItemGroupProps } from 'antd/lib/menu';
 
-import './style.css'
-import { CaretDown } from 'phosphor-react'
-import defaults from '../defaults'
+import './style.css';
+import { CaretDown } from 'phosphor-react';
 
-export type MenuProps = AntMenuProps
-export type MenuDividerProps = AntMenuDividerProps
-
-export const isIconFill = (keyPath: string[], key: string) => (keyPath.includes(key) ? 'fill' : 'light')
+export type MenuProps = AntMenuProps;
+export type MenuItemProps = AntMenuItemProps;
+export type MenuSubMenuProps = AntSubMenuProps;
+export type MenuItemGroupProps = AntMenuItemGroupProps;
 
 const Menu: React.FC<MenuProps> = props => {
-  return <AntMenu {...props} />
-}
+  return <AntMenu {...props} />;
+};
 
-export const MenuDivider: React.FC<MenuDividerProps> = props => {
-  return <AntMenu.Divider {...props} />
-}
+export const MenuItem: React.FC<MenuItemProps> = props => {
+  return <AntMenu.Item {...props} />;
+};
+
+export const MenuSubMenu: React.FC<MenuSubMenuProps> = props => {
+  return <AntMenu.SubMenu {...props} />;
+};
+
+export const MenuItemGroup: React.FC<MenuItemGroupProps> = props => {
+  return <AntMenu.ItemGroup {...props} />;
+};
 
 Menu.defaultProps = {
-  theme: defaults.theme as MenuTheme,
-  expandIcon: ({ isOpen }) => <CaretDown size={16} style={{ transform: isOpen && 'rotate(-180deg)' }} />
-}
+  expandIcon: ({ isOpen }) => (
+    <CaretDown size={16} style={{ transform: isOpen && 'rotate(-180deg)' }} />
+  )
+};
 
-export default Menu
+export default Menu;
