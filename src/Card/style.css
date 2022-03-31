@@ -133,3 +133,12 @@
     }
   }
 }
+
+.with-meta-extra{
+  .ant-card-body{
+    @apply flex;
+  }
+  .ant-card-meta{
+    @apply w-full;
+  }
+}
