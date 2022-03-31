@@ -2,7 +2,7 @@ import * as React from 'react'
 import { default as AntModal, ModalFuncProps as AntModalFuncProps, ModalProps as AntModalProps } from 'antd/lib/modal'
 import classNames from 'classnames';
 
-import { Info, WarningCircle, XCircle } from 'phosphor-react'
+import { X, Info, WarningCircle, XCircle } from 'phosphor-react'
 
 import Button from '../Button';
 
@@ -23,20 +23,22 @@ const getClassName = ({ className, hasIcon }: ModalFuncProps) =>{
   return classNames(className, hasIcon ? 'with-icon' : '')
 };
 
+const defaultCloseIcon = <X size={16}/>;
+
 const originalFunctions = { ...AntModal } ;
 
 export const ModalFunctions = {
-  confirm: ({ icon, className,hasIcon, ...restProps }: ModalFuncProps)=> {   
-    return originalFunctions.confirm({ ...restProps, className: getClassName(restProps), icon: hasIcon ? icon : null,cancelButtonProps:{ className:"ant-btn-text" } })
+  confirm: ({ closeIcon = defaultCloseIcon, closable=true, icon, className,hasIcon, ...restProps }: ModalFuncProps)=> {   
+    return originalFunctions.confirm({ ...restProps, className: getClassName(restProps), icon: hasIcon ? icon : null,cancelButtonProps:{ className:"ant-btn-text" }, closable,closeIcon })
   },
-  error: ({ icon = <XCircle size={24} color={'#DC2626'}/>, confirmMode,className, ...restProps }: ModalFuncProps)=> {   
-    return confirmMode === undefined || confirmMode ? AntModal.confirm({ ...restProps, className: getClassName(restProps),icon:icon,cancelButtonProps:{ className:"ant-btn-text" } }) : originalFunctions.error({ ...restProps, className: getClassName(restProps), icon:icon })
+  error: ({ closeIcon = defaultCloseIcon, closable=true, icon = <XCircle size={24} color={'#DC2626'}/>, confirmMode,className, ...restProps }: ModalFuncProps)=> {   
+    return confirmMode === undefined || confirmMode ? AntModal.confirm({ ...restProps, className: getClassName(restProps),icon:icon,cancelButtonProps:{ className:"ant-btn-text" }, closable,closeIcon }) : originalFunctions.error({ ...restProps, className: getClassName(restProps), icon:icon, closable,closeIcon })
   },
-  warning: ({ icon = <WarningCircle size={24} color={'#FBBF24'}/>, confirmMode,className, ...restProps }: ModalFuncProps)=> {   
-    return confirmMode === undefined || confirmMode ? AntModal.confirm({ ...restProps, className: getClassName(restProps),icon:icon,cancelButtonProps:{ className:"ant-btn-text" } }) : originalFunctions.warning({ ...restProps, className: getClassName(restProps), icon:icon })
+  warning: ({ closeIcon = defaultCloseIcon, closable=true, icon = <WarningCircle size={24} color={'#FBBF24'}/>, confirmMode,className, ...restProps }: ModalFuncProps)=> {   
+    return confirmMode === undefined || confirmMode ? AntModal.confirm({ ...restProps, className: getClassName(restProps),icon:icon,cancelButtonProps:{ className:"ant-btn-text" }, closable,closeIcon }) : originalFunctions.warning({ ...restProps, className: getClassName(restProps), icon:icon, closable,closeIcon })
   },
-  info: ({ icon = <Info size={24} color={"#334155"}/>, confirmMode,className, ...restProps }: ModalFuncProps)=> {   
-    return confirmMode === undefined || confirmMode ? AntModal.confirm({ ...restProps, className: getClassName(restProps),icon:icon,cancelButtonProps:{ className:"ant-btn-text" } }) : originalFunctions.info({ ...restProps, className: getClassName(restProps), icon:icon })
+  info: ({ closeIcon = defaultCloseIcon, closable=true, icon = <Info size={24} color={"#334155"}/>, confirmMode,className, ...restProps }: ModalFuncProps)=> {   
+    return confirmMode === undefined || confirmMode ? AntModal.confirm({ ...restProps, className: getClassName(restProps),icon:icon,cancelButtonProps:{ className:"ant-btn-text" }, closable,closeIcon }) : originalFunctions.info({ ...restProps, className: getClassName(restProps), icon:icon, closable,closeIcon })
   },
 }
 

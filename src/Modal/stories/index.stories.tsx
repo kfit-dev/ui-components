@@ -1,6 +1,6 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { X, CheckCircle } from 'phosphor-react'
+import { CheckCircle } from 'phosphor-react'
 import { default as Modal, ModalProps, ModalFunctions } from '../index'
 
 export default {
@@ -19,8 +19,6 @@ Basic.args = {
   modalFunc: ()=>ModalFunctions.confirm({
     title: 'Modal Title',
     content: content,
-    closable:true,
-    closeIcon:<X size={16}/>,
     okText:"Confirm",
     cancelText:"Button",
     confirmMode: false,
@@ -34,8 +32,6 @@ BasicInfo.args = {
   modalFunc: ()=>ModalFunctions.info({
     title: 'Modal Title',
     content: content,
-    closable:true,
-    closeIcon:<X size={16}/>,
     okText:"Confirm",
     cancelText:"Button",
     confirmMode: true,
@@ -49,8 +45,6 @@ Success.args = {
   modalFunc: ()=>ModalFunctions.info({
     title: 'Modal Title',
     content: content,
-    closable:true,
-    closeIcon:<X size={16}/>,
     okText:"Confirm",
     cancelText:"Button",
     icon: <CheckCircle size={24} color={'#10B981'} />,
@@ -65,8 +59,6 @@ Error.args = {
   modalFunc: ()=>ModalFunctions.error({
     title: 'Modal Title',
     content: content,
-    closable:true,
-    closeIcon:<X size={16}/>,
     okText:"Confirm",
     cancelText:"Button",
     confirmMode: true,
@@ -80,8 +72,6 @@ Warning.args = {
   modalFunc: ()=>ModalFunctions.warning({
     title: 'Modal Title',
     content: content,
-    closable:true,
-    closeIcon:<X size={16}/>,
     okText:"Confirm",
     cancelText:"Button",
     confirmMode: false,
