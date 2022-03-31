@@ -9,7 +9,6 @@ import { MenuItemGroupProps as AntMenuItemGroupProps } from 'antd/lib/menu';
 
 import './style.css';
 import { CaretDown } from 'phosphor-react';
-// MenuItemGroupProps;
 
 export type MenuProps = AntMenuProps;
 export type MenuItemProps = AntMenuItemProps;
