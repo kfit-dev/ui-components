@@ -1,6 +1,6 @@
 @import 'antd/lib/style/default.css';
 @import 'antd/lib/menu/style/index.css';
-@import 'antd/lib/tooltip/style/index.css';
+@import '../Tooltip/style.css';
 
 .ant-menu {
   @apply font-inter;
