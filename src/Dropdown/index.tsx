@@ -7,9 +7,9 @@ export type DropdownProps = AntDropdownProps;
 
 const Dropdown: React.FC<DropdownProps> = (props) => {
   return(
-    <AntDropdown overlay={props.overlay}>
+    <AntDropdown overlay={props.overlay} trigger={['click']}>
       <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-      Hover me
+      Click me
       </a>
     </AntDropdown>
   );

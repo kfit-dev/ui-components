@@ -98,9 +98,9 @@ export const MenuWithState= () => {
   );
 
   return(
-    <Dropdown overlay={menu}>
+    <Dropdown overlay={menu} trigger={['click']}>
       <a onClick={e => e.preventDefault()}>
-      Hover me
+      Click me
       </a>
     </Dropdown>
   );
