@@ -49,9 +49,11 @@ export {
   default as Menu,
   MenuItem,
   MenuItemGroup,
+  MenuSubMenu,
   MenuProps,
   MenuItemProps,
-  MenuItemGroupProps
+  MenuItemGroupProps,
+  MenuSubMenuProps
 } from './Menu';
 export {
   default as Collapse,

@@ -12,7 +12,7 @@ import { CaretDown } from 'phosphor-react';
 
 export type MenuProps = AntMenuProps;
 export type MenuItemProps = AntMenuItemProps;
-export type SubMenuProps = AntSubMenuProps;
+export type MenuSubMenuProps = AntSubMenuProps;
 export type MenuItemGroupProps = AntMenuItemGroupProps;
 
 const Menu: React.FC<MenuProps> = props => {
@@ -23,7 +23,7 @@ export const MenuItem: React.FC<MenuItemProps> = props => {
   return <AntMenu.Item {...props} />;
 };
 
-export const MenuSubMenu: React.FC<SubMenuProps> = props => {
+export const MenuSubMenu: React.FC<MenuSubMenuProps> = props => {
   return <AntMenu.SubMenu {...props} />;
 };
 
