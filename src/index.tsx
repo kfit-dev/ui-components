@@ -79,3 +79,4 @@ export {
 } from './Tabs';
 export { default as Steps, Step, StepsProps, StepProps } from './Steps';
 export { default as Image, ImageProps } from './Image';
+export { default as Modal,ModalFunctions, ModalProps,ModalFuncProps } from './Modal';
