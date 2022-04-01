@@ -19,6 +19,7 @@
         }
 
         &-submenu-title{
+            @apply font-inter text-neutral-700;
             @apply hover:bg-neutral-100;
             @apply mx-2 p-2 rounded;
         }
