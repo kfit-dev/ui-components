@@ -45,13 +45,23 @@ export {
   RangePicker,
   QuarterPicker
 } from './DatePicker';
+export { default as Pagination, PaginationProps } from './Pagination';
+export {
+  default as Menu,
+  MenuItem,
+  MenuItemGroup,
+  MenuSubMenu,
+  MenuProps,
+  MenuItemProps,
+  MenuItemGroupProps,
+  MenuSubMenuProps
+} from './Menu';
 export {
   default as Collapse,
   CollapsePanel,
   CollapseProps,
   CollapsePanelProps
 } from './Collapse';
-export { default as Pagination, PaginationProps } from './Pagination';
 export { default as Message, MessageProps } from './Message';
 export { default as Drawer, DrawerProps } from './Drawer';
 export {
@@ -69,4 +79,5 @@ export {
 } from './Tabs';
 export { default as Steps, Step, StepsProps, StepProps } from './Steps';
 export { default as Image, ImageProps } from './Image';
+export { default as Modal,ModalFunctions, ModalProps,ModalFuncProps } from './Modal';
 export { default as Card, CardProps, MetaProps } from './Card'
