@@ -15,6 +15,7 @@
       }
       .ant-card-extra {
         @apply py-0 mt-1;
+        @apply cursor-pointer;
 
         button {
           @apply mr-0;
@@ -137,6 +138,10 @@
 .with-meta-extra{
   .ant-card-body{
     @apply flex;
+
+    svg{
+      @apply cursor-pointer;
+    }
   }
   .ant-card-meta{
     @apply w-full;
