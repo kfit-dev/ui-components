@@ -3,7 +3,7 @@ import { useState } from '@storybook/addons';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { UserCircle } from 'phosphor-react';
-import { default as Menu, MenuItem, MenuSubMenu, MenuItemGroup,MenuDivider } from '../../Menu';
+import { default as Menu, MenuItem, MenuSubMenu, MenuItemGroup, MenuDivider } from '../../Menu';
 import { default as Dropdown, DropdownProps } from '../index'
 
 export default {
@@ -11,40 +11,48 @@ export default {
   component: Dropdown,
 } as ComponentMeta<typeof Dropdown>;
 
-const Template: ComponentStory<typeof Dropdown> = (args: DropdownProps) => <Dropdown {...args} />;
+const Template: ComponentStory<typeof Dropdown> = (args: DropdownProps) => {
+  return(
+    <Dropdown {...args}>
+      <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+      Click me
+      </a>
+    </Dropdown>
+  );
+};
 
 const menu = (
   <Menu style={{ width: 320 }}>
-    <MenuItem>Dropdown 1</MenuItem>
-    <MenuItem>Dropdown 2</MenuItem>
-    <MenuItem>Dropdown 3</MenuItem>
-    <MenuItem>Dropdown 4</MenuItem>
-    <MenuItem>Dropdown 5</MenuItem>
-    <MenuItem>Dropdown 6</MenuItem>
+    <MenuItem key="1">Dropdown 1</MenuItem>
+    <MenuItem key="2">Dropdown 2</MenuItem>
+    <MenuItem key="3">Dropdown 4</MenuItem>
+    <MenuItem key="4">Dropdown 3</MenuItem>
+    <MenuItem key="5">Dropdown 5</MenuItem>
+    <MenuItem key="6">Dropdown 6</MenuItem>
   </Menu>
 );
 
 const menuWithDivider = (
   <Menu style={{ width: 320 }}>
-    <MenuItem>Dropdown 1</MenuItem>
-    <MenuItem>Dropdown 2</MenuItem>
-    <MenuItem>Dropdown 3</MenuItem>
-    <MenuItem>Dropdown 4</MenuItem>
+    <MenuItem key="1">Dropdown 1</MenuItem>
+    <MenuItem key="2">Dropdown 2</MenuItem>
+    <MenuItem key="3">Dropdown 4</MenuItem>
+    <MenuItem key="4">Dropdown 3</MenuItem>
     <MenuDivider />
-    <MenuItem>Dropdown 5</MenuItem>
-    <MenuItem>Dropdown 6</MenuItem>
+    <MenuItem key="5">Dropdown 5</MenuItem>
+    <MenuItem key="6">Dropdown 6</MenuItem>
   </Menu>
 );
 
 const menuWithSubmenu = (
   <Menu style={{ width: 320 }}>
     <MenuItemGroup title="Group title">
-      <MenuItem>Dropdown 1</MenuItem>
-      <MenuItem>Dropdown 2</MenuItem>
+      <MenuItem key="1">Dropdown 1</MenuItem>
+      <MenuItem key="2">Dropdown 2</MenuItem>
     </MenuItemGroup>
-    <MenuSubMenu title="Sub-menu">
-      <MenuItem>Sub-menu 1</MenuItem>
-      <MenuItem>Sub-menu 2</MenuItem>
+    <MenuSubMenu key="3" title="Sub-menu">
+      <MenuItem key="sub1">Sub-menu 1</MenuItem>
+      <MenuItem key="sub2">Sub-menu 2</MenuItem>
     </MenuSubMenu>
     <MenuDivider/>
     <MenuItemGroup title="Title 2">
@@ -60,6 +68,7 @@ export const Basic = Template.bind({});
 Basic.args = {
   label: 'Dropdown',
   overlay: menu ,
+  trigger:"click",
 };
 
 export const MenuWithDivider = Template.bind({});
@@ -67,6 +76,7 @@ export const MenuWithDivider = Template.bind({});
 MenuWithDivider.args = {
   label: 'Dropdown',
   overlay: menuWithDivider ,
+  trigger:"click",
 };
 
 export const MenuWithSubmenu = Template.bind({});
@@ -74,6 +84,7 @@ export const MenuWithSubmenu = Template.bind({});
 MenuWithSubmenu.args = {
   label: 'Dropdown',
   overlay: menuWithSubmenu ,
+  trigger:"click",
 };
 
 
