@@ -3,9 +3,9 @@ import {
   Menu as AntMenu,
   MenuProps as AntMenuProps,
   MenuItemProps as AntMenuItemProps,
-  SubMenuProps as AntSubMenuProps
+  SubMenuProps as AntSubMenuProps,
 } from 'antd';
-import { MenuItemGroupProps as AntMenuItemGroupProps } from 'antd/lib/menu';
+import { MenuDividerProps as AntMenuDividerProps, MenuItemGroupProps as AntMenuItemGroupProps } from 'antd/lib/menu';
 
 import './style.css';
 import { CaretDown } from 'phosphor-react';
@@ -14,6 +14,7 @@ export type MenuProps = AntMenuProps;
 export type MenuItemProps = AntMenuItemProps;
 export type MenuSubMenuProps = AntSubMenuProps;
 export type MenuItemGroupProps = AntMenuItemGroupProps;
+export type MenuDividerProps = AntMenuDividerProps;
 
 const Menu: React.FC<MenuProps> = props => {
   return <AntMenu {...props} />;
@@ -30,6 +31,11 @@ export const MenuSubMenu: React.FC<MenuSubMenuProps> = props => {
 export const MenuItemGroup: React.FC<MenuItemGroupProps> = props => {
   return <AntMenu.ItemGroup {...props} />;
 };
+
+export const MenuDivider: React.FC<MenuDividerProps> = props => {
+  return <AntMenu.Divider {...props} />;
+};
+
 
 Menu.defaultProps = {
   expandIcon: ({ isOpen }) => (
