@@ -10,18 +10,57 @@ export default {
 
 
 export const Basic = () =>{
+
+  const description = {
+    businessRegName : {
+      label : "Business registration name",
+      content : "Puma Sdn Bhd"
+    },
+    businessRegNumber: {
+      label : "Business registration number",
+      content : "11223344X"
+    },
+    businessRegAddress: {
+      label : "Business registration address",
+      content : "Lot 123-A, Jalan Sungai Besar 45, Seksyen Sungai Besar, 67890 Sungai Besar, Kuala Lumpur."
+    },
+    regNumber: {
+      label : "SST/GST/VAT registration number",
+      content : "123450000"
+    },
+    businessBrandName: {
+      label : "Business brand name",
+      content : "Puma"
+    },
+    businessType: {
+      label : "Business type",
+      content : "Online merchant (e-commerce)"
+    },
+    website: {
+      label : "Website",
+      content : "www.puma.com.my"
+    },
+    category: {
+      label : "Category",
+      content : "Retail"
+    },
+    reportCategory: {
+      label : "Reporting category",
+      content : "Sportswear / Athletic"
+    },
+    merchantMCC: {
+      label : "Merchanr's MCC",
+      content : "1000 - Fashion retail"
+    }
+  }
+
   return(
     <Descriptions title="Business Details" layout="vertical" colon={false}>
-      <DescriptionsItem label="Business registration name">Puma Sdn Bhd</DescriptionsItem>
-      <DescriptionsItem label="Business registration number">11223344X</DescriptionsItem>
-      <DescriptionsItem label="Business registration address">Lot 123-A, Jalan Sungai Besar 45, Seksyen Sungai Besar, 67890 Sungai Besar, Kuala Lumpur.</DescriptionsItem>
-      <DescriptionsItem label="Business registration name">123450000</DescriptionsItem>
-      <DescriptionsItem label="Business brand name">Puma</DescriptionsItem>
-      <DescriptionsItem label="Business type">Online merchant (e-commerce)</DescriptionsItem>
-      <DescriptionsItem label="Website">www.puma.com.my</DescriptionsItem>
-      <DescriptionsItem label="Category">Retail</DescriptionsItem>
-      <DescriptionsItem label="Reporting category">Sportswear / Athletic</DescriptionsItem>
-      <DescriptionsItem label="Merchant's MCC">1000 - Fashion retail</DescriptionsItem>
+      {
+        Object.keys(description).map((Item,index) =>(
+          <DescriptionsItem key={index} label={description[Item].label}>{description[Item].content}</DescriptionsItem>
+        ))
+      }
     </Descriptions>
   );
 }
