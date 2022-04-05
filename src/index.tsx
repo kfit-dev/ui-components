@@ -84,3 +84,4 @@ export { default as Image, ImageProps } from './Image';
 export { default as Modal,ModalFunctions, ModalProps,ModalFuncProps } from './Modal';
 export { default as Card, CardProps, MetaProps } from './Card'
 export { default as Dropdown, DropdownProps } from './Dropdown';
+export { default as Breadcrumb,BreadcrumbItem, BreadcrumbProps,BreadcrumbItemProps } from './Breadcrumb';
