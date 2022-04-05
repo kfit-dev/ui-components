@@ -6,11 +6,12 @@ import {
 } from 'antd/lib/breadcrumb'
 
 import './style.css'
+import { default as BreadcrumbItemType } from 'antd/lib/breadcrumb/BreadcrumbItem';
 
 export type BreadcrumbProps = AntBreadcrumbProps
 export type BreadcrumbItemProps = AntBreadcrumbItemProps
 
-export const BreadcrumbItem: React.FC<AntBreadcrumbItemProps> = props => <AntBreadcrumb.Item {...props} />
+export const BreadcrumbItem : typeof BreadcrumbItemType = AntBreadcrumb.Item;
 
 const Breadcrumb: React.FC<BreadcrumbProps> = props => {
   return <AntBreadcrumb {...props} />
