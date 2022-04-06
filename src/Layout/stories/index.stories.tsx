@@ -68,7 +68,7 @@ const Template: Story<Args> = (args: Args) => {
           openKeys={openKeys}
           onOpenChange={handleMenuOpen}
         >
-          <SubMenu key="sub3" icon={<WithAntIconSpan icon={<Handshake size={16} />} />} title="Merchant Connect">
+          <SubMenu key="sub3" icon={<WithAntIconSpan icon={<Handshake weight="fill" />} />} title="Merchant Connect">
             <MenuItem key="10">My Merchants</MenuItem>
             <MenuItem key="11">My Submissions</MenuItem>
             <MenuItem key="12">My Drafts</MenuItem>
@@ -114,7 +114,7 @@ const Template: Story<Args> = (args: Args) => {
           <Row>
             <Col offset={1} span={22}>
               <PageHeaderTitle>My Merchants</PageHeaderTitle>
-              <PageHeaderSubtitle>{"This is the list of merchants you're in charge of."}</PageHeaderSubtitle>
+              <PageHeaderSubtitle>Here is the list of merchants you are working with.</PageHeaderSubtitle>
             </Col>
           </Row>
         </Content>
