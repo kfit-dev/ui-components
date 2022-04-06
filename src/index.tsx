@@ -72,3 +72,4 @@ export * from './HOCs'
 
 // None-modified components
 export { Typography, Grid, Form } from 'antd'
+export { default as Description, DescriptionsItem, DescriptionsProps, DescriptionsItemProps } from './Descriptions';
