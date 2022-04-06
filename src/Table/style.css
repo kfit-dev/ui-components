@@ -14,3 +14,160 @@
 @import '../Tooltip/style.css';
 @import '../Input/style.css';
 @import 'antd/lib/tree/style/index.css';
+
+.ant-table-wrapper {
+  .ant-table {
+    @apply font-inter;
+    @apply rounded-xl;
+    @apply overflow-hidden;
+    @apply border;
+    @apply border-slate-100;
+
+    .ant-table-thead {
+      tr {
+        th {
+          @apply bg-white;
+          @apply font-semibold;
+          @apply text-sm;
+          @apply text-neutral-700;
+
+          &::before {
+            /* hardcoded to rgba(0, 0, 0, 0.06) in antd codebase */
+            @apply bg-neutral-300 !important;
+          }
+        }
+
+        .ant-table-filter-trigger {
+          @apply text-neutral-700;
+          &.active {
+            @apply text-primary;
+          }
+        }
+      }
+
+      .ant-table-column-sorter,
+      .ant-table-column-sorter-full {
+        @apply flex;
+        @apply items-center;
+
+        svg {
+          @apply hidden;
+        }
+      }
+
+      .ant-table-column-sort {
+        .ant-table-column-title {
+          .sort-ascend,
+          .sort-descend {
+            polyline,
+            line {
+              @apply transition-all;
+              @apply duration-300;
+            }
+          }
+
+          .sort-ascend {
+            polyline,
+            line {
+              &:last-of-type {
+                @apply stroke-primary;
+              }
+            }
+          }
+
+          .sort-descend {
+            polyline,
+            line {
+              &:first-of-type {
+                @apply stroke-primary;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .ant-table-tbody {
+      td {
+        @apply font-normal;
+        @apply text-neutral-700;
+
+        &:last-child {
+          a {
+            @apply text-primary;
+            @apply font-semibold;
+          }
+        }
+      }
+
+      .ant-table-row {
+        &:hover {
+          td {
+            @apply bg-neutral-100;
+          }
+        }
+
+        &.ant-table-row-selected {
+          td {
+            @apply bg-slate-100;
+          }
+        }
+      }
+    }
+
+    /* affects thead and tbody */
+    .drag-visible {
+      @apply pl-6;
+      svg {
+        @apply m-auto;
+      }
+    }
+
+    /* affects thead and tbody */
+    .ant-table-selection-column {
+      @apply pl-5;
+    }
+  }
+}
+
+tr.drop-over-downward td {
+  border-bottom: 2px dashed #1890ff;
+}
+
+tr.drop-over-upward td {
+  border-top: 2px dashed #1890ff;
+}
+
+/* when dragging items in table */
+.row-dragging {
+  @apply font-inter;
+  @apply flex;
+  @apply items-center;
+  @apply bg-neutral-100;
+  @apply border;
+  @apply border-slate-100;
+
+  td {
+    &:not(:first-child) {
+      @apply m-auto;
+    }
+    @apply m-[30px];
+    /* @apply px-5; */
+  }
+
+  .ant-table-cell {
+    a {
+      @apply text-primary;
+      @apply font-semibold;
+    }
+  }
+
+  .ant-table-cell-fix-right,
+  .ant-table-cell-fix-left {
+    @apply bg-transparent;
+  }
+}
+
+.row-dragging .drag-visible {
+  visibility: visible;
+}
