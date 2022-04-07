@@ -1,0 +1,48 @@
+@import 'antd/lib/page-header/style/index.css';
+@import '../Breadcrumb/style.css';
+@import '../Avatar/style.css';
+
+.ant-page-header{
+
+    .ui-page-header{
+        @apply flex flex-col;
+
+        &-title{
+            @apply font-inter text-slate-700 text-xl font-bold mb-1;
+        }
+
+        &-subtitle{
+            @apply font-inter text-neutral-400 text-sm font-normal;
+        }
+    }
+
+    &-heading-left{
+        @apply my-0;
+        .ant-page-header-back{
+            @apply flex;
+        }
+    }
+
+    &-heading-title{
+        @apply text-slate-700 text-xl font-bold mr-0;
+    }
+
+    &-heading-sub-title{
+        @apply text-neutral-400 text-sm font-normal;
+    }
+
+    .ant-breadcrumb + &-heading {
+        @apply mt-4;
+    }
+
+    &-back{
+        &-button{
+            @apply w-10 h-10 rounded-full;
+            @apply flex bg-white !important;
+
+            svg{
+                @apply justify-center self-center w-full;
+            }
+        }
+    }
+}
