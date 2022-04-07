@@ -45,10 +45,10 @@ export default {
 const format = (date: string) =>
   fnFormat(typeof date === 'string' ? parseISO(date) : date, 'dd MMM yyyy');
 
-enum SubmissionStatus {
-  NotStarted,
-  Submitted,
-  Approved
+const SubmissionStatus = {
+  NotStarted: 'Not started',
+  Submitted: 'Submitted',
+  Approved: 'Approved'
 }
 
 type RecordType = {
@@ -56,7 +56,7 @@ type RecordType = {
   submissionDate: string;
   merchantName: string;
   outletLocation: string;
-  submissionStatus: SubmissionStatus;
+  submissionStatus: string;
   productType: string;
 };
 
