@@ -2,7 +2,12 @@
   "env": {
     "browser": true
   },
-  "extends": ["plugin:react/recommended", "standard", "prettier", "prettier/react"],
+  "extends": [
+    "plugin:react/recommended",
+    "standard",
+    "prettier",
+    "prettier/react"
+  ],
   "parser": "@typescript-eslint/parser",
   "settings": {
     "react": {
@@ -19,8 +24,7 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "space-before-function-paren": "off",
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["error"],
+    "no-unused-vars": "error",
     "react/display-name": "off",
     "no-console": [
       "error",
