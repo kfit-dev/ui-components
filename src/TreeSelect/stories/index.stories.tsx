@@ -4,7 +4,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import {
   default as TreeSelect,
   TreeSelectProps,
-  TreeSelectTreeNode
 } from '../index';
 
 export default {
@@ -109,11 +108,7 @@ const recursiveTreeNodes = (tree: TreeNodesType[]) => {
 
 Primary.decorators = [
   Story => {
-    console.log('our tree!\n', treeNodesArray);
-    console.log(
-      'recursiveTreeNodes\n',
-      recursiveTreeNodes([...treeNodesArray])
-    );
+    recursiveTreeNodes([...treeNodesArray])
     const [value, setValue] = React.useState(undefined);
     const onChange = () => {
       setValue(value);
