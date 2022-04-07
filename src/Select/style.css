@@ -1,6 +1,6 @@
 @import 'antd/lib/style/default.css';
 @import 'antd/lib/select/style/index.css';
-@import '../empty/style.css';
+@import '../Empty/style.css';
 
 .ant-select {
   @apply font-inter bg-white rounded-lg flex;
