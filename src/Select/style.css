@@ -107,6 +107,26 @@
   }
 }
 
+.ant-select-dropdown {
+  & .ui-checkable-option {
+    @apply flex items-center;
+
+    & .ui-item-text {
+      @apply flex-1;
+    }
+
+    & .ui-item-check {
+      @apply invisible;
+    }
+  }
+
+  & .ant-select-item-option-selected {
+    & .ui-item-check {
+      @apply ml-1 visible;
+    }
+  }
+}
+
 .ant-form-item-has-error {
   .ant-select-selection-search-input {
     @apply text-red-600;

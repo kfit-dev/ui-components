@@ -5,7 +5,7 @@ import { Handshake, Person } from 'phosphor-react'
 
 import WithAntIconSpan from '../../HOCs'
 import { default as Menu, MenuItem, SubMenu, isIconFill } from '../../Menu'
-import Select from '../../Select'
+import Select, { CheckeableItem, Option } from '../../Select'
 import Tag from '../../Tag'
 
 import {
@@ -92,6 +92,8 @@ const Template: Story<Args> = (args: Args) => {
   const [openKeys, setOpenKeys] = React.useState<string[]>([])
   const [selectedKeyPath, setSelectedKeyPath] = React.useState<string[]>(['sub1', '1'])
 
+  const [selectedCountry, setSelectedCountry] = useState('MY')
+
   const handleMenuOpen = keys => {
     const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1)
     if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) setOpenKeys(keys)
@@ -137,17 +139,31 @@ const Template: Story<Args> = (args: Args) => {
             {isStaging && <Tag color={'success'}>ia-staging</Tag>}
             <Select
               style={{ width: 110 }}
-              defaultValue={'MY'}
+              defaultValue={selectedCountry}
+              optionLabelProp={'label'}
               bordered={false}
               dropdownMatchSelectWidth={false}
               showArrow
-              options={[
+              onChange={value => setSelectedCountry(value)}
+              // need to keep
+              // options={[
+              //   { label: 'Malaysia', value: 'MY' },
+              //   { label: 'Singapore', value: 'SG' },
+              //   { label: 'Indonesia', value: 'ID' },
+              //   { label: 'India', value: 'IN' }
+              // ]}
+            >
+              {[
                 { label: 'Malaysia', value: 'MY' },
                 { label: 'Singapore', value: 'SG' },
                 { label: 'Indonesia', value: 'ID' },
                 { label: 'India', value: 'IN' }
-              ]}
-            />
+              ].map(item => (
+                <Option key={item.value} value={item.value} label={item.label}>
+                  <CheckeableItem>{item.label}</CheckeableItem>
+                </Option>
+              ))}
+            </Select>
           </HeaderEndContent>
         </Header>
         <Content style={{ margin: '0 16px' }}>
