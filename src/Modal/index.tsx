@@ -1,44 +1,34 @@
-import * as React from 'react';
-import {
-  default as AntModal,
-  ModalFuncProps as AntModalFuncProps,
-  ModalProps as AntModalProps
-} from 'antd/lib/modal';
-import classNames from 'classnames';
+import * as React from 'react'
+import { default as AntModal, ModalFuncProps as AntModalFuncProps, ModalProps as AntModalProps } from 'antd/lib/modal'
+import classNames from 'classnames'
 
-import { X, Info, WarningCircle, XCircle } from 'phosphor-react';
+import { X, Info, WarningCircle, XCircle } from 'phosphor-react'
 
-import Button from '../Button';
+import Button from '../Button'
 
-import './style.css';
+import './style.css'
 
 export type ModalProps = AntModalProps & {
-  icon?: React.ReactNode;
-  confirmMode?: boolean;
-  modalFunc: (args: ModalFuncProps) => void;
-};
+  icon?: React.ReactNode
+  confirmMode?: boolean
+  modalFunc: (args: ModalFuncProps) => void
+}
 
 export type ModalFuncProps = AntModalFuncProps & {
-  hasIcon?: boolean;
-  confirmMode?: boolean;
-};
+  hasIcon?: boolean
+  confirmMode?: boolean
+}
 
 const getClassName = ({ className, hasIcon }: ModalFuncProps) => {
-  return classNames(className, hasIcon ? 'with-icon' : '');
-};
+  return classNames(className, hasIcon ? 'with-icon' : '')
+}
 
-const defaultCloseIcon = <X size={16} />;
+const defaultCloseIcon = <X size={16} />
 
-const originalFunctions = { ...AntModal };
+const originalFunctions = { ...AntModal }
 
 export const ModalFunctions = {
-  confirm: ({
-    closeIcon = defaultCloseIcon,
-    closable = true,
-    icon,
-    hasIcon,
-    ...restProps
-  }: ModalFuncProps) => {
+  confirm: ({ closeIcon = defaultCloseIcon, closable = true, icon, hasIcon, ...restProps }: ModalFuncProps) => {
     return originalFunctions.confirm({
       ...restProps,
       className: getClassName(restProps),
@@ -46,7 +36,7 @@ export const ModalFunctions = {
       cancelButtonProps: { className: 'ant-btn-text' },
       closable,
       closeIcon
-    });
+    })
   },
   error: ({
     closeIcon = defaultCloseIcon,
@@ -70,7 +60,7 @@ export const ModalFunctions = {
           icon: icon,
           closable,
           closeIcon
-        });
+        })
   },
   warning: ({
     closeIcon = defaultCloseIcon,
@@ -94,7 +84,7 @@ export const ModalFunctions = {
           icon: icon,
           closable,
           closeIcon
-        });
+        })
   },
   info: ({
     closeIcon = defaultCloseIcon,
@@ -118,14 +108,12 @@ export const ModalFunctions = {
           icon: icon,
           closable,
           closeIcon
-        });
+        })
   }
-};
+}
 
 const Modal: React.FC<ModalProps> = props => {
-  return (
-    <Button onClick={() => props.modalFunc({ ...props })}>Press Me</Button>
-  );
-};
+  return <Button onClick={() => props.modalFunc({ ...props })}>Press Me</Button>
+}
 
-export default Modal;
+export default Modal
