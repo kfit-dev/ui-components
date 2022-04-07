@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Table as AntTable, TableProps as AntTableProps } from 'antd';
-import { ArrowsDownUp, CaretLeft, CaretRight, Funnel } from 'phosphor-react';
 import { ColumnType } from 'antd/lib/table';
 import { SortOrder } from 'antd/lib/table/interface';
+import { ArrowsDownUp, CaretLeft, CaretRight, Funnel } from 'phosphor-react';
 import { itemRender } from '../Pagination';
 
 import './style.css';

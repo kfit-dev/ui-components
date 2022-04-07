@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ComponentMeta, Story } from '@storybook/react';
 import { ColumnsType, TableRowSelection } from 'antd/lib/table/interface';
+import { CaretDown, List } from 'phosphor-react';
 import {
   SortableContainer,
   SortableElement,
@@ -12,7 +13,7 @@ import {
   format as fnFormat,
   differenceInMilliseconds
 } from 'date-fns';
-import { CaretDown, List } from 'phosphor-react';
+
 import { default as Button } from '../../Button';
 import { default as Tag } from '../../Tag';
 import { default as Tooltip } from '../../Tooltip';
@@ -391,9 +392,9 @@ SortWithHandle.decorators = [
       />
     );
 
-    const DraggableBodyRow = ({ className, style, ...restProps }) => {
-      const index = data.findIndex(x => x.key === restProps['data-row-key']);
-      return <SortableItem index={index} {...restProps} />;
+    const DraggableBodyRow = props => {
+      const index = data.findIndex(x => x.key === props['data-row-key']);
+      return <SortableItem index={index} {...props} />;
     };
     return (
       <Story
