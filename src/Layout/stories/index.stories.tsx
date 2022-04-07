@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import { DesktopOutlined, PieChartOutlined } from '@ant-design/icons'
 import { ComponentMeta, Story } from '@storybook/react'
 import { Col, Row } from 'antd'
 import { Handshake, Person } from 'phosphor-react'
 
 import WithAntIconSpan from '../../HOCs'
-import { default as Menu, MenuItem, SubMenu } from '../../Menu'
+import { default as Menu, MenuItem, SubMenu, isIconFill } from '../../Menu'
 import Select from '../../Select'
 import Tag from '../../Tag'
 
@@ -41,11 +40,57 @@ export default {
   }
 } as ComponentMeta<typeof Layout>
 
-const rootSubmenuKeys = ['sub1', 'sub2', 'sub3']
+const subMenuItems = [
+  {
+    key: 'sub1',
+    Icon: Handshake,
+    title: 'Merchant Connect',
+    subItems: [
+      {
+        key: '1',
+        title: 'My Merchants'
+      },
+      {
+        key: '2',
+        title: 'My Submissions'
+      },
+      {
+        key: '3',
+        title: 'My Drafts'
+      },
+      {
+        key: '4',
+        title: 'My Attentions'
+      }
+    ]
+  },
+  {
+    key: 'sub2',
+    Icon: Person,
+    title: 'User',
+    subItems: [
+      {
+        key: '5',
+        title: 'Tom'
+      },
+      {
+        key: '6',
+        title: 'Bill'
+      },
+      {
+        key: '7',
+        title: 'Alex'
+      }
+    ]
+  }
+]
+
+const rootSubmenuKeys = subMenuItems.map(item => item.key)
 
 const Template: Story<Args> = (args: Args) => {
   const [collapsed, setCollapsed] = useState(true)
-  const [openKeys, setOpenKeys] = React.useState([])
+  const [openKeys, setOpenKeys] = React.useState<string[]>([])
+  const [selectedKeyPath, setSelectedKeyPath] = React.useState<string[]>(['sub1', '1'])
 
   const handleMenuOpen = keys => {
     const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1)
@@ -63,28 +108,23 @@ const Template: Story<Args> = (args: Args) => {
 
         <Menu
           mode="inline"
-          defaultSelectedKeys={['10']}
+          defaultSelectedKeys={selectedKeyPath}
           inlineIndent={16}
           openKeys={openKeys}
           onOpenChange={handleMenuOpen}
+          onSelect={selectionInfo => setSelectedKeyPath(selectionInfo.keyPath)}
         >
-          <SubMenu key="sub3" icon={<WithAntIconSpan icon={<Handshake weight="fill" />} />} title="Merchant Connect">
-            <MenuItem key="10">My Merchants</MenuItem>
-            <MenuItem key="11">My Submissions</MenuItem>
-            <MenuItem key="12">My Drafts</MenuItem>
-            <MenuItem key="13">My Attentions</MenuItem>
-          </SubMenu>
-          <SubMenu key="sub1" icon={<WithAntIconSpan icon={<Person />} />} title="User">
-            <MenuItem key="3">Tom</MenuItem>
-            <MenuItem key="4">Bill</MenuItem>
-            <MenuItem key="5">Alex</MenuItem>
-          </SubMenu>
-          <MenuItem key="1" icon={<PieChartOutlined />}>
-            Option 1
-          </MenuItem>
-          <MenuItem key="2" icon={<DesktopOutlined />}>
-            Option 2
-          </MenuItem>
+          {subMenuItems.map(item => (
+            <SubMenu
+              key={item.key}
+              icon={<WithAntIconSpan icon={<item.Icon weight={isIconFill(selectedKeyPath, item.key)} />} />}
+              title="Merchant Connect"
+            >
+              {item.subItems.map(sub => (
+                <MenuItem key={sub.key}>{sub.title}</MenuItem>
+              ))}
+            </SubMenu>
+          ))}
         </Menu>
 
         <BottomPane>

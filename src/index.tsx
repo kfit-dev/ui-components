@@ -34,6 +34,7 @@ export {
   QuarterPicker
 } from './DatePicker'
 export {
+  isIconFill,
   default as Menu,
   MenuItem,
   MenuItemGroup,
@@ -72,4 +73,4 @@ export * from './HOCs'
 
 // None-modified components
 export { Typography, Grid, Form } from 'antd'
-export { default as Description, DescriptionsItem, DescriptionsProps, DescriptionsItemProps } from './Descriptions';
+export { default as Description, DescriptionsItem, DescriptionsProps, DescriptionsItemProps } from './Descriptions'

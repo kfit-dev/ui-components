@@ -18,6 +18,8 @@ export type SubMenuProps = AntSubMenuProps
 export type MenuItemGroupProps = AntMenuItemGroupProps
 export type MenuDividerProps = AntMenuDividerProps
 
+export const isIconFill = (keyPath: string[], key: string) => (keyPath.includes(key) ? 'fill' : 'light')
+
 const Menu: React.FC<MenuProps> = props => {
   return <AntMenu {...props} />
 }

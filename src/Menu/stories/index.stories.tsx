@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Bell, CaretDown, HouseLine, MagnifyingGlass } from 'phosphor-react'
-import { default as Menu, MenuItemGroup, MenuItem, MenuProps, SubMenu } from '../index'
+import { default as Menu, MenuItemGroup, MenuItem, MenuProps, SubMenu, isIconFill } from '../index'
 
 export default {
   title: 'Menu',
@@ -68,7 +68,6 @@ InlineMenu.args = {
   inlineCollapsed: true
 }
 
-const isIconFill = (selectedKey: string[], key: string) => (selectedKey.includes(key) ? 'fill' : 'light')
 InlineMenu.decorators = [
   Story => {
     const [selectedKey, setSelectedKey] = React.useState([])
