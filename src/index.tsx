@@ -59,15 +59,27 @@ export { default as Dropdown, DropdownProps } from './Dropdown'
 export { default as Breadcrumb, BreadcrumbItem, BreadcrumbProps, BreadcrumbItemProps } from './Breadcrumb'
 export {
   default as Layout,
-  LayoutProps,
-  BasicProps,
   Sider,
+  Header,
+  Content,
+  Footer,
+  AvatarText,
+  PageHeaderTitle,
+  PageHeaderSubtitle,
+  SiderHeader,
+  HeaderEndContent,
+  LogoutButton,
+  BottomPane,
+  BasicProps,
+  LayoutProps,
+  HeaderProps,
+  SharedProps,
   SiderProps,
   SiderContextProps,
   SiderState,
-  Header,
-  Content,
-  Footer
+  SiderHeaderProps,
+  AvatarTextProps,
+  LogoutButtonProps
 } from './Layout'
 export * from './HOCs'
 

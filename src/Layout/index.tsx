@@ -73,7 +73,7 @@ export const PageHeaderSubtitle: React.FC<SharedProps> = ({ children, className 
   <Typography className={classNames('ui-page-subtitle', className)}>{children}</Typography>
 )
 
-export const SiderHeader = ({ className, text, avatarText, collapsed, setCollapsed }: SiderHeaderProps) => {
+export const SiderHeader: React.FC<SiderHeaderProps> = ({ className, text, avatarText, collapsed, setCollapsed }) => {
   const styles = classNames('ui-sider-header', className)
 
   const InternalAvatarText = React.memo(AvatarText)
