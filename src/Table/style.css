@@ -1,19 +1,15 @@
 @import 'antd/lib/style/default.css';
 @import 'antd/lib/table/style/index.css';
-
 @import '../Button/style.css';
 @import '../Empty/style.css';
 @import '../Radio/style.css';
 @import '../checkbox/style.css';
-/* @import 'antd/lib/checkbox/style/index.css'; */
-
 @import 'antd/lib/dropdown/style/index.css';
-
 @import 'antd/lib/spin/style/index.css';
 @import '../Pagination/style.css';
 @import '../Tooltip/style.css';
 @import '../Input/style.css';
-@import 'antd/lib/tree/style/index.css';
+@import '../Tree/style.css';
 
 .ant-table-wrapper {
   .ant-table {
@@ -31,9 +27,8 @@
           @apply text-sm;
           @apply text-neutral-700;
 
-          &::before {
-            /* hardcoded to rgba(0, 0, 0, 0.06) in antd codebase */
-            @apply bg-neutral-300 !important;
+          &:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+            @apply bg-neutral-300;
           }
         }
 
@@ -98,6 +93,19 @@
             @apply font-semibold;
           }
         }
+
+        &.ant-table-cell-with-append {
+          @apply pl-10;
+          svg {
+            @apply absolute;
+            @apply m-auto;
+            @apply top-0;
+            @apply bottom-0;
+            @apply left-3;
+            @apply transition-all;
+            @apply cursor-pointer;
+          }
+        }
       }
 
       .ant-table-row {
@@ -110,6 +118,12 @@
         &.ant-table-row-selected {
           td {
             @apply bg-slate-100;
+          }
+        }
+
+        &:not(.ant-table-row-level-0) {
+          .ant-table-cell-with-append {
+            @apply pl-14;
           }
         }
       }
@@ -130,12 +144,23 @@
   }
 }
 
-tr.drop-over-downward td {
-  border-bottom: 2px dashed #1890ff;
-}
+.ant-table-filter-dropdown {
+  @apply shadow-md;
+  @apply rounded-lg;
 
-tr.drop-over-upward td {
-  border-top: 2px dashed #1890ff;
+  .ant-table-filter-dropdown-tree {
+    @apply pt-3;
+    @apply pr-3;
+    @apply pb-0;
+    @apply pl-3;
+  }
+
+  .ant-table-filter-dropdown-btns {
+    @apply border-none;
+    @apply justify-end;
+    @apply rounded-b-lg;
+    @apply p-2;
+  }
 }
 
 /* when dragging items in table */
@@ -152,7 +177,6 @@ tr.drop-over-upward td {
       @apply m-auto;
     }
     @apply m-[30px];
-    /* @apply px-5; */
   }
 
   .ant-table-cell {
@@ -166,8 +190,4 @@ tr.drop-over-upward td {
   .ant-table-cell-fix-left {
     @apply bg-transparent;
   }
-}
-
-.row-dragging .drag-visible {
-  visibility: visible;
 }

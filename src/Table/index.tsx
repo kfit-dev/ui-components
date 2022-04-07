@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { Table as AntTable, TableProps as AntTableProps } from 'antd';
-
-import './style.css';
 import { ArrowsDownUp, CaretLeft, CaretRight, Funnel } from 'phosphor-react';
 import { ColumnType } from 'antd/lib/table';
 import { SortOrder } from 'antd/lib/table/interface';
 import { itemRender } from '../Pagination';
 
+import './style.css';
+
 export type TableProps<T> = AntTableProps<T>;
 export const FilterIcon = <Funnel size={16} weight="light" />;
-
 export const headerWithSort = <RecordType extends {}>(
   sortColumns: {
     column: ColumnType<RecordType>;

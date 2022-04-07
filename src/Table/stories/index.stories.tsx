@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ComponentMeta, Story } from '@storybook/react';
-import { TableRowSelection } from 'antd/lib/table/interface';
+import { ColumnsType, TableRowSelection } from 'antd/lib/table/interface';
 import {
   SortableContainer,
   SortableElement,
@@ -12,16 +12,16 @@ import {
   format as fnFormat,
   differenceInMilliseconds
 } from 'date-fns';
-import Button from '../../Button';
-import { default as Tag } from '../../Tag/index';
+import { CaretDown, List } from 'phosphor-react';
+import { default as Button } from '../../Button';
+import { default as Tag } from '../../Tag';
+import { default as Tooltip } from '../../Tooltip';
 import {
   default as Table,
   FilterIcon,
   headerWithSort,
   TableProps
 } from '../index';
-import { default as Tooltip } from '../../Tooltip';
-import { List } from 'phosphor-react';
 
 export default {
   title: 'Table',
@@ -52,7 +52,7 @@ enum SubmissionStatus {
 }
 
 type RecordType = {
-  key: string;
+  key: number;
   submissionDate: string;
   merchantName: string;
   outletLocation: string;
@@ -68,7 +68,7 @@ type ArgsType = TableProps<RecordType> & {
 
 const dataSource = [
   {
-    key: '1',
+    key: 1,
     submissionDate: new Date(2022, 1, 3).toISOString(),
     merchantName: 'Dunkin Donuts',
     outletLocation: 'Subang Jaya',
@@ -76,8 +76,7 @@ const dataSource = [
     productType: 'FavePay',
     children: [
       {
-        key: '13',
-        submissionDate: new Date(2022, 1, 3).toISOString(),
+        key: 13,
         merchantName: 'Another Dunkin Donuts Shop!',
         outletLocation: 'Subang Jaya',
         submissionStatus: SubmissionStatus.NotStarted,
@@ -86,7 +85,7 @@ const dataSource = [
     ]
   },
   {
-    key: '2',
+    key: 2,
     submissionDate: new Date(2022, 1, 1).toISOString(),
     merchantName: 'Puma Sdn Bhd',
     outletLocation: 'One Pavilion',
@@ -94,7 +93,7 @@ const dataSource = [
     productType: 'FavePay'
   },
   {
-    key: '3',
+    key: 3,
     submissionDate: new Date(2022, 1, 2).toISOString(),
     merchantName: 'ArtFriend',
     outletLocation: 'Jaya One',
@@ -102,7 +101,7 @@ const dataSource = [
     productType: 'FavePay'
   },
   {
-    key: '4',
+    key: 4,
     submissionDate: new Date(2022, 1, 3).toISOString(),
     merchantName: 'Dunkin Donuts 2',
     outletLocation: 'One Pavilion, 123A, Jalan Pavilion, 47000 Kuala Lumpur.',
@@ -110,7 +109,7 @@ const dataSource = [
     productType: 'FavePay'
   },
   {
-    key: '5',
+    key: 5,
     submissionDate: new Date(2022, 1, 1).toISOString(),
     merchantName: 'Puma Sdn Bhd 2',
     outletLocation: 'One Pavilion',
@@ -118,7 +117,7 @@ const dataSource = [
     productType: 'FavePay'
   },
   {
-    key: '6',
+    key: 6,
     submissionDate: new Date(2022, 1, 2).toISOString(),
     merchantName: 'ArtFriend 2',
     outletLocation: 'Jaya One',
@@ -126,49 +125,49 @@ const dataSource = [
     productType: 'FavePay'
   },
   {
-    key: '7',
+    key: 7,
     submissionDate: new Date(2022, 1, 3).toISOString(),
-    merchantName: 'Dunkin Donuts',
+    merchantName: 'Dunkin Donuts 3',
     outletLocation: 'Subang Jaya',
     submissionStatus: SubmissionStatus.NotStarted,
     productType: 'FavePay'
   },
   {
-    key: '8',
+    key: 8,
     submissionDate: new Date(2022, 1, 1).toISOString(),
-    merchantName: 'Puma Sdn Bhd',
+    merchantName: 'Puma Sdn Bhd 3',
     outletLocation: 'One Pavilion',
     submissionStatus: SubmissionStatus.NotStarted,
     productType: 'FavePay'
   },
   {
-    key: '9',
+    key: 9,
     submissionDate: new Date(2022, 1, 2).toISOString(),
-    merchantName: 'ArtFriend',
+    merchantName: 'ArtFriend 3',
     outletLocation: 'Jaya One',
     submissionStatus: SubmissionStatus.NotStarted,
     productType: 'FavePay'
   },
   {
-    key: '10',
+    key: 10,
     submissionDate: new Date(2022, 1, 3).toISOString(),
-    merchantName: 'Dunkin Donuts 2',
+    merchantName: 'Dunkin Donuts 4',
     outletLocation: 'One Pavilion, 123A, Jalan Pavilion, 47000 Kuala Lumpur.',
     submissionStatus: SubmissionStatus.NotStarted,
     productType: 'FavePay'
   },
   {
-    key: '11',
+    key: 11,
     submissionDate: new Date(2022, 1, 1).toISOString(),
-    merchantName: 'Puma Sdn Bhd 2',
+    merchantName: 'Puma Sdn Bhd 4',
     outletLocation: 'One Pavilion',
     submissionStatus: SubmissionStatus.NotStarted,
     productType: 'FavePay'
   },
   {
-    key: '12',
+    key: 12,
     submissionDate: new Date(2022, 1, 2).toISOString(),
-    merchantName: 'ArtFriend 2',
+    merchantName: 'ArtFriend 4',
     outletLocation: 'Jaya One',
     submissionStatus: SubmissionStatus.NotStarted,
     productType: 'FavePay'
@@ -179,69 +178,68 @@ const nameFilters = dataSource.map(({ merchantName }) => {
   return { text: merchantName, value: merchantName };
 });
 
+const dataColumns: ColumnsType<RecordType> & any = [
+  {
+    title: ({ sortColumns }) => headerWithSort(sortColumns, 'Submission Date'),
+    dataIndex: 'submissionDate',
+    render: text => (text ? format(text) : ''),
+    sorter: ({ submissionDate: a }, { submissionDate: b }) =>
+      differenceInMilliseconds(parseISO(a), parseISO(b))
+  },
+  {
+    title: ({ sortColumns }) => headerWithSort(sortColumns, 'Merchant Name'),
+    dataIndex: 'merchantName',
+    sorter: ({ merchantName: a }, { merchantName: b }) => a.localeCompare(b),
+    filters: nameFilters,
+    filterMode: 'tree',
+    onFilter: (value, { merchantName }) => merchantName === value,
+    filterIcon: FilterIcon
+  },
+  {
+    title: 'Outlet Location',
+    dataIndex: 'outletLocation',
+    ellipsis: {
+      showTitle: false
+    },
+    render: address => (
+      <Tooltip placement="topLeft" title={address}>
+        {address}
+      </Tooltip>
+    )
+  },
+  {
+    title: 'Submission Status',
+    dataIndex: 'submissionStatus',
+    render: (_, { submissionStatus: submissionStatus }) => (
+      <>
+        {submissionStatus === SubmissionStatus.NotStarted && (
+          <Tag color={'default'}>Not started</Tag>
+        )}
+      </>
+    )
+  },
+  {
+    title: 'Product',
+    dataIndex: 'productType',
+    render: productType => <Tag color={'default'}>{productType}</Tag>
+  },
+  {
+    title: 'Action(s)',
+    key: 'action',
+    render: (_, { merchantName }) => (
+      <a onClick={() => confirm(`cancel submission for ${merchantName}?`)}>
+        Cancel Submission
+      </a>
+    ),
+    fixed: 'right'
+  }
+];
+
 const args: ArgsType = {
   size: 'large',
   checked: undefined,
-  // withFooter: ['Footer'],
   dataSource: dataSource,
-  columns: [
-    {
-      title: ({ sortColumns }) =>
-        headerWithSort(sortColumns, 'Submission Date'),
-      dataIndex: 'submissionDate',
-      render: text => (text ? format(text) : ''),
-      sorter: ({ submissionDate: a }, { submissionDate: b }) =>
-        differenceInMilliseconds(parseISO(a), parseISO(b))
-    },
-    {
-      title: ({ sortColumns }) => headerWithSort(sortColumns, 'Merchant Name'),
-      dataIndex: 'merchantName',
-      sorter: ({ merchantName: a }, { merchantName: b }) => a.localeCompare(b),
-      filters: nameFilters,
-      filterMode: 'tree',
-      filterSearch: true,
-      onFilter: (value, { merchantName }) => merchantName === value,
-      filterIcon: FilterIcon
-    },
-    {
-      title: 'Outlet Location',
-      dataIndex: 'outletLocation',
-      ellipsis: {
-        showTitle: false
-      },
-      render: address => (
-        <Tooltip placement="topLeft" title={address}>
-          {address}
-        </Tooltip>
-      )
-    },
-    {
-      title: 'Submission Status',
-      dataIndex: 'submissionStatus',
-      render: (_, { submissionStatus: submissionStatus }) => (
-        <>
-          {submissionStatus === SubmissionStatus.NotStarted && (
-            <Tag color={'default'}>Not started</Tag>
-          )}
-        </>
-      )
-    },
-    {
-      title: 'Product',
-      dataIndex: 'productType',
-      render: productType => <Tag color={'default'}>{productType}</Tag>
-    },
-    {
-      title: 'Action(s)',
-      key: 'action',
-      render: (_, { merchantName }) => (
-        <a onClick={() => confirm(`cancel submission for ${merchantName}?`)}>
-          Cancel Submission
-        </a>
-      ),
-      fixed: 'right'
-    }
-  ],
+  columns: dataColumns,
   label: 'Table'
 };
 
@@ -265,13 +263,33 @@ const Template: Story<ArgsType> = (
 
   const footerFn = withFooter?.length > 0 ? () => withFooter[0] : undefined;
 
+  // when table has checkboxes or drag sorts, the column index changes
+  const expandIconColumnIndex =
+    checked?.length > 0 ? 3 : restProps.components || components ? 2 : 1;
+
   return (
     <Table
       columns={restProps.columns || columns}
       dataSource={restProps.dataSource || dataSource}
       rowSelection={rowSelection}
       footer={footerFn}
-      components={args.components || components}
+      components={restProps.components || components}
+      expandable={{
+        indentSize: 0,
+        expandIconColumnIndex: expandIconColumnIndex,
+        expandIcon: ({ expanded, expandable, onExpand, record }) => {
+          return (
+            expandable && (
+              <CaretDown
+                size={16}
+                weight="light"
+                style={{ transform: expanded ? 'rotate(180deg)' : '' }}
+                onClick={(e: any) => onExpand(record, e)}
+              />
+            )
+          );
+        }
+      }}
       {...restProps}
     />
   );
@@ -324,17 +342,6 @@ Checked.decorators = [
     );
   }
 ];
-
-export const Expandable = Template.bind({});
-
-Expandable.args = {
-  ...args
-  // expandable: {
-  //   expandedRowRender: record => (
-  //     <p style={{ margin: 0 }}>{record.description}</p>
-  //   )
-  // }
-};
 
 export const FixedHeaderAndColumn = Template.bind({});
 
