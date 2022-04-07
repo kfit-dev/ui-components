@@ -1,14 +1,27 @@
-import React, { useState } from 'react'
-import { ComponentMeta, Story } from '@storybook/react'
-import { ColumnsType, TableRowSelection } from 'antd/lib/table/interface'
-import { arrayMoveImmutable } from 'array-move'
-import { parseISO, format as fnFormat, differenceInMilliseconds } from 'date-fns'
-import { CaretDown, List } from 'phosphor-react'
-import { SortableContainer, SortableElement, SortableHandle } from 'react-sortable-hoc'
-import { default as Button } from '../../Button'
-import { default as Tag } from '../../Tag'
-import { default as Tooltip } from '../../Tooltip'
-import { default as Table, FilterIcon, headerWithSort, TableProps } from '../index'
+import React, { useState } from 'react';
+import { ComponentMeta, Story } from '@storybook/react';
+import { ColumnsType, TableRowSelection } from 'antd/lib/table/interface';
+import { arrayMoveImmutable } from 'array-move';
+import {
+  parseISO,
+  format as fnFormat,
+  differenceInMilliseconds
+} from 'date-fns';
+import { CaretDown, List } from 'phosphor-react';
+import {
+  SortableContainer,
+  SortableElement,
+  SortableHandle
+} from 'react-sortable-hoc';
+import { default as Button } from '../../Button';
+import { default as Tag } from '../../Tag';
+import { default as Tooltip } from '../../Tooltip';
+import {
+  default as Table,
+  FilterIcon,
+  headerWithSort,
+  TableProps
+} from '../index';
 
 export default {
   title: 'Table',
@@ -27,9 +40,10 @@ export default {
       control: { type: 'check' }
     }
   }
-} as ComponentMeta<typeof Table>
+} as ComponentMeta<typeof Table>;
 
-const format = (date: string) => fnFormat(typeof date === 'string' ? parseISO(date) : date, 'dd MMM yyyy')
+const format = (date: string) =>
+  fnFormat(typeof date === 'string' ? parseISO(date) : date, 'dd MMM yyyy');
 
 enum SubmissionStatus {
   NotStarted,
@@ -38,19 +52,19 @@ enum SubmissionStatus {
 }
 
 type RecordType = {
-  key: number
-  submissionDate: string
-  merchantName: string
-  outletLocation: string
-  submissionStatus: SubmissionStatus
-  productType: string
-}
+  key: number;
+  submissionDate: string;
+  merchantName: string;
+  outletLocation: string;
+  submissionStatus: SubmissionStatus;
+  productType: string;
+};
 
 type ArgsType = TableProps<RecordType> & {
-  label: string
-  checked?: string[]
-  withFooter?: string[]
-}
+  label: string;
+  checked?: string[];
+  withFooter?: string[];
+};
 
 const dataSource = [
   {
@@ -158,18 +172,19 @@ const dataSource = [
     submissionStatus: SubmissionStatus.NotStarted,
     productType: 'FavePay'
   }
-]
+];
 
 const nameFilters = dataSource.map(({ merchantName }) => {
-  return { text: merchantName, value: merchantName }
-})
+  return { text: merchantName, value: merchantName };
+});
 
 const dataColumns: ColumnsType<RecordType> & any = [
   {
     title: ({ sortColumns }) => headerWithSort(sortColumns, 'Submission Date'),
     dataIndex: 'submissionDate',
     render: text => (text ? format(text) : ''),
-    sorter: ({ submissionDate: a }, { submissionDate: b }) => differenceInMilliseconds(parseISO(a), parseISO(b))
+    sorter: ({ submissionDate: a }, { submissionDate: b }) =>
+      differenceInMilliseconds(parseISO(a), parseISO(b))
   },
   {
     title: ({ sortColumns }) => headerWithSort(sortColumns, 'Merchant Name'),
@@ -195,8 +210,12 @@ const dataColumns: ColumnsType<RecordType> & any = [
   {
     title: 'Submission Status',
     dataIndex: 'submissionStatus',
-    render: (_, { submissionStatus: submissionStatus }) => (
-      <>{submissionStatus === SubmissionStatus.NotStarted && <Tag color={'default'}>Not started</Tag>}</>
+    render: (_, { submissionStatus }) => (
+      <>
+        {submissionStatus === SubmissionStatus.NotStarted && (
+          <Tag color={'default'}>Not started</Tag>
+        )}
+      </>
     )
   },
   {
@@ -208,11 +227,13 @@ const dataColumns: ColumnsType<RecordType> & any = [
     title: 'Action(s)',
     key: 'action',
     render: (_, { merchantName }) => (
-      <a onClick={() => confirm(`cancel submission for ${merchantName}?`)}>Cancel Submission</a>
+      <a onClick={() => confirm(`cancel submission for ${merchantName}?`)}>
+        Cancel Submission
+      </a>
     ),
     fixed: 'right'
   }
-]
+];
 
 const args: ArgsType = {
   size: 'large',
@@ -220,25 +241,31 @@ const args: ArgsType = {
   dataSource: dataSource,
   columns: dataColumns,
   label: 'Table'
-}
+};
 
-const Template: Story<ArgsType> = ({ checked, withFooter, ...restProps }: ArgsType, context) => {
-  const { setSelectedRows, columns, dataSource, components } = context
+const Template: Story<ArgsType> = (
+  { checked, withFooter, ...restProps }: ArgsType,
+  context
+) => {
+  const { setSelectedRows, columns, dataSource, components } = context;
 
   const rowSelection: TableRowSelection<RecordType> =
     checked?.length > 0
       ? {
-          type: 'checkbox',
-          onChange: (selectedRowKeys: React.Key[], selectedRows: RecordType[]) =>
-            restProps.rowSelection || setSelectedRows(selectedRows),
-          columnWidth: 40
-        }
-      : undefined
+        type: 'checkbox',
+        onChange: (
+          selectedRowKeys: React.Key[],
+          selectedRows: RecordType[]
+        ) => restProps.rowSelection || setSelectedRows(selectedRows),
+        columnWidth: 40
+      }
+      : undefined;
 
-  const footerFn = withFooter?.length > 0 ? () => withFooter[0] : undefined
+  const footerFn = withFooter?.length > 0 ? () => withFooter[0] : undefined;
 
   // when table has checkboxes or drag sorts, the column index changes
-  const expandIconColumnIndex = checked?.length > 0 ? 3 : restProps.components || components ? 2 : 1
+  const expandIconColumnIndex =
+    checked?.length > 0 ? 3 : restProps.components || components ? 2 : 1;
 
   return (
     <Table
@@ -260,33 +287,37 @@ const Template: Story<ArgsType> = ({ checked, withFooter, ...restProps }: ArgsTy
                 onClick={(e: any) => onExpand(record, e)}
               />
             )
-          )
+          );
         }
       }}
       {...restProps}
     />
-  )
-}
+  );
+};
 
-export const Default = Template.bind({})
+export const Default = Template.bind({});
 
 Default.args = {
   ...args
-}
+};
 
-export const Checked = Template.bind({})
+export const Checked = Template.bind({});
 
 Checked.args = {
   ...args,
   checked: ['checked']
-}
+};
 
 Checked.decorators = [
   Story => {
-    const [selectedRows, setSelectedRows] = useState<RecordType[]>([])
+    const [selectedRows, setSelectedRows] = useState<RecordType[]>([]);
 
     const handleClick = () =>
-      confirm(`Cancel [${selectedRows.length}] submissions: ${selectedRows.map(r => r.merchantName).join(', ')}?`)
+      confirm(
+        `Cancel [${selectedRows.length}] submissions: ${selectedRows
+          .map(r => r.merchantName)
+          .join(', ')}?`
+      );
 
     return (
       <div
@@ -308,20 +339,20 @@ Checked.decorators = [
         </Button>
         <Story setSelectedRows={setSelectedRows} />
       </div>
-    )
+    );
   }
-]
+];
 
-export const FixedHeaderAndColumn = Template.bind({})
+export const FixedHeaderAndColumn = Template.bind({});
 
 FixedHeaderAndColumn.args = {
   scroll: { y: '78vh', x: 1500 },
   ...args
-}
+};
 
-export const SortWithHandle = Template.bind({})
+export const SortWithHandle = Template.bind({});
 
-const DragHandle = SortableHandle(() => <List size={16} weight="light" />)
+const DragHandle = SortableHandle(() => <List size={16} weight="light" />);
 const sortWithHandleColumns = [
   {
     title: 'Sort',
@@ -331,29 +362,43 @@ const sortWithHandleColumns = [
     render: () => <DragHandle />
   },
   ...args.columns
-]
+];
 
 SortWithHandle.decorators = [
   Story => {
-    const [data, setData] = React.useState(dataSource)
+    const [data, setData] = React.useState(dataSource);
 
     const onSortEnd = ({ oldIndex, newIndex }) => {
       if (oldIndex !== newIndex) {
-        const newData = arrayMoveImmutable([].concat(data), oldIndex, newIndex).filter(el => !!el)
-        setData(newData)
+        const newData = arrayMoveImmutable(
+          [].concat(data),
+          oldIndex,
+          newIndex
+        ).filter(el => !!el);
+        setData(newData);
       }
-    }
+    };
 
-    const SortableItem = SortableElement(props => <tr {...props} />)
-    const SortableBody = SortableContainer(props => <tbody {...props} />)
+    const SortableItem = SortableElement(props => <tr {...props} />);
+    const SortableBody = SortableContainer(props => <tbody {...props} />);
     const DraggableContainer = props => (
-      <SortableBody useDragHandle disableAutoscroll helperClass="row-dragging" onSortEnd={onSortEnd} {...props} />
-    )
+      <SortableBody
+        useDragHandle
+        disableAutoscroll
+        helperClass="row-dragging"
+        onSortEnd={onSortEnd}
+        {...props}
+      />
+    );
 
-    const DraggableBodyRow = props => {
-      const index = data.findIndex(x => x.key === props['data-row-key'])
-      return <SortableItem index={index} {...props} />
-    }
+    const DraggableBodyRow = (
+      props: {} & {
+        'data-row-key': number;
+      }
+    ) => {
+      const index = data.findIndex(x => x.key === props['data-row-key']);
+      return <SortableItem index={index} {...props} />;
+    };
     return (
       <Story
         columns={sortWithHandleColumns}
@@ -365,6 +410,6 @@ SortWithHandle.decorators = [
           }
         }}
       />
-    )
+    );
   }
-]
+];
