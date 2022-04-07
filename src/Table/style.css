@@ -190,4 +190,19 @@
   .ant-table-cell-fix-left {
     @apply bg-transparent;
   }
+
+  .ant-table-cell-with-append {
+    @apply pl-10;
+    @apply relative;
+
+    svg {
+      @apply absolute;
+      @apply m-auto;
+      @apply top-0;
+      @apply bottom-0;
+      @apply left-3;
+      @apply transition-all;
+      @apply cursor-pointer;
+    }
+  }
 }
