@@ -42,7 +42,7 @@
     }
   }
 
-  &-focused {
+  &.ant-select-open {
     span.ant-select-arrow {
       .rotate-caret {
         @apply transform rotate-180 transition ease-linear;
