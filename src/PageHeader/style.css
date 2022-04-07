@@ -31,10 +31,6 @@
         @apply text-neutral-400 text-sm font-normal;
     }
 
-    .ant-breadcrumb + &-heading {
-        @apply mt-4;
-    }
-
     &-back{
         &-button{
             @apply w-10 h-10 rounded-full;
@@ -44,5 +40,13 @@
                 @apply justify-center self-center w-full;
             }
         }
+    }
+
+    .ant-breadcrumb + &-heading {
+        @apply mt-4;
+    }
+
+    .ant-breadcrumb span:last-child{
+        @apply font-inter text-slate-700;
     }
 }
