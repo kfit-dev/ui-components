@@ -19,16 +19,36 @@
     @apply border;
     @apply border-slate-100;
 
+    .ant-table-container {
+      &::before {
+        @apply rounded-tl-xl;
+      }
+
+      table > thead > tr:first-child th:first-child {
+        @apply rounded-tl-xl;
+      }
+
+      table > thead > tr:first-child th:last-child {
+        @apply rounded-tr-xl;
+      }
+    }
+
     .ant-table-thead {
       tr {
         th {
-          @apply bg-white;
+          @apply bg-transparent;
           @apply font-semibold;
           @apply text-sm;
           @apply text-neutral-700;
+          @apply rounded-tr-xl;
 
           &:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
             @apply bg-neutral-300;
+          }
+
+          &.ant-table-cell-fix-right-first,
+          &.ant-table-cell-scrollbar {
+            @apply bg-white;
           }
         }
 
