@@ -10,7 +10,12 @@ export { default as Empty, EmptyProps } from './Empty';
 export { default as Button, ButtonProps } from './Button';
 export { default as Checkbox, CheckboxProps } from './Checkbox';
 export { default as Tooltip, TooltipProps } from './Tooltip';
-export { default as Select, SelectProps } from './Select';
+export {
+  default as Select,
+  Option,
+  CheckeableItem,
+  SelectProps
+} from './Select';
 export { default as Radio, RadioProps } from './Radio';
 export { default as Tag, TagProps } from './Tag';
 export { default as Progress, ProgressProps } from './Progress';
@@ -45,19 +50,24 @@ export {
   RangePicker,
   QuarterPicker
 } from './DatePicker';
-export { default as Pagination, PaginationProps } from './Pagination';
 export {
+  isIconFill,
   default as Menu,
   MenuItem,
   MenuItemGroup,
-  MenuSubMenu,
-  MenuDivider,
+  SubMenu,
   MenuProps,
   MenuItemProps,
   MenuItemGroupProps,
-  MenuSubMenuProps,
+  SubMenuProps,
   MenuDividerProps
 } from './Menu';
+export {
+  default as Table,
+  TableProps,
+  FilterIcon,
+  headerWithSort
+} from './Table';
 export {
   default as Collapse,
   CollapsePanel,
@@ -73,7 +83,6 @@ export {
   WarningIcon
 } from './Popconfirm';
 export { default as AutoComplete, AutoCompleteProps } from './AutoComplete';
-export * from 'antd/lib/table/interface';
 export {
   default as Tabs,
   TabsProps,
@@ -97,14 +106,36 @@ export {
   BreadcrumbItemProps
 } from './Breadcrumb';
 export {
+  default as Layout,
+  Sider,
+  Header,
+  Content,
+  Footer,
+  AvatarText,
+  PageHeaderTitle,
+  PageHeaderSubtitle,
+  SiderHeader,
+  HeaderEndContent,
+  LogoutButton,
+  BottomPane,
+  BasicProps,
+  LayoutProps,
+  HeaderProps,
+  SharedProps,
+  SiderProps,
+  SiderContextProps,
+  SiderState,
+  SiderHeaderProps,
+  AvatarTextProps,
+  LogoutButtonProps
+} from './Layout';
+export * from './HOCs';
+
+// None-modified components
+export { Typography, Grid, Form } from 'antd';
+export {
   default as Description,
   DescriptionsItem,
   DescriptionsProps,
   DescriptionsItemProps
 } from './Descriptions';
-export {
-  default as Table,
-  TableProps,
-  FilterIcon,
-  headerWithSort
-} from './Table';

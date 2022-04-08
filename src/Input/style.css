@@ -1,5 +1,6 @@
-@import '../assets/style/form-item.css';
+@import 'antd/lib/style/default.css';
 @import 'antd/lib/input/style/index.css';
+@import '../Button/style.css';
 @import '../variables.css';
 
 .ant-form {
