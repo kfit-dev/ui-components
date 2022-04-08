@@ -333,7 +333,7 @@ Checked.decorators = [
               alignSelf: 'flex-end'
             }}
           >
-            <span>{`Selected ${selectedRows.length} item`}</span>
+            <span>{`Selected ${selectedRows.length} ${selectedRows.length > 1 ? 'items' : 'item'}`}</span>
             <Button
               style={{ marginLeft: '12px' }}
               type={'primary'}
