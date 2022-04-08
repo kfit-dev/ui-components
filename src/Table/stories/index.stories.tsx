@@ -268,30 +268,34 @@ const Template: Story<ArgsType> = (
     checked?.length > 0 ? 3 : restProps.components || components ? 2 : 1;
 
   return (
-    <Table
-      columns={restProps.columns || columns}
-      dataSource={restProps.dataSource || dataSource}
-      rowSelection={rowSelection}
-      footer={footerFn}
-      components={restProps.components || components}
-      expandable={{
-        indentSize: 0,
-        expandIconColumnIndex: expandIconColumnIndex,
-        expandIcon: ({ expanded, expandable, onExpand, record }) => {
-          return (
-            expandable && (
-              <CaretDown
-                size={16}
-                weight="light"
-                style={{ transform: expanded ? 'rotate(180deg)' : '' }}
-                onClick={(e: any) => onExpand(record, e)}
-              />
-            )
-          );
-        }
-      }}
-      {...restProps}
-    />
+    // so QA and Designer can ensure that the tooltip does appear at the top
+    // when hover on column
+    <div style={{ marginTop: 40 }}>
+      <Table
+        columns={restProps.columns || columns}
+        dataSource={restProps.dataSource || dataSource}
+        rowSelection={rowSelection}
+        footer={footerFn}
+        components={restProps.components || components}
+        expandable={{
+          indentSize: 0,
+          expandIconColumnIndex: expandIconColumnIndex,
+          expandIcon: ({ expanded, expandable, onExpand, record }) => {
+            return (
+              expandable && (
+                <CaretDown
+                  size={16}
+                  weight="light"
+                  style={{ transform: expanded ? 'rotate(180deg)' : '' }}
+                  onClick={(e: any) => onExpand(record, e)}
+                />
+              )
+            );
+          }
+        }}
+        {...restProps}
+      />
+    </div>
   );
 };
 
