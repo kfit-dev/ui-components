@@ -133,7 +133,7 @@
     .drag-visible {
       @apply pl-6;
       svg {
-        @apply cursor-grabbing;
+        @apply cursor-grab;
         @apply m-auto;
       }
     }
