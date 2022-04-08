@@ -89,8 +89,21 @@
     @apply font-inter font-semibold;
     @apply mx-2 bg-transparent;
 
+    .ant-select-item-option-content{
+      @apply h-5 self-center;
+    }
+
     .ant-select-item-option-state {
-      @apply text-neutral-700;
+      @apply h-5 self-center;
+    }
+
+    .anticon-check{
+      @apply h-4 w-4;
+      background-image:var(--ic-check-16-n700);
+      
+      svg{
+        @apply hidden;
+      }
     }
   }
 

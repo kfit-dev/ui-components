@@ -17,19 +17,21 @@ type Args = {
   input: InputProps
 }
 const Template: Story<Args> = (args: Args) => (
-  <Form.Item style={{ width: '320px' }} {...args.formItem}>
-    <AutoComplete
-      {...args.autoComplete}
-      filterOption={(inputValue, option) =>
+  <Form layout='vertical'>
+    <Form.Item style={{ width: '320px' }} {...args.formItem}>
+      <AutoComplete
+        {...args.autoComplete}
+        filterOption={(inputValue, option) =>
         option!.value
           .toString()
           .toUpperCase()
           .indexOf(inputValue.toUpperCase()) !== -1
-      }
-    >
-      <Input {...args.input} />
-    </AutoComplete>
-  </Form.Item>
+        }
+      >
+        <Input {...args.input} />
+      </AutoComplete>
+    </Form.Item>
+  </Form>
 )
 export const Basic = Template.bind({})
 Basic.args = {
