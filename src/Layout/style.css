@@ -16,7 +16,7 @@
       }
 
       & > .ant-typography {
-        @apply ml-2 font-semibold text-slate-700 whitespace-nowrap overflow-hidden text-ellipsis;
+        @apply ml-2 font-semibold text-slate-700 whitespace-nowrap;
       }
 
       &-button {
@@ -133,7 +133,7 @@
   @apply relative;
 
   & .ant-layout-sider-light {
-    @apply absolute left-0 top-0 bottom-0 z-[3];
+    @apply absolute left-0 top-0 bottom-0 z-[1];
 
     & + .ant-layout {
       @apply ml-20;
