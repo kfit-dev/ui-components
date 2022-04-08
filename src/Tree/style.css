@@ -23,15 +23,10 @@
           @apply border-none;
         }
       }
-
-      &:hover {
-        .ant-tree-checkbox-inner {
-          @apply border-slate-700;
-        }
-      }
     }
 
     .ant-tree-checkbox-inner {
+      @apply border-slate-700;
       @apply rounded;
     }
 
