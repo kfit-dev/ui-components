@@ -133,6 +133,7 @@
     .drag-visible {
       @apply pl-6;
       svg {
+        @apply cursor-grabbing;
         @apply m-auto;
       }
     }
@@ -171,6 +172,9 @@
   @apply bg-neutral-100;
   @apply border;
   @apply border-slate-100;
+  /* hardcoded to none in antd codebase */
+  @apply pointer-events-auto !important;
+  @apply cursor-grabbing;
 
   td {
     &:not(:first-child) {
