@@ -42,7 +42,7 @@
     }
   }
 
-  &-focused {
+  &.ant-select-open {
     span.ant-select-arrow {
       .rotate-caret {
         @apply transform rotate-180 transition ease-linear;
@@ -104,6 +104,26 @@
 
   &-arrow {
     @apply w-4 h-4 text-neutral-500;
+  }
+}
+
+.ant-select-dropdown {
+  & .ui-checkable-option {
+    @apply flex items-center;
+
+    & .ui-item-text {
+      @apply flex-1;
+    }
+
+    & .ui-item-check {
+      @apply invisible;
+    }
+  }
+
+  & .ant-select-item-option-selected {
+    & .ui-item-check {
+      @apply ml-1 visible;
+    }
   }
 }
 
