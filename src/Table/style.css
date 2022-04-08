@@ -61,7 +61,7 @@
             }
           }
 
-          .sort-ascend {
+          .sort-descend {
             polyline,
             line {
               &:last-of-type {
@@ -70,7 +70,7 @@
             }
           }
 
-          .sort-descend {
+          .sort-ascend {
             polyline,
             line {
               &:first-of-type {

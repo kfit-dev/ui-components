@@ -49,7 +49,7 @@ const SubmissionStatus = {
   NotStarted: 'Not started',
   Submitted: 'Submitted',
   Approved: 'Approved'
-}
+};
 
 type RecordType = {
   key: number;
@@ -268,34 +268,30 @@ const Template: Story<ArgsType> = (
     checked?.length > 0 ? 3 : restProps.components || components ? 2 : 1;
 
   return (
-    // so QA and Designer can ensure that the tooltip does appear at the top
-    // when hover on column
-    <div style={{ marginTop: 40 }}>
-      <Table
-        columns={restProps.columns || columns}
-        dataSource={restProps.dataSource || dataSource}
-        rowSelection={rowSelection}
-        footer={footerFn}
-        components={restProps.components || components}
-        expandable={{
-          indentSize: 0,
-          expandIconColumnIndex: expandIconColumnIndex,
-          expandIcon: ({ expanded, expandable, onExpand, record }) => {
-            return (
-              expandable && (
-                <CaretDown
-                  size={16}
-                  weight="light"
-                  style={{ transform: expanded ? 'rotate(180deg)' : '' }}
-                  onClick={(e: any) => onExpand(record, e)}
-                />
-              )
-            );
-          }
-        }}
-        {...restProps}
-      />
-    </div>
+    <Table
+      columns={restProps.columns || columns}
+      dataSource={restProps.dataSource || dataSource}
+      rowSelection={rowSelection}
+      footer={footerFn}
+      components={restProps.components || components}
+      expandable={{
+        indentSize: 0,
+        expandIconColumnIndex: expandIconColumnIndex,
+        expandIcon: ({ expanded, expandable, onExpand, record }) => {
+          return (
+            expandable && (
+              <CaretDown
+                size={16}
+                weight="light"
+                style={{ transform: expanded ? 'rotate(180deg)' : '' }}
+                onClick={(e: any) => onExpand(record, e)}
+              />
+            )
+          );
+        }
+      }}
+      {...restProps}
+    />
   );
 };
 
@@ -330,17 +326,24 @@ Checked.decorators = [
           flexFlow: 'column'
         }}
       >
-        <Button
-          style={{
-            marginBottom: '10px',
-            alignSelf: 'flex-end'
-          }}
-          type={'primary'}
-          onClick={handleClick}
-          disabled={selectedRows.length === 0}
-        >
-          Cancel submissions
-        </Button>
+        {selectedRows.length > 0 && (
+          <div 
+            style={{
+              marginBottom: '10px',
+              alignSelf: 'flex-end'
+            }}
+          >
+            <span>{`Selected ${selectedRows.length} item`}</span>
+            <Button
+              style={{ marginLeft: '12px' }}
+              type={'primary'}
+              onClick={handleClick}
+              disabled={selectedRows.length === 0}
+            >
+              Cancel submissions
+            </Button>
+          </div>
+        )}
         <Story setSelectedRows={setSelectedRows} />
       </div>
     );
