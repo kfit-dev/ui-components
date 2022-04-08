@@ -130,15 +130,10 @@
 
 /* floating sider */
 .ant-layout.ant-layout-has-sider {
-  position: relative;
+  @apply relative;
 
   & .ant-layout-sider-light {
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 1;
+    @apply absolute left-0 top-0 bottom-0 z-[1];
 
     & + .ant-layout {
       @apply ml-20;
