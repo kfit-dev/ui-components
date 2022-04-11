@@ -1,6 +1,7 @@
 @import 'antd/lib/style/default.css';
 @import 'antd/lib/date-picker/style/index.css';
 @import 'antd/lib/empty/style/index.css';
+@import "../TimePicker/style.css";
 @import '../variables.css';
 
 .ant-picker {
@@ -120,6 +121,10 @@
     .ant-picker-cell-inner {
     @apply rounded-r-2xl;
   }
+}
+
+.ant-picker.ant-picker-disabled{
+  @apply border-transparent;
 }
 
 .ant-form-item-has-error {
