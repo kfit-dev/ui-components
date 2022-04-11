@@ -63,6 +63,13 @@ export {
   MenuDividerProps
 } from './Menu';
 export {
+  default as Table,
+  TableProps,
+  FilterIcon,
+  HeaderWithSort,
+  HeaderWithSortProps
+} from './Table';
+export {
   default as Collapse,
   CollapsePanel,
   CollapseProps,
