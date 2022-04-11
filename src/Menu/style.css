@@ -2,9 +2,29 @@
 @import 'antd/lib/menu/style/index.css';
 @import '../Tooltip/style.css';
 
+.ant-menu {
+  &.ant-menu-sub {
+    &.ant-menu-vertical:not(.ant-menu-inline) {
+      @apply shadow-md;
+    }
+  }
+}
+
 .ant-menu.ant-menu-light {
   @apply font-inter;
   @apply text-neutral-400;
+
+  /* affects top navigation and collapsed vertical navigation */
+  .ant-menu-item {
+    &:hover {
+      @apply text-slate-700;
+    }
+
+    &.ant-menu-item-selected {
+      @apply text-slate-700;
+      @apply font-semibold;
+    }
+  }
 
   /* top navigation */
   &.ant-menu-horizontal {
@@ -13,8 +33,6 @@
 
     .ant-menu-item {
       &:hover {
-        @apply text-slate-700;
-
         &::after {
           @apply border-none;
         }
@@ -25,9 +43,6 @@
       }
 
       &.ant-menu-item-selected {
-        @apply text-slate-700;
-        @apply font-semibold;
-
         &::after {
           @apply border-none;
         }
@@ -36,6 +51,28 @@
       &.ant-menu-item-active {
         &::after {
           @apply border-none;
+        }
+      }
+    }
+
+    &.ant-menu-overflow {
+      /* when menu items do not overflow and become ellipsis */
+      .ant-menu-overflow-item.ant-menu-submenu.ant-menu-submenu-horizontal:not(.ant-menu-overflow-item-rest) {
+        .ant-menu-submenu-title {
+          @apply flex items-center flex-row-reverse;
+
+          > svg {
+            @apply ml-2;
+          }
+        }
+      }
+
+      /* ellipsis */
+      .ant-menu-overflow-item-rest {
+        @apply flex items-center;
+
+        .ant-menu-submenu-title {
+          @apply flex;
         }
       }
     }
@@ -54,16 +91,6 @@
           @apply -rotate-180;
         }
       }
-      .ant-menu-submenu-title {
-        /* background-color: red; */
-        @apply flex;
-        @apply items-center;
-        @apply flex-row-reverse;
-
-        svg {
-          @apply ml-2;
-        }
-      }
     }
   }
 
@@ -77,40 +104,37 @@
       }
     }
 
-    .ant-menu-sub {
-      .ant-menu-item-group {
-        .ant-menu-item {
-          /* when hover, background color overflows */
-          @apply w-auto;
-          @apply text-slate-700;
+    /* affects all menu-item in and outside of ant-menu-sub */
+    .ant-menu-item {
+      /* when hover, background color overflows */
+      @apply w-auto;
+      @apply text-slate-700;
 
-          /* hardcoded to margin-top: 4px, margin-bottom: 8px */
-          @apply my-0;
+      /* hardcoded to margin-top: 4px, margin-bottom: 8px */
+      @apply my-0;
 
-          /* hardcoded to 40px */
-          @apply h-11;
+      /* hardcoded to 40px */
+      @apply h-11;
 
-          &:hover {
-            @apply bg-neutral-100;
-          }
+      &:hover {
+        @apply bg-neutral-100;
+      }
 
-          &::after {
-            /* hardcoded to border-right: 2px solid #1890ff in antd codebase */
-            border-right: unset;
-          }
+      &::after {
+        /* hardcoded to border-right: 2px solid #1890ff in antd codebase */
+        border-right: unset;
+      }
 
-          &.ant-menu-item-selected {
-            @apply bg-slate-100;
-            @apply font-semibold;
+      &.ant-menu-item-selected {
+        @apply bg-slate-100;
+        @apply font-semibold;
 
-            &::after {
-              /* hardcoded to border-right: 2px solid #1890ff in antd codebase */
-              border-right: unset;
-              @apply border-l-2;
-              @apply border-slate-700;
-              @apply left-0;
-            }
-          }
+        &::after {
+          /* hardcoded to border-right: 2px solid #1890ff in antd codebase */
+          border-right: unset;
+          @apply border-l-2;
+          @apply border-slate-700;
+          @apply left-0;
         }
       }
     }
@@ -143,7 +167,6 @@
   &.ant-menu-inline,
   &.ant-menu-inline-collapsed {
     @apply bg-transparent;
-    @apply rounded;
     /* hardcoded to border-right: 2px solid #1890ff in antd codebase */
     border-right: unset;
 
@@ -206,6 +229,30 @@
   }
 }
 
+.ant-menu-submenu {
+  > .ant-menu {
+    @apply rounded-lg;
+  }
+
+  /* for double dropdowns */
+  &.ant-menu-submenu-popup {
+    .ant-menu-item:hover {
+      @apply text-slate-700 bg-neutral-100;
+    }
+    .ant-menu-submenu.ant-menu-submenu-vertical {
+      .ant-menu-submenu-title {
+        @apply flex items-center;
+        .ant-menu-item-icon {
+          @apply hidden;
+        }
+        > svg {
+          @apply ml-2;
+        }
+      }
+    }
+  }
+}
+
 /* affects submenu in all menu types  */
 .ant-menu-light {
   & .ant-menu-submenu {
@@ -221,11 +268,6 @@
 
       /* hardcoded to 0px */
       @apply px-0 !important;
-
-      &:not(.ant-menu-inline) {
-        @apply rounded-lg;
-        @apply shadow-md;
-      }
     }
 
     .ant-menu-item-group-title {
@@ -261,7 +303,7 @@
         @apply text-slate-700;
       }
 
-      svg {
+      > svg {
         @apply transition-transform;
         @apply ease-in-out;
       }
