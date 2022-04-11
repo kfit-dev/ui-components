@@ -132,7 +132,7 @@ export {
 export * from './HOCs';
 
 // None-modified components
-export { Typography, Grid, Form } from 'antd';
+export { Typography, Grid, Form, Row, Col, RowProps, ColProps } from 'antd';
 export {
   default as Description,
   DescriptionsItem,
