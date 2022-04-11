@@ -19,7 +19,7 @@ import { default as Tooltip } from '../../Tooltip';
 import {
   default as Table,
   FilterIcon,
-  headerWithSort,
+  HeaderWithSort,
   TableProps
 } from '../index';
 
@@ -180,14 +180,14 @@ const nameFilters = dataSource.map(({ merchantName }) => {
 
 const dataColumns: ColumnsType<RecordType> & any = [
   {
-    title: ({ sortColumns }) => headerWithSort(sortColumns, 'Submission Date'),
+    title: ({ sortColumns }) => <HeaderWithSort sortColumns={sortColumns} title={'Submission Date'}/>,
     dataIndex: 'submissionDate',
     render: text => (text ? format(text) : ''),
     sorter: ({ submissionDate: a }, { submissionDate: b }) =>
       differenceInMilliseconds(parseISO(a), parseISO(b))
   },
   {
-    title: ({ sortColumns }) => headerWithSort(sortColumns, 'Merchant Name'),
+    title: ({ sortColumns }) => <HeaderWithSort sortColumns={sortColumns} title={'Merchant Name'} />,
     dataIndex: 'merchantName',
     sorter: ({ merchantName: a }, { merchantName: b }) => a.localeCompare(b),
     filters: nameFilters,

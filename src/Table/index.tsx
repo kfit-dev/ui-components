@@ -8,14 +8,18 @@ import { itemRender } from '../Pagination';
 import './style.css';
 
 export type TableProps<T> = AntTableProps<T>;
-export const FilterIcon = <Funnel size={16} weight="light" />;
-export const headerWithSort = <RecordType extends {}>(
+export type HeaderWithSortProps<RecordType extends {}> = {
   sortColumns: {
     column: ColumnType<RecordType>;
     order: SortOrder;
-  }[],
-  title: string
-) => {
+  }[];
+  title: string;
+};
+
+export const FilterIcon = <Funnel size={16} weight="light" />;
+
+export const HeaderWithSort = <T extends {}>(props: HeaderWithSortProps<T>) => {
+  const { sortColumns, title } = props;
   const sortable = sortColumns ? sortColumns.find(item => item.order) : '';
   const sortClassname = sortable
     ? sortable.order === 'ascend'
@@ -36,6 +40,7 @@ export const headerWithSort = <RecordType extends {}>(
     </div>
   );
 };
+
 const Table = <T extends {}>(props: TableProps<T>) => {
   return <AntTable {...props} />;
 };

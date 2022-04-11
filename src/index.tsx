@@ -66,7 +66,8 @@ export {
   default as Table,
   TableProps,
   FilterIcon,
-  headerWithSort
+  HeaderWithSort,
+  HeaderWithSortProps
 } from './Table';
 export {
   default as Collapse,
