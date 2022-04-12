@@ -3,6 +3,8 @@ import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
 import { Search, SearchProps } from '../index'
 
+import '../../assets/style/form-item.css';
+
 export default {
   title: 'Input/Search',
   component: Search
@@ -14,9 +16,11 @@ type Args = {
 }
 
 const Template: Story<Args> = (args: Args) => (
-  <Form.Item style={{ width: '320px' }} {...args.formItem}>
-    <Search {...args.input} />
-  </Form.Item>
+  <Form layout='vertical'>
+    <Form.Item style={{ width: '320px' }} {...args.formItem}>
+      <Search {...args.input} />
+    </Form.Item>
+  </Form>
 )
 
 export const Basic = Template.bind({})

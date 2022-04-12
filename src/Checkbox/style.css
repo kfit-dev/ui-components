@@ -8,7 +8,7 @@
   }
 
   &-wrapper {
-    @apply text-slate-700 font-inter font-normal flex;
+    @apply text-slate-700 font-inter font-normal;
   }
 
   &-wrapper:hover {
