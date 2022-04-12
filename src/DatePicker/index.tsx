@@ -17,7 +17,6 @@ export type TimeRangePickerProps = RangePickerTimeProps<Date> & {
   popupClassName?: string;
 }
 
-export const QuarterPicker = DatePicker.QuarterPicker
 export const WeekPicker = DatePicker.WeekPicker
 export const MonthPicker = DatePicker.MonthPicker
 export const YearPicker = DatePicker.YearPicker
@@ -25,11 +24,6 @@ export const RangePicker = DatePicker.RangePicker
 export const TimePicker = DatePicker.TimePicker
 
 export const TimeRangePicker = React.forwardRef<any, TimeRangePickerProps>((props, ref) => (<RangePicker {...props} picker="time" mode={undefined} ref={ref}/>));
-
-QuarterPicker.defaultProps = {
-  format: "YYYY-'Q'Q",
-  suffixIcon: CaretDownIcon
-}
 
 DatePicker.defaultProps = {
   suffixIcon: CaretDownIcon

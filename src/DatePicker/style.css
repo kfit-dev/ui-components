@@ -1,6 +1,6 @@
 @import 'antd/lib/style/default.css';
 @import 'antd/lib/date-picker/style/index.css';
-@import 'antd/lib/empty/style/index.css';
+@import '../Empty/style.css';
 @import "../TimePicker/style.css";
 @import '../variables.css';
 
@@ -123,8 +123,23 @@
   }
 }
 
+
+/* Quater Picker Disabled Styling */
+.ant-picker-quarter-panel{
+  .ant-picker-cell-disabled::before {
+    @apply bg-transparent;
+  }
+  
+  .ant-picker-cell-disabled{
+    .ant-picker-cell-inner{
+      @apply bg-neutral-100 text-neutral-700;
+    }
+  }
+}
+
 .ant-picker.ant-picker-disabled{
   @apply border-transparent;
+
 }
 
 .ant-form-item-has-error {
