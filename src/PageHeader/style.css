@@ -3,7 +3,8 @@
 @import '../Avatar/style.css';
 
 .ant-page-header{
-      @apply font-inter p-0;
+
+    @apply font-inter;
 
     .ui-page-header{
         @apply flex flex-col;
@@ -34,15 +35,11 @@
 
     &-back{
         &-button{
-            @apply w-10 h-10 rounded-full ;
+            @apply w-10 h-10 rounded-full;
             @apply flex bg-white !important;
 
             svg{
                 @apply justify-center self-center w-full;
-            }
-
-            button{
-                @apply text-slate-700 hover:text-slate-700;
             }
         }
     }
