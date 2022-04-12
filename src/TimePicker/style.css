@@ -92,10 +92,8 @@
 
     /* Ratate the Caret Down Icon when Picker is Focused */
     &.ant-picker-focused{
-        .ant-picker-input{
-            .ant-picker-suffix{
-                @apply transform rotate-180 transition ease-linear;
-            }
+        .ant-picker-suffix{
+            @apply transform rotate-180 transition ease-linear;
         }
     }
 

@@ -32,7 +32,7 @@ BasicWithCurrentTime.args = {
   label: 'TimePicker',
   onChange:{ onChange },
   hasDone:false,
-  defaultOpenValue:new Date(),
+  defaultValue:new Date(),
 };
 
 export const Disabled = Template.bind({});

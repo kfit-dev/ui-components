@@ -32,12 +32,14 @@ DatePicker.defaultProps = {
 TimePicker.defaultProps = {
   use12Hours:true,
   suffixIcon: CaretDownIcon,
+  minuteStep:5,
   format:"h:mma",
 };
 
 DatePicker.RangePicker.defaultProps = {
   use12Hours:true,
   suffixIcon: CaretDownIcon,
+  minuteStep:5,
   format:"h:mma",
   separator: <ArrowRight />
 }
