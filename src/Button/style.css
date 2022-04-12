@@ -89,4 +89,10 @@
       @apply text-primary;
     }
   }
+
+  &-link {
+    @apply text-primary;
+    @apply hover:text-primary;
+    @apply focus:text-primary;
+  }
 }
