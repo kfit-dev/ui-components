@@ -59,3 +59,15 @@ BasicWithBreadcrumb.args = {
   title:"Header",
   subTitle:"This is the description, one-liner only please."
 };
+
+export const BasicBackWithBreadcrumb = Template.bind({});
+
+BasicBackWithBreadcrumb.args = {
+  label: 'PageHeader',
+  breadcrumb: { routes },
+  backIcon:<Button shape="circle" size='large' icon={<ArrowLeft size={16} className="circle" />}/>,
+  onBack:back,
+  hasBack:true,
+  title:"Header",
+  subTitle:"This is the description, one-liner only please."
+};
