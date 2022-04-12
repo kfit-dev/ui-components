@@ -64,7 +64,7 @@ Default.argTypes = {
 const count = 3;
 const fakeDataUrl = `https://randomuser.me/api/?results=${count}&inc=name,gender,email,nat,picture&noinfo`;
 
-export const LoadMoreList: React.FC = props => {
+export const LoadMoreList: React.FC = () => {
   const [initLoading, setInitLoading] = useState(true);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
