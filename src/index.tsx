@@ -31,7 +31,9 @@ export {
   YearPicker,
   TimePicker,
   RangePicker,
-  QuarterPicker
+  TimeRangePicker,
+  TimePickerProps,
+  TimeRangePickerProps
 } from './DatePicker'
 export {
   isIconFill,
