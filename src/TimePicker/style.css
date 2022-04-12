@@ -31,14 +31,18 @@
         }
 
         &-cell-inner{
-            @apply text-center;
-            @apply pl-0 h-6 leading-6 !important;
+            @apply text-center ;
+            @apply pl-0 h-6 leading-6 text-neutral-700 !important;
             @apply hover:bg-neutral-100 hover:rounded-lg !important;
         }
     }
 
     &-content{
         @apply p-4;
+
+        ::-webkit-scrollbar {
+            @apply w-0 bg-transparent;
+        }
     }
 
     &-ranges{
