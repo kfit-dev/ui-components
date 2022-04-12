@@ -8,17 +8,15 @@ export type PaginationProps = AntPaginationProps & {
   RightIcon: React.ReactNode
 }
 
-const itemRender = (LeftIcon: React.ReactNode, RightIcon: React.ReactNode) => (
-  page: React.ReactNode,
+export const itemRender = (LeftIcon: React.ReactNode, RightIcon: React.ReactNode) => (
+  _: React.ReactNode,
   type: string,
   originalElement: React.ReactNode
 ) => {
-  if (type === 'prev') {
-    return LeftIcon
-  }
-  if (type === 'next') {
-    return RightIcon
-  }
+  if (type === 'prev') return LeftIcon
+
+  if (type === 'next') return RightIcon
+
   return originalElement
 }
 

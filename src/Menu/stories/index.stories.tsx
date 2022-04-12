@@ -1,18 +1,12 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Bell, CaretDown, HouseLine, MagnifyingGlass } from 'phosphor-react';
-import {
-  default as Menu,
-  MenuItemGroup,
-  MenuItem,
-  MenuProps,
-  MenuSubMenu
-} from '../index';
+import React from 'react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Bell, CaretDown, HouseLine, MagnifyingGlass } from 'phosphor-react'
+import { default as Menu, MenuItemGroup, MenuItem, MenuProps, SubMenu, isIconFill } from '../index'
 
 export default {
   title: 'Menu',
   component: Menu
-} as ComponentMeta<typeof Menu>;
+} as ComponentMeta<typeof Menu>
 
 const Template: ComponentStory<typeof Menu> = (args: MenuProps, context) => {
   return (
@@ -25,10 +19,10 @@ const Template: ComponentStory<typeof Menu> = (args: MenuProps, context) => {
     >
       {args.children || context.children}
     </Menu>
-  );
-};
+  )
+}
 
-export const TopNavigation = Template.bind({});
+export const TopNavigation = Template.bind({})
 
 TopNavigation.args = {
   label: 'Top Navigation',
@@ -40,11 +34,7 @@ TopNavigation.args = {
       <MenuItem key={'three'} disabled={true}>
         Navigation Three
       </MenuItem>
-      <MenuSubMenu
-        icon={<CaretDown size={16} weight={'light'} />}
-        key={'four'}
-        title="Navigation One"
-      >
+      <SubMenu icon={<CaretDown size={16} weight={'light'} />} key={'four'} title="Navigation One">
         <MenuItemGroup title="Item 1">
           <MenuItem key="setting:1">Option 1</MenuItem>
           <MenuItem key="setting:2">Option 2</MenuItem>
@@ -53,12 +43,12 @@ TopNavigation.args = {
           <MenuItem key="setting:3">Option 3</MenuItem>
           <MenuItem key="setting:4">Option 4</MenuItem>
         </MenuItemGroup>
-      </MenuSubMenu>
+      </SubMenu>
     </>
   )
-};
+}
 
-export const InlineMenu = Template.bind({});
+export const InlineMenu = Template.bind({})
 
 InlineMenu.argTypes = {
   inlineCollapsed: {
@@ -70,26 +60,21 @@ InlineMenu.argTypes = {
       disable: true
     }
   }
-};
+}
 
 InlineMenu.args = {
   label: 'Inline Menu',
   mode: 'inline',
   inlineCollapsed: true
-};
+}
 
-const isIconFill = (selectedKey: string[], key: string) =>
-  selectedKey.includes(key) ? 'fill' : 'light';
 InlineMenu.decorators = [
   Story => {
-    const [selectedKey, setSelectedKey] = React.useState([]);
+    const [selectedKey, setSelectedKey] = React.useState([])
 
     return (
-      <Story
-        mode="inline"
-        onSelect={menuData => setSelectedKey(menuData.keyPath)}
-      >
-        <MenuSubMenu
+      <Story mode="inline" onSelect={menuData => setSelectedKey(menuData.keyPath)}>
+        <SubMenu
           key={'one'}
           icon={<HouseLine weight={isIconFill(selectedKey, 'one')} size={16} />}
           title="Navigation One"
@@ -102,15 +87,10 @@ InlineMenu.decorators = [
             <MenuItem key="setting:3">Option 3</MenuItem>
             <MenuItem key="setting:4">Option 4</MenuItem>
           </MenuItemGroup>
-        </MenuSubMenu>
-        <MenuSubMenu
+        </SubMenu>
+        <SubMenu
           key={'two'}
-          icon={
-            <MagnifyingGlass
-              weight={isIconFill(selectedKey, 'two')}
-              size={16}
-            />
-          }
+          icon={<MagnifyingGlass weight={isIconFill(selectedKey, 'two')} size={16} />}
           title="Navigation Two"
         >
           <MenuItemGroup title="Item 1">
@@ -121,8 +101,8 @@ InlineMenu.decorators = [
             <MenuItem key="setting:7">Option 3</MenuItem>
             <MenuItem key="setting:8">Option 4</MenuItem>
           </MenuItemGroup>
-        </MenuSubMenu>
-        <MenuSubMenu
+        </SubMenu>
+        <SubMenu
           key={'three'}
           icon={<Bell weight={isIconFill(selectedKey, 'three')} size={16} />}
           title="Navigation Three"
@@ -135,8 +115,8 @@ InlineMenu.decorators = [
             <MenuItem key="setting:11">Option 3</MenuItem>
             <MenuItem key="setting:12">Option 4</MenuItem>
           </MenuItemGroup>
-        </MenuSubMenu>
+        </SubMenu>
       </Story>
-    );
+    )
   }
-];
+]
