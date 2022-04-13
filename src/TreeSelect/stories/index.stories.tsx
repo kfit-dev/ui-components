@@ -31,7 +31,7 @@ export const Primary = Template.bind({});
 
 Primary.args = {
   label: 'TreeSelect',
-  style: { width: '100%' },
+  style: { maxWidth: '320px' },
   dropdownStyle: { maxHeight: 400, overflow: 'auto' },
   placeholder: 'Please select'
 };
