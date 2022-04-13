@@ -3,7 +3,9 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import {
   default as TreeSelect,
+  recursiveTreeNodes,
   TreeSelectProps,
+  TreeSelectTreeNodeProps
 } from '../index';
 
 export default {
@@ -29,52 +31,43 @@ export const Primary = Template.bind({});
 
 Primary.args = {
   label: 'TreeSelect',
-  showSearch: true,
   style: { width: '100%' },
   dropdownStyle: { maxHeight: 400, overflow: 'auto' },
   placeholder: 'Please select',
-  allowClear: true,
-  treeDefaultExpandAll: true,
-  treeLine: true
+  treeDefaultExpandAll: true
 };
 
-type TreeNodesType = {
-  title: string;
-  value: string;
-  children?: TreeNodesType[];
-  disabled?: boolean;
-};
-
-const treeNodesArray: TreeNodesType[] = [
+const treeNodesArray: TreeSelectTreeNodeProps[] = [
   {
     title: 'Node1',
-    value: '0-0',
+    value: 'A',
     children: [
       {
         title: 'Child Node1',
-        value: '0-0-1'
+        value: 'A1'
       },
       {
         title: 'Child Node2',
-        value: '0-0-2',
+        value: 'A2',
         children: [
           {
             title: 'Child Node1',
-            value: '0-0-0-1',
+            value: 'A21',
             children: [
               {
                 title: 'Child Node1',
-                value: '0-0-0-0-1'
+                value: 'A211',
+                disabled: true
               },
               {
                 title: 'Child Node2',
-                value: '0-0-0-0-2'
+                value: 'A212'
               }
             ]
           },
           {
             title: 'Child Node2',
-            value: '0-0-0-2'
+            value: 'A22'
           }
         ]
       }
@@ -82,37 +75,18 @@ const treeNodesArray: TreeNodesType[] = [
   },
   {
     title: 'Node2',
-    value: '0-1'
+    value: 'B'
   }
 ];
 
-const recursiveTreeNodes = (tree: TreeNodesType[]) => {
-  // tree has to be broken down first
-  // base case to check if array has any objects to be traverse down
-  if (tree.length === 0) {
-    return tree;
-  } else {
-    return tree.map(item => {
-      // base case (condition that breaks the call)
-      if (!item.children) {
-        return item;
-      }
-      // condition that keeps on calling itself
-      else {
-        item.disabled = true;
-        return { ...item, children: recursiveTreeNodes(item.children) };
-      }
-    });
-  }
-};
-
 Primary.decorators = [
   Story => {
-    recursiveTreeNodes([...treeNodesArray])
     const [value, setValue] = React.useState(undefined);
     const onChange = () => {
       setValue(value);
     };
+    recursiveTreeNodes([...treeNodesArray]);
+
     return (
       <Story onChange={onChange} value={value} treeData={treeNodesArray} />
     );

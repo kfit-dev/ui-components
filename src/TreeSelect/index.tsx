@@ -5,13 +5,32 @@ import {
   TreeNodeProps as AntTreeNodeProps
 } from 'antd';
 
-import 'antd/lib/tree-select/style/index.css';
 import './style.css';
+import { CaretDown } from 'phosphor-react';
 
 export type TreeSelectProps = AntTreeSelectProps & {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 export type TreeSelectTreeNodeProps = AntTreeNodeProps;
+
+export const recursiveTreeNodes: Function = (tree: TreeSelectTreeNodeProps[]) => {
+  // base case to check if array has any objects to be traverse down
+  if (tree.length === 0) {
+    return tree;
+  } else {
+    return tree.map((item) => {
+      // base case (condition that breaks the call)
+      if (!item.children) {
+        return item;
+      }
+      // else continue call itself
+      else {
+        item.selectable = false;
+        return { ...item, children: recursiveTreeNodes(item.children as TreeSelectTreeNodeProps[]) };
+      }
+    });
+  }
+};
 
 const TreeSelect: React.FC<TreeSelectProps> = props => {
   return <AntTreeSelect {...props} />;
@@ -23,6 +42,9 @@ export const TreeSelectTreeNode: React.FC<TreeSelectTreeNodeProps & {
   return <AntTreeSelect.TreeNode {...props} />;
 };
 
-TreeSelect.defaultProps = {};
+TreeSelect.defaultProps = {
+  switcherIcon: <CaretDown className="rotate-caret" size={16} weight="light" />,
+  suffixIcon: <CaretDown className="rotate-caret" size={16} weight="light" />
+};
 
 export default TreeSelect;
