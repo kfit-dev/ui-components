@@ -22,6 +22,10 @@
         }
       }
 
+      span.ant-select-tree-node-content-wrapper {
+        @apply p-0;
+      }
+
       &:not(&-disabled):hover {
         @apply bg-neutral-100 rounded;
       }

@@ -33,49 +33,66 @@ Primary.args = {
   label: 'TreeSelect',
   style: { width: '100%' },
   dropdownStyle: { maxHeight: 400, overflow: 'auto' },
-  placeholder: 'Please select',
-  treeDefaultExpandAll: true
+  placeholder: 'Please select'
 };
 
 const treeNodesArray: TreeSelectTreeNodeProps[] = [
   {
-    title: 'Node1',
-    value: 'A',
+    title: 'Main 1',
+    value: 'A-0',
     children: [
       {
-        title: 'Child Node1',
-        value: 'A1'
+        title: 'Sub 1',
+        value: 'A-0-0'
       },
       {
-        title: 'Child Node2',
-        value: 'A2',
+        title: 'Sub 2',
+        value: 'A-0-1',
+        disabled: true
+      }
+    ]
+  },
+  {
+    title: 'Main 2',
+    value: 'B-0',
+    children: [
+      {
+        title: 'Sub 1',
+        value: 'B-0-0',
+      },
+      {
+        title: 'Sub 2',
+        value: 'B-0-1',
         children: [
           {
-            title: 'Child Node1',
-            value: 'A21',
-            children: [
-              {
-                title: 'Child Node1',
-                value: 'A211',
-                disabled: true
-              },
-              {
-                title: 'Child Node2',
-                value: 'A212'
-              }
-            ]
+            title: 'Content 1',
+            value: 'B-0-1-0'
           },
           {
-            title: 'Child Node2',
-            value: 'A22'
+            title: 'Content 2',
+            value: 'B-0-1-1'
           }
         ]
       }
     ]
   },
   {
-    title: 'Node2',
-    value: 'B'
+    title: 'Dropdown 3',
+    value: 'C-0',
+    children: [
+      {
+        title: 'Sub 1',
+        value: 'C-0-0'
+      },
+      {
+        title: 'Sub 2',
+        value: 'C-0-1'
+      }
+    ]
+  },
+  {
+    title: 'Dropdown 4',
+    value: 'D-0'
   }
 ];
 
