@@ -22,16 +22,20 @@
   }
 
   .ant-result-content {
-    @apply bg-neutral-100 rounded-lg p-[26px] max-w-md;
+    @apply bg-neutral-100 rounded-lg p-6 w-[448px];
   }
 
   .ant-result-children {
     &-title {
-      @apply text-neutral-700 font-semibold text-sm mb-1;
+      @apply text-neutral-700 font-semibold text-sm mb-[10px];
     }
 
     &-content {
       @apply flex justify-between items-center;
+
+      &:not(:last-child) {
+        @apply mb-2;
+      }
     }
 
     &-icon-and-text {
