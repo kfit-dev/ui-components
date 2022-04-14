@@ -2,7 +2,7 @@ import React from 'react'
 import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
 import { differenceInDays } from 'date-fns'
-import { default as DatePicker } from '../index'
+import { DatePicker } from '../index'
 
 import '../../assets/style/form-item.css'
 
