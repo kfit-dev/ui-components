@@ -38,7 +38,6 @@ Basic.args = {
   datePicker: {
     label: 'DatePicker',
     showToday: false,
-    format: 'DD/MM/YYYY'
   },
   formItem: {
     label: 'Date'
@@ -49,9 +48,8 @@ export const Error = Template.bind({})
 
 Error.args = {
   datePicker: {
-    label: 'RangePicker',
+    label: 'DatePicker',
     showToday: false,
-    format: 'DD/MM/YYYY'
   },
   formItem: {
     label: 'Date',
