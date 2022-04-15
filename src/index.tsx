@@ -25,13 +25,20 @@ export * from 'antd/lib/upload/interface'
 export { default as Alert, AlertProps, AlertWithButtons } from './Alert'
 export { default as Timeline, TimelineItem, TimelineProps, TimelineItemProps } from './Timeline'
 export {
-  default as DatePicker,
+  default as BaseDatePicker,
+  DatePicker,
   MonthPicker,
   WeekPicker,
   YearPicker,
   TimePicker,
   RangePicker,
-  QuarterPicker
+  QuarterPicker,
+  TimeRangePicker,
+  DateRangePicker,
+  TimePickerProps,
+  TimeRangePickerProps,
+  DatePickerProps,
+  DateRangePickerProps
 } from './DatePicker'
 export {
   isIconFill,
