@@ -141,3 +141,4 @@ export {
   DescriptionsItemProps
 } from './Descriptions';
 export { default as PageHeader, PageHeaderWrapper, PageHeaderProps, PageHeaderWrapperProps } from './PageHeader';
+export { default as InputNumber, InputNumberProps } from './InputNumber';
