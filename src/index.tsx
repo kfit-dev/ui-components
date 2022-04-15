@@ -42,14 +42,21 @@ export {
   TimelineItemProps
 } from './Timeline';
 export {
-  default as DatePicker,
+  default as BaseDatePicker,
+  DatePicker,
   MonthPicker,
   WeekPicker,
   YearPicker,
   TimePicker,
   RangePicker,
-  QuarterPicker
-} from './DatePicker';
+  QuarterPicker,
+  TimeRangePicker,
+  DateRangePicker,
+  TimePickerProps,
+  TimeRangePickerProps,
+  DatePickerProps,
+  DateRangePickerProps
+} from './DatePicker'
 export {
   isIconFill,
   default as Menu,
