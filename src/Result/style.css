@@ -39,7 +39,7 @@
     }
 
     &-icon-and-text {
-      @apply flex items-center text-neutral-700;
+      @apply flex items-center text-neutral-700 text-sm;
       > svg {
         @apply mr-[6px];
       }
