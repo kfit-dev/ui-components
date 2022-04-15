@@ -1,0 +1,10 @@
+@import 'antd/lib/style/default.css';
+@import 'antd/lib/spin/style/index.css';
+
+.ant-spin {
+  &.ant-spin-spinning {
+    .anticon-loading {
+      @apply text-slate-700;
+    }
+  }
+}
