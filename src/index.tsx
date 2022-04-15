@@ -82,7 +82,13 @@ export {
   AvatarTextProps,
   LogoutButtonProps
 } from './Layout'
-export { default as Result, ResultChildren, ResultProps, ResultChildrenProps } from './Result'
+export {
+  default as Result,
+  ResultChildren,
+  ResultProps,
+  ResultChildrenProps,
+  ResultChildrenContentProps
+} from './Result'
 export * from './HOCs'
 
 // None-modified components

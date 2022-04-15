@@ -11,7 +11,7 @@ import ResultSuccessIconSVG from '../assets/icons/ResultSuccessIconSVG'
 import ResultWarningIconSVG from '../assets/icons/ResultWarningIconSVG'
 
 export type ResultProps = AntResultProps
-type ResultChildrenContentProps = {
+export type ResultChildrenContentProps = {
   icon?: React.ReactNode
   text: string
   button?: React.ReactNode
