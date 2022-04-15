@@ -32,8 +32,8 @@ const resultIcon = (status: ResultStatusType | undefined, icon: React.ReactNode)
 }
 
 const Result: React.FC<ResultProps> = props => {
-  const { status, icon } = props
-  return <AntResult icon={resultIcon(status, icon)} {...props} />
+  const { status, icon, ...restProps } = props
+  return <AntResult icon={resultIcon(status, icon)} {...restProps} />
 }
 
 export const ResultChildren: React.FC<ResultChildrenProps> = props => {
