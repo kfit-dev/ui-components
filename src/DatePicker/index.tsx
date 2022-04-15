@@ -37,34 +37,38 @@ const getStyle = (open:boolean,className?:string,) => {return classNames(classNa
 
 export const DatePicker:React.FC<DatePickerProps> = ({ onOpenChange ,className, ...restProps }) => {
   const [open, setOpen] = React.useState(false);
-  const handleOpenChange = createHandleOpenChange(onOpenChange,setOpen);
+  const styles = React.useMemo(() => getStyle(open, className), [open, className])
+  const handleOpenChange = React.useCallback(createHandleOpenChange(onOpenChange, setOpen), [onOpenChange, setOpen])
   return(
-    <BaseDatePicker className={getStyle(open,className)} onOpenChange={handleOpenChange} {...restProps}/>
+    <BaseDatePicker className={styles} onOpenChange={handleOpenChange} {...restProps}/>
   );
 }
 
 export const QuarterPicker : React.FC<DatePickerProps> = ({ onOpenChange ,className, ...restProps }) =>{
   const [open, setOpen] = React.useState(false);
-  const handleOpenChange = createHandleOpenChange(onOpenChange,setOpen);
+  const styles = React.useMemo(() => getStyle(open, className), [open, className])
+  const handleOpenChange = React.useCallback(createHandleOpenChange(onOpenChange, setOpen), [onOpenChange, setOpen])
   return(
-    <BaseDatePicker className={getStyle(open,className)} onOpenChange={handleOpenChange} {...restProps} picker='quarter' format={"YYYY-'Q'Q"}/>
+    <BaseDatePicker className={styles} onOpenChange={handleOpenChange} {...restProps} picker='quarter' format={"YYYY-'Q'Q"}/>
   );
 };
 
 export const DateRangePicker:React.FC<DateRangePickerProps> = ({ onOpenChange ,className, ...restProps }) => {
   const [open, setOpen] = React.useState(false);
-  const handleOpenChange = createHandleOpenChange(onOpenChange,setOpen);
+  const styles = React.useMemo(() => getStyle(open, className), [open, className])
+  const handleOpenChange = React.useCallback(createHandleOpenChange(onOpenChange, setOpen), [onOpenChange, setOpen])
   return(
-    <RangePicker className={getStyle(open,className)} onOpenChange={handleOpenChange}  {...restProps}/>
+    <RangePicker className={styles}  onOpenChange={handleOpenChange}  {...restProps}/>
   );
 }
 
 
 export const TimePicker: React.FC<TimePickerProps> = ({ onOpenChange ,className, ...restProps }) => {
   const [open, setOpen] = React.useState(false);
-  const handleOpenChange = createHandleOpenChange(onOpenChange,setOpen);
+  const styles = React.useMemo(() => getStyle(open, className), [open, className])
+  const handleOpenChange = React.useCallback(createHandleOpenChange(onOpenChange, setOpen), [onOpenChange, setOpen])
   return(
-    <BaseDatePicker.TimePicker className={getStyle(open,className)} onOpenChange={handleOpenChange}  {...restProps}/>
+    <BaseDatePicker.TimePicker className={styles}  onOpenChange={handleOpenChange}  {...restProps}/>
   );
 }
 
@@ -73,9 +77,10 @@ export const TimeRangePicker = React.forwardRef<any, TimeRangePickerProps>((prop
   // eslint-disable-next-line react/prop-types
   const { onOpenChange,className,picker,mode, ...restProps } = props;
   const [open, setOpen] = React.useState(false);
-  const handleOpenChange = createHandleOpenChange(onOpenChange,setOpen);
+  const styles = React.useMemo(() => getStyle(open, className), [open, className])
+  const handleOpenChange = React.useCallback(createHandleOpenChange(onOpenChange, setOpen), [onOpenChange, setOpen])
   return(
-    <RangePicker className={getStyle(open,className)} onOpenChange={handleOpenChange}  picker="time" ref={ref} {...restProps}/>
+    <RangePicker className={styles} onOpenChange={handleOpenChange}  picker="time" ref={ref} {...restProps}/>
   );
 });
 
