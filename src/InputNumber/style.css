@@ -54,4 +54,34 @@
 
 }
 
+.ant-form-item-has-error {
+
+    input{
+        @apply text-red-600;
+    }
+
+    .ant-input-number-input{
+        @apply border-[1px] border-red-600;
+        @apply hover:border-red-600;
+        @apply focus:border-red-600;
+    }
+
+    .ant-input-number-affix-wrapper{
+
+        @apply text-red-600 border-red-600;
+        @apply hover:border-red-600 !important;
+        @apply  focus:text-red-600;
+    
+        .ant-input-number-prefix{
+            @apply text-red-600;
+        }
+    
+        .ant-input-number-input{
+            @apply border-transparent;
+            @apply hover:border-transparent focus:border-transparent;
+        }
+    
+    }
+}
+
 

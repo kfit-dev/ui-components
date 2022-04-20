@@ -1,7 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import { Form } from 'antd'
 import { default as InputNumber, InputNumberProps } from '../index'
+
+import '../../assets/style/form-item.css';
 
 export default {
   title: 'InputNumber',
@@ -28,18 +30,18 @@ BasicDisabled.args = {
   value:123,
 };
 
-export const BasicPrefixCurrencyRM = Template.bind({});
+export const PrefixCurrencyRM = Template.bind({});
 
-BasicPrefixCurrencyRM.args = {
+PrefixCurrencyRM.args = {
   label: 'InputNumber',
   controls:false,
   bordered:false,
   prefix:"RM"
 };
 
-export const BasicPrefixCurrencyRMDisbaled = Template.bind({});
+export const PrefixCurrencyRMDisbaled = Template.bind({});
 
-BasicPrefixCurrencyRMDisbaled.args = {
+PrefixCurrencyRMDisbaled.args = {
   label: 'InputNumber',
   controls:false,
   bordered:false,
@@ -49,18 +51,18 @@ BasicPrefixCurrencyRMDisbaled.args = {
 };
 
 
-export const BasicPrefixCurrencySG = Template.bind({});
+export const PrefixCurrencySG = Template.bind({});
 
-BasicPrefixCurrencySG.args = {
+PrefixCurrencySG.args = {
   label: 'InputNumber',
   controls:false,
   bordered:false,
   prefix:"$S"
 };
 
-export const BasicPrefixCurrencyRP = Template.bind({});
+export const PrefixCurrencyRP = Template.bind({});
 
-BasicPrefixCurrencyRP.args = {
+PrefixCurrencyRP.args = {
   label: 'InputNumber',
   controls:false,
   bordered:false,
@@ -93,6 +95,35 @@ export const BasicResponsive = () => {
         bordered={false}
       />
     </div>
+  );
+}
+
+export const Error = () => {
+  return(
+    <Form layout='vertical'>
+      <Form.Item label='Text field title' validateStatus='error' help='Error text here. No more than one line'>
+        <InputNumber
+          style={{ flexBasis:"fit-content",width: '320px'  }}
+          controls={false}
+          bordered={false}
+        />
+      </Form.Item>
+    </Form>
+  );
+}
+
+export const ErrorCurrency = () => {
+  return(
+    <Form layout='vertical'>
+      <Form.Item label='Text field title' validateStatus='error' help='Error text here. No more than one line'>
+        <InputNumber
+          prefix={"RM"}
+          style={{ flexBasis:"fit-content",width: '320px'  }}
+          controls={false}
+          bordered={false}
+        />
+      </Form.Item>
+    </Form>
   );
 }
 
