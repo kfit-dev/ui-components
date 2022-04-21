@@ -35,11 +35,15 @@
 
     &-back{
         &-button{
-            @apply w-10 h-10 rounded-full;
+            @apply w-10 h-10 rounded-full ;
             @apply flex bg-white !important;
 
             svg{
                 @apply justify-center self-center w-full;
+            }
+
+            button{
+                @apply text-slate-700 hover:text-slate-700;
             }
         }
     }

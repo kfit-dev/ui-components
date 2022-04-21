@@ -25,13 +25,20 @@ export * from 'antd/lib/upload/interface'
 export { default as Alert, AlertProps, AlertWithButtons } from './Alert'
 export { default as Timeline, TimelineItem, TimelineProps, TimelineItemProps } from './Timeline'
 export {
-  default as DatePicker,
+  default as BaseDatePicker,
+  DatePicker,
   MonthPicker,
   WeekPicker,
   YearPicker,
   TimePicker,
   RangePicker,
-  QuarterPicker
+  QuarterPicker,
+  TimeRangePicker,
+  DateRangePicker,
+  TimePickerProps,
+  TimeRangePickerProps,
+  DatePickerProps,
+  DateRangePickerProps
 } from './DatePicker'
 export {
   isIconFill,
@@ -83,9 +90,17 @@ export {
   LogoutButtonProps
 } from './Layout'
 export { default as Spin, DefaultLoadingIcon, spinSizeNumbers, SpinProps, DefaultIconProps } from './Spin'
+export {
+  default as Result,
+  ResultChildren,
+  ResultProps,
+  ResultChildrenProps,
+  ResultChildrenContentProps
+} from './Result'
+export { default as Description, DescriptionsItem, DescriptionsProps, DescriptionsItemProps } from './Descriptions'
+export { default as PageHeader, PageHeaderWrapper, PageHeaderProps, PageHeaderWrapperProps } from './PageHeader'
+
 export * from './HOCs'
 
 // None-modified components
 export { Typography, Grid, Form, Row, Col, RowProps, ColProps } from 'antd'
-export { default as Description, DescriptionsItem, DescriptionsProps, DescriptionsItemProps } from './Descriptions'
-export { default as PageHeader, PageHeaderWrapper, PageHeaderProps, PageHeaderWrapperProps } from './PageHeader'
