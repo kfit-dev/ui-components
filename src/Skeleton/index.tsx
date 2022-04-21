@@ -19,6 +19,8 @@ export const SkeletonButton: React.FC<SkeletonButtonProps> = props => <AntSkelet
 export const SkeletonInput: React.FC<SkeletonInputProps> = props => <AntSkeleton.Input {...props} />
 export const SkeletonImage = (props: SkeletonImageProps) => <AntSkeleton.Image {...props} />
 
-Skeleton.defaultProps = {}
+Skeleton.defaultProps = {
+  active: true
+}
 
 export default Skeleton
