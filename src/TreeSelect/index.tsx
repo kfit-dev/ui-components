@@ -51,27 +51,23 @@ export const TreeSelectTreeNode: React.FC<TreeSelectTreeNodeProps & {
   return <AntTreeSelect.TreeNode {...props} value={props.value} />
 }
 
-const onClickExpandTree = (event: React.MouseEvent) => {
+const onClickExpandTree = (event: MouseEvent) => {
   const target = event.target as Element
   const parentNode = target.parentNode as HTMLElement
 
   if (parentNode.className.includes(parentNodeClassname)) {
     event.preventDefault()
-    const expandIconElement: any = Array.from(parentNode.childNodes).find((item: HTMLElement) =>
-      item.className.includes(expandIconClassname)
-    )
-    if (expandIconElement) {
-      expandIconElement.click()
-    }
+    const expandIconElement: HTMLElement | null = parentNode.querySelector(`.${expandIconClassname}`)
+    if (expandIconElement) expandIconElement.click()
   }
 }
 
 const TreeSelect: React.FC<TreeSelectProps> = props => {
   React.useEffect(() => {
     const dropdownContainer = document.querySelector('body')
-    if (dropdownContainer) dropdownContainer.addEventListener('click', onClickExpandTree as () => void)
+    if (dropdownContainer) dropdownContainer.addEventListener('click', onClickExpandTree)
     return () => {
-      if (dropdownContainer) dropdownContainer.removeEventListener('click', onClickExpandTree as () => void)
+      if (dropdownContainer) dropdownContainer.removeEventListener('click', onClickExpandTree)
     }
   }, [onClickExpandTree])
 
