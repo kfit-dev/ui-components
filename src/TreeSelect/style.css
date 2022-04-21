@@ -14,6 +14,10 @@
         @apply text-neutral-300;
       }
 
+      span.ant-select-tree-title {
+        @apply pointer-events-none;
+      }
+
       span.ant-select-tree-switcher {
         &_close {
           .rotate-caret {
