@@ -107,7 +107,18 @@ export {
 } from './Result'
 export { default as Description, DescriptionsItem, DescriptionsProps, DescriptionsItemProps } from './Descriptions'
 export { default as PageHeader, PageHeaderWrapper, PageHeaderProps, PageHeaderWrapperProps } from './PageHeader'
-export { default as Skeleton, SkeletonProps } from './Skeleton'
+export {
+  default as Skeleton,
+  SkeletonAvatar,
+  SkeletonButton,
+  SkeletonImage,
+  SkeletonInput,
+  SkeletonProps,
+  SkeletonAvatarProps,
+  SkeletonButtonProps,
+  SkeletonImageProps,
+  SkeletonInputProps
+} from './Skeleton'
 
 export * from './HOCs'
 
