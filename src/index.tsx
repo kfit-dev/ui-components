@@ -1,4 +1,12 @@
-export { default as List, ListItem, ListItemMetaSkeleton, ListProps, ListItemProps, ListItemMetaProps } from './List'
+export {
+  default as List,
+  ListItem,
+  ListItemMeta,
+  ListItemMetaSkeleton,
+  ListProps,
+  ListItemProps,
+  ListItemMetaProps
+} from './List'
 export { default as Empty, EmptyProps } from './Empty'
 export { default as Button, ButtonProps } from './Button'
 export { default as Checkbox, CheckboxProps } from './Checkbox'
@@ -89,6 +97,7 @@ export {
   AvatarTextProps,
   LogoutButtonProps
 } from './Layout'
+export { default as Spin, DefaultLoadingIcon, spinSizeNumbers, SpinProps, DefaultIconProps } from './Spin'
 export {
   default as Result,
   ResultChildren,
@@ -96,10 +105,11 @@ export {
   ResultChildrenProps,
   ResultChildrenContentProps
 } from './Result'
+export { default as Description, DescriptionsItem, DescriptionsProps, DescriptionsItemProps } from './Descriptions'
+export { default as PageHeader, PageHeaderWrapper, PageHeaderProps, PageHeaderWrapperProps } from './PageHeader'
+
 export * from './HOCs'
 
 // None-modified components
 export { Typography, Grid, Form, Row, Col, RowProps, ColProps } from 'antd'
-export { default as Description, DescriptionsItem, DescriptionsProps, DescriptionsItemProps } from './Descriptions'
-export { default as PageHeader, PageHeaderWrapper, PageHeaderProps, PageHeaderWrapperProps } from './PageHeader'
 export { default as BackTop, BackTopProps } from './BackTop'
