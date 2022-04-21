@@ -82,7 +82,7 @@ export {
   AvatarTextProps,
   LogoutButtonProps
 } from './Layout'
-export { default as Spin, SpinProps, SpinIcon } from './Spin'
+export { default as Spin, DefaultLoadingIcon, spinSizeNumbers, SpinProps, DefaultIconProps } from './Spin'
 export * from './HOCs'
 
 // None-modified components
