@@ -6,11 +6,16 @@ import { SpinSize } from 'antd/lib/spin'
 import './style.css'
 
 export type SpinProps = AntSpinProps
+const SpinSizeNumbers = {
+  small: 14,
+  default: 20,
+  large: 32
+}
 
 const iconSize = (size: SpinSize | number) => {
-  if (size === 'small') return 14
-  else if (size === 'default') return 20
-  else if (size === 'large') return 32
+  if (size === 'small') return SpinSizeNumbers.small
+  else if (size === 'default') return SpinSizeNumbers.default
+  else if (size === 'large') return SpinSizeNumbers.large
   else return size
 }
 
@@ -20,8 +25,9 @@ export const SpinIcon: React.FC<{ size: SpinSize | number }> = props => {
 }
 
 const Spin: React.FC<SpinProps> = props => {
-  const { indicator, size = 'default', ...restProps } = props
-  return <AntSpin indicator={<SpinIcon size={size} /> || indicator} {...restProps} />
+  const { size = 'default', ...restProps } = props
+  const indicator = <SpinIcon size={size} /> || props.indicator
+  return <AntSpin {...restProps} indicator={indicator} />
 }
 
 export default Spin
