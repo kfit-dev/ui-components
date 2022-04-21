@@ -1,15 +1,14 @@
-import * as React from "react";
-import { Divider as AntDivider, DividerProps as AntDividerProps } from "antd";
+import * as React from 'react'
+import { Divider as AntDivider, DividerProps as AntDividerProps } from 'antd'
 
+import './style.css'
 
-import "./style.css"
+export type DividerProps = AntDividerProps
 
-export type DividerProps = AntDividerProps;
+const Divider: React.FC<DividerProps> = props => {
+  return <AntDivider {...props} />
+}
 
-const Divider: React.FC<DividerProps> = (props) => {
-  return <AntDivider {...props} />;
-};
+Divider.defaultProps = {}
 
-Divider.defaultProps = {};
-
-export default Divider;
+export default Divider
