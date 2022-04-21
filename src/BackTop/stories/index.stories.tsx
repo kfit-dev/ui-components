@@ -31,5 +31,5 @@ const Template: ComponentStory<typeof BackTop> = (args: BackTopProps) =>{
 export const Primary = Template.bind({});
 
 Primary.args = {
-  label: 'BackTop'
+  label: 'BackTop2'
 };
