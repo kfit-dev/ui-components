@@ -97,6 +97,13 @@ export {
   AvatarTextProps,
   LogoutButtonProps
 } from './Layout'
+export {
+  default as TreeSelect,
+  TreeSelectTreeNode,
+  TreeSelectProps,
+  TreeSelectTreeNodeProps,
+  recursiveTreeNodes
+} from './TreeSelect'
 export { default as Spin, DefaultLoadingIcon, spinSizeNumbers, SpinProps, DefaultIconProps } from './Spin'
 export {
   default as Result,
