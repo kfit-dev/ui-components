@@ -11,7 +11,7 @@ export default {
 
 var indents = [];
 for (var i = 0; i < 5; i++) {
-  indents.push(<div>Only for Testing Purpose (Scroll Down)</div>);
+  indents.push(<div key={i}>Only for Testing Purpose (Scroll Down)</div>);
 }
 
 export const Navbar = () =>{
@@ -56,7 +56,6 @@ export const NotificationBar = () =>{
         </div>
       </Affix>
       {indents}
-      {indents}
     </div>
   );
 }
@@ -78,7 +77,6 @@ export const AlertBar = () =>{
           banner={false}
         />
       </Affix>
-      {indents}
       {indents}
     </div>
   );
