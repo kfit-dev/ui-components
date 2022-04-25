@@ -31,7 +31,6 @@ export const Navbar = () =>{
         </div>
       </Affix>
       {indents}
-      {indents}
     </div>
   );
 }
