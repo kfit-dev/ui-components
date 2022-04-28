@@ -121,3 +121,4 @@ export * from './HOCs'
 // None-modified components
 export { Typography, Grid, Form, Row, Col, RowProps, ColProps } from 'antd'
 export { default as BackTop, BackTopProps } from './BackTop'
+export { default as Affix, AffixProps } from './Affix'
