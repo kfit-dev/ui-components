@@ -114,10 +114,12 @@ export {
 } from './Result'
 export { default as Description, DescriptionsItem, DescriptionsProps, DescriptionsItemProps } from './Descriptions'
 export { default as PageHeader, PageHeaderWrapper, PageHeaderProps, PageHeaderWrapperProps } from './PageHeader'
+export { default as Divider, DividerProps } from './Divider'
 
 export * from './HOCs'
 
 // None-modified components
 export { Typography, Grid, Form, Row, Col, RowProps, ColProps } from 'antd'
 export { default as BackTop, BackTopProps } from './BackTop'
+export { default as Affix, AffixProps } from './Affix'
 export { default as Mentions,MentionOption,MentionsProps,OptionProps } from './Mentions'
