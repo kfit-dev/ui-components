@@ -115,6 +115,7 @@ export {
 export { default as Description, DescriptionsItem, DescriptionsProps, DescriptionsItemProps } from './Descriptions'
 export { default as PageHeader, PageHeaderWrapper, PageHeaderProps, PageHeaderWrapperProps } from './PageHeader'
 export { default as Divider, DividerProps } from './Divider'
+export { default as Comment, CommentProps } from './Comment'
 
 export * from './HOCs'
 
