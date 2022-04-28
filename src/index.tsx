@@ -20,7 +20,7 @@ export { default as AvatarGroup, AvatarGroupProps } from './AvatarGroup'
 export { default as Badge, BadgeProps } from './Badge'
 export { default as Popover, PopoverProps } from './Popover'
 export { default as Notification, NotificationProps } from './Notification'
-export { default as Input, Search, InputProps, SearchProps } from './Input'
+export { default as Input, Search, TextArea, InputProps, SearchProps, TextAreaProps } from './Input'
 export {
   default as Upload,
   UploadProps,
@@ -120,5 +120,5 @@ export * from './HOCs'
 export { Typography, Grid, Form, Row, Col, RowProps, ColProps } from 'antd'
 export { default as BackTop, BackTopProps } from './BackTop'
 export { default as Affix, AffixProps } from './Affix'
-export { default as Mentions,MentionOption,MentionsProps,OptionProps } from './Mentions'
-export { default as InputNumber, InputNumberProps } from './InputNumber';
+export { default as Mentions, MentionOption, MentionsProps, OptionProps } from './Mentions'
+export { default as InputNumber, InputNumberProps } from './InputNumber'

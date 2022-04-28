@@ -137,3 +137,7 @@
     background-image: var(--ic-x-16);
   }
 }
+
+textarea.ant-input {
+  @apply rounded-lg border-slate-100;
+}
