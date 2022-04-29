@@ -4,20 +4,20 @@ import { default as AntCard, CardProps as AntCardProps, CardMetaProps as AntCard
 import './style.css'
 
 export type CardProps = AntCardProps & {
-  hasbutton?:string,
-  hasmetaextra?:string,
+  hasButton?:boolean,
+  hasMetaExtra?:boolean,
 }
 
 export type MetaProps = AntCardMetaProps & {
-  hasmeta: boolean,
+  hasMeta: boolean,
   extra?:React.ReactNode,
 }
 
 export const { Meta } = AntCard
 
 const Card: React.FC<CardProps> = props => {
-  const { hasbutton,hasmetaextra } = props
-  return <AntCard {...props}  className={ [hasbutton ? "with-button" : "", hasmetaextra ? "with-meta-extra" : ""].join(" ")}/>
+  const { hasButton,hasMetaExtra, ...restProps } = props
+  return <AntCard {...restProps}  className={ [hasButton ? "with-button" : "", hasMetaExtra ? "with-meta-extra" : ""].join(" ")}/>
 }
 
 export default Card
