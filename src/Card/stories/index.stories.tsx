@@ -77,7 +77,7 @@ SmallCardButton.args = {
     size: 'small',
     title: 'Small Card Title',
     children: content,
-    hasButton:false,
+    hasButton:true,
     extra: (
       <Button size="small" type="text">
         Button
