@@ -49,11 +49,12 @@ export {
   DateRangePickerProps
 } from './DatePicker'
 export {
-  isIconFill,
   default as Menu,
+  isIconFill,
   MenuItem,
   MenuItemGroup,
   SubMenu,
+  MenuDivider,
   MenuProps,
   MenuItemProps,
   MenuItemGroupProps,
@@ -120,5 +121,5 @@ export * from './HOCs'
 export { Typography, Grid, Form, Row, Col, RowProps, ColProps } from 'antd'
 export { default as BackTop, BackTopProps } from './BackTop'
 export { default as Affix, AffixProps } from './Affix'
-export { default as Mentions,MentionOption,MentionsProps,OptionProps } from './Mentions'
-export { default as InputNumber, InputNumberProps } from './InputNumber';
+export { default as Mentions, MentionOption, MentionsProps, OptionProps } from './Mentions'
+export { default as InputNumber, InputNumberProps } from './InputNumber'
