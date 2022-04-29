@@ -19,15 +19,14 @@ export const Primary = Template.bind({})
 
 Primary.args = {
   label: 'Comment',
-  author: <a>Han Solo</a>,
+  author: 'Han Solo • A few seconds ago',
   avatar: <Avatar src="https://joeschmoe.io/api/v1/random" alt="Han Solo" />,
   content: (
     <p>
       We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure),
       to help people create their product prototypes beautifully and efficiently.
     </p>
-  ),
-  datetime: 'A few seconds ago'
+  )
 }
 
 type CommentEditorProps = {
@@ -72,7 +71,7 @@ const CommentEditor: React.FC<CommentEditorProps> = props => (
         </Form.Item>
         <Form.Item>
           <Button loading={props.submitting} onClick={props.onSubmit} type="primary">
-            Button
+            Submit
           </Button>
           {props.onCancel && (
             <Button onClick={props.onCancel} type="text">

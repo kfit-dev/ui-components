@@ -4,7 +4,9 @@
 .ant-comment {
   @apply font-inter;
 
-  .ant-comment-content-author {
+  .ant-comment-content-author,
+  .ant-comment-content-author-name,
+  .ant-comment-content-author-time {
     @apply text-neutral-400;
   }
 
