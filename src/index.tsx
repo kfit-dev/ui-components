@@ -49,11 +49,12 @@ export {
   DateRangePickerProps
 } from './DatePicker'
 export {
-  isIconFill,
   default as Menu,
+  isIconFill,
   MenuItem,
   MenuItemGroup,
   SubMenu,
+  MenuDivider,
   MenuProps,
   MenuItemProps,
   MenuItemGroupProps,
