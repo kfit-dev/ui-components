@@ -15,17 +15,17 @@ type Args = {
 }
 
 const Template: Story<Args> = (args: Args) => {
-  const { hasMeta, ...argsMeta } = args.meta
-  const { hasMetaExtra } = args.card
+  const { hasmeta, ...argsMeta } = args.meta
+  const { hasmetaextra } = args.card
   
   return (
     <>
-      {args.meta.hasMeta === false && <Card {...args.card} />}
+      {args.meta.hasmeta === false && <Card {...args.card} />}
 
-      {hasMeta === true && (
+      {hasmeta === true && (
         <Card {...args.card}>
           <Meta {...argsMeta}/>
-          {hasMetaExtra && argsMeta.extra}
+          {hasmetaextra && argsMeta.extra}
         </Card>
       )}
     </>
@@ -47,11 +47,11 @@ DefaultCardButton.args = {
     label: 'Card',
     title: 'Default Card Title',
     children: content,
-    hasButton:true,
+    hasbutton:"true",
     extra: <Button type="text">Button</Button>
   },
   meta: {
-    hasMeta: false
+    hasmeta: false
   }
 }
 
@@ -65,7 +65,7 @@ DefaultCardMore.args = {
     extra: <DotsThree size={16} />
   },
   meta: {
-    hasMeta: false
+    hasmeta: false
   }
 }
 
@@ -77,7 +77,7 @@ SmallCardButton.args = {
     size: 'small',
     title: 'Small Card Title',
     children: content,
-    hasButton:true,
+    hasbutton:"true",
     extra: (
       <Button size="small" type="text">
         Button
@@ -85,7 +85,7 @@ SmallCardButton.args = {
     )
   },
   meta: {
-    hasMeta: false
+    hasmeta: false
   }
 }
 
@@ -100,7 +100,7 @@ SmallCardMore.args = {
     extra: <DotsThree size={16} />
   },
   meta: {
-    hasMeta: false
+    hasmeta: false
   }
 }
 
@@ -112,7 +112,7 @@ BasicCard.args = {
     children: content
   },
   meta: {
-    hasMeta: false
+    hasmeta: false
   }
 }
 
@@ -122,7 +122,7 @@ CardDescription.args = {
   card: {},
   meta: {
     label: 'Card',
-    hasMeta: true,
+    hasmeta: true,
     avatar: <Avatar src="https://joeschmoe.io/api/v1/random" />,
     title: 'Default Card Title',
     description: 'Card description'
@@ -133,11 +133,11 @@ export const CardDescriptionMore = Template.bind({})
 
 CardDescriptionMore.args = {
   card: {
-    hasMetaExtra:true
+    hasmetaextra:"true"
   },
   meta: {
     label: 'Card',
-    hasMeta: true,
+    hasmeta: true,
     avatar: <Avatar src="https://joeschmoe.io/api/v1/random" />,
     title: 'Default Card Title',
     description: 'Card description',
@@ -153,7 +153,7 @@ CoverCard.args = {
   },
   meta: {
     label: 'Card',
-    hasMeta: true,
+    hasmeta: true,
     title: 'Default Card Title',
     description: 'Card description',
     extra: <DotsThree size={16} />
@@ -165,11 +165,11 @@ export const CoverCardAvatar = Template.bind({})
 CoverCardAvatar.args = {
   card: {
     cover: <img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />,
-    hasMetaExtra:true
+    hasmetaextra:"true"
   },
   meta: {
     label: 'Card',
-    hasMeta: true,
+    hasmeta: true,
     avatar: <Avatar src="https://joeschmoe.io/api/v1/random" />,
     title: 'Default Card Title',
     description: 'Card description',
