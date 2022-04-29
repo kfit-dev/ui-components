@@ -20,7 +20,7 @@ export { default as AvatarGroup, AvatarGroupProps } from './AvatarGroup'
 export { default as Badge, BadgeProps } from './Badge'
 export { default as Popover, PopoverProps } from './Popover'
 export { default as Notification, NotificationProps } from './Notification'
-export { default as Input, Search, InputProps, SearchProps } from './Input'
+export { default as Input, Search, TextArea, InputProps, SearchProps, TextAreaProps } from './Input'
 export {
   default as Upload,
   UploadProps,
@@ -97,13 +97,6 @@ export {
   AvatarTextProps,
   LogoutButtonProps
 } from './Layout'
-export {
-  default as TreeSelect,
-  TreeSelectTreeNode,
-  TreeSelectProps,
-  TreeSelectTreeNodeProps,
-  recursiveTreeNodes
-} from './TreeSelect'
 export { default as Spin, DefaultLoadingIcon, spinSizeNumbers, SpinProps, DefaultIconProps } from './Spin'
 export {
   default as Result,
@@ -116,10 +109,24 @@ export { default as Description, DescriptionsItem, DescriptionsProps, Descriptio
 export { default as PageHeader, PageHeaderWrapper, PageHeaderProps, PageHeaderWrapperProps } from './PageHeader'
 export { default as Divider, DividerProps } from './Divider'
 export { default as Comment, CommentProps } from './Comment'
+export {
+  default as Skeleton,
+  SkeletonAvatar,
+  SkeletonButton,
+  SkeletonImage,
+  SkeletonInput,
+  SkeletonProps,
+  SkeletonAvatarProps,
+  SkeletonButtonProps,
+  SkeletonImageProps,
+  SkeletonInputProps
+} from './Skeleton'
 
 export * from './HOCs'
+
+// None-modified components
 export { Typography, Grid, Form, Row, Col, RowProps, ColProps } from 'antd'
 export { default as BackTop, BackTopProps } from './BackTop'
 export { default as Affix, AffixProps } from './Affix'
-export { default as Mentions,MentionOption,MentionsProps,OptionProps } from './Mentions'
-export { default as InputNumber, InputNumberProps } from './InputNumber';
+export { default as Mentions, MentionOption, MentionsProps, OptionProps } from './Mentions'
+export { default as InputNumber, InputNumberProps } from './InputNumber'
