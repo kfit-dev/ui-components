@@ -29,7 +29,7 @@ Primary.args = {
   )
 }
 
-type CommentEditorProps = {
+type CommentEditorPropsType = {
   avatar: React.ReactElement
   onCancel?: () => void
   onChange: ChangeEventHandler<HTMLTextAreaElement>
@@ -38,30 +38,41 @@ type CommentEditorProps = {
   value: string
 }
 
-type RecursiveCommentsProps = CommentProps &
-  CommentEditorProps & {
+type RecursiveCommentsPropsType = CommentProps &
+  CommentEditorPropsType & {
     key: string
     parentkey?: string
     replyToID: string
-    setReplyToID: any
+    setReplyToID: (value: string | undefined) => void
   }
 
-type CommentListComment = {
+type CommentListCommentType = {
   key: string
   author: string
   avatar: React.ReactElement
-  children?: CommentListComment[]
+  children?: CommentListCommentType[]
   content: ReactNode
   datetime: string
 }
 
-type CommentListProps = CommentEditorProps & {
-  comments: CommentListComment[]
+type CommentListProps = CommentEditorPropsType & {
+  comments: CommentListCommentType[]
+  commentsLength: number
   replyToID: string
-  setReplyToID: (e: string) => void
+  setReplyToID: (value: string | undefined) => void
 }
 
-const CommentEditor: React.FC<CommentEditorProps> = props => (
+type ReducerPropsType = {
+  commentsLength: number
+  comments: CommentProps[]
+  submitting: boolean
+  value: string
+  replyToId: string | undefined
+}
+
+type ReducerActionsType = 'handleSubmit' | 'setValue' | 'setIsSubmit' | 'setReplyToID'
+
+const CommentEditor: React.FC<CommentEditorPropsType> = props => (
   <Comment
     avatar={props.avatar}
     content={
@@ -84,9 +95,8 @@ const CommentEditor: React.FC<CommentEditorProps> = props => (
   />
 )
 
-const RecursiveComments: React.FC<RecursiveCommentsProps> = props => {
+const RecursiveComments: React.FC<RecursiveCommentsPropsType> = props => {
   const { parentkey, replyToID, setReplyToID, submitting, ...restProps } = props
-  // const [value, setValue] = React.useState('')
   const children = props.children as []
   const actions = parentkey && [
     <span
@@ -117,7 +127,7 @@ const RecursiveComments: React.FC<RecursiveCommentsProps> = props => {
         </div>
       )}
       {children &&
-        children.map((item: RecursiveCommentsProps) => {
+        children.map((item: RecursiveCommentsPropsType) => {
           return (
             <RecursiveComments
               {...item}
@@ -144,11 +154,10 @@ const CommentList: React.FC<CommentListProps> = props => {
       <List
         bordered={false}
         dataSource={props.comments}
-        header={`${props.comments.length} ${props.comments.length > 1 ? 'replies' : 'reply'}`}
+        header={`${props.commentsLength} ${props.comments.length > 1 ? 'replies' : 'reply'}`}
         itemLayout="horizontal"
         renderItem={renderProps => {
           // first level node always appear here
-
           return (
             <>
               <RecursiveComments
@@ -185,6 +194,7 @@ const CommentList: React.FC<CommentListProps> = props => {
 
 export const CommentsSection: React.FC = () => {
   const initialValues = {
+    commentsLength: 7,
     comments: [
       {
         key: '1',
@@ -254,12 +264,13 @@ export const CommentsSection: React.FC = () => {
     replyToId: undefined
   }
 
-  const reducer = (state: any, action: { type: any; payload?: any }): any => {
+  const reducer = (state: ReducerPropsType, action: { type: ReducerActionsType; payload: any }) => {
     switch (action.type) {
       case 'handleSubmit':
         return {
           ...state,
-          ...action.payload
+          ...action.payload,
+          commentsLength: state.commentsLength + 1
         }
       case 'setValue':
         return {
@@ -279,9 +290,12 @@ export const CommentsSection: React.FC = () => {
     }
   }
 
-  const [{ comments, submitting, value, replyToId }, dispatch] = React.useReducer(reducer, initialValues)
+  const [{ comments, commentsLength, submitting, value, replyToId }, dispatch] = React.useReducer(
+    reducer,
+    initialValues
+  )
 
-  const handleChange = (e: any) => {
+  const handleChange = e => {
     dispatch({ type: 'setValue', payload: e.target.value })
   }
 
@@ -289,14 +303,14 @@ export const CommentsSection: React.FC = () => {
     dispatch({ type: 'setReplyToID', payload: e })
   }
 
-  const handleSubmit = (e?: any) => {
+  const handleSubmit = () => {
     if (!value) {
       return
     }
     dispatch({ type: 'setIsSubmit', payload: true })
     const level = replyToId && replyToId.split('-')
 
-    const attachCommentToParent = (commentArray: CommentListComment[], commentLevel?: number) => {
+    const attachCommentToParent = (commentArray: CommentListCommentType[], commentLevel?: number) => {
       const currentLevel = commentLevel || 0
       if (replyToId) {
         const newComments = [...commentArray]
@@ -353,8 +367,9 @@ export const CommentsSection: React.FC = () => {
       {comments.length > 0 && (
         <CommentList
           comments={comments}
+          commentsLength={commentsLength}
           replyToID={replyToId}
-          setReplyToID={(e: any) => setReplyToID(e)}
+          setReplyToID={(e: string | undefined) => setReplyToID(e)}
           avatar={<Avatar>KS</Avatar>}
           onChange={handleChange}
           onSubmit={handleSubmit}
