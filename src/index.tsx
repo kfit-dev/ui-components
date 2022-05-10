@@ -125,6 +125,9 @@ export {
   RecursiveCommentsProps,
   CommentListProps,
   CommentListCommentsTypes,
+  CommentOptionalProps,
+  CommentLoggedInUserProps,
+  CommentAuthorProps,
   avatarContent
 } from './Comment'
 export {

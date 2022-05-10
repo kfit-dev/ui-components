@@ -7,15 +7,15 @@ import Button from '../Button'
 import { TextArea } from '../Input'
 import List from '../List'
 
-type CommentOptionalProps = {
+export type CommentOptionalProps = {
   onChange?: React.ChangeEventHandler<HTMLTextAreaElement>
   value?: string
 }
-type CommentLoggedInUserProps = {
+export type CommentLoggedInUserProps = {
   loggedInAuthor: string
   loggedInAvatar?: React.ReactElement
 }
-type CommentAuthorProps = {
+export type CommentAuthorProps = {
   author: string
   avatar?: React.ReactElement
 }
