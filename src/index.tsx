@@ -74,6 +74,13 @@ export { default as Card, CardProps, MetaProps } from './Card'
 export { default as Dropdown, DropdownProps } from './Dropdown'
 export { default as Breadcrumb, BreadcrumbItem, BreadcrumbProps, BreadcrumbItemProps } from './Breadcrumb'
 export {
+  default as TreeSelect,
+  TreeSelectTreeNode,
+  TreeSelectProps,
+  TreeSelectTreeNodeProps,
+  recursiveTreeNodes
+} from './TreeSelect'
+export {
   default as Layout,
   Sider,
   Header,
