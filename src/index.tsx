@@ -114,6 +114,22 @@ export {
 } from './Result'
 export { default as Description, DescriptionsItem, DescriptionsProps, DescriptionsItemProps } from './Descriptions'
 export { default as PageHeader, PageHeaderWrapper, PageHeaderProps, PageHeaderWrapperProps } from './PageHeader'
+export { default as Divider, DividerProps } from './Divider'
+export {
+  default as Comment,
+  CommentEditor,
+  RecursiveComments,
+  CommentList,
+  CommentProps,
+  CommentEditorProps,
+  RecursiveCommentsProps,
+  CommentListProps,
+  CommentListCommentsTypes,
+  CommentOptionalProps,
+  CommentLoggedInUserProps,
+  CommentAuthorProps,
+  avatarContent
+} from './Comment'
 export {
   default as Skeleton,
   SkeletonAvatar,
