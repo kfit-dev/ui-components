@@ -1,10 +1,6 @@
 import * as React from 'react'
-import {
-  default as AntInput,
-  InputProps as AntInputProps,
-  SearchProps as AntSearchProps,
-  TextAreaProps as AntTextAreaProps
-} from 'antd/lib/input'
+import { Input as AntInput, InputProps as AntInputProps } from 'antd'
+import { SearchProps as AntSearchProps } from 'antd/lib/input'
 
 import './style.css'
 
