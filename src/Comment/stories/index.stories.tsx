@@ -1,12 +1,7 @@
-import React, { ChangeEventHandler, ReactNode } from 'react'
+import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-
-import { Form } from 'antd'
-import TextArea from 'antd/lib/input/TextArea'
 import Avatar from '../../Avatar'
-import Button from '../../Button'
-import List from '../../List'
-import { default as Comment, CommentProps } from '../index'
+import { default as Comment, CommentProps, CommentList, CommentListCommentsTypes, avatarContent } from '../index'
 
 export default {
   title: 'Comment',
@@ -29,39 +24,6 @@ Primary.args = {
   )
 }
 
-type CommentEditorPropsType = {
-  avatar: React.ReactElement
-  onCancel?: () => void
-  onChange: ChangeEventHandler<HTMLTextAreaElement>
-  onSubmit: () => void
-  submitting: boolean
-  value: string
-}
-
-type RecursiveCommentsPropsType = CommentProps &
-  CommentEditorPropsType & {
-    key: string
-    parentkey?: string
-    replyToID: string
-    setReplyToID: (value: string | undefined) => void
-  }
-
-type CommentListCommentType = {
-  key: string
-  author: string
-  avatar: React.ReactElement
-  children?: CommentListCommentType[]
-  content: ReactNode
-  datetime: string
-}
-
-type CommentListProps = CommentEditorPropsType & {
-  comments: CommentListCommentType[]
-  commentsLength: number
-  replyToID: string
-  setReplyToID: (value: string | undefined) => void
-}
-
 type ReducerPropsType = {
   commentsLength: number
   comments: CommentProps[]
@@ -72,126 +34,6 @@ type ReducerPropsType = {
 
 type ReducerActionsType = 'handleSubmit' | 'setValue' | 'setIsSubmit' | 'setReplyToID'
 
-const CommentEditor: React.FC<CommentEditorPropsType> = props => (
-  <Comment
-    avatar={props.avatar}
-    content={
-      <>
-        <Form.Item>
-          <TextArea rows={4} onChange={props.onChange} value={props.value} />
-        </Form.Item>
-        <Form.Item>
-          <Button loading={props.submitting} onClick={props.onSubmit} type="primary">
-            Submit
-          </Button>
-          {props.onCancel && (
-            <Button onClick={props.onCancel} type="text">
-              Cancel
-            </Button>
-          )}
-        </Form.Item>
-      </>
-    }
-  />
-)
-
-const RecursiveComments: React.FC<RecursiveCommentsPropsType> = props => {
-  const { parentkey, replyToID, setReplyToID, submitting, ...restProps } = props
-  const children = props.children as []
-  const actions = parentkey && [
-    <span
-      key="comment-nested-reply-to"
-      onClick={() => {
-        if (setReplyToID) {
-          setReplyToID(parentkey)
-        }
-      }}
-    >
-      Reply to
-    </span>
-  ]
-
-  return (
-    <Comment {...restProps} actions={actions || []} content={<>{props.content}</>}>
-      {replyToID === parentkey && (
-        <div>
-          {/* attach logged in user details here */}
-          <CommentEditor
-            avatar={<Avatar>AL</Avatar>}
-            onChange={props.onChange}
-            onSubmit={props.onSubmit}
-            onCancel={props.onCancel}
-            submitting={submitting}
-            value={props.value}
-          />
-        </div>
-      )}
-      {children &&
-        children.map((item: RecursiveCommentsPropsType) => {
-          return (
-            <RecursiveComments
-              {...item}
-              author={`${item.author} • ${item.datetime}`}
-              datetime={``}
-              key={item.key}
-              parentkey={item.key}
-              replyToID={replyToID}
-              setReplyToID={setReplyToID}
-              content={<>{item.content}</>}
-              onSubmit={props.onSubmit}
-              onCancel={props.onCancel}
-              submitting={submitting}
-            />
-          )
-        })}
-    </Comment>
-  )
-}
-
-const CommentList: React.FC<CommentListProps> = props => {
-  return (
-    <>
-      <List
-        bordered={false}
-        dataSource={props.comments}
-        header={`${props.commentsLength} ${props.comments.length > 1 ? 'replies' : 'reply'}`}
-        itemLayout="horizontal"
-        renderItem={renderProps => {
-          // first level node always appear here
-          return (
-            <>
-              <RecursiveComments
-                {...renderProps}
-                author={`${renderProps.author} • ${renderProps.datetime}`}
-                datetime={``}
-                setReplyToID={props.setReplyToID}
-                replyToID={props.replyToID}
-                parentkey={renderProps.key}
-                avatar={renderProps.avatar}
-                onChange={props.onChange}
-                onCancel={props.onCancel}
-                onSubmit={props.onSubmit}
-                submitting={props.submitting}
-                value={props.value}
-              />
-            </>
-          )
-        }}
-      />
-      {/* attach logged in user avatar here */}
-      {!props.replyToID && (
-        <CommentEditor
-          avatar={<Avatar>AL</Avatar>}
-          onChange={props.onChange}
-          onSubmit={props.onSubmit}
-          submitting={props.submitting}
-          value={props.value}
-        />
-      )}
-    </>
-  )
-}
-
 export const CommentsSection: React.FC = () => {
   const initialValues = {
     commentsLength: 7,
@@ -199,7 +41,7 @@ export const CommentsSection: React.FC = () => {
       {
         key: '1',
         author: 'Katelyn',
-        avatar: <Avatar>KS</Avatar>,
+        // avatar: <Avatar>KS</Avatar>,
         content:
           'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
         datetime: 'A few seconds ago',
@@ -215,7 +57,7 @@ export const CommentsSection: React.FC = () => {
               {
                 key: '1-1-1',
                 author: 'Katelyn',
-                avatar: <Avatar>KS</Avatar>,
+                // avatar: <Avatar>KS</Avatar>,
                 content:
                   'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
                 datetime: 'A few seconds ago',
@@ -252,8 +94,7 @@ export const CommentsSection: React.FC = () => {
       },
       {
         key: '2',
-        author: 'Han Solo',
-        avatar: 'https://joeschmoe.io/api/v1/random',
+        author: 'Han Solo With No Profile Picture',
         content:
           'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
         datetime: 'A few seconds ago'
@@ -295,6 +136,8 @@ export const CommentsSection: React.FC = () => {
     initialValues
   )
 
+  const loggedInPersonAvatar = 'https://joeschmoe.io/api/v1/random'
+
   const handleChange = e => {
     dispatch({ type: 'setValue', payload: e.target.value })
   }
@@ -310,7 +153,7 @@ export const CommentsSection: React.FC = () => {
     dispatch({ type: 'setIsSubmit', payload: true })
     const level = replyToId && replyToId.split('-')
 
-    const attachCommentToParent = (commentArray: CommentListCommentType[], commentLevel?: number) => {
+    const attachCommentToParent = (commentArray: CommentListCommentsTypes[], commentLevel?: number) => {
       const currentLevel = commentLevel || 0
       if (replyToId) {
         const newComments = [...commentArray]
@@ -322,7 +165,7 @@ export const CommentsSection: React.FC = () => {
               }
               item.children.push({
                 key: `${item.key}-${item.children.length + 1}`,
-                author: 'Alan Lai',
+                author: 'Nested Level Authors',
                 avatar: <Avatar>AL</Avatar>,
                 content: value,
                 datetime: 'A few seconds ago'
@@ -340,7 +183,7 @@ export const CommentsSection: React.FC = () => {
           ...comments,
           {
             key: `${comments.length + 1}`,
-            author: 'Alan Lai',
+            author: 'First Level Authors',
             avatar: <Avatar>AL</Avatar>,
             content: value,
             datetime: 'A few seconds ago'
@@ -366,11 +209,12 @@ export const CommentsSection: React.FC = () => {
     <>
       {comments.length > 0 && (
         <CommentList
+          loggedInAuthor={'Logged In Author Name'}
+          loggedInAvatar={avatarContent('Logged In Author Name', loggedInPersonAvatar)}
           comments={comments}
           commentsLength={commentsLength}
           replyToID={replyToId}
           setReplyToID={(e: string | undefined) => setReplyToID(e)}
-          avatar={<Avatar>KS</Avatar>}
           onChange={handleChange}
           onSubmit={handleSubmit}
           onCancel={() => setReplyToID(undefined)}
