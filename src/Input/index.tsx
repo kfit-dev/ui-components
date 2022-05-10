@@ -5,12 +5,10 @@ import { SearchProps as AntSearchProps } from 'antd/lib/input'
 import './style.css'
 
 export type InputProps = AntInputProps
-
 export type SearchProps = AntSearchProps
-export const { Search } = AntInput
+export type TextAreaProps = AntTextAreaProps
+export const { Search, TextArea } = AntInput
 
-const Input: React.FC<InputProps> = props => {
-  return <AntInput {...props} />
-}
+const Input: React.FC<InputProps> = props => <AntInput {...props} />
 
 export default Input
