@@ -48,18 +48,7 @@ export {
   DatePickerProps,
   DateRangePickerProps
 } from './DatePicker'
-export {
-  isIconFill,
-  default as Menu,
-  MenuItem,
-  MenuItemGroup,
-  SubMenu,
-  MenuProps,
-  MenuItemProps,
-  MenuItemGroupProps,
-  SubMenuProps,
-  MenuDividerProps
-} from './Menu'
+export { default as Menu, isIconFill, MenuDivider, MenuProps, MenuDividerProps } from './Menu'
 export { default as Table, TableProps, FilterIcon, HeaderWithSort, HeaderWithSortProps } from './Table'
 export { default as Collapse, CollapsePanel, CollapseProps, CollapsePanelProps } from './Collapse'
 export { default as Message, MessageProps } from './Message'
