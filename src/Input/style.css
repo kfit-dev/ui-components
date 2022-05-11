@@ -25,7 +25,7 @@
     @apply text-neutral-300;
   }
 
-  .ant-input-clear-icon > svg {
+  .ant-input-clear-icon > span > svg {
     @apply hidden;
   }
 
