@@ -71,6 +71,10 @@
     &:active {
       @apply text-primary;
     }
+
+    &.ant-btn-lg{
+      min-height:40px;
+    }
   }
 
   &-primary {
