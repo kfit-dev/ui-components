@@ -4,7 +4,7 @@
 
 .ant-page-header{
 
-    @apply font-inter;
+    @apply font-inter p-0;
 
     .ui-page-header{
         @apply flex flex-col;
