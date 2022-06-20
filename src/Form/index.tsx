@@ -1,7 +1,7 @@
 import { Form as AntForm, FormProps as AntFormProps, FormItemProps as AntFormItemProps } from "antd";
 
-import { default as FormItemType } from 'antd/lib/form/FormItem';
 import { default as FormType } from 'antd/lib/form/Form';
+import { default as FormItemType } from 'antd/lib/form/FormItem';
 import "./style.css"
 
 export type FormProps = AntFormProps;
