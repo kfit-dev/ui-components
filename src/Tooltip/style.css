@@ -7,8 +7,7 @@
     @apply rounded px-3 py-2 shadow-sm;
   }
   
-  &-arrow-content {
-    @apply bg-white;
-    --antd-arrow-background-color: white;
+  &-arrow-content::before{
+    background: white;
   }
 }
