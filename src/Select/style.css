@@ -7,10 +7,14 @@
 
   &-single:not(.ant-select-customize-input) {
     .ant-select-selector {
-      @apply px-3 rounded-lg;
+      @apply px-3 rounded-lg h-10;
 
       .ant-select-selection-item {
         @apply m-auto;
+      }
+
+      .ant-select-selection-placeholder {
+        @apply flex items-center;
       }
     }
   }
@@ -49,7 +53,7 @@
       }
     }
   }
-  
+
   span.ant-select-arrow {
     .rotate-caret {
       @apply transition ease-linear;
@@ -95,7 +99,7 @@
     @apply font-inter font-semibold;
     @apply mx-2 bg-transparent;
 
-    .ant-select-item-option-content{
+    .ant-select-item-option-content {
       @apply h-5 self-center;
     }
 
@@ -103,11 +107,11 @@
       @apply h-5 self-center;
     }
 
-    .anticon-check{
+    .anticon-check {
       @apply h-4 w-4;
-      background-image:var(--ic-check-16-n700);
-      
-      svg{
+      background-image: var(--ic-check-16-n700);
+
+      svg {
         @apply hidden;
       }
     }
@@ -142,6 +146,14 @@
   & .ant-select-item-option-selected {
     & .ui-item-check {
       @apply ml-1 visible;
+    }
+  }
+
+  .ant-select-item-option {
+    @apply mt-1;
+
+    &:last-child {
+      @apply mb-1;
     }
   }
 }
