@@ -6,6 +6,10 @@
     @apply items-center;
     @apply pb-0;
 
+    &:not(.ant-tree .ant-tree-treenode-disabled).filter-node .ant-tree-title {
+      @apply bg-yellow-100 p-0.5;
+    }
+
     .ant-tree-checkbox {
       @apply mt-0;
       @apply mr-2;
