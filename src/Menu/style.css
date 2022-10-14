@@ -255,10 +255,17 @@
 
 /* affects submenu in all menu types  */
 .ant-menu-light {
-  & .ant-menu-submenu {
-    /* hardcoded to color #1890ff in antd codebase */
-    @apply text-neutral-400 !important;
+  /*  */
+  .ant-menu-submenu-active {
+    @apply text-slate-700;
+  }
 
+  .ant-menu:not(.ant-menu-inline) {
+    .ant-menu-submenu-open {
+      @apply text-slate-700;
+    }
+  }
+  & .ant-menu-submenu {
     /* hardcoded to border-bottom: 2px solid #1890ff in antd codebase */
     border-bottom: unset;
 
