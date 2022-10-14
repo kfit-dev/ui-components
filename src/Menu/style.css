@@ -255,7 +255,6 @@
 
 /* affects submenu in all menu types  */
 .ant-menu-light {
-  /*  */
   .ant-menu-submenu-active,
   .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open {
     @apply text-slate-700;
