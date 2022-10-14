@@ -41,7 +41,10 @@ export const ModalFunctions = {
       ...restProps,
       className: getClassName(restProps),
       icon: hasIcon ? icon : null,
-      cancelButtonProps: { ...restProps.cancelButtonProps, className: 'ant-btn-text' },
+      cancelButtonProps: {
+        ...restProps.cancelButtonProps,
+        className: classNames(restProps.cancelButtonProps?.className, 'ant-btn-text')
+      },
       closable,
       closeIcon,
       width
@@ -60,7 +63,10 @@ export const ModalFunctions = {
         ...restProps,
         className: getClassName(restProps),
         icon,
-        cancelButtonProps: { ...restProps.cancelButtonProps, className: 'ant-btn-text' },
+        cancelButtonProps: {
+          ...restProps.cancelButtonProps,
+          className: classNames(restProps.cancelButtonProps?.className, 'ant-btn-text')
+        },
         closable,
         closeIcon,
         width
@@ -87,7 +93,10 @@ export const ModalFunctions = {
         ...restProps,
         className: getClassName(restProps),
         icon,
-        cancelButtonProps: { ...restProps.cancelButtonProps, className: 'ant-btn-text' },
+        cancelButtonProps: {
+          ...restProps.cancelButtonProps,
+          className: classNames(restProps.cancelButtonProps?.className, 'ant-btn-text')
+        },
         closable,
         closeIcon,
         width
@@ -114,7 +123,10 @@ export const ModalFunctions = {
         ...restProps,
         className: getClassName(restProps),
         icon,
-        cancelButtonProps: { ...restProps.cancelButtonProps, className: 'ant-btn-text' },
+        cancelButtonProps: {
+          ...restProps.cancelButtonProps,
+          className: classNames(restProps.cancelButtonProps?.className, 'ant-btn-text')
+        },
         closable,
         closeIcon,
         width
