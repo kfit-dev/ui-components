@@ -4,14 +4,11 @@ import classNames from 'classnames'
 
 import { X, Info, WarningCircle, XCircle } from 'phosphor-react'
 
-import Button from '../Button'
-
 import './style.css'
 
 export type ModalProps = AntModalProps & {
   icon?: React.ReactNode
   confirmMode?: boolean
-  modalFunc: (args: ModalFuncProps) => void
 }
 
 export type ModalFuncProps = AntModalFuncProps & {
@@ -60,25 +57,25 @@ export const ModalFunctions = {
   }: ModalFuncProps) => {
     return confirmMode === undefined || confirmMode
       ? AntModal.confirm({
-        ...restProps,
-        className: getClassName(restProps),
-        icon,
-        cancelButtonProps: {
-          ...restProps.cancelButtonProps,
-          className: classNames(restProps.cancelButtonProps?.className, 'ant-btn-text')
-        },
-        closable,
-        closeIcon,
-        width
-      })
+          ...restProps,
+          className: getClassName(restProps),
+          icon,
+          cancelButtonProps: {
+            ...restProps.cancelButtonProps,
+            className: classNames(restProps.cancelButtonProps?.className, 'ant-btn-text')
+          },
+          closable,
+          closeIcon,
+          width
+        })
       : originalFunctions.error({
-        ...restProps,
-        className: getClassName(restProps),
-        icon,
-        closable,
-        closeIcon,
-        width
-      })
+          ...restProps,
+          className: getClassName(restProps),
+          icon,
+          closable,
+          closeIcon,
+          width
+        })
   },
   warning: ({
     closeIcon = defaultCloseIcon,
@@ -90,25 +87,25 @@ export const ModalFunctions = {
   }: ModalFuncProps) => {
     return confirmMode === undefined || confirmMode
       ? AntModal.confirm({
-        ...restProps,
-        className: getClassName(restProps),
-        icon,
-        cancelButtonProps: {
-          ...restProps.cancelButtonProps,
-          className: classNames(restProps.cancelButtonProps?.className, 'ant-btn-text')
-        },
-        closable,
-        closeIcon,
-        width
-      })
+          ...restProps,
+          className: getClassName(restProps),
+          icon,
+          cancelButtonProps: {
+            ...restProps.cancelButtonProps,
+            className: classNames(restProps.cancelButtonProps?.className, 'ant-btn-text')
+          },
+          closable,
+          closeIcon,
+          width
+        })
       : originalFunctions.warning({
-        ...restProps,
-        className: getClassName(restProps),
-        icon,
-        closable,
-        closeIcon,
-        width
-      })
+          ...restProps,
+          className: getClassName(restProps),
+          icon,
+          closable,
+          closeIcon,
+          width
+        })
   },
   info: ({
     closeIcon = defaultCloseIcon,
@@ -120,30 +117,41 @@ export const ModalFunctions = {
   }: ModalFuncProps) => {
     return confirmMode === undefined || confirmMode
       ? AntModal.confirm({
-        ...restProps,
-        className: getClassName(restProps),
-        icon,
-        cancelButtonProps: {
-          ...restProps.cancelButtonProps,
-          className: classNames(restProps.cancelButtonProps?.className, 'ant-btn-text')
-        },
-        closable,
-        closeIcon,
-        width
-      })
+          ...restProps,
+          className: getClassName(restProps),
+          icon,
+          cancelButtonProps: {
+            ...restProps.cancelButtonProps,
+            className: classNames(restProps.cancelButtonProps?.className, 'ant-btn-text')
+          },
+          closable,
+          closeIcon,
+          width
+        })
       : originalFunctions.info({
-        ...restProps,
-        className: getClassName(restProps),
-        icon,
-        closable,
-        closeIcon,
-        width
-      })
+          ...restProps,
+          className: getClassName(restProps),
+          icon,
+          closable,
+          closeIcon,
+          width
+        })
   }
 }
 
-const Modal: React.FC<ModalProps> = props => {
-  return <Button onClick={() => props.modalFunc({ ...props })}>Press Me</Button>
+const Modal: React.FC<ModalProps> = ({ width, cancelButtonProps, closeIcon, ...restProps }) => {
+  return (
+    <AntModal
+      {...restProps}
+      width={width || defaultWidth}
+      className={'fave-modal-component'}
+      cancelButtonProps={{
+        ...cancelButtonProps,
+        className: classNames(cancelButtonProps?.className, 'ant-btn-text')
+      }}
+      closeIcon={closeIcon || defaultCloseIcon}
+    />
+  )
 }
 
 export default Modal
