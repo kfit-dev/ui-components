@@ -57,25 +57,25 @@ export const ModalFunctions = {
   }: ModalFuncProps) => {
     return confirmMode === undefined || confirmMode
       ? AntModal.confirm({
-          ...restProps,
-          className: getClassName(restProps),
-          icon,
-          cancelButtonProps: {
-            ...restProps.cancelButtonProps,
-            className: classNames(restProps.cancelButtonProps?.className, 'ant-btn-text')
-          },
-          closable,
-          closeIcon,
-          width
-        })
+        ...restProps,
+        className: getClassName(restProps),
+        icon,
+        cancelButtonProps: {
+          ...restProps.cancelButtonProps,
+          className: classNames(restProps.cancelButtonProps?.className, 'ant-btn-text')
+        },
+        closable,
+        closeIcon,
+        width
+      })
       : originalFunctions.error({
-          ...restProps,
-          className: getClassName(restProps),
-          icon,
-          closable,
-          closeIcon,
-          width
-        })
+        ...restProps,
+        className: getClassName(restProps),
+        icon,
+        closable,
+        closeIcon,
+        width
+      })
   },
   warning: ({
     closeIcon = defaultCloseIcon,
@@ -87,25 +87,25 @@ export const ModalFunctions = {
   }: ModalFuncProps) => {
     return confirmMode === undefined || confirmMode
       ? AntModal.confirm({
-          ...restProps,
-          className: getClassName(restProps),
-          icon,
-          cancelButtonProps: {
-            ...restProps.cancelButtonProps,
-            className: classNames(restProps.cancelButtonProps?.className, 'ant-btn-text')
-          },
-          closable,
-          closeIcon,
-          width
-        })
+        ...restProps,
+        className: getClassName(restProps),
+        icon,
+        cancelButtonProps: {
+          ...restProps.cancelButtonProps,
+          className: classNames(restProps.cancelButtonProps?.className, 'ant-btn-text')
+        },
+        closable,
+        closeIcon,
+        width
+      })
       : originalFunctions.warning({
-          ...restProps,
-          className: getClassName(restProps),
-          icon,
-          closable,
-          closeIcon,
-          width
-        })
+        ...restProps,
+        className: getClassName(restProps),
+        icon,
+        closable,
+        closeIcon,
+        width
+      })
   },
   info: ({
     closeIcon = defaultCloseIcon,
@@ -117,25 +117,25 @@ export const ModalFunctions = {
   }: ModalFuncProps) => {
     return confirmMode === undefined || confirmMode
       ? AntModal.confirm({
-          ...restProps,
-          className: getClassName(restProps),
-          icon,
-          cancelButtonProps: {
-            ...restProps.cancelButtonProps,
-            className: classNames(restProps.cancelButtonProps?.className, 'ant-btn-text')
-          },
-          closable,
-          closeIcon,
-          width
-        })
+        ...restProps,
+        className: getClassName(restProps),
+        icon,
+        cancelButtonProps: {
+          ...restProps.cancelButtonProps,
+          className: classNames(restProps.cancelButtonProps?.className, 'ant-btn-text')
+        },
+        closable,
+        closeIcon,
+        width
+      })
       : originalFunctions.info({
-          ...restProps,
-          className: getClassName(restProps),
-          icon,
-          closable,
-          closeIcon,
-          width
-        })
+        ...restProps,
+        className: getClassName(restProps),
+        icon,
+        closable,
+        closeIcon,
+        width
+      })
   }
 }
 
