@@ -80,7 +80,7 @@ const emptyDescription = ({
   customTitle?: string
   customDescription?: string
 }) =>
-  description || (customTitle && customDescription) ? (
+  description || (customTitle !== undefined && customDescription !== undefined) ? (
     <PresetParagraphs paragraphOne={customTitle} paragraphTwo={customDescription} />
   ) : (
     <PresetParagraphs
@@ -93,8 +93,8 @@ const Empty: React.FC<EmptyProps> = ({
   emptyType = 'custom-image',
   image,
   description,
-  customTitle = 'custom title',
-  customDescription = 'custom description',
+  customTitle = '',
+  customDescription = '',
   ...props
 }) => {
   const imageProp = emptyImage({ image, emptyType })
