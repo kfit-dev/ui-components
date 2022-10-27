@@ -4,14 +4,11 @@ import classNames from 'classnames'
 
 import { X, Info, WarningCircle, XCircle } from 'phosphor-react'
 
-import Button from '../Button'
-
 import './style.css'
 
 export type ModalProps = AntModalProps & {
   icon?: React.ReactNode
   confirmMode?: boolean
-  modalFunc: (args: ModalFuncProps) => void
 }
 
 export type ModalFuncProps = AntModalFuncProps & {
@@ -142,8 +139,19 @@ export const ModalFunctions = {
   }
 }
 
-const Modal: React.FC<ModalProps> = props => {
-  return <Button onClick={() => props.modalFunc({ ...props })}>Press Me</Button>
+const Modal: React.FC<ModalProps> = ({ width, cancelButtonProps, closeIcon, ...restProps }) => {
+  return (
+    <AntModal
+      {...restProps}
+      width={width || defaultWidth}
+      className={'fave-modal-component'}
+      cancelButtonProps={{
+        ...cancelButtonProps,
+        className: classNames(cancelButtonProps?.className, 'ant-btn-text')
+      }}
+      closeIcon={closeIcon || defaultCloseIcon}
+    />
+  )
 }
 
 export default Modal
