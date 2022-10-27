@@ -11,70 +11,94 @@ import {
   SeemsEmptySVG
 } from '../assets/icons'
 
+type EmptyTypeType =
+  | 'nothing-here'
+  | 'no-outlet'
+  | 'no-bank-account'
+  | 'cant-find-anything'
+  | 'add-more'
+  | 'seems-empty'
+  | 'custom-image'
+
 export type EmptyProps = AntEmptyProps & {
-  emptyType?: 'nothing-here' | 'no-outlet' | 'no-bank-account' | 'cant-find-anything' | 'add-more' | 'seems-empty'
+  emptyType?: EmptyTypeType
+  customTitle?: string
+  customDescription?: string
 }
 
-const emptyImage = (image: React.ReactNode, emptyType?: string) => {
-  if (emptyType === 'nothing-here') return <NothingHereSVG />
-  else if (emptyType === 'no-outlet') return <NoOutletSVG />
-  else if (emptyType === 'no-bank-account') return <NoBankAccountSVG />
-  else if (emptyType === 'cant-find-anything') return <CantFindAnythingSVG />
-  else if (emptyType === 'add-more') return <AddMoreSVG />
-  else if (emptyType === 'seems-empty') return <SeemsEmptySVG />
-  else return image
+const emptyTypeObject = {
+  'nothing-here': {
+    image: <NothingHereSVG />,
+    error_title: 'Nothing here yet, nada.',
+    error_description: 'Check back later, it might appear.'
+  },
+  'nothing-outlet': {
+    image: <NoOutletSVG />,
+    error_title: 'Why no outlet eh?',
+    error_description: 'Click on the plus button to add outlets.'
+  },
+  'no-bank-account': {
+    image: <NoBankAccountSVG />,
+    error_title: `There's no bank account, how to get paid?`,
+    error_description: 'Click on the plus button to add bank accounts.'
+  },
+  'cant-find-anything': {
+    image: <CantFindAnythingSVG />,
+    error_title: `I've failed you, can't find anything :(`,
+    error_description: 'Try searching for something else.'
+  },
+  'add-more': {
+    image: <AddMoreSVG />,
+    error_title: 'Add more for more commission ;)',
+    error_description: 'Click on the plus button to add Fave products.'
+  },
+  'seems-empty': {
+    image: <SeemsEmptySVG />,
+    error_title: 'It seems to be empty here.',
+    error_description: `Try again, I'm sure you'll find it eventually.`
+  }
 }
 
-const PresetParagraphs = ({ paragraphOne, paragraphTwo }: { paragraphOne: string; paragraphTwo: string }) => (
+const emptyImage = ({ image, emptyType }: { image: React.ReactNode; emptyType: EmptyTypeType }) =>
+  emptyType !== 'custom-image' ? emptyTypeObject[emptyType].image : image
+
+const PresetParagraphs = ({ paragraphOne, paragraphTwo }: { paragraphOne?: string; paragraphTwo?: string }) => (
   <>
     <p className="preset-paragraph-1">{paragraphOne}</p>
     <p className="preset-paragraph-2">{paragraphTwo}</p>
   </>
 )
 
-const emptyDescription = (description: React.ReactNode, emptyType?: string) => {
-  if (emptyType === 'nothing-here')
-    return (
-      <PresetParagraphs paragraphOne={`Nothing here yet, nada.`} paragraphTwo={`Check back later, it might appear.`} />
-    )
-  else if (emptyType === 'no-outlet')
-    return (
-      <PresetParagraphs paragraphOne={`Why no outlet eh?`} paragraphTwo={`Click on the plus button to add outlets.`} />
-    )
-  else if (emptyType === 'no-bank-account')
-    return (
-      <PresetParagraphs
-        paragraphOne={`There's no bank account, how to get paid?`}
-        paragraphTwo={`Click on the plus button to add bank accounts.`}
-      />
-    )
-  else if (emptyType === 'cant-find-anything')
-    return (
-      <PresetParagraphs
-        paragraphOne={`I've failed you, can't find anything :(`}
-        paragraphTwo={`Try searching for something else.`}
-      />
-    )
-  else if (emptyType === 'add-more')
-    return (
-      <PresetParagraphs
-        paragraphOne={`Add more for more commission ;)`}
-        paragraphTwo={`Click on the plus button to add Fave products.`}
-      />
-    )
-  else if (emptyType === 'seems-empty')
-    return (
-      <PresetParagraphs
-        paragraphOne={`It seems to be empty here.`}
-        paragraphTwo={`Try again, I'm sure you'll find it eventually.`}
-      />
-    )
-  else return description
-}
+const emptyDescription = ({
+  description,
+  emptyType,
+  customTitle,
+  customDescription
+}: {
+  description: React.ReactNode
+  emptyType: string
+  customTitle?: string
+  customDescription?: string
+}) =>
+  description || (customTitle && customDescription) ? (
+    <PresetParagraphs paragraphOne={customTitle} paragraphTwo={customDescription} />
+  ) : (
+    <PresetParagraphs
+      paragraphOne={emptyTypeObject[emptyType].error_title}
+      paragraphTwo={emptyTypeObject[emptyType].error_description}
+    />
+  )
 
-const Empty: React.FC<EmptyProps> = ({ emptyType, image, description, ...props }) => {
-  const imageProp = emptyImage(image, emptyType)
-  const descriptionProp = emptyDescription(description, emptyType)
+const Empty: React.FC<EmptyProps> = ({
+  emptyType = 'custom-image',
+  image,
+  description,
+  customTitle = 'custom title',
+  customDescription = 'custom description',
+  ...props
+}) => {
+  const imageProp = emptyImage({ image, emptyType })
+  const descriptionProp = emptyDescription({ description, emptyType, customTitle, customDescription })
 
   return <AntEmpty image={imageProp} description={descriptionProp} {...props} />
 }
