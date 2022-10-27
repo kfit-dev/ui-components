@@ -45,3 +45,35 @@
     }
   }
 }
+
+.fave-modal-component {
+  & .ant-modal {
+    &-content {
+      @apply rounded-lg p-4;
+
+      .ant-modal-header {
+        @apply border-none p-0;
+
+        .ant-modal-title {
+          @apply ml-2 w-72 text-neutral-700 font-bold leading-6;
+        }
+      }
+
+      .ant-modal-body {
+        @apply p-0 font-inter leading-5 ml-2 mr-6 mt-1 text-neutral-700;
+      }
+
+      .ant-modal-footer {
+        @apply border-0 p-0 mt-4 mr-4;
+      }
+    }
+
+    &-close-x {
+      @apply w-4 h-4 mt-4 mr-4 leading-4;
+
+      svg {
+        @apply text-neutral-400;
+      }
+    }
+  }
+}
