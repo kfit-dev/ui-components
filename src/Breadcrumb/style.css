@@ -1,8 +1,5 @@
-@import 'antd/lib/style/default.css';
-@import 'antd/lib/breadcrumb/style/index.css';
-
-@import '../Menu/style.css';
-@import '../Dropdown/style.css';
+/* @import '../Menu/style.css';
+@import '../Dropdown/style.css'; */
 
 .ant-breadcrumb {
   li a {
