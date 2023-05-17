@@ -141,6 +141,11 @@
   }
 }
 
+.ant-pagination-item,
+.ant-pagination-total-text {
+  @apply xs:mr-0;
+}
+
 .ant-table-filter-dropdown {
   @apply shadow-md;
   @apply rounded-lg;
