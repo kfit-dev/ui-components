@@ -4,8 +4,8 @@ import { CaretLeft, CaretRight } from 'phosphor-react'
 import './style.css'
 
 export type PaginationProps = AntPaginationProps & {
-  LeftIcon: React.ReactNode
-  RightIcon: React.ReactNode
+  LeftIcon?: React.ReactNode
+  RightIcon?: React.ReactNode
 }
 
 export const itemRender = (LeftIcon: React.ReactNode, RightIcon: React.ReactNode) => (
