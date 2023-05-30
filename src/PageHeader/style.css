@@ -9,7 +9,7 @@
     }
 
     &-subtitle {
-      @apply text-neutral-400 text-sm font-normal;
+      @apply text-neutral-400 text-sm font-normal whitespace-normal;
     }
   }
 
