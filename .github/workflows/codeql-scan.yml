@@ -39,6 +39,18 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+
+    - name: Get current date only
+      if: ${{ github.event_name != 'pull_request' }} 
+      id: set-date
+      run: |
+        echo "date=$(date +'%Y-%m-%d')" >> "$GITHUB_ENV"
+
+    - name: Get current time and date
+      if: ${{ github.event_name != 'pull_request' }} 
+      id: set-time-and-date
+      run: |
+        echo "date_time=$(date +'%Y-%m-%dT%H:%M')" >> "$GITHUB_ENV"
                 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
@@ -67,12 +79,6 @@ jobs:
       with:
         category: "${{ matrix.language }}/branch:${{ github.head_ref || github.ref_name }}"
 
-    - name: Get current time and date
-      if: ${{ github.event_name != 'pull_request' }} 
-      id: set-date
-      run: |
-        echo "date=$(date +'%Y-%m-%dT%H:%M')" >> "$GITHUB_ENV"
-
     - name: Generate Code Security Report
       if: ${{ github.event_name != 'pull_request' }} 
       uses: kfit-dev/github-security-report-action@main
@@ -80,12 +86,12 @@ jobs:
         token: ${{ secrets.TOKEN_GITHUB_ACTIONS }}
         template: report
     
-    - name: Upload  Code Security Report to Google Drive
+    - name: Upload Code Security Report to Google Drive
       if: ${{ github.event_name != 'pull_request' }} 
       uses: kfit-dev/google-drive-upload-action@main
       with:
         target: report.pdf
         credentials: ${{ secrets.GOOGLE_DRIVE_CREDS }}
-        parent_folder_id: 1oITUn9zBMBQGawZW8aJweV_aE5PDtBUJ
-        name: codeql-results-${{ github.repository }}.pdf
-        child_folder: ${{ github.repository }}-${{ env.date }}
+        parent_folder_id: 1RAcNjaHnxZrkMMlEMnZtaR5GTcQGNElr
+        name: ${{ github.repository }}-${{ matrix.language }}-${{ env.date_time }}.pdf
+        child_folder: ${{ env.date }}
