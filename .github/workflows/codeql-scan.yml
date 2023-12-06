@@ -78,24 +78,3 @@ jobs:
       uses: github/codeql-action/analyze@v2
       with:
         category: "${{ matrix.language }}/branch:${{ github.head_ref || github.ref_name }}"
-
-    # Disabling this option since Github Action has bug of not being able to pull internal github action plugins
-    # if the repository that uses the plugins are made public
-
-    # - name: Generate Code Security Report
-    #   if: ${{ github.event_name != 'pull_request' }} 
-    #   uses: kfit-dev/github-security-report-action@main
-    #   with:
-    #     token: ${{ secrets.TOKEN_GITHUB_ACTIONS }}
-    #     template: report
-    
-    # - name: Upload Code Security Report to Google Drive
-    #   if: ${{ github.event_name != 'pull_request' }} 
-    #   uses: kfit-dev/google-drive-upload-action@main
-    #   with:
-    #     target: report.pdf
-    #     credentials: ${{ secrets.GOOGLE_DRIVE_CREDS }}
-    #     parent_folder_id: 1RAcNjaHnxZrkMMlEMnZtaR5GTcQGNElr
-    #     name: ${{ github.repository }}-${{ matrix.language }}-${{ env.date_time }}.pdf
-    #     child_folder: ${{ env.date }}
-
