@@ -1,0 +1,80 @@
+name: "CodeQL"
+run-name: "CodeQL scan on ${{ github.head_ref || github.ref_name }}"
+
+# For CodeQL scan, below are the optimal ways to do it
+# 1. Perform scan on weekly basis for master/main branch. Preferably on Monday
+# 2. Perform scan on each PR to master/main branch.
+# 3. If necessary, we can do scan for each push event in master/main branch. 
+
+on:
+  pull_request:
+    # Only runs if PR on master or main branch
+    branches: 
+      - "master"
+      - "main" 
+  # Runs on every Monday 8am MYT (12am UTC)
+  schedule:
+    - cron: '00 00 * * 1'
+  # Enabling manual trigger
+  workflow_dispatch:
+
+jobs:
+  codeql-analyze:
+    name: Analyze
+    runs-on: 'ubuntu-latest' 
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ['javascript']
+        # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby' ]
+        # Use only 'java' to analyze code written in Java, Kotlin or both
+        # Use only 'javascript' to analyze code written in JavaScript, TypeScript or both
+        # Learn more about CodeQL language support at https://aka.ms/codeql-docs/language-support
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Get current date only
+      if: ${{ github.event_name != 'pull_request' }} 
+      id: set-date
+      run: |
+        echo "date=$(date +'%Y-%m-%d')" >> "$GITHUB_ENV"
+
+    - name: Get current time and date
+      if: ${{ github.event_name != 'pull_request' }} 
+      id: set-time-and-date
+      run: |
+        echo "date_time=$(date +'%Y-%m-%dT%H:%M')" >> "$GITHUB_ENV"
+                
+    # Initializes the CodeQL tools for scanning.
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: ${{ matrix.language }}
+        config: |
+          paths:
+            - src
+            - tools
+          paths-ignore:
+            - '**/*.test.js'
+          query-filters:
+            - exclude:
+                problem.severity:
+                  - note
+                  - low
+                  - warning
+          
+        # For more details on CodeQL's query packs, refer to: https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning#using-queries-in-ql-packs
+        # queries: security-extended,security-and-quality # We can enable this once we are ready
+
+      # Perform CodeQL scan
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
+      with:
+        category: "${{ matrix.language }}/branch:${{ github.head_ref || github.ref_name }}"
