@@ -40,7 +40,7 @@
     "@ant-design/icons": "^4.7.0",
     "@babel/runtime": "^7.1.2",
     "@types/classnames": "^2.3.1",
-    "@types/react": "^16.9.5",
+    "@types/react": "17.0.2",
     "antd": "4.20.0",
     "array-move": "^4.0.0",
     "classnames": "^2.3.1",
@@ -49,7 +49,8 @@
     "ui-box": "^5.0.0"
   },
   "peerDependencies": {
-    "react": ">=16.9.0"
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
@@ -129,3 +130,4 @@
     ]
   }
 }
+
