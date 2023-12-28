@@ -32,7 +32,9 @@
     "clean": "git clean -Xdf",
     "storybook": "start-storybook -p 6006",
     "create-component": "node ./tools/create-component.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "audit": "yarn audit --groups dependencies",
+    "publish-local": "yalc publish"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
