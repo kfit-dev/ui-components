@@ -4,12 +4,14 @@ import { CaretDown, Check } from 'phosphor-react'
 
 import './style.css'
 
-export type SelectProps = AntSelectProps
+export type SelectProps = AntSelectProps & {
+  showArrow?: boolean
+}
 
 export const { Option } = AntSelect
 
-const Select: React.FC<SelectProps> = props => {
-  return <AntSelect {...props} />
+const Select: React.FC<SelectProps> = ({ suffixIcon, showArrow, ...rest }) => {
+  return <AntSelect {...rest} suffixIcon={showArrow ? suffixIcon : null} />
 }
 
 export const CheckeableItem: React.FC<React.PropsWithChildren<{}>> = ({ children }) => (
