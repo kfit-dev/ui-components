@@ -4,8 +4,6 @@ import { Form, FormItemProps } from 'antd'
 import { differenceInDays } from 'date-fns'
 import { QuarterPicker } from '../index'
 
-import '../../assets/style/form-item.css'
-
 export default {
   title: 'DatePicker/QuarterPicker',
   component: QuarterPicker

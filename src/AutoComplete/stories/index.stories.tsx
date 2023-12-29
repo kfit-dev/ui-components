@@ -4,8 +4,6 @@ import { Form, FormItemProps, Input, InputProps } from 'antd'
 import Search from 'antd/lib/input/Search'
 import { default as AutoComplete, AutoCompleteProps } from '../index'
 
-import '../../assets/style/form-item.css'
-
 export default {
   title: 'AutoComplete',
   component: AutoComplete
@@ -22,10 +20,10 @@ const Template: Story<Args> = (args: Args) => (
       <AutoComplete
         {...args.autoComplete}
         filterOption={(inputValue, option) =>
-        option!.value
-          .toString()
-          .toUpperCase()
-          .indexOf(inputValue.toUpperCase()) !== -1
+          option!.value
+            .toString()
+            .toUpperCase()
+            .indexOf(inputValue.toUpperCase()) !== -1
         }
       >
         <Input {...args.input} />

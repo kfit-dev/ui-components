@@ -1,9 +1,7 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Form } from 'antd'
 import { default as InputNumber, InputNumberProps } from '../index'
-
-import '../../assets/style/form-item.css';
 
 export default {
   title: 'InputNumber',

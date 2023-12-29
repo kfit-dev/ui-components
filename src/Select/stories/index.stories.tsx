@@ -4,8 +4,6 @@ import { Form, FormItemProps } from 'antd'
 import { MagnifyingGlass } from 'phosphor-react'
 import { default as Select, SelectProps } from '../index'
 
-import '../../assets/style/form-item.css'
-
 export default {
   title: 'Select',
   component: Select
