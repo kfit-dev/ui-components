@@ -5,12 +5,8 @@
 }
 
 .ant-input-affix-wrapper {
+  @apply focus-within:border-neutral-300 focus-within:shadow-none z-0 focus:shadow-none;
   @apply font-inter h-10 px-4 rounded-lg;
-
-  input {
-    @apply focus:border-neutral-300 z-0 focus:shadow-none;
-  }
-
   input::placeholder {
     @apply text-neutral-300;
   }
