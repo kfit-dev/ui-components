@@ -1,11 +1,9 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Switch } from 'antd'
-import { Bell, CaretDown, HouseLine, MagnifyingGlass } from 'phosphor-react'
+import { Bell, HouseLine, MagnifyingGlass } from 'phosphor-react'
 
 import { default as Menu, MenuProps, isIconFill } from '../index'
-
-import 'antd/lib/switch/style/index.css'
 
 export default {
   title: 'Menu',
@@ -47,7 +45,6 @@ TopNavigation.args = {
     {
       label: 'Navigation Four',
       key: 'four',
-      icon: <CaretDown size={16} weight={'light'} />,
       children: [
         {
           type: 'group',
