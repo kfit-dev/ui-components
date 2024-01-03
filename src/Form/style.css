@@ -1,6 +1,6 @@
 .ant-form {
   &-item {
-    &-label {
+    & &-label {
       @apply pb-2 mb-0 leading-none;
 
       label {
@@ -13,34 +13,22 @@
       }
     }
 
-    &-explain {
+    & &-explain {
       .ant-form-item-explain-error {
         @apply text-xs font-inter leading-4 text-red-600;
         @apply pt-1;
       }
     }
 
-    &-with-help {
+    & &-with-help {
       .ant-form-item-explain {
         @apply min-h-0;
       }
     }
 
-    &-extra {
+    & &-extra {
       @apply text-xs font-inter leading-4 text-neutral-500;
       @apply pt-1 min-h-0;
-    }
-
-    &-has-error {
-      .ant-select-selector,
-      .ant-input {
-        @apply border-red-600 !important;
-        @apply shadow-none !important;
-      }
-
-      .ant-input {
-        @apply text-red-600 !important;
-      }
     }
   }
 }
