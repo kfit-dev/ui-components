@@ -3,24 +3,24 @@
     @apply font-inter text-sm;
   }
 
-  &-tab {
+  & &-tab {
     @apply text-neutral-400;
     @apply hover:text-primary;
     @apply pb-2;
+
+    &.ant-tabs-tab-active {
+      @apply text-primary;
+      @apply hover:text-primary;
+
+      .ant-tabs-tab-btn {
+        @apply text-primary;
+        @apply focus:text-primary;
+      }
+    }
   }
 
   &-top > .ant-tabs-nav::before {
     @apply border-b-2 border-b-white;
-  }
-
-  .ant-tabs-tab-active {
-    @apply text-primary;
-    @apply hover:text-primary;
-
-    .ant-tabs-tab-btn {
-      @apply text-primary;
-      @apply focus:text-primary;
-    }
   }
 
   .ant-tabs-tab-btn {
