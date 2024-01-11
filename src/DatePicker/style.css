@@ -6,6 +6,10 @@
   @apply h-10 px-4 border-transparent shadow-none rounded-lg;
   @apply hover:border-neutral-300 focus:border-neutral-300;
 
+  &&-focused {
+    @apply border-transparent shadow-none;
+  }
+
   &-panel-container {
     @apply rounded-lg;
   }
@@ -28,7 +32,7 @@
     @apply px-4 text-slate-300;
   }
 
-  &-suffix {
+  & &-suffix {
     @apply text-neutral-500;
   }
 
