@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { Comment as AntComment, CommentProps as AntCommentProps, Form } from 'antd'
+import { Comment as AntComment, Form } from '@ant-design/compatible'
+import { CommentProps as AntCommentProps } from '@ant-design/compatible/lib/comment'
 
 import './style.css'
 import Avatar from '../Avatar'
@@ -53,6 +54,10 @@ export type CommentListProps = CommentLoggedInUserProps &
     setReplyToID: (value: string | undefined) => void
   }
 
+// todo: create an alternative component for this.
+/**
+ * @deprecated deprecated in antd v5.0. It is used from compatibility package. consider using an alternative component
+ */
 export const Comment: React.FC<CommentProps> = props => <AntComment {...props} />
 
 const authorInitials = (name: string) => {
