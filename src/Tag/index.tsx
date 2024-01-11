@@ -11,7 +11,8 @@ const Tag: React.FC<TagProps> = props => {
 }
 
 Tag.defaultProps = {
-  closeIcon: <X size={12} />
+  closeIcon: <X size={12} />,
+  closable: false
 }
 
 export default Tag
