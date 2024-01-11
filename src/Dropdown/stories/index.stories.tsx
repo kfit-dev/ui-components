@@ -4,7 +4,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { ItemType } from 'antd/lib/menu/hooks/useItems'
 import { UserCircle } from 'phosphor-react'
-import { default as Menu } from '../../Menu'
 import { default as Dropdown, DropdownProps } from '../index'
 
 export default {
@@ -119,15 +118,24 @@ const menuWithSubmenuItems: ItemType[] = [
   }
 ]
 
-const menu = <Menu style={{ width: 320 }} items={menuItems} />
-const menuWithDivider = <Menu style={{ width: 320 }} items={menuWithDividerItems} />
-const menuWithSubmenu = <Menu style={{ width: 320 }} items={menuWithSubmenuItems} />
+const menu = {
+  style: { width: 320 },
+  items: menuItems
+}
+const menuWithDivider = {
+  style: { width: 320 },
+  items: menuWithDividerItems
+}
+const menuWithSubmenu = {
+  style: { width: 320 },
+  items: menuWithSubmenuItems
+}
 
 export const Basic = Template.bind({})
 
 Basic.args = {
   label: 'Dropdown',
-  overlay: menu,
+  menu: menu,
   trigger: 'click'
 }
 
@@ -135,7 +143,7 @@ export const MenuWithDivider = Template.bind({})
 
 MenuWithDivider.args = {
   label: 'Dropdown',
-  overlay: menuWithDivider,
+  menu: menuWithDivider,
   trigger: 'click'
 }
 
@@ -143,7 +151,7 @@ export const MenuWithSubmenu = Template.bind({})
 
 MenuWithSubmenu.args = {
   label: 'Dropdown',
-  overlay: menuWithSubmenu,
+  menu: menuWithSubmenu,
   trigger: 'click'
 }
 
@@ -171,11 +179,16 @@ export const MenuWithState = () => {
     { key: '5', label: 'Dropdown 3' },
     { key: '6', label: 'Dropdown 4', disabled: true }
   ]
-
-  const menu = <Menu mode="vertical" onClick={handleClick} selectedKeys={[current]} items={menuWithStateItems} />
-
   return (
-    <Dropdown overlay={menu} trigger={['click']}>
+    <Dropdown
+      menu={{
+        mode: 'vertical',
+        onClick: handleClick,
+        selectedKeys: [current],
+        items: menuWithStateItems
+      }}
+      trigger={['click']}
+    >
       <a onClick={e => e.preventDefault()}>Click me</a>
     </Dropdown>
   )
