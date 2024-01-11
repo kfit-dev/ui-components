@@ -13,7 +13,7 @@ import {
 
 export type MessageProps = ArgsProps;
 const iconSize = 16;
-const Message = AntMessage;
+const Message: typeof AntMessage = AntMessage;
 const originalCalls = { ...Message };
 
 Message.info = ({ icon, ...restArgs }: MessageProps) =>
