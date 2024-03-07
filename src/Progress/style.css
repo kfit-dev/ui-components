@@ -1,5 +1,9 @@
 .ant-progress {
   @apply font-inter;
+
+  &-outer {
+    height: inherit !important;
+  }
 }
 
 /* center line success/exception icons */
@@ -101,9 +105,11 @@
   }
 }
 
-.ant-progress-success-bg,
-.ant-progress-bg {
-  @apply bg-slate-700;
+.ant-progress {
+  & &-success-bg,
+  & &-bg {
+    @apply bg-slate-700;
+  }
 }
 
 .ant-progress-line {

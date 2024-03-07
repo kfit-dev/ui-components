@@ -3,7 +3,7 @@
   @apply hover:border-neutral-300 hover:outline-none hover:shadow-none;
   @apply focus:border-neutral-300;
 
-  &-focused {
+  &:focus-within {
     @apply border-neutral-300 shadow-none;
   }
 

@@ -3,8 +3,6 @@ import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
 import { default as Input, InputProps } from '../index'
 
-import '../../assets/style/form-item.css';
-
 export default {
   title: 'Input/Basic',
   component: Input

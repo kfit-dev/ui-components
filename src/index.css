@@ -1,2 +1,19 @@
-@import 'antd/dist/antd.css';
 @import './variables.css';
+
+/* removed in antd 5 */
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}

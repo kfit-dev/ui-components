@@ -1,7 +1,8 @@
-/* @import '../Menu/style.css';
-@import '../Dropdown/style.css'; */
-
 .ant-breadcrumb {
+  & > ol {
+    @apply mb-[1em];
+  }
+
   li a {
     @apply text-sm font-inter text-neutral-400;
     @apply hover:text-neutral-400 hover:underline;

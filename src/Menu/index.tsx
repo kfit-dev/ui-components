@@ -22,7 +22,7 @@ export const MenuDivider: React.FC<MenuDividerProps> = props => {
 
 Menu.defaultProps = {
   theme: defaults.theme as MenuTheme,
-  expandIcon: ({ isOpen }) => <CaretDown size={16} style={{ transform: isOpen && 'rotate(-180deg)' }} />
+  expandIcon: ({ isOpen }) => <CaretDown size={16} className={`${isOpen}`} style={{ transform: isOpen && 'rotate(-180deg)' }} />
 }
 
 export default Menu

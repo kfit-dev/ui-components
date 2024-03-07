@@ -6,7 +6,7 @@ import { CheckCircle, Info, WarningCircle, X, XCircle } from 'phosphor-react';
 import './style.css';
 
 export type NotificationProps = ArgsProps;
-const Notification = AntNotification;
+const Notification: typeof AntNotification = AntNotification;
 const originalCalls = { ...Notification };
 
 const iconSize = 24;

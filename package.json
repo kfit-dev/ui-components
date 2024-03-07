@@ -32,14 +32,18 @@
     "clean": "git clean -Xdf",
     "storybook": "start-storybook -p 6006",
     "create-component": "node ./tools/create-component.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "audit": "yarn audit --groups dependencies",
+    "publish-local": "yalc publish"
   },
   "dependencies": {
+    "@ant-design/compatible": "^5.1.2",
     "@ant-design/icons": "^4.7.0",
+    "@ant-design/pro-layout": "^7.17.16",
     "@babel/runtime": "^7.1.2",
     "@types/classnames": "^2.3.1",
-    "@types/react": "^16.9.5",
-    "antd": "4.20.0",
+    "@types/react": "17.0.2",
+    "antd": "5.12.2",
     "array-move": "^4.0.0",
     "classnames": "^2.3.1",
     "date-fns": "^2.28.0",
@@ -47,7 +51,8 @@
     "ui-box": "^5.0.0"
   },
   "peerDependencies": {
-    "react": ">=16.9.0"
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
@@ -127,3 +132,4 @@
     ]
   }
 }
+

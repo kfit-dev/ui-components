@@ -7,7 +7,7 @@
   &.icon-start {
     @apply pl-2;
 
-    svg:first-child {
+    svg:first-of-type {
       @apply mr-1;
     }
   }
@@ -15,18 +15,18 @@
   &.icon-end {
     @apply pr-2;
 
-    svg:last-child {
+    svg:last-of-type {
       @apply ml-1;
     }
   }
 
-  &-sm {
+  &&-sm {
     @apply px-3 py-1 text-xs font-semibold rounded;
 
     &.icon-start {
       @apply pl-2;
 
-      svg:first-child {
+      svg:first-of-type {
         @apply mr-1;
       }
     }
@@ -34,19 +34,19 @@
     &.icon-end {
       @apply pr-1;
 
-      svg:last-child {
+      svg:last-of-type {
         @apply ml-1;
       }
     }
   }
 
-  &-lg {
+  &&-lg {
     @apply px-4 py-2.5 text-sm font-bold;
 
     &.icon-start {
       @apply pl-2;
 
-      svg:first-child {
+      svg:first-of-type {
         @apply mr-1;
       }
     }
@@ -54,19 +54,24 @@
     &.icon-end {
       @apply pr-2;
 
-      svg:last-child {
+      svg:last-of-type {
         @apply ml-1;
       }
     }
   }
 
   &-circle {
-    @apply text-primary h-auto px-3 py-3;
-    @apply hover:text-primary hover:outline-primary hover:outline-1;
-    @apply focus:text-primary;
+    &:not(:disabled):not(.ant-btn-disabled) {
+      @apply text-primary bg-white border-neutral-300;
 
-    &:active {
-      @apply text-primary;
+      &:focus,
+      &:active {
+        @apply text-primary border-primary;
+      }
+
+      &:hover {
+        @apply text-primary border-neutral-300;
+      }
     }
 
     &.ant-btn-lg {
@@ -75,28 +80,33 @@
   }
 
   &-primary {
-    @apply bg-primary text-white;
-    @apply hover:bg-primary hover:bg-opacity-70 hover:text-white;
-    @apply focus:bg-primary focus:text-white focus:outline-none;
-
-    &:active {
-      @apply bg-primary text-white bg-opacity-70;
+    &:not(:disabled):not(.ant-btn-disabled) {
+      @apply bg-primary text-white;
+      @apply hover:bg-primary hover:bg-opacity-70 hover:text-white;
+      @apply focus:bg-primary focus:text-white focus:outline-none;
+      @apply active:bg-primary active:text-white active:bg-opacity-70;
     }
   }
 
   &-text {
-    @apply text-primary;
-    @apply hover:text-primary;
-    @apply focus:text-primary;
-
-    &:active {
+    &:not(:disabled):not(.ant-btn-disabled) {
       @apply text-primary;
+
+      &:hover,
+      &:focus,
+      &:active {
+        @apply text-primary;
+      }
     }
   }
 
   &-link {
-    @apply text-primary;
-    @apply hover:text-primary;
-    @apply focus:text-primary;
+    &:not(:disabled):not(.ant-btn-disabled) {
+      &:hover,
+      &:focus,
+      &:active {
+        @apply text-primary;
+      }
+    }
   }
 }

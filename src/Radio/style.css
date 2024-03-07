@@ -1,47 +1,34 @@
 .ant-radio {
-  &:hover {
-    .ant-radio-inner {
-      @apply border-slate-700;
-    }
-  }
+  @apply font-inter;
 
   &-wrapper {
-    @apply text-slate-700 font-inter font-normal leading-6 flex;
-  }
+    &:not(&-disabled) {
+      .ant-radio-inner {
+        @apply border-slate-700;
 
-  &-wrapper-disabled {
-    @apply text-neutral-300;
-  }
+        &::after {
+          margin-block-start: -11px;
+          margin-inline-start: -11px;
 
-  &-inner {
-    @apply border-slate-700;
-  }
+          @apply w-[22px] h-[22px] rounded-[22px];
+        }
+      }
 
-  &-inner::after {
-    @apply bg-slate-700;
-  }
+      &:hover {
+        .ant-radio-inner {
+          @apply border-slate-700;
+        }
+      }
 
-  &-checked {
-    .ant-radio-inner {
-      @apply border-slate-700;
+      & .ant-radio-checked {
+        .ant-radio-inner {
+          @apply bg-white border-slate-700;
+
+          &::after {
+            @apply bg-slate-700;
+          }
+        }
+      }
     }
-  }
-
-  &-checked::after {
-    @apply border-slate-700 border-none;
-  }
-
-  &-disabled {
-    .ant-radio-inner {
-      @apply bg-white border-neutral-300;
-    }
-
-    .ant-radio-inner::after {
-      @apply bg-neutral-300 border-neutral-300;
-    }
-  }
-
-  &-input:focus + &-inner {
-    @apply border-slate-700 shadow-none;
   }
 }

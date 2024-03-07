@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PageHeader as AntPageHeader, PageHeaderProps as AntPageHeaderProps } from "antd";
+import { PageHeader as AntPageHeader, PageHeaderProps as AntPageHeaderProps } from '@ant-design/pro-layout';
 
 import "./style.css"
 
@@ -21,9 +21,13 @@ export const PageHeaderWrapper : React.FC<PageHeaderWrapperProps> = (props) => {
   );
 }
 
-const PageHeader: React.FC<PageHeaderProps> = (props) => {
-  const { title, subTitle, ...restProps } = props; 
-  return <AntPageHeader  title={<PageHeaderWrapper title={title} subtitle={subTitle}/>} {...restProps} />;
-};
+// todo: create an alternative component for this.
+/**
+ * @deprecated deprecated in antd v5.0. It is used from compatibility package. consider using an alternative component
+ */
+const PageHeader: React.FC<PageHeaderProps> = props => {
+  const { title, subTitle, ...restProps } = props
+  return <AntPageHeader title={<PageHeaderWrapper title={title} subtitle={subTitle} />} {...restProps} />
+}
 
-export default PageHeader;
+export default PageHeader

@@ -3,8 +3,6 @@ import { Story, ComponentMeta } from '@storybook/react'
 import { Form, FormItemProps } from 'antd'
 import { Search, SearchProps } from '../index'
 
-import '../../assets/style/form-item.css';
-
 export default {
   title: 'Input/Search',
   component: Search

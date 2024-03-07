@@ -21,8 +21,6 @@ import {
   PageHeaderSubtitle
 } from '../index'
 
-import 'antd/lib/typography/style/index.css'
-
 export default {
   title: 'Layout',
   component: Layout
@@ -125,7 +123,7 @@ export const Default = () => {
               defaultValue={selectedCountry}
               optionLabelProp={'label'}
               bordered={false}
-              dropdownMatchSelectWidth={false}
+              popupMatchSelectWidth={false}
               showArrow
               onChange={value => setSelectedCountry(value)}
               // need to keep
